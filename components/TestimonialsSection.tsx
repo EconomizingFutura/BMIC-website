@@ -8,7 +8,7 @@ const testimonials = [
     position: "Project Manager",
     company: "TechCorp Industries",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b5c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
   },
   {
     content: "Outstanding service and technical support. Their team's professionalism and expertise made our complex project a success.",
@@ -28,7 +28,7 @@ const testimonials = [
   }
 ];
 
-const clientLogos = [
+export const clientLogos = [
   { name: "TechCorp", logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=TechCorp" },
   { name: "GreenEnergy", logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=GreenEnergy" },
   { name: "Urban Dev", logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Urban+Dev" },
@@ -89,7 +89,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* Client Logos */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <h3 className="text-xl text-gray-900 mb-8">Trusted by Industry Leaders</h3>
           
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 items-center">
@@ -103,10 +103,10 @@ export function TestimonialsSection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Trust Indicators */}
-        <div className="mt-16 bg-white rounded-2xl p-8 grid md:grid-cols-3 gap-8 text-center">
+        {/* <div className="mt-16 bg-white rounded-2xl p-8 grid md:grid-cols-3 gap-8 text-center">
           <div>
             <div className="text-3xl text-primary mb-2">500+</div>
             <div className="text-gray-600">Satisfied Clients</div>
@@ -119,7 +119,7 @@ export function TestimonialsSection() {
             <div className="text-3xl text-primary mb-2">4.9/5</div>
             <div className="text-gray-600">Average Rating</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

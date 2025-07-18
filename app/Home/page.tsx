@@ -5,11 +5,13 @@ import { SolutionsSection } from "../../components/SolutionsSection";
 import { CertificationsSection } from "../../components/CertificationsSection";
 import { TestimonialsSection } from "../../components/TestimonialsSection";
 import { CTASection } from "../../components/CTASection";
+import ClientLogo from "@/components/ClientLogo";
 
 export function HomePage() {
   return (
     <main>
       <HeroSection />
+      <ClientLogo/>
       <IndustriesSection />
       <ProjectsSection />
       <SolutionsSection />

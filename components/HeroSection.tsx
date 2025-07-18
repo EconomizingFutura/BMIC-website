@@ -7,11 +7,11 @@ export function HeroSection() {
   return (
     <section id="home" className="relative bg-gradient-to-br from-primary/5 to-accent/30 py-20 lg:py-32">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center ">
+          <div className="space-y-8 ">
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-6xl leading-tight text-gray-900">
-                Professional <span className="text-primary">Solutions</span> for Your Business Needs
+              <h1 className="text-4xl lg:text-5xl font-semibold leading-tight text-gray-900">
+                Professional <span className="text-primary">Solutions</span> <br/> for Your Business Needs
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed">
                 We deliver innovative engineering solutions, manufacturing excellence, and comprehensive services 
@@ -65,7 +65,7 @@ export function HeroSection() {
               </div>
             </div>
           </div>
-
+ 
           <div className="relative">
             <Card className="overflow-hidden shadow-xl">
               <ImageWithFallback

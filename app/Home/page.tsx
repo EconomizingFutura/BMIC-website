@@ -13,9 +13,9 @@ export function HomePage() {
       <IndustriesSection />
       <ProjectsSection />
       <SolutionsSection />
-      {/*<CertificationsSection />*/}
-      {/* <TestimonialsSection /> */}
-      {/* <CTASection />*/}
+      <CertificationsSection />
+      <TestimonialsSection />
+      <CTASection />
     </main>
   );
 }

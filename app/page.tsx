@@ -11,6 +11,7 @@ import { ProjectsPage } from "./Projects/page";
 import { BlogPage } from "./Blog/page";
 import { ContactPage } from "./Contact/page";
 import Head from "next/head";
+import "../globals.css";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<
@@ -164,10 +165,7 @@ export default function App() {
     <>
       <Head>
         <title>BMIC</title>
-        <meta
-          name="description"
-          content="test"
-        />
+        <meta name="description" content="test" />
         <link rel="canonical" href="https://economizingfutura.com/" />
       </Head>
       <div className="min-h-screen">

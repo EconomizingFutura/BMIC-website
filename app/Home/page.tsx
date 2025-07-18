@@ -10,12 +10,12 @@ export function HomePage() {
   return (
     <main>
       <HeroSection />
-      {/* <IndustriesSection />
+      <IndustriesSection />
       <ProjectsSection />
       <SolutionsSection />
-      <CertificationsSection />
-      <TestimonialsSection />
-      <CTASection /> */}
+      {/*<CertificationsSection />*/}
+      {/* <TestimonialsSection /> */}
+      {/* <CTASection />*/}
     </main>
   );
 }

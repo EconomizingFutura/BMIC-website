@@ -23,7 +23,7 @@ export function Header({
   onNavigateToContact,
 }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm relative overflow-hidden">
+    <header className=" top-0 z-50 bg-white shadow-sm relative overflow-hidden">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         {/* Grid pattern similar to ServicesPage */}
@@ -64,7 +64,7 @@ export function Header({
           />
         </div>
 
-        <div className="container mx-auto px-4 flex md:flex-row flex-col justify-between items-center relative">
+        <div className=" mx-auto  lg:px-24 px-4 flex md:flex-row flex-col justify-between items-center relative">
           <div className="flex items-center space-x-2 ml-auto md:ml-0   md:space-x-4">
             <div className="flex items-center space-x-1 md:space-x-2 hover:bg-white/10 md:px-2 py-1 rounded-md transition-colors">
               <Phone className="h-4 w-4" />
@@ -100,7 +100,7 @@ export function Header({
       </div>
 
       {/* Main navigation with enhanced styling */}
-      <nav className="container mx-auto  px-2 sm:px-4 py-4 relative">
+      <nav className=" mx-auto  px-2 lg:px-24 sm:px-4 py-4 relative">
         <div className="flex justify-between items-center">
           <button
             onClick={onNavigateToHome}
@@ -123,38 +123,38 @@ export function Header({
           <Menu className="h-6 w-6 lg:hidden" />
 
           {/* Enhanced Desktop Navigation */}
-          <div className="hidden lg:flex items-center lg:space-x-3 space-x-6 relative">
+          <div className="hidden lg:flex items-center lg:space-x-6 space-x-6 relative">
             {/* Background decoration for nav */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300" />
 
             <a
               href="#home"
-              className="hover:text-primary font-medium transition-colors relative px-2 py-2 rounded-md hover:bg-primary/5"
+              className="hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
             >
               Home
             </a>
             <button
               onClick={onNavigateToServices}
-              className="hover:text-primary font-medium transition-colors relative px-2 py-2 rounded-md  hover:bg-primary/5"
+              className="hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md  hover:bg-primary/5"
             >
-              Services
+              Solutions
             </button>
             <button
               onClick={onNavigateToPharma}
-              className="hover:text-primary font-medium transition-colors relative px-2 py-2 rounded-md hover:bg-primary/5"
+              className="hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
             >
               Industries
             </button>
             <button
               onClick={onNavigateToProjects}
-              className="hover:text-primary font-medium transition-colors relative px-2 py-2 rounded-md hover:bg-primary/5"
+              className="hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
             >
-              Projects
+              Gallery
             </button>
 
             <button
               onClick={onNavigateToAbout}
-              className="hover:text-primary font-medium transition-colors relative px-2 py-2 rounded-md hover:bg-primary/5 whitespace-nowrap"
+              className="hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5 whitespace-nowrap"
             >
               About Us
             </button>
@@ -167,29 +167,7 @@ export function Header({
             </Button>
           </div>
 
-          {/* Enhanced CTA Buttons */}
-          <div className=" items-center space-x-4 hidden relative">
-            <Button
-              variant="outline"
-              className="hidden sm:inline-flex border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-lg relative overflow-hidden group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative">Get a Quote</span>
-            </Button>
-            <Button className="bg-green-600 hover:bg-green-700 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative">WhatsApp Us</span>
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="lg:hidden bg-amber-400 hover:bg-primary/10 transition-colors relative"
-            >
-              <Menu className="h-6 w-6" />
-              {/* Mobile menu indicator */}
-              <div className="absolute top-1 right-1 w-2 h-2 bg-primary/50 rounded-full animate-pulse" />
-            </Button>
-          </div>
+       
         </div>
 
         {/* Additional decorative elements */}

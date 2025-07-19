@@ -368,7 +368,7 @@ export function BlogPage({ onBackToHome }: BlogPageProps) {
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 bg-white border-b border-gray-200 sticky top-0 z-40 backdrop-blur-sm bg-white/95">
+      <section className="py-8 border-b border-gray-200 sticky top-0 z-40 backdrop-blur-sm bg-white/95">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-3">
             <div className="flex items-center space-x-2 mr-4">

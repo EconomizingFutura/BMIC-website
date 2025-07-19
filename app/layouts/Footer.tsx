@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "../../components/ui/button";
 import {
   Phone,
@@ -9,22 +10,22 @@ import {
   Instagram,
   Clock,
 } from "lucide-react";
-
+import BMIC_FOOTER from "@/components/figma/images/BMIC_FOOTER.svg";
+import EFLOGO from "@/components/figma/images/EFLOGO.svg";
+import { Input } from "@/components/ui/input";
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-[#D1D5DC]">
       <div className="container mx-auto px-4 py-12">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-8">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 md:col-span-1">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white">C</span>
-              </div>
-              <div>
-                <h3 className="text-lg text-white">Company</h3>
-                <p className="text-sm text-gray-400">Solutions & Services</p>
+              <div className="relative ">
+                <div className="md:w-24 md:h-12 h-6 w-12 rounded-lg flex items-center bg-[#101828] justify-center ">
+                  <Image src={BMIC_FOOTER} alt="Logo" fill />
+                </div>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -114,7 +115,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Thermal Insulation
+                  Insulation
                 </a>
               </li>
               <li>
@@ -122,7 +123,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Cold Storage Solutions
+                  Cold Storage
                 </a>
               </li>
               <li>
@@ -130,7 +131,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  HVAC & Ducting
+                  HVAC / Ducting
                 </a>
               </li>
               <li>
@@ -138,23 +139,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Energy Efficiency
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
-                  Industrial Solutions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
-                  Maintenance & Support
+                  Soundproofing
                 </a>
               </li>
             </ul>
@@ -169,7 +154,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Pharmaceutical
+                  Pharma
                 </a>
               </li>
               <li>
@@ -177,7 +162,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Food Processing
+                  Food & Beverage
                 </a>
               </li>
               <li>
@@ -185,7 +170,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Petrochemical
+                  Cold Chain Logistics
                 </a>
               </li>
               <li>
@@ -193,7 +178,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Power Generation
+                  IT & Data Centers
                 </a>
               </li>
               <li>
@@ -201,7 +186,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Data Centers
+                  Warehousing
                 </a>
               </li>
               <li>
@@ -209,73 +194,85 @@ export function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Healthcare
+                  Construction & Infrastructure
                 </a>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg text-white">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
-                  Our Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
-                  Industries
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
-                  Blogs
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
-                  News & Updates
-                </a>
-              </li>
-            </ul>
+          <div className="space-y-3">
+            <div className="space-y-4">
+              <h4 className="text-lg text-white">Quick Links</h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-primary transition-colors"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-primary transition-colors"
+                  >
+                    Our Services
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-primary transition-colors"
+                  >
+                    Industries
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-primary transition-colors"
+                  >
+                    Projects
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-primary transition-colors"
+                  >
+                    Blogs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-primary transition-colors"
+                  >
+                    News & Updates
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <h4 className="text-lg text-white">Stay Updated</h4>
+            <div>
+              <Input
+                className="border border-[#4A5565] bg-[#1E2939] placeholder:text-[#99A1AF]"
+                placeholder="Your Email"
+              />
+            </div>
             <Button className="bg-primary hover:bg-primary/90 w-full">
-              Get a Quote
+              Subscribe
             </Button>
+            <h4 className="text-lg text-white">Powered by</h4>
+            <Image src={EFLOGO} alt="EF-logo" />
           </div>
         </div>
 
         {/* Newsletter */}
-        <div className="border-t border-gray-700 pt-8 mb-8">
+        {/* <div className="border-t border-gray-700 pt-8 mb-8">
           <div className="max-w-md mx-auto text-center">
             <h4 className="text-lg text-white mb-2">Stay Updated</h4>
             <p className="text-gray-300 text-sm mb-4">
@@ -293,7 +290,7 @@ export function Footer() {
               </Button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-6">
@@ -319,6 +316,12 @@ export function Footer() {
                 className="text-gray-400 hover:text-primary transition-colors"
               >
                 Cookie Policy
+              </a>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-primary transition-colors"
+              >
+                Sitemap
               </a>
             </div>
           </div>

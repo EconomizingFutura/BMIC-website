@@ -3,40 +3,70 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    content: "Their engineering expertise and attention to detail exceeded our expectations. The project was delivered on time and within budget.",
+    content:
+      "Their engineering expertise and attention to detail exceeded our expectations. The project was delivered on time and within budget.",
     author: "Sarah Johnson",
     position: "Project Manager",
     company: "TechCorp Industries",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
   },
   {
-    content: "Outstanding service and technical support. Their team's professionalism and expertise made our complex project a success.",
+    content:
+      "Outstanding service and technical support. Their team's professionalism and expertise made our complex project a success.",
     author: "Michael Chen",
     position: "Operations Director",
     company: "GreenEnergy Solutions",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    avatar:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
   },
   {
-    content: "Reliable, professional, and innovative solutions. They've been our trusted partner for multiple projects over the years.",
+    content:
+      "Reliable, professional, and innovative solutions. They've been our trusted partner for multiple projects over the years.",
     author: "Emily Rodriguez",
     position: "VP Engineering",
     company: "Urban Development Co.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-  }
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+  },
 ];
 
 export const clientLogos = [
-  { name: "TechCorp", logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=TechCorp" },
-  { name: "GreenEnergy", logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=GreenEnergy" },
-  { name: "Urban Dev", logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Urban+Dev" },
-  { name: "Maritime Inc", logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Maritime" },
-  { name: "Ocean Energy", logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Ocean+Energy" },
-  { name: "Defense Corp", logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Defense+Corp" },
-  { name: "Global Logistics", logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Global+Log" },
-  { name: "Industrial Solutions", logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial" }
+  {
+    name: "TechCorp",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=TechCorp",
+  },
+  {
+    name: "GreenEnergy",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=GreenEnergy",
+  },
+  {
+    name: "Urban Dev",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Urban+Dev",
+  },
+  {
+    name: "Maritime Inc",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Maritime",
+  },
+  {
+    name: "Ocean Energy",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Ocean+Energy",
+  },
+  {
+    name: "Defense Corp",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Defense+Corp",
+  },
+  {
+    name: "Global Logistics",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Global+Log",
+  },
+  {
+    name: "Industrial Solutions",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
+  },
 ];
 
 export function TestimonialsSection() {
@@ -44,19 +74,22 @@ export function TestimonialsSection() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">
             What Our <span className="text-primary">Clients</span> Say
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our valued clients have to say 
-            about their experience working with us.
+            Don't just take our word for it. Here's what our valued clients have
+            to say about their experience working with us.
           </p>
         </div>
 
         {/* Testimonials Grid */}
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="hover:shadow-xl transition-shadow duration-300">
+            <Card
+              key={index}
+              className="hover:shadow-xl transition-shadow duration-300"
+            >
               <CardContent className="p-6">
                 <div className="mb-4">
                   <Quote className="h-8 w-8 text-primary/30 mb-3" />
@@ -64,13 +97,16 @@ export function TestimonialsSection() {
                     "{testimonial.content}"
                   </p>
                 </div>
-                
+
                 <div className="flex items-center space-x-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <Star
+                      key={i}
+                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                    />
                   ))}
                 </div>
-                
+
                 <div className="flex items-center space-x-3">
                   <img
                     src={testimonial.avatar}
@@ -79,8 +115,12 @@ export function TestimonialsSection() {
                   />
                   <div>
                     <p className="text-gray-900">{testimonial.author}</p>
-                    <p className="text-sm text-gray-600">{testimonial.position}</p>
-                    <p className="text-sm text-primary">{testimonial.company}</p>
+                    <p className="text-sm text-gray-600">
+                      {testimonial.position}
+                    </p>
+                    <p className="text-sm text-primary">
+                      {testimonial.company}
+                    </p>
                   </div>
                 </div>
               </CardContent>

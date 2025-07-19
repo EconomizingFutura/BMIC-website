@@ -12,6 +12,7 @@ import { BlogPage } from "./Blog/page";
 import { ContactPage } from "./Contact/page";
 import Head from "next/head";
 import "../globals.css";
+import { CTASection } from "@/components/CTASection";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<
@@ -66,6 +67,7 @@ export default function App() {
           onNavigateToContact={navigateToContact}
         />
         <AboutPage onBackToHome={navigateToHome} />
+        <CTASection />
         <Footer />
       </div>
     );
@@ -84,6 +86,7 @@ export default function App() {
           onNavigateToContact={navigateToContact}
         />
         <ServicesPage onBackToHome={navigateToHome} />
+        <CTASection />
         <Footer />
       </div>
     );
@@ -102,6 +105,7 @@ export default function App() {
           onNavigateToContact={navigateToContact}
         />
         <PharmaIndustryPage onBackToHome={navigateToHome} />
+        <CTASection />
         <Footer />
       </div>
     );
@@ -120,6 +124,7 @@ export default function App() {
           onNavigateToContact={navigateToContact}
         />
         <ProjectsPage onBackToHome={navigateToHome} />
+        <CTASection />
         <Footer />
       </div>
     );
@@ -138,6 +143,7 @@ export default function App() {
           onNavigateToContact={navigateToContact}
         />
         <BlogPage onBackToHome={navigateToHome} />
+        <CTASection />
         <Footer />
       </div>
     );

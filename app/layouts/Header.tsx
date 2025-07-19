@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { Button } from "../../components/ui/button";
 import { Phone, Mail, Menu } from "lucide-react";
+import BMIC_LOGO from "@/components/figma/images/BMIC_LOGO.svg";
 
 interface HeaderProps {
   onNavigateToAbout?: () => void;
@@ -62,19 +64,23 @@ export function Header({
           />
         </div>
 
-        <div className="container mx-auto px-4 flex justify-between items-center relative">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 hover:bg-white/10 px-2 py-1 rounded-md transition-colors">
+        <div className="container mx-auto px-4 flex md:flex-row flex-col justify-between items-center relative">
+          <div className="flex items-center space-x-2 ml-auto md:ml-0   md:space-x-4">
+            <div className="flex items-center space-x-1 md:space-x-2 hover:bg-white/10 md:px-2 py-1 rounded-md transition-colors">
               <Phone className="h-4 w-4" />
-              <span className="hidden sm:inline">+1 (555) 123-4567</span>
+              <span className="text-[13px] md:text-[14px]">
+                +1 (555) 123-4567
+              </span>
             </div>
-            <div className="flex items-center space-x-2 hover:bg-white/10 px-2 py-1 rounded-md transition-colors">
+            <div className="flex items-center space-x-1 md:space-x-2 hover:bg-white/10 md:px-2 py-1 rounded-md transition-colors">
               <Mail className="h-4 w-4" />
-              <span className="hidden sm:inline">info@company.com</span>
+              <span className="text-[13px] md:text-[14px]">
+                info@company.com
+              </span>
             </div>
           </div>
-          <div className="flex items-center space-x-2">
-            <span className="hidden md:inline">Follow Us:</span>
+          <div className="flex items-center text-[13px] md:text-[14px] ml-auto md:ml-0 space-x-2">
+            <span className="">Follow Us:</span>
             <div className="flex space-x-2">
               <a
                 href="#"
@@ -94,81 +100,75 @@ export function Header({
       </div>
 
       {/* Main navigation with enhanced styling */}
-      <nav className="container mx-auto px-4 py-4 relative">
+      <nav className="container mx-auto  px-2 sm:px-4 py-4 relative">
         <div className="flex justify-between items-center">
           <button
             onClick={onNavigateToHome}
-            className="flex items-center space-x-2 hover:opacity-80 transition-all duration-300 group relative"
+            className="flex  items-center space-x-2 hover:opacity-80 transition-all duration-300 group relative"
           >
             {/* Enhanced logo with background effect */}
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                <span className="text-white">C</span>
+            <div className="relative ">
+              <div className="md:w-24 md:h-12 h-6 w-12 rounded-lg flex items-center justify-center ">
+                <Image src={BMIC_LOGO} alt="Logo" fill />
               </div>
               {/* Floating indicator */}
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
+              <div className="absolute hidden md:block -top-1 -right-1 w-3 h-3 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
             </div>
-            <div>
-              <h1 className="text-xl text-primary group-hover:text-primary/80 transition-colors">
-                Company
+            <div className="">
+              <h1 className="whitespace-nowrap md:text-2xl text-[12px] sm:text-[13px] text-primary font-bold">
+                Bharath Modern Insulation Company
               </h1>
-              <p className="text-sm text-muted-foreground">
-                Solutions & Services
-              </p>
             </div>
           </button>
+          <Menu className="h-6 w-6 lg:hidden" />
 
           {/* Enhanced Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 relative">
+          <div className="hidden lg:flex items-center lg:space-x-3 space-x-6 relative">
             {/* Background decoration for nav */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300" />
 
             <a
               href="#home"
-              className="hover:text-primary transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
+              className="hover:text-primary font-medium transition-colors relative px-2 py-2 rounded-md hover:bg-primary/5"
             >
               Home
             </a>
             <button
               onClick={onNavigateToServices}
-              className="hover:text-primary transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
+              className="hover:text-primary font-medium transition-colors relative px-2 py-2 rounded-md  hover:bg-primary/5"
             >
               Services
             </button>
             <button
               onClick={onNavigateToPharma}
-              className="hover:text-primary transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
+              className="hover:text-primary font-medium transition-colors relative px-2 py-2 rounded-md hover:bg-primary/5"
             >
               Industries
             </button>
             <button
               onClick={onNavigateToProjects}
-              className="hover:text-primary transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
+              className="hover:text-primary font-medium transition-colors relative px-2 py-2 rounded-md hover:bg-primary/5"
             >
               Projects
             </button>
-            <button
-              onClick={onNavigateToBlog}
-              className="hover:text-primary transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
-            >
-              Blog
-            </button>
+
             <button
               onClick={onNavigateToAbout}
-              className="hover:text-primary transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
+              className="hover:text-primary font-medium transition-colors relative px-2 py-2 rounded-md hover:bg-primary/5 whitespace-nowrap"
             >
-              About
+              About Us
             </button>
-            <button
+            <Button
               onClick={onNavigateToContact}
-              className="hover:text-primary transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
+              className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
             >
-              Contact
-            </button>
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative"> Contact Us</span>
+            </Button>
           </div>
 
           {/* Enhanced CTA Buttons */}
-          <div className="flex items-center space-x-4 relative">
+          <div className=" items-center space-x-4 hidden relative">
             <Button
               variant="outline"
               className="hidden sm:inline-flex border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-lg relative overflow-hidden group"
@@ -183,7 +183,7 @@ export function Header({
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden hover:bg-primary/10 transition-colors relative"
+              className="lg:hidden bg-amber-400 hover:bg-primary/10 transition-colors relative"
             >
               <Menu className="h-6 w-6" />
               {/* Mobile menu indicator */}

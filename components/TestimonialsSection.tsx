@@ -64,7 +64,47 @@ export const clientLogos = [
     logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Global+Log",
   },
   {
-    name: "Industrial Solutions",
+    name: "Industrial Solutions2",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
+  },
+  {
+    name: "Industrial Solutions3",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
+  },
+  {
+    name: "Industrial Solutions4",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
+  },
+  {
+    name: "Industrial Solutions5",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
+  },
+  {
+    name: "Industrial Solutions55",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
+  },
+  {
+    name: "Industrial Solutions6",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
+  },
+  {
+    name: "Industrial Solutions7",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
+  },
+  {
+    name: "Industrial Solutions8",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
+  },
+  {
+    name: "Industrial Solutions86",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
+  },
+  {
+    name: "Industrial Solutions9",
+    logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
+  },
+  {
+    name: "Industrial Solutions1",
     logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=Industrial",
   },
 ];
@@ -78,8 +118,8 @@ export function TestimonialsSection() {
             What Our <span className="text-primary">Clients</span> Say
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our valued clients have
-            to say about their experience working with us.
+            Don&lsquo;t just take our word for it. Here&lsquo;s what our valued
+            clients have to say about their experience working with us.
           </p>
         </div>
 
@@ -88,13 +128,13 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="hover:shadow-xl transition-shadow duration-300"
+              className=" border border-[#0000001A] transition-shadow duration-300"
             >
               <CardContent className="p-6">
                 <div className="mb-4">
                   <Quote className="h-8 w-8 text-primary/30 mb-3" />
                   <p className="text-gray-700 leading-relaxed italic">
-                    "{testimonial.content}"
+                    &#34;{testimonial.content}&ldquo;
                   </p>
                 </div>
 

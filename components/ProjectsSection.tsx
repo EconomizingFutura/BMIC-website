@@ -90,13 +90,13 @@ export function ProjectsSection() {
           {projects.slice(0, 3).map((project, index) => (
             <Card
               key={index}
-              className="group hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group  border border-[#0000001A]  overflow-hidden"
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover "
                   fill
                 />
                 <div className="absolute top-4 left-4">
@@ -104,10 +104,10 @@ export function ProjectsSection() {
                     {project.category}
                   </Badge>
                 </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-black/0 " />
+                {/* <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <ExternalLink className="h-6 w-6 text-white" />
-                </div>
+                </div> */}
               </div>
 
               <CardContent className="p-6">

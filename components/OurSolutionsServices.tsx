@@ -1,4 +1,3 @@
-import { Card, CardContent } from "./ui/card";
 import { Award, Shield, ChevronRight, Settings } from "lucide-react";
 import {
   ColdStorage,
@@ -81,7 +80,7 @@ export function OurSolutionsServices() {
                   />
                 </div>
                 <div className="px-4 py-2">
-                  <Settings size={20} color="#005919"  />
+                  <Settings size={20} color="#005919" />
                   <div className="flex justify-between py-4 ">
                     <h3 className="text-lg font-medium  text-gray-900 ">
                       {cert.title}

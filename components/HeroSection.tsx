@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative bg-gradient-to-br from-primary/5 to-accent/30 py-20 lg:py-32"
+      className="relative bg-gradient-to-b from-[#c9dcce] via-[#fffff] to-[#fffff] py-20 lg:py-32"
     >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center ">
@@ -22,7 +22,7 @@ export function HeroSection() {
               <p className="text-lg text-gray-600 leading-relaxed">
                 We deliver innovative engineering solutions, manufacturing
                 excellence, and comprehensive services to help your business
-                thrive in today's competitive market.
+                thrive in today&lsquo;s competitive market.
               </p>
             </div>
 
@@ -85,11 +85,11 @@ export function HeroSection() {
               />
             </div>
 
-            <Card className="overflow-hidden  shadow-xl">
+            <Card className="overflow-hidden shadow-xl">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Industrial facility"
-                className="w-full  h-96 object-cover"
+                className="w-full  h-96 border border-green-500 object-cover"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />

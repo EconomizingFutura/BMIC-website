@@ -61,20 +61,20 @@ export function IndustriesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2  lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => (
             <Card
               key={index}
-              className="group hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group  border-[#0000001A]  overflow-hidden"
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
                   src={industry.image}
                   alt={industry.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                   fill
                 />
-                <div className="absolute inset-0 bg-primary/80 group-hover:bg-primary/70 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-primary/80 " />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
                     <industry.icon className="h-12 w-12 mx-auto mb-3" />

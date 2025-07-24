@@ -1,217 +1,214 @@
-import { Card, CardContent } from "../../components/ui/card";
+import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
+import Image from "next/image";
 import {
-  ArrowLeft,
-  Thermometer,
-  Snowflake,
-  Wind,
-  Factory,
   Zap,
   Shield,
   Download,
   FileText,
-  Phone,
-  ArrowRight,
   CheckCircle,
   Wrench,
   Settings,
+  Dot,
+  Globe,
+  Mail,
+  ArrowLeft,
 } from "lucide-react";
-import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
-
+import { servicebanner } from "../../components/figma/images/index";
 interface ServicesPageProps {
   onBackToHome: () => void;
 }
 
 export function ServicesPage({ onBackToHome }: ServicesPageProps) {
-  const services = [
-    {
-      id: 1,
-      title: "Thermal Insulation",
-      icon: <Thermometer className="h-6 w-6" />,
-      description:
-        "High-performance insulation solutions for industrial pipes, vessels, and equipment operating at extreme temperatures.",
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      features: [
-        "Temperature range: -200°C to +1000°C",
-        "Energy loss reduction up to 85%",
-        "Fire-resistant materials",
-        "Custom fabrication available",
-        "Maintenance-free operation",
-        "Corrosion protection",
-      ],
-      applications: [
-        "Petrochemical plants",
-        "Power generation facilities",
-        "Chemical processing units",
-        "Steam distribution systems",
-        "Furnaces and kilns",
-        "Cryogenic applications",
-      ],
-      specifications: {
-        materials: "Mineral wool, Ceramic fiber, Aerogel, Polyurethane",
-        thickness: "25mm to 200mm",
-        density: "32-160 kg/m³",
-        certification: "IS 8183, ASTM C547, EN 14303",
-      },
-    },
-    {
-      id: 2,
-      title: "Cold Storage Solutions",
-      icon: <Snowflake className="h-6 w-6" />,
-      description:
-        "Precision-controlled cold storage facilities for pharmaceuticals, food processing, and specialty applications.",
-      image:
-        "https://images.unsplash.com/photo-1576091160549-57d4ac34bfad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      features: [
-        "Temperature precision ±0.5°C",
-        "Multi-zone temperature control",
-        "Automated monitoring systems",
-        "Energy-efficient design",
-        "FDA/WHO compliance",
-        "Emergency backup systems",
-      ],
-      applications: [
-        "Pharmaceutical storage",
-        "Vaccine distribution centers",
-        "Food processing facilities",
-        "Data center cooling",
-        "Laboratory storage",
-        "Blood bank facilities",
-      ],
-      specifications: {
-        materials: "PIR/PUF panels, Stainless steel",
-        thickness: "75mm to 200mm",
-        density: "40-50 kg/m³",
-        certification: "FDA, WHO, HACCP, ISO 22000",
-      },
-    },
-    {
-      id: 3,
-      title: "HVAC & Ducting",
-      icon: <Wind className="h-6 w-6" />,
-      description:
-        "Complete HVAC solutions including design, installation, and maintenance of air conditioning and ventilation systems.",
-      image:
-        "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      features: [
-        "Energy-efficient design",
-        "Smart controls integration",
-        "Zone-based climate control",
-        "Air quality monitoring",
-        "Noise reduction technology",
-        "Predictive maintenance",
-      ],
-      applications: [
-        "Commercial buildings",
-        "Healthcare facilities",
-        "Industrial complexes",
-        "Data centers",
-        "Educational institutions",
-        "Hospitality sector",
-      ],
-      specifications: {
-        materials: "Galvanized steel, Aluminum, Stainless steel",
-        thickness: "0.6mm to 2.0mm",
-        density: "Variable based on application",
-        certification: "IS 5392, ASHRAE, SMACNA",
-      },
-    },
-    {
-      id: 4,
-      title: "Industrial Solutions",
-      icon: <Factory className="h-6 w-6" />,
-      description:
-        "Comprehensive industrial thermal management including steam systems, process heating, and equipment insulation.",
-      image:
-        "https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      features: [
-        "Process optimization",
-        "Energy recovery systems",
-        "Steam trap management",
-        "Heat exchanger insulation",
-        "Boiler insulation",
-        "Maintenance services",
-      ],
-      applications: [
-        "Manufacturing plants",
-        "Process industries",
-        "Power plants",
-        "Steel mills",
-        "Cement plants",
-        "Oil refineries",
-      ],
-      specifications: {
-        materials: "Various based on application",
-        thickness: "Custom designed",
-        density: "Application specific",
-        certification: "IS, ASTM, EN standards",
-      },
-    },
-    {
-      id: 5,
-      title: "Energy Efficiency",
-      icon: <Zap className="h-6 w-6" />,
-      description:
-        "Energy audit, optimization consulting, and implementation of energy-saving thermal management solutions.",
-      image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      features: [
-        "Energy audits & assessments",
-        "ROI analysis & reporting",
-        "Carbon footprint reduction",
-        "Sustainability consulting",
-        "Performance monitoring",
-        "Government incentive assistance",
-      ],
-      applications: [
-        "Industrial facilities",
-        "Commercial buildings",
-        "Healthcare institutions",
-        "Educational campuses",
-        "Government buildings",
-        "Residential complexes",
-      ],
-      specifications: {
-        materials: "Smart sensors, IoT devices",
-        thickness: "N/A",
-        density: "N/A",
-        certification: "BEE, LEED, GRIHA",
-      },
-    },
-    {
-      id: 6,
-      title: "Regulatory Compliance",
-      icon: <Shield className="h-6 w-6" />,
-      description:
-        "Ensuring compliance with international standards, safety regulations, and industry-specific requirements.",
-      image:
-        "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      features: [
-        "Regulatory consulting",
-        "Documentation support",
-        "Inspection & testing",
-        "Certification assistance",
-        "Training programs",
-        "Compliance monitoring",
-      ],
-      applications: [
-        "Pharmaceutical facilities",
-        "Food processing plants",
-        "Chemical industries",
-        "Healthcare facilities",
-        "Export-oriented units",
-        "Government projects",
-      ],
-      specifications: {
-        materials: "Compliant materials only",
-        thickness: "As per regulations",
-        density: "Standard compliant",
-        certification: "All major international standards",
-      },
-    },
-  ];
+  // const services = [
+  //   {
+  //     id: 1,
+  //     title: "Thermal Insulation",
+  //     icon: <Thermometer className="h-6 w-6" />,
+  //     description:
+  //       "High-performance insulation solutions for industrial pipes, vessels, and equipment operating at extreme temperatures.",
+  //     image:
+  //       "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  //     features: [
+  //       "Temperature range: -200°C to +1000°C",
+  //       "Energy loss reduction up to 85%",
+  //       "Fire-resistant materials",
+  //       "Custom fabrication available",
+  //       "Maintenance-free operation",
+  //       "Corrosion protection",
+  //     ],
+  //     applications: [
+  //       "Petrochemical plants",
+  //       "Power generation facilities",
+  //       "Chemical processing units",
+  //       "Steam distribution systems",
+  //       "Furnaces and kilns",
+  //       "Cryogenic applications",
+  //     ],
+  //     specifications: {
+  //       materials: "Mineral wool, Ceramic fiber, Aerogel, Polyurethane",
+  //       thickness: "25mm to 200mm",
+  //       density: "32-160 kg/m³",
+  //       certification: "IS 8183, ASTM C547, EN 14303",
+  //     },
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Cold Storage Solutions",
+  //     icon: <Snowflake className="h-6 w-6" />,
+  //     description:
+  //       "Precision-controlled cold storage facilities for pharmaceuticals, food processing, and specialty applications.",
+  //     image:
+  //       "https://images.unsplash.com/photo-1576091160549-57d4ac34bfad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  //     features: [
+  //       "Temperature precision ±0.5°C",
+  //       "Multi-zone temperature control",
+  //       "Automated monitoring systems",
+  //       "Energy-efficient design",
+  //       "FDA/WHO compliance",
+  //       "Emergency backup systems",
+  //     ],
+  //     applications: [
+  //       "Pharmaceutical storage",
+  //       "Vaccine distribution centers",
+  //       "Food processing facilities",
+  //       "Data center cooling",
+  //       "Laboratory storage",
+  //       "Blood bank facilities",
+  //     ],
+  //     specifications: {
+  //       materials: "PIR/PUF panels, Stainless steel",
+  //       thickness: "75mm to 200mm",
+  //       density: "40-50 kg/m³",
+  //       certification: "FDA, WHO, HACCP, ISO 22000",
+  //     },
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "HVAC & Ducting",
+  //     icon: <Wind className="h-6 w-6" />,
+  //     description:
+  //       "Complete HVAC solutions including design, installation, and maintenance of air conditioning and ventilation systems.",
+  //     image:
+  //       "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  //     features: [
+  //       "Energy-efficient design",
+  //       "Smart controls integration",
+  //       "Zone-based climate control",
+  //       "Air quality monitoring",
+  //       "Noise reduction technology",
+  //       "Predictive maintenance",
+  //     ],
+  //     applications: [
+  //       "Commercial buildings",
+  //       "Healthcare facilities",
+  //       "Industrial complexes",
+  //       "Data centers",
+  //       "Educational institutions",
+  //       "Hospitality sector",
+  //     ],
+  //     specifications: {
+  //       materials: "Galvanized steel, Aluminum, Stainless steel",
+  //       thickness: "0.6mm to 2.0mm",
+  //       density: "Variable based on application",
+  //       certification: "IS 5392, ASHRAE, SMACNA",
+  //     },
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Industrial Solutions",
+  //     icon: <Factory className="h-6 w-6" />,
+  //     description:
+  //       "Comprehensive industrial thermal management including steam systems, process heating, and equipment insulation.",
+  //     image:
+  //       "https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  //     features: [
+  //       "Process optimization",
+  //       "Energy recovery systems",
+  //       "Steam trap management",
+  //       "Heat exchanger insulation",
+  //       "Boiler insulation",
+  //       "Maintenance services",
+  //     ],
+  //     applications: [
+  //       "Manufacturing plants",
+  //       "Process industries",
+  //       "Power plants",
+  //       "Steel mills",
+  //       "Cement plants",
+  //       "Oil refineries",
+  //     ],
+  //     specifications: {
+  //       materials: "Various based on application",
+  //       thickness: "Custom designed",
+  //       density: "Application specific",
+  //       certification: "IS, ASTM, EN standards",
+  //     },
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Energy Efficiency",
+  //     icon: <Zap className="h-6 w-6" />,
+  //     description:
+  //       "Energy audit, optimization consulting, and implementation of energy-saving thermal management solutions.",
+  //     image:
+  //       "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  //     features: [
+  //       "Energy audits & assessments",
+  //       "ROI analysis & reporting",
+  //       "Carbon footprint reduction",
+  //       "Sustainability consulting",
+  //       "Performance monitoring",
+  //       "Government incentive assistance",
+  //     ],
+  //     applications: [
+  //       "Industrial facilities",
+  //       "Commercial buildings",
+  //       "Healthcare institutions",
+  //       "Educational campuses",
+  //       "Government buildings",
+  //       "Residential complexes",
+  //     ],
+  //     specifications: {
+  //       materials: "Smart sensors, IoT devices",
+  //       thickness: "N/A",
+  //       density: "N/A",
+  //       certification: "BEE, LEED, GRIHA",
+  //     },
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "Regulatory Compliance",
+  //     icon: <Shield className="h-6 w-6" />,
+  //     description:
+  //       "Ensuring compliance with international standards, safety regulations, and industry-specific requirements.",
+  //     image:
+  //       "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  //     features: [
+  //       "Regulatory consulting",
+  //       "Documentation support",
+  //       "Inspection & testing",
+  //       "Certification assistance",
+  //       "Training programs",
+  //       "Compliance monitoring",
+  //     ],
+  //     applications: [
+  //       "Pharmaceutical facilities",
+  //       "Food processing plants",
+  //       "Chemical industries",
+  //       "Healthcare facilities",
+  //       "Export-oriented units",
+  //       "Government projects",
+  //     ],
+  //     specifications: {
+  //       materials: "Compliant materials only",
+  //       thickness: "As per regulations",
+  //       density: "Standard compliant",
+  //       certification: "All major international standards",
+  //     },
+  //   },
+  // ];
 
   const downloadDoc = [
     {
@@ -248,87 +245,124 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
     },
   ];
 
+  const keyFeatures = [
+    {
+      icon: <Zap />,
+      title: "High Performance",
+      description: "Industry-leading efficiency with 99.7% uptime guarantee",
+      features: ["24/7 Operation", "Fast Response Time", "Automated Systems"],
+    },
+    {
+      icon: <Shield />,
+      title: "Safety & Compliance",
+      description: "ISO certified with comprehensive safety protocols",
+      features: ["ISO 9001:2015", "OSHA Compliant", "CE Marked"],
+    },
+    {
+      icon: <Settings />,
+      title: "Advanced Technology",
+      description: "Cutting-edge automation and control systems",
+      features: [
+        "IoT Integration",
+        "Real-time Monitoring",
+        "Predictive Maintenance",
+      ],
+    },
+    {
+      icon: <Globe />,
+      title: "Global Support",
+      description: "Worldwide service network with local expertise",
+      features: ["50+ Countries", "Local Teams", "Remote Support"],
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-amber-600 bg-gradient-to-br from-primary/5 via-white to-accent/30 py-20 overflow-hidden">
-        {/* Enhanced Background Pattern */}
-        <div className="absolute inset-0 opacity-8">
-          <div className="absolute top-20 left-20 w-40 h-40 border-2 border-primary/20 rounded-full animate-pulse" />
-          <div className="absolute top-60 right-32 w-24 h-24 bg-primary/10 rounded-lg rotate-45 animate-bounce delay-100" />
-          <div className="absolute bottom-32 left-1/3 w-20 h-20 border-2 border-primary/15 rotate-12 animate-pulse delay-200" />
-          <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-gradient-to-br from-primary/8 to-accent/15 rounded-full animate-bounce delay-300" />
+      <section
+        id="home"
+        className="relative bg-gradient-to-b from-[#c9dcce] via-[#fffff] to-[#fffff] py-20 lg:py-32"
+      >
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center ">
+            <div className="space-y-8 max-w-[586px] w-full ">
+              <Button
+                variant="outline"
+                onClick={onBackToHome}
+                className="mb-8 !bg-white  shadow-lg border-primary/30"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Home
+              </Button>
+              <div className="space-y-4">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-gray-900">
+                  Advanced
+                  <span className="text-primary">
+                    {" "}
+                    Insulation <br className="hidden sm:block" /> Solution{" "}
+                  </span>
+                  System
+                </h1>
+                <p className="text-base  text-gray-600 leading-relaxed ">
+                  State-of-the-art industrial equipment designed for maximum
+                  efficiency, reliability, and performance. Our solutions
+                  integrate seamlessly into your existing operations while
+                  delivering measurable improvements.
+                </p>
+              </div>
 
-          {/* Grid pattern for technical look */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="grid grid-cols-12 gap-8 h-full">
-              {Array.from({ length: 60 }).map((_, i) => (
-                <div key={i} className="flex items-center justify-center">
-                  {i % 4 === 0 && (
+              <div className="flex flex-wrap gap-3">
+                {["ISO Certified", "99.7% Uptime", "Global Support"].map(
+                  (benefit, index) => (
                     <div
-                      className="w-2 h-2 bg-primary rounded-full animate-pulse"
-                      style={{ animationDelay: `${i * 100}ms` }}
-                    />
-                  )}
-                </div>
-              ))}
+                      key={index}
+                      className="flex items-center border border-[#0059194D] py-2 px-4 rounded-md space-x-2"
+                    >
+                      <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                      <span className="text-gray-700 font-medium text-[10.5px] leading-[14px] tracking-normal text-center align-middle">
+                        {benefit}
+                      </span>
+                    </div>
+                  )
+                )}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-white flex items-center justify-center"
+                >
+                  Request Quote <Mail className="ml-2 h-5 w-5" />
+                </Button>
+                <Button
+                  size="lg"
+                  className="bg-white text-primary border border-primary hover:bg-white flex items-center justify-center"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Brochure
+                </Button>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div className="container mx-auto px-4 relative">
-          {/* Back Button */}
-          <Button
-            variant="outline"
-            onClick={onBackToHome}
-            className="mb-8 hover:bg-primary hover:text-white transition-colors shadow-lg border-primary/30"
-          >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Home
-          </Button>
+            <div className="relative w-full bg-transparent">
+              <Card className="overflow-hidden bg-transparent border-none w-full">
+                <Image
+                  src={servicebanner}
+                  alt="Industrial facility"
+                  className="w-full h-auto object-cover"
+                  sizes="100vw"
+                  priority
+                />
+              </Card>
 
-          <div className="text-center mb-12">
-            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-4 py-2">
-              Our Services
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl text-gray-900 mb-6">
-              Comprehensive{" "}
-              <span className="text-primary relative">
-                Thermal Solutions
-                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
-              </span>
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8">
-              From high-temperature industrial insulation to precision cold
-              storage and energy-efficient HVAC systems, we deliver cutting-edge
-              thermal management solutions tailored to your specific
-              requirements.
-            </p>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-              <Card className="text-center p-4 bg-white/80 backdrop-blur-sm border-primary/20">
-                <div className="text-2xl text-primary mb-1">6</div>
-                <div className="text-sm text-gray-600">Service Areas</div>
-              </Card>
-              <Card className="text-center p-4 bg-white/80 backdrop-blur-sm border-primary/20">
-                <div className="text-2xl text-primary mb-1">500+</div>
-                <div className="text-sm text-gray-600">Projects Delivered</div>
-              </Card>
-              <Card className="text-center p-4 bg-white/80 backdrop-blur-sm border-primary/20">
-                <div className="text-2xl text-primary mb-1">15+</div>
-                <div className="text-sm text-gray-600">Industries Served</div>
-              </Card>
-              <Card className="text-center p-4 bg-white/80 backdrop-blur-sm border-primary/20">
-                <div className="text-2xl text-primary mb-1">24/7</div>
-                <div className="text-sm text-gray-600">Support Available</div>
-              </Card>
+              {/* Floating element */}
+              {/* <div className="absolute  top-0 left-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 bg-accent rounded-full animate-pulse delay-300" /> */}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             {services.map((service) => (
@@ -358,7 +392,6 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
 
                 <CardContent className="p-6">
                   <div className="space-y-6">
-                    {/* Key Features */}
                     <div>
                       <h4 className="text-lg text-gray-900 mb-3">
                         Key Features
@@ -378,7 +411,6 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
                       </div>
                     </div>
 
-                    {/* Applications */}
                     <div>
                       <h4 className="text-lg text-gray-900 mb-3">
                         Applications
@@ -404,7 +436,6 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
                       </div>
                     </div>
 
-                    {/* Specifications Preview */}
                     <div className="bg-gray-50 p-4 rounded-lg">
                       <h4 className="text-sm text-gray-900 mb-2">
                         Technical Specifications
@@ -425,7 +456,6 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
                       </div>
                     </div>
 
-                    {/* Action Buttons */}
                     <div className="flex space-x-3">
                       <Button className="flex-1 bg-primary hover:bg-primary/90">
                         <Phone className="h-4 w-4 mr-2" />
@@ -441,6 +471,54 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
                     </div>
                   </div>
                 </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section> */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4  bg-primary/10 text-primary border-primary/20">
+              Key Features
+            </Badge>
+            <h2 className="text-3xl font-semibold lg:text-[52px] text-gray-900 mb-6">
+              Why Choose Our
+              <span className="text-primary"> Solutions</span>
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Discover the advanced features that set our industrial systems
+              apart from the competition.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 items-start  lg:grid-cols-4 gap-8">
+            {keyFeatures.map((a) => (
+              <Card
+                key={a.description}
+                className="text-start rounded-[12.75px] py-6 px-4 gap-2  border-[#0000001A] border"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center  mb-4">
+                  {a.icon}
+                </div>
+                <h3 className="text-lg text-start text-[#101828] mb-1">
+                  {a.title}
+                </h3>
+                <p className="text-[#4A5565]  text-sm max-w-60 w-full ">
+                  {a.description}
+                </p>
+                <div className="text-[#6A7282] text-[10.5px] py-1 max-w-56   w-full flex justify-between">
+                  <ul className="list-disc list-inside space-y-1">
+                    {a.features.map((feature, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center -translate-2.5   "
+                      >
+                        <Dot size={25} className=" text-primary " />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </Card>
             ))}
           </div>
@@ -462,33 +540,37 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-6 md:p-4">
             {/* Performance Card */}
-            <div className="rounded-2xl shadow-md border p-6 bg-white">
-              <h2 className="text-lg font-semibold mb-4">Performance</h2>
+            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
+              <h2 className="text-lg font-semibold ">Performance</h2>
+              <div className="w-full border-t border-[#00591933]" />
+
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
                   <span>Maximum Output:</span>
-                  <span>10,000 units/hour</span>
+                  <span className=" text-end block">10,000 units/hour</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Efficiency Rating:</span>
-                  <span>99.7%</span>
+                  <span className=" text-end block">99.7%</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Power Consumption:</span>
-                  <span>15kW nominal</span>
+                  <span className=" text-end block">15kW nominal</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Operating Temperature:</span>
-                  <span>-20°C to +60°C</span>
+                  <span className=" text-end block">-20°C to +60°C</span>
                 </li>
               </ul>
-            </div>
+            </Card>
 
             {/* Dimensions Card */}
-            <div className="rounded-2xl shadow-md border p-6 bg-white">
-              <h2 className="text-lg font-semibold mb-4">Dimensions</h2>
+            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
+              <h2 className="text-lg font-semibold ">Dimensions</h2>
+              <div className="w-full border-t border-[#00591933]" />
+
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
                   <span>Length:</span>
@@ -507,11 +589,12 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
                   <span>850kg</span>
                 </li>
               </ul>
-            </div>
+            </Card>
 
             {/* Materials Card */}
-            <div className="rounded-2xl shadow-md border p-6 bg-white">
-              <h2 className="text-lg font-semibold mb-4">Materials</h2>
+            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
+              <h2 className="text-lg font-semibold">Materials</h2>
+              <div className="w-full border-t border-[#00591933]" />
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
                   <span>Frame:</span>
@@ -519,7 +602,7 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
                 </li>
                 <li className="flex justify-between">
                   <span>Components:</span>
-                  <span>Food Grade Materials</span>
+                  <span className=" text-end block">Food Grade Materials</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Seals:</span>
@@ -530,11 +613,12 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
                   <span>Anti-corrosive</span>
                 </li>
               </ul>
-            </div>
+            </Card>
 
             {/* Compliance Card */}
-            <div className="rounded-2xl shadow-md border p-6 bg-white">
-              <h2 className="text-lg font-semibold mb-4">Compliance</h2>
+            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
+              <h2 className="text-lg font-semibold ">Compliance</h2>
+              <div className="w-full border-t border-[#00591933]" />
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
                   <span>Safety Standards:</span>
@@ -553,7 +637,7 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
                   <span>GMP Certified</span>
                 </li>
               </ul>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -573,20 +657,31 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
               installation guides.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Technical Resources
+           */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
             {downloadDoc.map((a) => (
-              <Card className="text-center py-6 px-1 gap-2 border-[#0000001A] border">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Card
+                key={a.description}
+                className="flex flex-col items-center text-center rounded-lg p-6 gap-3 border border-[#0000001A]"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   {a.icon}
                 </div>
+
                 <h3 className="text-lg text-gray-900 mb-1">{a.title}</h3>
-                <p className="text-[#4A5565] text-sm">{a.description}</p>
-                <div className="text-[#6A7282] text-[10.5px] py-1 max-w-56 mx-auto w-full flex justify-between">
+
+                <p className="text-[#4A5565] text-sm max-w-60 w-full">
+                  {a.description}
+                </p>
+
+                <div className="flex justify-between w-full text-[#6A7282] text-[10.5px] py-1 max-w-56">
                   <p>{a.type}</p>
                   <p>{a.size}</p>
                 </div>
-                <Button className="max-w-56 border-primary border bg-[#FFFFFF] hover:bg-white text-primary mx-auto w-full">
+
+                <Button className="w-full max-w-56 border border-primary bg-white hover:bg-white text-primary flex items-center justify-center gap-2 px-4 py-2">
+                  <Download />
                   Download
                 </Button>
               </Card>

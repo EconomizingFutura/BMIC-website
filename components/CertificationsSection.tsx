@@ -88,7 +88,7 @@ export function CertificationsSection() {
           {certifications.map((cert, index) => (
             <Card
               key={index}
-              className="text-center hover:shadow-lg transition-shadow duration-300"
+              className="text-center  border-[#0000001A] transition-shadow duration-300"
             >
               <CardContent className="p-6">
                 <div
@@ -123,7 +123,7 @@ export function CertificationsSection() {
             {achievements.map((achievement, index) => (
               <Card
                 key={index}
-                className="text-center border-0 shadow-sm hover:shadow-md transition-shadow"
+                className="text-center border-0 shadow-sm  transition-shadow"
               >
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">

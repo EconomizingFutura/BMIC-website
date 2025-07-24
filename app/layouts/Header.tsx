@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { Button } from "../../components/ui/button";
-import { Phone, Mail, Menu } from "lucide-react";
+import { Phone, Mail, Menu, ChevronDown, ShieldCheck } from "lucide-react";
 import BMIC_LOGO from "@/components/figma/images/BMIC_LOGO.svg";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface HeaderProps {
   onNavigateToAbout?: () => void;
@@ -22,8 +28,42 @@ export function Header({
   onNavigateToBlog,
   onNavigateToContact,
 }: HeaderProps) {
+  const solutions = [
+    {
+      title: "Insulation Solutions",
+      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    },
+    {
+      title: "Cold Storage Solutions",
+      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    },
+    {
+      title: "HVAC / Ducting Solutions",
+      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    },
+    {
+      title: "Soundproofing Solutions",
+      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    },
+  ];
+
+  const industries = [
+    {
+      title: "Pharma",
+      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    },
+    {
+      title: "Food & Beverage",
+      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    },
+    {
+      title: "Cold Chain Logistics",
+      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    },
+  ];
+
   return (
-    <header className=" top-0 z-50 bg-white shadow-sm relative overflow-hidden">
+    <header className=" top-0 z-50 bg-white shadow-sm relative overflow-hidden ">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         {/* Grid pattern similar to ServicesPage */}
@@ -133,18 +173,97 @@ export function Header({
             >
               Home
             </a>
-            <button
-              onClick={onNavigateToServices}
-              className="hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md  hover:bg-primary/5"
-            >
-              Solutions
-            </button>
-            <button
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center items-center hover:bg-primary/5 focus:outline-none">
+                  Solutions <ChevronDown size={2} className="h-5 w-5" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                className="z-[1000] bg-white border border-gray-200 shadow-lg rounded-md min-w-[200px]"
+                align="end"
+              >
+                <div className="max-w-sm flex flex-col bg-white p-2 space-y-6">
+                  {solutions.map((item, index) => (
+                    <DropdownMenuItem
+                      className=" !hover:bg-white"
+                      key={index}
+                      asChild
+                    >
+                      <button
+                        onClick={onNavigateToServices}
+                        className="flex w-full text-left cursor-pointer items-start space-x-4 data-[highlighted]:bg-transparent"
+                      >
+                        <div className="bg-[#0059191A] p-2.5 rounded-full">
+                          <ShieldCheck
+                            size={24}
+                            className="text-primary !h-7 !w-7"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-base font-semibold text-gray-900 flex items-center">
+                            {item.title}
+                            <span className="ml-1 text-xl">→</span>
+                          </h3>
+                          <p className="text-gray-500 text-start text-sm">
+                            {item.description}
+                          </p>
+                        </div>
+                      </button>
+                    </DropdownMenuItem>
+                  ))}
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* <button
               onClick={onNavigateToPharma}
               className="hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
             >
-              Industries
-            </button>
+              
+            </button> */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center items-center hover:bg-primary/5 focus:outline-none">
+                  Industries <ChevronDown size={2} className="h-5 w-5" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                className="z-[1000] bg-white border border-gray-200 shadow-lg rounded-md min-w-[200px]"
+                align="end"
+              >
+                <div className="max-w-sm flex flex-col bg-white p-2 space-y-6">
+                  {industries.map((item, index) => (
+                    <DropdownMenuItem
+                      className=" !hover:bg-white"
+                      key={index}
+                      asChild
+                    >
+                      <button
+                        onClick={onNavigateToPharma}
+                        className="flex w-full text-left cursor-pointer items-start space-x-4 data-[highlighted]:bg-transparent"
+                      >
+                        <div className="bg-[#0059191A] p-2.5 rounded-full">
+                          <ShieldCheck
+                            size={24}
+                            className="text-primary !h-7 !w-7"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-base font-semibold text-gray-900 flex items-center">
+                            {item.title}
+                            <span className="ml-1 text-xl">→</span>
+                          </h3>
+                          <p className="text-gray-500 text-start text-sm">
+                            {item.description}
+                          </p>
+                        </div>
+                      </button>
+                    </DropdownMenuItem>
+                  ))}
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <button
               onClick={onNavigateToProjects}
               className="hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
@@ -166,8 +285,6 @@ export function Header({
               <span className="relative"> Contact Us</span>
             </Button>
           </div>
-
-       
         </div>
 
         {/* Additional decorative elements */}

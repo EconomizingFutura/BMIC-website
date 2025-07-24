@@ -1,18 +1,18 @@
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
+import { aboutuscard } from "@/components/figma/images";
 import {
   ArrowLeft,
-  Users,
   Target,
-  Award,
-  Building2,
-  MapPin,
-  Briefcase,
   TrendingUp,
-  CheckCircle,
-  Star,
   Globe,
+  Eye,
+  Zap,
+  ShieldCheck,
+  Users,
+  Building,
+  Award,
 } from "lucide-react";
 import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 import Image from "next/image";
@@ -27,7 +27,8 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
       name: "Dr. Rajesh Kumar",
       role: "Chief Executive Officer",
       experience: "20+ years",
-      expertise: "Industrial Thermal Solutions",
+      expertise:
+        "Visionary leader with extensive experience in industrial engineering and business development.",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     },
@@ -35,7 +36,8 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
       name: "Priya Sharma",
       role: "Chief Technology Officer",
       experience: "15+ years",
-      expertise: "Cold Storage Systems",
+      expertise:
+        "Technology expert specializing in automation systems and digital transformation.",
       image:
         "https://images.unsplash.com/photo-1494790108755-2616b612b898?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     },
@@ -43,7 +45,8 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
       name: "Engineer Amit Singh",
       role: "Head of Operations",
       experience: "18+ years",
-      expertise: "HVAC & Project Management",
+      expertise:
+        "Operations specialist focused on efficiency optimization and quality management.",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     },
@@ -51,39 +54,88 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
       name: "Dr. Meera Patel",
       role: "Director of Engineering",
       experience: "12+ years",
-      expertise: "Energy Efficiency & Sustainability",
+      expertise:
+        "Engineering leader with expertise in complex industrial project management.",
       image:
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     },
   ];
 
-  const clientLogos = [
+  const statsCard = [
     {
-      name: "Reliance Industries",
-      logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=RELIANCE",
+      icon: <Building className="h-6 w-6 text-green-900" />,
+      value: "1994",
+      title: "Company Founded",
     },
     {
-      name: "Tata Group",
-      logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=TATA",
+      icon: <Target className="h-6 w-6 text-green-900" />,
+      value: "500+",
+      title: "Projects Completed",
     },
     {
-      name: "Adani Group",
-      logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=ADANI",
+      icon: <Globe className="h-6 w-6 text-green-900" />,
+      value: "50+",
+      title: "Countries Served",
     },
     {
-      name: "Bajaj",
-      logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=BAJAJ",
-    },
-    {
-      name: "Mahindra",
-      logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=MAHINDRA",
-    },
-    {
-      name: "L&T",
-      logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=L%26T",
+      icon: <Users className="h-6 w-6 text-green-900" />,
+      value: "200+",
+      title: "Team Members",
     },
   ];
 
+  // const clientLogos = [
+  //   {
+  //     name: "Reliance Industries",
+  //     logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=RELIANCE",
+  //   },
+  //   {
+  //     name: "Tata Group",
+  //     logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=TATA",
+  //   },
+  //   {
+  //     name: "Adani Group",
+  //     logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=ADANI",
+  //   },
+  //   {
+  //     name: "Bajaj",
+  //     logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=BAJAJ",
+  //   },
+  //   {
+  //     name: "Mahindra",
+  //     logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=MAHINDRA",
+  //   },
+  //   {
+  //     name: "L&T",
+  //     logo: "https://via.placeholder.com/120x60/005919/FFFFFF?text=L%26T",
+  //   },
+  // ];
+  const stats = [
+    {
+      icon: <Globe className="h-6 w-6 text-green-700" />,
+      value: "50+",
+      title: "Countries Served",
+      description: "Global presence across six continents",
+    },
+    {
+      icon: <TrendingUp className="h-6 w-6 text-green-700" />,
+      value: "500+",
+      title: "Projects Completed",
+      description: "Successfully delivered industrial solutions",
+    },
+    {
+      icon: <ShieldCheck className="h-6 w-6 text-green-700" />,
+      value: "15+",
+      title: "ISO Certifications",
+      description: "Industry-leading quality standards",
+    },
+    {
+      icon: <Zap className="h-6 w-6 text-green-700" />,
+      value: "99.8%",
+      title: "Client Satisfaction",
+      description: "Proven track record of excellence",
+    },
+  ];
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -120,8 +172,8 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               With over two decades of excellence in industrial insulation, cold
-              storage, and HVAC solutions, we've established ourselves as
-              India's premier thermal management company.
+              storage, and HVAC solutions, we&apos;ve established ourselves as
+              India&#39;s premier thermal management company.
             </p>
           </div>
 
@@ -146,66 +198,52 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
         </div>
       </section>
 
-      {/* Company Overview */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50   mx-auto">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div>
-                <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-                  Our Story
-                </Badge>
-                <h2 className="text-3xl lg:text-4xl text-gray-900 mb-6">
-                  Building Excellence Since 1999
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Founded with a vision to revolutionize thermal management
-                  solutions in India, our company has grown from a small
-                  engineering firm to a leading industrial solutions provider.
-                  We specialize in high-performance insulation systems,
-                  precision cold storage facilities, and energy-efficient HVAC
-                  installations.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Our commitment to innovation, quality, and customer
-                  satisfaction has earned us the trust of Fortune 500 companies
-                  across pharmaceuticals, petrochemicals, food processing, and
-                  data center industries.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-primary/5 rounded-lg">
-                  <TrendingUp className="h-8 w-8 text-primary mx-auto mb-2" />
-                  <div className="text-lg text-gray-900 mb-1">₹1000Cr+</div>
-                  <div className="text-sm text-gray-600">Projects Value</div>
-                </div>
-                <div className="text-center p-4 bg-primary/5 rounded-lg">
-                  <Globe className="h-8 w-8 text-primary mx-auto mb-2" />
-                  <div className="text-lg text-gray-900 mb-1">100%</div>
-                  <div className="text-sm text-gray-600">Success Rate</div>
-                </div>
-              </div>
+          <div className="text-center mb-12 space-y-7">
+            <h2 className="text-3xl lg:text-[42px] font-semibold text-gray-900 mb-6">
+              Our <span className="text-primary">Story</span>
+            </h2>
+            <p className="text-[#4A5565] text-[20px] font-normal  mx-auto">
+              Founded in 1994, our company began as a small engineering
+              consultancy with a bold vision: to revolutionize industrial
+              processes through innovative technology and unwavering commitment
+              to excellence. Today, we stand as a global leader in industrial
+              solutions.
+            </p>
+            <p className="text-[#4A5565] text-[20px] font-normal  mx-auto">
+              Our journey has been marked by continuous growth, strategic
+              partnerships, and breakthrough innovations that have set new
+              industry standards. We&#39;ve successfully completed over 500
+              projects across six continents, serving clients from startups to
+              Fortune 500 companies.
+            </p>
+          </div>
+          <div className="flex flex-col lg:flex-row mx-auto gap-8 items-center justify-between">
+            {/* Left stats grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 w-full ">
+              {statsCard.map((item, index) => (
+                <Card
+                  key={index}
+                  className="bg-[#eff5f1] border-[#00591933] border rounded-xl px-6 py-8 flex flex-col items-center text-center shadow  w-full"
+                >
+                  <div className="">{item.icon}</div>
+                  <h3 className="text-2xl font-bold text-green-900 ">
+                    {item.value}
+                  </h3>
+                  <p className="text-green-900 font-medium">{item.title}</p>
+                </Card>
+              ))}
             </div>
 
-            <div className="relative">
+            {/* Right image with certification */}
+            <div className="relative w-full  aspect-[3/2] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Industrial facility"
-                className="w-full h-96 object-cover rounded-2xl shadow-xl"
+                src={aboutuscard}
+                alt="Office"
                 fill
+                className="object-contain"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-primary/20">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Award className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-lg text-gray-900">ISO Certified</div>
-                    <div className="text-sm text-gray-600">Quality Assured</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -216,92 +254,112 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-              Our Purpose
+              Our Foundation
             </Badge>
-            <h2 className="text-3xl lg:text-4xl text-gray-900 mb-6">
-              Mission & Vision
+            <h2 className="text-3xl lg:text-[42px] font-semibold text-gray-900 mb-6">
+              Our <span className="text-primary">Mission</span> & Vision
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Driving the future of industrial thermal management through
-              innovation, sustainability, and uncompromising quality.
+            <p className="text-[#4A5565] text-[20px]  mx-auto">
+              Driving forward with purpose and clear direction toward a
+              sustainable industrial future.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            <Card className="p-8 hover:shadow-xl transition-shadow duration-300 border-l-4 border-l-primary">
-              <div className="flex items-start space-x-4 mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+          <div className="grid lg:grid-cols-2 gap-11  mx-auto w-full ">
+            <Card className="p-8 max-h-min   duration-300  border-[#0000001A] border-t-5 border-t-primary  bg-[#FFFFFF] gap-5">
+              <div className="flex items-center gap-2  space-x-1 mb-0">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center ">
                   <Target className="h-6 w-6 text-primary" />
                 </div>
-                <div>
-                  <h3 className="text-xl text-gray-900 mb-2">Our Mission</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    To deliver world-class thermal management solutions that
-                    enhance energy efficiency, ensure product integrity, and
-                    support sustainable industrial growth across India and
-                    beyond.
-                  </p>
-                </div>
+                <h3 className="text-xl text-gray-900 font-semibold ">
+                  Our Mission
+                </h3>
               </div>
+
+              <p className="text-gray-600  text-sm leading-relaxed">
+                To deliver world-class thermal management solutions that enhance
+                energy efficiency, ensure product integrity, and support
+                sustainable industrial growth across India and beyond.
+              </p>
 
               <div className="space-y-3">
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
+                  <div className="h-2 w-2 bg-primary rounded-full text-primary" />
                   <span className="text-gray-700 text-sm">
-                    Customer-centric approach
+                    Excellence in every project
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
+                  <div className="h-2 w-2 bg-primary rounded-full text-primary" />
                   <span className="text-gray-700 text-sm">
-                    Innovative technology adoption
+                    Client success as our priority
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
+                  <div className="h-2 w-2 bg-primary rounded-full text-primary" />
                   <span className="text-gray-700 text-sm">
-                    Sustainable practices
+                    Sustainable business practices
                   </span>
                 </div>
               </div>
             </Card>
 
-            <Card className="p-8 hover:shadow-xl transition-shadow duration-300 border-l-4 border-l-accent">
-              <div className="flex items-start space-x-4 mb-6">
-                <div className="w-12 h-12 bg-accent/50 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Star className="h-6 w-6 text-primary" />
+            <Card className="p-8 max-h-min  duration-300 border-[#0000001A] border-t-5 border-t-primary bg-[#FFFFFF] gap-5">
+              <div className="flex items-center gap-2 space-x-1 mb-0">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Eye className="h-6 w-6 text-primary" />
                 </div>
-                <div>
-                  <h3 className="text-xl text-gray-900 mb-2">Our Vision</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    To be the most trusted and innovative thermal management
-                    partner, setting global standards for quality, efficiency,
-                    and environmental responsibility in industrial solutions.
-                  </p>
-                </div>
+                <h3 className="text-xl text-gray-900 font-semibold">
+                  Our Vision
+                </h3>
               </div>
+
+              <p className="text-gray-600 text-sm leading-relaxed">
+                To be the most trusted and innovative thermal management
+                partner, setting global standards for quality, efficiency, and
+                environmental responsibility in industrial solutions.
+              </p>
 
               <div className="space-y-3">
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
+                  <div className="h-2 w-2 bg-primary rounded-full text-primary" />
                   <span className="text-gray-700 text-sm">
-                    Global leadership in thermal solutions
+                    Global industry leadership
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
+                  <div className="h-2 w-2 bg-primary rounded-full text-primary" />
                   <span className="text-gray-700 text-sm">
-                    Zero-carbon industrial processes
+                    Technological innovation
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
+                  <div className="h-2 w-2 bg-primary rounded-full text-primary" />
                   <span className="text-gray-700 text-sm">
-                    Industry 4.0 integration
+                    Environmental stewardship
                   </span>
                 </div>
               </div>
             </Card>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 py-11 lg:grid-cols-4 gap-6">
+            {stats.map((item, index) => (
+              <Card
+                key={index}
+                className="bg-[#FFFFFFCC] rounded-lg border border-[#0000001A] p-6 flex flex-col items-center text-center gap-2"
+              >
+                <div className="bg-[#0059191A] rounded-full p-3 mb-4">
+                  {item.icon}
+                </div>
+                <h3 className="text-2xl font-semibold text-green-800 mb-1">
+                  {item.value}
+                </h3>
+                <p className="font-normal text-gray-900 mb-1">{item.title}</p>
+                <p className="text-[#4A5565] text-sm max-w-40">
+                  {item.description}
+                </p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -311,46 +369,45 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-              Leadership Team
+              Meet Our Team
             </Badge>
-            <h2 className="text-3xl lg:text-4xl text-gray-900 mb-6">
-              Meet Our Experts
+            <h2 className="text-3xl font-semibold lg:text-4xl text-gray-900 mb-6">
+              Our <span className=" text-primary">Leadership</span> Team
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Our leadership team brings together decades of industry
-              experience, technical expertise, and visionary thinking.
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Meet the experienced professionals who guide our company&#39;s
+              vision and drive our success.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4  mx-auto gap-7">
             {teamMembers.map((member, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className="group overflow-hidden border   mx-auto w-full gap-0 border-[#0000001A] "
               >
                 <div className="relative h-64 overflow-hidden">
                   <ImageWithFallback
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover "
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-lg text-white mb-1">{member.name}</h3>
-                    <p className="text-sm text-white/90">{member.role}</p>
-                  </div>
                 </div>
 
-                <CardContent className="p-6">
+                <CardContent className="p-5">
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-500">Experience:</span>
-                      <span className="text-gray-900">{member.experience}</span>
+                    <div className=" bottom-4 left-4 right-4">
+                      <h3 className="text-lg mb-1">{member.name}</h3>
+                      <p className="text-sm text-primary my-1.5">
+                        {member.role}
+                      </p>
                     </div>
-                    <div className="text-sm">
-                      <span className="text-gray-500">Expertise:</span>
-                      <p className="text-gray-900 mt-1">{member.expertise}</p>
-                    </div>
+                    <Badge className="mb-4 bg-primary/0 text-primary border-primary/30">
+                      {member.experience}
+                    </Badge>
+                    <p className="text-[#4A5565] text-[14px]  align-middle">
+                      {member.expertise}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -360,7 +417,7 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
       </section>
 
       {/* Infrastructure */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
@@ -452,10 +509,10 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Partner Brands */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
@@ -465,8 +522,8 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
               Partnering with Industry Leaders
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We're proud to work with some of India's most respected companies,
-              delivering solutions that drive their success.
+              We&apos;re proud to work with some of India&apos;s most respected
+              companies, delivering solutions that drive their success.
             </p>
           </div>
 
@@ -496,7 +553,7 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

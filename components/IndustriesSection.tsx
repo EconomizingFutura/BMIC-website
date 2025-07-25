@@ -87,7 +87,7 @@ export function IndustriesSection() {
                   {industry.description}
                 </p>
                 <div className="mt-4 text-center">
-                  <button className="text-primary hover:text-primary/80 transition-colors">
+                  <button className="text-primary font-semibold hover:text-primary/80 transition-colors">
                     Learn More →
                   </button>
                 </div>

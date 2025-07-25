@@ -28,7 +28,7 @@ export function CTASection() {
               </p>
               <Button
                 size="sm"
-                className="bg-green-600 hover:bg-green-700 w-full"
+                className="bg-green-600 hover:bg-green-600 w-full"
               >
                 Chat Now
               </Button>
@@ -43,7 +43,7 @@ export function CTASection() {
               <Button
                 size="sm"
                 variant="outline"
-                className="border-white text-white w-full"
+                className="border-white hover:text-white text-white w-full"
               >
                 +1 (555) 123-4567
               </Button>
@@ -58,7 +58,7 @@ export function CTASection() {
               <Button
                 size="sm"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary w-full"
+                className="border-white hover:text-white text-white w-full"
               >
                 Send Email
               </Button>

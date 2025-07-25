@@ -17,11 +17,11 @@ import {
 import Image from "next/image";
 import { servicebanner } from "@/components/figma/images";
 
-interface PharmaIndustryPageProps {
+interface FoodIndustryPageProps {
   onBackToHome: () => void;
 }
 
-export function PharmaIndustryPage({ onBackToHome }: PharmaIndustryPageProps) {
+export function FoodIndustryPage({ onBackToHome }: FoodIndustryPageProps) {
   const projects = [
     {
       title: "Advanced Manufacturing Plant",
@@ -214,7 +214,7 @@ export function PharmaIndustryPage({ onBackToHome }: PharmaIndustryPageProps) {
               <div className="space-y-4">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl  font-semibold leading-tight text-gray-900">
                   Advancing
-                  <span className="text-primary"> Pharmaceutical</span>
+                  <span className="text-primary"> Food & Beverage</span>
                   <br /> Manufacturing
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">

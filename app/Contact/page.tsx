@@ -239,7 +239,7 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
                           }`}
                         />
                         {formErrors.name && (
-                          <p className="text-red-500 text-sm">
+                          <p className="text-red-500 text-xs">
                             {formErrors.name}
                           </p>
                         )}
@@ -260,7 +260,7 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
                           }`}
                         />
                         {formErrors.email && (
-                          <p className="text-red-500 text-sm">
+                          <p className="text-red-500 text-xs">
                             {formErrors.email}
                           </p>
                         )}
@@ -284,7 +284,7 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
                           }`}
                         />
                         {formErrors.phone && (
-                          <p className="text-red-500 text-sm">
+                          <p className="text-red-500 text-xs">
                             {formErrors.phone}
                           </p>
                         )}
@@ -305,7 +305,7 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
                           }`}
                         />
                         {formErrors.company && (
-                          <p className="text-red-500 text-sm">
+                          <p className="text-red-500 text-xs">
                             {formErrors.company}
                           </p>
                         )}
@@ -334,7 +334,7 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
                       </select>
 
                       {formErrors.service && (
-                        <p className="text-red-500 text-sm">
+                        <p className="text-red-500 text-xs">
                           {formErrors.service}
                         </p>
                       )}
@@ -356,7 +356,7 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
                         }`}
                       />
                       {formErrors.message && (
-                        <p className="text-red-500 text-sm">
+                        <p className="text-red-500 text-xs">
                           {formErrors.message}
                         </p>
                       )}

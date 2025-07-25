@@ -16,12 +16,13 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { servicebanner } from "../../components/figma/images/index";
-import { useMemo } from "react";
-interface ServicesPageProps {
+interface InsulationServicesPageProps {
   onBackToHome: () => void;
 }
 
-export function ServicesPage({ onBackToHome }: ServicesPageProps) {
+export function InsulationServicePage({
+  onBackToHome,
+}: InsulationServicesPageProps) {
   // const services = [
   //   {
   //     id: 1,
@@ -211,43 +212,40 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
   //   },
   // ];
 
-  const downloadDoc = useMemo(
-    () => [
-      {
-        title: "Technical Data Sheet",
-        description: "Complete technical specifications and performance data",
-        type: "PDF",
-        size: "2.4 MB",
-        button: "Download",
-        icon: <FileText className="h-8 w-8 text-primary" />,
-      },
-      {
-        title: "Installation Manual",
-        description: "Step-by-step installation and setup guidelines",
-        type: "PDF",
-        size: "5.1 MB",
-        button: "Download",
-        icon: <Wrench className="h-8 w-8 text-primary" />,
-      },
-      {
-        title: "Safety Certificates",
-        description: "ISO certifications and compliance documentation",
-        type: "PDF",
-        size: "1.8 MB",
-        button: "Download",
-        icon: <Shield className="h-8 w-8 text-primary" />,
-      },
-      {
-        title: "CAD Drawings",
-        description: "Detailed engineering drawings and 3D models",
-        type: "DWG",
-        size: "12.3 MB",
-        icon: <Settings className="h-8 w-8 text-primary" />,
-        button: "Download",
-      },
-    ],
-    []
-  );
+  const downloadDoc = [
+    {
+      title: "Technical Data Sheet",
+      description: "Complete technical specifications and performance data",
+      type: "PDF",
+      size: "2.4 MB",
+      button: "Download",
+      icon: <FileText className="h-8 w-8 text-primary" />,
+    },
+    {
+      title: "Installation Manual",
+      description: "Step-by-step installation and setup guidelines",
+      type: "PDF",
+      size: "5.1 MB",
+      button: "Download",
+      icon: <Wrench className="h-8 w-8 text-primary" />,
+    },
+    {
+      title: "Safety Certificates",
+      description: "ISO certifications and compliance documentation",
+      type: "PDF",
+      size: "1.8 MB",
+      button: "Download",
+      icon: <Shield className="h-8 w-8 text-primary" />,
+    },
+    {
+      title: "CAD Drawings",
+      description: "Detailed engineering drawings and 3D models",
+      type: "DWG",
+      size: "12.3 MB",
+      icon: <Settings className="h-8 w-8 text-primary" />,
+      button: "Download",
+    },
+  ];
 
   const keyFeatures = [
     {
@@ -283,7 +281,10 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-[#c9dcce] via-[#fffff] to-[#fffff] py-20 lg:py-32">
+      <section
+        id="home"
+        className="relative bg-gradient-to-b from-[#c9dcce] via-[#fffff] to-[#fffff] py-20 lg:py-32"
+      >
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center ">
             <div className="space-y-8 max-w-[586px] w-full ">
@@ -320,7 +321,7 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
                       className="flex items-center border border-[#0059194D] py-2 px-4 rounded-md space-x-2"
                     >
                       <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                      <span className="text-primary font-medium text-[10.5px] leading-[14px] tracking-normal text-center align-middle">
+                      <span className="text-[#005919] font-medium text-[10.5px] leading-[14px] tracking-normal text-center align-middle">
                         {benefit}
                       </span>
                     </div>
@@ -642,6 +643,7 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
           </div>
         </div>
       </section>
+
       {/* Service Support Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">

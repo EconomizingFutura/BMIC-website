@@ -6,7 +6,9 @@ import yoe from "./yoe.svg";
 import servicebanner from "./servicebanner.svg";
 import aboutuscard from "./aboutuscard.svg";
 import aboutusbanner from "./aboutusbanner.jpg";
+import whatsappAnimation from "./whatsappAnimation.json";
 export {
+  whatsappAnimation,
   ColdStorage,
   DUCT,
   automobile,

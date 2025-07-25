@@ -1,4 +1,6 @@
 import "../globals.css";
+import WhatsAnimate from "@/components/WhatsAnimate";
+
 export const metadata = {
   title: "Economizing Futura",
   description:
@@ -16,7 +18,10 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <title>BMIC</title>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAnimate />
+      </body>
     </html>
   );
 }

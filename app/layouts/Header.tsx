@@ -17,23 +17,36 @@ import {
 import { useState } from "react";
 
 interface HeaderProps {
-  onNavigateToAbout?: () => void;
-  onNavigateToHome?: () => void;
-  onNavigateToServices?: () => void;
-  onNavigateToPharma?: () => void;
-  onNavigateToProjects?: () => void;
-  onNavigateToBlog?: () => void;
-  onNavigateToContact?: () => void;
+  onNavigateToAbout: () => void;
+  onNavigateToHome: () => void;
+  onNavigateToServices: () => void;
+  onNavigateToPharma: () => void;
+  onNavigateToProjects: () => void;
+  onNavigateToBlog: () => void;
+  onNavigateToContact: () => void;
+  onNavigateToInsulation: () => void;
+  onNavigateToColdStorage?: () => void;
+  onNavigateToDucting: () => void;
+  onNavigateToSound: () => void;
+  onNavigateToFood: () => void;
+  onNavigateToColdChain: () => void;
+  currentPage: string;
 }
 
 export function Header({
   onNavigateToAbout,
   onNavigateToHome,
-  onNavigateToServices,
   onNavigateToPharma,
   onNavigateToProjects,
-  // onNavigateToBlog,
   onNavigateToContact,
+  onNavigateToInsulation,
+  onNavigateToColdStorage,
+  onNavigateToDucting,
+  onNavigateToSound,
+  onNavigateToFood,
+  onNavigateToColdChain,
+  onNavigateToBlog,
+  currentPage,
 }: HeaderProps) {
   const [open, setOpen] = useState<boolean>(false);
 
@@ -45,18 +58,22 @@ export function Header({
     {
       title: "Insulation Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      navigate: onNavigateToInsulation,
     },
     {
       title: "Cold Storage Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      navigate: onNavigateToColdStorage,
     },
     {
       title: "HVAC / Ducting Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      navigate: onNavigateToDucting,
     },
     {
       title: "Soundproofing Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      navigate: onNavigateToSound,
     },
   ];
 
@@ -64,14 +81,17 @@ export function Header({
     {
       title: "Pharma",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      navigate: onNavigateToPharma,
     },
     {
       title: "Food & Beverage",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      navigate: onNavigateToFood,
     },
     {
       title: "Cold Chain Logistics",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      navigate: onNavigateToColdChain,
     },
   ];
 
@@ -180,10 +200,25 @@ export function Header({
             {/* Background decoration for nav */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300" />
 
-            <a href="#home">Home</a>
+            <a
+              onClick={() => onNavigateToHome()}
+              className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center cursor-default items-center hover:bg-primary/5 focus:outline-none ${
+                currentPage == "home"
+                  ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
+                  : ""
+              }`}
+            >
+              Home
+            </a>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center items-center hover:bg-primary/5 focus:outline-none">
+                <button
+                  className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center items-center hover:bg-primary/5 focus:outline-none ${
+                    currentPage == "services"
+                      ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
+                      : ""
+                  }`}
+                >
                   Solutions <ChevronDown size={2} className="h-5 w-5" />
                 </button>
               </DropdownMenuTrigger>
@@ -199,7 +234,7 @@ export function Header({
                       asChild
                     >
                       <button
-                        onClick={onNavigateToServices}
+                        onClick={() => item.navigate?.()}
                         className="flex w-full text-left cursor-pointer items-start space-x-4 data-[highlighted]:bg-transparent"
                       >
                         <div className="bg-[#0059191A] p-2.5 rounded-full">
@@ -232,7 +267,13 @@ export function Header({
             </button> */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center items-center hover:bg-primary/5 focus:outline-none">
+                <button
+                  className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center items-center hover:bg-primary/5 focus:outline-none ${
+                    currentPage == "industry"
+                      ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
+                      : ""
+                  }`}
+                >
                   Industries <ChevronDown size={2} className="h-5 w-5" />
                 </button>
               </DropdownMenuTrigger>
@@ -248,7 +289,7 @@ export function Header({
                       asChild
                     >
                       <button
-                        onClick={onNavigateToPharma}
+                        onClick={() => item.navigate?.()}
                         className="flex w-full text-left cursor-pointer items-start space-x-4 data-[highlighted]:bg-transparent"
                       >
                         <div className="bg-[#0059191A] p-2.5 rounded-full">
@@ -274,14 +315,22 @@ export function Header({
             </DropdownMenu>
             <button
               onClick={onNavigateToProjects}
-              className="hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
+              className={`hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md  ${
+                currentPage.trim() == "projects"
+                  ? "bg-[#0059191A] !hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
+                  : "hover:bg-primary/5"
+              }`}
             >
               Gallery
             </button>
 
             <button
               onClick={onNavigateToAbout}
-              className="hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5 whitespace-nowrap"
+              className={`hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md whitespace-nowrap  ${
+                currentPage == "about"
+                  ? "bg-[#0059191A] text-primary hover:bg-[#0059191A] py-[6px] px-[12px] rounded"
+                  : "hover:bg-primary/5 "
+              }`}
             >
               About Us
             </button>
@@ -305,13 +354,8 @@ export function Header({
       <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20" />
 
       {open && (
-        <div className="fixed inset-0 z-50 flex">
+        <div className="fixed lg:hidden inset-0 z-50 flex">
           {/* Overlay */}
-          <div
-            className="bg-black/50 flex-1"
-            // onClick={() => setIsMobileMenuOpen(false)}
-          />
-
           {/* Sidebar */}
           <div className="w-full bg-white h-full p-4 overflow-y-auto">
             {/* Logo & Close */}
@@ -341,14 +385,13 @@ export function Header({
                   Solutions
                 </AccordionTrigger>
                 <AccordionContent className="mt-2 space-y-4">
-                  {[
-                    "Insulation Solutions",
-                    "Cold Storage Solutions",
-                    "HVAC / Ducting Solutions",
-                    "Soundproofing Solutions",
-                  ].map((title, i) => (
+                  {solutions.map((title, i) => (
                     <div
                       key={i}
+                      onClick={() => {
+                        title.navigate?.();
+                        setOpen(false);
+                      }}
                       className="flex  items-start gap-3.5  max-w-[343px] pb-4"
                     >
                       <div className="bg-[#0059191A] p-3 rounded-full">
@@ -356,10 +399,10 @@ export function Header({
                       </div>
                       <div className=" space-y-2">
                         <button
-                          onClick={onNavigateToServices}
+                          onClick={title.navigate}
                           className="flex gap-2  text-start text-[17.5px] w-full font-medium"
                         >
-                          {title} <span>→</span>
+                          {title.title} <span>→</span>
                         </button>
                         <p className="text-[12.5px] text-gray-500">
                           Lorem ipsum Lorem ipsum Lorem ipsum
@@ -382,16 +425,17 @@ export function Header({
                     {industries.map((title, i) => (
                       <div
                         key={i}
+                        onClick={() => {
+                          title.navigate?.();
+                          setOpen(false);
+                        }}
                         className="flex  items-start gap-3.5  max-w-[343px] pb-4"
                       >
                         <div className="bg-[#0059191A] p-3 rounded-full">
                           <ShieldCheck className="h-5 w-5 text-primary" />
                         </div>
                         <div className=" space-y-2">
-                          <button
-                            onClick={onNavigateToServices}
-                            className="flex gap-2 text-start text-[17.5px] w-full font-medium"
-                          >
+                          <button className="flex gap-2 text-start text-[17.5px] w-full font-medium">
                             {title.title} <span>→</span>
                           </button>
                           <p className="text-[12.5px] text-gray-500">
@@ -408,7 +452,10 @@ export function Header({
             {/* Other Links */}
             <div className="border-t border-[#0000001A] ">
               <button
-                onClick={onNavigateToProjects}
+                onClick={() => {
+                  onNavigateToProjects();
+                  setOpen(false);
+                }}
                 className="block w-full font-medium text-lg py-5 text-left"
               >
                 Gallery
@@ -417,7 +464,10 @@ export function Header({
 
             <div className="border-t border-[#0000001A] ">
               <button
-                // onClick={onNavigateToBlog}
+                onClick={() => {
+                  onNavigateToBlog();
+                  setOpen(false);
+                }}
                 className="block w-full font-medium text-lg py-5 text-left"
               >
                 Blog
@@ -426,7 +476,10 @@ export function Header({
 
             <div className="border-t border-[#0000001A] ">
               <button
-                onClick={onNavigateToAbout}
+                onClick={() => {
+                  onNavigateToAbout();
+                  setOpen(false);
+                }}
                 className="block w-full font-medium text-lg py-5 text-left"
               >
                 About us

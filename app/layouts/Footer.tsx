@@ -13,7 +13,36 @@ import {
 import BMIC_FOOTER from "@/components/figma/images/BMIC_FOOTER.svg";
 import EFLOGO from "@/components/figma/images/EFLOGO.svg";
 import { Input } from "@/components/ui/input";
-export function Footer() {
+
+interface FooterProps {
+  onNavigateToAbout: () => void;
+  onNavigateToHome: () => void;
+  onNavigateToServices: () => void;
+  onNavigateToPharma: () => void;
+  onNavigateToProjects: () => void;
+  onNavigateToBlog: () => void;
+  onNavigateToContact: () => void;
+  onNavigateToInsulation: () => void;
+  onNavigateToColdStorage: () => void;
+  onNavigateToDucting: () => void;
+  onNavigateToSound: () => void;
+  onNavigateToFood: () => void;
+  onNavigateToColdChain: () => void;
+}
+export const Footer: React.FC<FooterProps> = ({
+  onNavigateToAbout,
+  onNavigateToBlog,
+  onNavigateToHome,
+  onNavigateToPharma,
+  onNavigateToProjects,
+  // onNavigateToContact,
+  onNavigateToInsulation,
+  onNavigateToColdStorage,
+  onNavigateToDucting,
+  onNavigateToSound,
+  onNavigateToFood,
+  onNavigateToColdChain,
+}) => {
   return (
     <footer className="bg-gray-900 text-[#D1D5DC]">
       <div className="container mx-auto px-4 py-12">
@@ -24,7 +53,12 @@ export function Footer() {
             <div className="flex items-center space-x-2">
               <div className="relative ">
                 <div className="md:w-24 md:h-12 h-6 w-12 rounded-lg flex items-center bg-[#101828] justify-center ">
-                  <Image src={BMIC_FOOTER} alt="Logo" fill />
+                  <Image
+                    src={BMIC_FOOTER}
+                    onClick={onNavigateToHome}
+                    alt="Logo"
+                    fill
+                  />
                 </div>
               </div>
             </div>
@@ -78,28 +112,16 @@ export function Footer() {
             <div className="space-y-4  ">
               <h4 className="text-lg text-white">Follow Us</h4>
               <div className=" flex gap-4 text-sm">
-                <a
-                  href="#"
-                  className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2 rounded-md"
-                >
+                <a className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2 rounded-md">
                   <Facebook className="h-[14px] w-[14px]" />
                 </a>
-                <a
-                  href="#"
-                  className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2  rounded-md"
-                >
+                <a className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2  rounded-md">
                   <Twitter className="h-[14px] w-[14px]" />
                 </a>
-                <a
-                  href="#"
-                  className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2 rounded-md"
-                >
+                <a className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2 rounded-md">
                   <Linkedin className="h-[14px] w-[14px]" />
                 </a>
-                <a
-                  href="#"
-                  className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2 rounded-md"
-                >
+                <a className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2 rounded-md">
                   <Instagram className="h-[14px] w-[14px] " />
                 </a>
               </div>
@@ -112,32 +134,32 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
+                  onClick={onNavigateToInsulation}
+                  className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                 >
                   Insulation
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
+                  onClick={onNavigateToColdStorage}
+                  className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                 >
                   Cold Storage
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
+                  onClick={onNavigateToDucting}
+                  className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                 >
                   HVAC / Ducting
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
+                  onClick={onNavigateToSound}
+                  className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                 >
                   Soundproofing
                 </a>
@@ -151,49 +173,40 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
+                  onClick={onNavigateToPharma}
+                  className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                 >
                   Pharma
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
+                  onClick={onNavigateToFood}
+                  className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                 >
                   Food & Beverage
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
+                  onClick={onNavigateToColdChain}
+                  className="text-gray-300  hover:text-primary transition-colors"
                 >
                   Cold Chain Logistics
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
+                <a className="text-gray-300 hover:text-primary transition-colors">
                   IT & Data Centers
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
+                <a className="text-gray-300 hover:text-primary transition-colors">
                   Warehousing
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-primary transition-colors"
-                >
+                <a className="text-gray-300 hover:text-primary transition-colors">
                   Construction & Infrastructure
                 </a>
               </li>
@@ -207,49 +220,40 @@ export function Footer() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-300 hover:text-primary transition-colors"
+                    onClick={() => onNavigateToAbout()}
+                    className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                   >
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-primary transition-colors"
-                  >
+                  <a className="text-gray-300 hover:text-primary transition-colors">
                     Our Services
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-primary transition-colors"
-                  >
+                  <a className="text-gray-300 hover:text-primary transition-colors">
                     Industries
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-300 hover:text-primary transition-colors"
+                    onClick={() => onNavigateToProjects()}
+                    className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                   >
                     Projects
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-300 hover:text-primary transition-colors"
+                    onClick={() => onNavigateToBlog()}
+                    className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                   >
                     Blogs
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-primary transition-colors"
-                  >
+                  <a className="text-gray-300 hover:text-primary transition-colors">
                     News & Updates
                   </a>
                 </li>
@@ -267,7 +271,13 @@ export function Footer() {
               Subscribe
             </Button>
             <h4 className="text-lg text-white">Powered by</h4>
-            <Image src={EFLOGO} alt="EF-logo" />
+            <Image
+              onClick={() =>
+                (window.location.href = "https://www.economizingfutura.com/")
+              }
+              src={EFLOGO}
+              alt="EF-logo"
+            />
           </div>
         </div>
 
@@ -329,4 +339,4 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+};

@@ -64,11 +64,11 @@ export function OurSolutionsServices() {
         </div>
 
         {/* Certifications Grid */}
-        <div className="grid md:grid-cols-2 mx-auto lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-6 mb-16">
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="text-center rounded-[5px]   lg:max-w-60 bg-white border-0 "
+              className="text-center rounded-[5px] w-full lg:max-w-60 bg-white border-0 "
             >
               <div className=" space-y-3">
                 <div className="relative  lg:w-60 h-40 mx-auto">

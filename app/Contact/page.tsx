@@ -14,11 +14,25 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useState } from "react";
 
 interface ContactPageProps {
   onBackToHome: () => void;
 }
 
+interface ContactFormData {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  service: string;
+  message: string;
+  subscribe: boolean;
+}
+
+type ContactFormErrors = {
+  [K in keyof Omit<ContactFormData, "subscribe">]?: string;
+};
 const contactOptions = [
   {
     icon: <Phone className="h-6 w-6 text-primary " />,
@@ -53,6 +67,65 @@ const contactOptions = [
 ];
 
 export function ContactPage({ onBackToHome }: ContactPageProps) {
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    message: "",
+    subscribe: false,
+  });
+
+  const [formErrors, setFormErrors] = useState<ContactFormErrors>({});
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value, type } = e.target;
+
+    const checked =
+      type === "checkbox" && "checked" in e.target
+        ? (e.target as HTMLInputElement).checked
+        : undefined;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const validate = (): ContactFormErrors => {
+    const errors: ContactFormErrors = {};
+
+    if (!formData.name.trim()) errors.name = "Full name is required.";
+    if (!formData.email.trim()) errors.email = "Email is required.";
+    else if (!/\S+@\S+\.\S+/.test(formData.email))
+      errors.email = "Invalid email address.";
+
+    if (!formData.phone.trim()) errors.phone = "Phone number is required.";
+    else if (!/^\d{10}$/.test(formData.phone))
+      errors.phone = "Phone must be 10 digits.";
+
+    if (!formData.message.trim())
+      errors.message = "Project details are required.";
+
+    return errors;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const errors = validate();
+    setFormErrors(errors);
+    console.log("Form submitted successfully", errors);
+
+    if (Object.keys(errors).length === 0) {
+      console.log("Form submitted successfully", formData);
+      // Call API or show toast
+    }
+  };
   return (
     <div className="min-h-screen">
       <section className="relative bg-gradient-to-br from-20%  from-[#c9dcce]  via-[#c9dcce]  to-[#fffff] to-70% py-16 ">
@@ -144,28 +217,53 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
                     </p>
                   </div>
 
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label className="text-sm gap-1.5 flex text-gray-700 mb-2 ">
                           <User className="h-[14px] text-primary w-[14px]" />{" "}
                           Full Name *
                         </label>
-                        <Input
+                        {/* <Input
                           placeholder="Enter your full name"
                           className="!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC]"
+                        /> */}
+
+                        <Input
+                          name="name"
+                          placeholder="Enter your full name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${
+                            formErrors.name ? "border-red-500" : ""
+                          }`}
                         />
+                        {formErrors.name && (
+                          <p className="text-red-500 text-sm">
+                            {formErrors.name}
+                          </p>
+                        )}
                       </div>
                       <div>
                         <label className="text-sm gap-1.5 flex text-gray-700 mb-2 ">
                           <Mail className="h-[14px] text-primary w-[14px]" />{" "}
                           Email Address *
                         </label>
+
                         <Input
-                          type="email"
-                          className="!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC]"
+                          name="email"
                           placeholder="Enter your email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${
+                            formErrors.email ? "border-red-500" : ""
+                          }`}
                         />
+                        {formErrors.email && (
+                          <p className="text-red-500 text-sm">
+                            {formErrors.email}
+                          </p>
+                        )}
                       </div>
                     </div>
 
@@ -175,20 +273,42 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
                           <Phone className="h-[14px] text-primary w-[14px]" />{" "}
                           Phone Number *
                         </label>
+
                         <Input
+                          name="phone"
                           placeholder="Enter your phone number"
-                          className="!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC]"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${
+                            formErrors.phone ? "border-red-500" : ""
+                          }`}
                         />
+                        {formErrors.phone && (
+                          <p className="text-red-500 text-sm">
+                            {formErrors.phone}
+                          </p>
+                        )}
                       </div>
                       <div>
                         <label className="text-sm gap-1.5 flex text-gray-700 mb-2 ">
                           <Building2 className="h-[14px] text-primary w-[14px]" />{" "}
                           Company Name
                         </label>
+
                         <Input
+                          name="company"
                           placeholder="Enter company name"
-                          className="!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC]"
+                          value={formData.company}
+                          onChange={handleChange}
+                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${
+                            formErrors.company ? "border-red-500" : ""
+                          }`}
                         />
+                        {formErrors.company && (
+                          <p className="text-red-500 text-sm">
+                            {formErrors.company}
+                          </p>
+                        )}
                       </div>
                     </div>
 
@@ -196,13 +316,28 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
                       <label className="text-sm text-gray-700 mb-2 block">
                         Service Required
                       </label>
-                      <select className="w-full px-3 py-2 border border-gray-300 rounded-md">
-                        <option>Select a service</option>
-                        <option>Thermal Insulation</option>
-                        <option>Cold Storage Solutions</option>
-                        <option>HVAC & Ducting</option>
-                        <option>Other</option>
+                      <select
+                        name="service"
+                        value={formData.service}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                      >
+                        <option value="">Select a service</option>
+                        <option value="Thermal Insulation">
+                          Thermal Insulation
+                        </option>
+                        <option value="Cold Storage Solutions">
+                          Cold Storage Solutions
+                        </option>
+                        <option value="HVAC & Ducting">HVAC & Ducting</option>
+                        <option value="Other">Other</option>
                       </select>
+
+                      {formErrors.service && (
+                        <p className="text-red-500 text-sm">
+                          {formErrors.service}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -210,10 +345,21 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
                         <MessageSquare className="h-[14px] text-primary w-[14px]" />
                         Project Details *
                       </label>
+
                       <Textarea
+                        name="message"
                         placeholder="Please describe your project requirements..."
-                        className="min-h-32 border !border-[#D1D5DC] !bg-[#F3F3F5]"
+                        value={formData.message}
+                        onChange={handleChange}
+                        className={`min-h-32 border !border-[#D1D5DC] !bg-[#F3F3F5] ${
+                          formErrors.message ? "border-red-500" : ""
+                        }`}
                       />
+                      {formErrors.message && (
+                        <p className="text-red-500 text-sm">
+                          {formErrors.message}
+                        </p>
+                      )}
                     </div>
                     <div className="flex items-center  space-x-2 ">
                       <Checkbox
@@ -227,7 +373,10 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-[1fr_0.6fr] gap-[10px]">
-                      <Button className="w-full bg-primary hover:bg-primary/90">
+                      <Button
+                        type="submit"
+                        className="w-full bg-primary hover:bg-primary/90"
+                      >
                         <Send className="h-4 w-4 mr-2" />
                         Send Message
                       </Button>

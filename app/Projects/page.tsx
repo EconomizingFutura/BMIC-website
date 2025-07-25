@@ -85,7 +85,7 @@ export function ProjectsPage({ onBackToHome }: ProjectsPageProps) {
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 bg-[#F9FAFB]">
+      <section className="pt-20 pb-10 bg-[#F9FAFB]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-center gap-4">
             <div className="flex items-center justify-center gap-2">

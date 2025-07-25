@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Card, CardContent } from "../../components/ui/card";
-import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import {
   ArrowLeft,
@@ -85,47 +84,53 @@ export function ProjectsPage({ onBackToHome }: ProjectsPageProps) {
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 bg-[#F9FAFB] ">
+      <section className="py-8 bg-[#F9FAFB]">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-4">
-            <Filter className="h-5 w-5 text-primary" />
-            <span className="text-sm text-gray-600">Filter by Type:</span>
-            {[
-              {
-                value: "all",
-                label: "All Projects",
-                icon: <Building2 className="h-4 w-4" />,
-              },
-              {
-                value: "insulation",
-                label: "Thermal Insulation",
-                icon: <Thermometer className="h-4 w-4" />,
-              },
-              {
-                value: "cold-storage",
-                label: "Cold Storage",
-                icon: <Snowflake className="h-4 w-4" />,
-              },
-              {
-                value: "ducting",
-                label: "HVAC & Ducting",
-                icon: <Wind className="h-4 w-4" />,
-              },
-            ].map((option) => (
-              <Button
-                key={option.value}
-                variant={activeFilter === option.value ? "default" : "outline"}
-                onClick={() => setActiveFilter(option.value as ProjectType)}
-                className={
-                  activeFilter === option.value
-                    ? "bg-primary text-white"
-                    : "border-primary/30 text-primary"
-                }
-              >
-                {option.icon}
-                <span className="ml-2">{option.label}</span>
-              </Button>
-            ))}
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-center gap-4">
+            <div className="flex items-center justify-center gap-2">
+              <Filter className="h-5 w-5 text-primary flex-shrink-0" />
+              <span className="text-sm text-gray-600">Filter by Type:</span>
+            </div>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                {
+                  value: "all",
+                  label: "All Projects",
+                  icon: <Building2 className="h-4 w-4" />,
+                },
+                {
+                  value: "insulation",
+                  label: "Thermal Insulation",
+                  icon: <Thermometer className="h-4 w-4" />,
+                },
+                {
+                  value: "cold-storage",
+                  label: "Cold Storage",
+                  icon: <Snowflake className="h-4 w-4" />,
+                },
+                {
+                  value: "ducting",
+                  label: "HVAC & Ducting",
+                  icon: <Wind className="h-4 w-4" />,
+                },
+              ].map((option) => (
+                <Button
+                  key={option.value}
+                  variant={
+                    activeFilter === option.value ? "default" : "outline"
+                  }
+                  onClick={() => setActiveFilter(option.value as ProjectType)}
+                  className={
+                    activeFilter === option.value
+                      ? "!bg-primary text-white !border-primary/30 !border"
+                      : "!border-primary/30 !border text-primary"
+                  }
+                >
+                  {option.icon}
+                  <span className="ml-2">{option.label}</span>
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </section>

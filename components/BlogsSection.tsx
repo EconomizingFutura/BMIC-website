@@ -1,6 +1,6 @@
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Calendar, MapPin, ExternalLink, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 

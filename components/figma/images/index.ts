@@ -5,6 +5,7 @@ import SoundProof from "./SoundProof.svg";
 import yoe from "./yoe.svg";
 import servicebanner from "./servicebanner.svg";
 import aboutuscard from "./aboutuscard.svg";
+import aboutusbanner from "./aboutusbanner.jpg";
 export {
   ColdStorage,
   DUCT,
@@ -13,4 +14,5 @@ export {
   yoe,
   servicebanner,
   aboutuscard,
+  aboutusbanner,
 };

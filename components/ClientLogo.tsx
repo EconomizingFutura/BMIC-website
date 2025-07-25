@@ -17,15 +17,16 @@ const ClientLogo = () => {
             {logos.map((logo) => (
               <div
                 key={`first-${logo.name}`}
-                className="flex-shrink-0 mx-4 bg-white rounded-lg shadow-md px-6 min-w-[200px] flex items-center justify-center min-h-10"
+                className="flex-shrink-0 mx-4 bg-white rounded-lg shadow-md px-6 min-w-[200px] flex items-center gap-3 justify-center max-h-20"
               >
                 <Image
-                  src={logo.logo || "/placeholder.svg"}
+                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                   alt={logo.name}
-                  width={120}
-                  height={60}
-                  className="max-w-full h-auto object-contain"
+                  width={24}
+                  height={10}
+                  className="object-cover rounded-full"
                 />
+                <h1>{logo.name}</h1>
               </div>
             ))}
             {logos.map((logo) => (

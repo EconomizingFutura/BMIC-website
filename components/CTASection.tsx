@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
-import { ArrowRight, Phone, Mail, MessageCircle } from "lucide-react";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 
 export function CTASection() {
   return (
@@ -12,14 +12,14 @@ export function CTASection() {
             <span className="text-green-200">Next Project?</span>
           </h2>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
-            Get in touch with our experts today. We're here to help you find the
-            perfect solution for your business needs with a free consultation
-            and competitive quote.
+            Get in touch with our experts today. We&apos;re here to help you
+            find the perfect solution for your business needs with a free
+            consultation and competitive quote.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          <Card className="bg-white/10 border-white/20 text-white hover:bg-white/20 transition-colors">
+          <Card className="bg-white/10 border-white/20 text-white">
             <CardContent className="p-6 text-center">
               <MessageCircle className="h-8 w-8 mx-auto mb-3" />
               <h4 className="mb-2">WhatsApp Us</h4>
@@ -35,7 +35,7 @@ export function CTASection() {
             </CardContent>
           </Card>
 
-          <Card className="bg-white/10 border-white/20 text-white hover:bg-white/20 transition-colors">
+          <Card className="bg-white/10 border-white/20 text-white">
             <CardContent className="p-6 text-center">
               <Phone className="h-8 w-8 mx-auto mb-3" />
               <h4 className="mb-2">Call Us</h4>
@@ -43,14 +43,14 @@ export function CTASection() {
               <Button
                 size="sm"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary w-full"
+                className="border-white text-white w-full"
               >
                 +1 (555) 123-4567
               </Button>
             </CardContent>
           </Card>
 
-          <Card className="bg-white/10 border-white/20 text-white hover:bg-white/20 transition-colors">
+          <Card className="bg-white/10 border-white/20 text-white ">
             <CardContent className="p-6 text-center">
               <Mail className="h-8 w-8 mx-auto mb-3" />
               <h4 className="mb-2">Email Us</h4>

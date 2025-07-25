@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "../../components/ui/button";
-import { Phone, Mail, Menu, ChevronDown, ShieldCheck } from "lucide-react";
+import { Phone, Mail, Menu, ChevronDown, ShieldCheck, X } from "lucide-react";
 import BMIC_LOGO from "@/components/figma/images/BMIC_LOGO.svg";
 import {
   DropdownMenu,
@@ -8,6 +8,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { useState } from "react";
 
 interface HeaderProps {
   onNavigateToAbout?: () => void;
@@ -25,9 +32,15 @@ export function Header({
   onNavigateToServices,
   onNavigateToPharma,
   onNavigateToProjects,
-  onNavigateToBlog,
+  // onNavigateToBlog,
   onNavigateToContact,
 }: HeaderProps) {
+  const [open, setOpen] = useState<boolean>(false);
+
+  const handleOpenMenu = () => {
+    setOpen((pre) => !pre);
+  };
+
   const solutions = [
     {
       title: "Insulation Solutions",
@@ -160,19 +173,14 @@ export function Header({
               </h1>
             </div>
           </button>
-          <Menu className="h-6 w-6 lg:hidden" />
+          <Menu onClick={handleOpenMenu} className="h-6 w-6 lg:hidden" />
 
           {/* Enhanced Desktop Navigation */}
           <div className="hidden lg:flex items-center lg:space-x-6 space-x-6 relative">
             {/* Background decoration for nav */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300" />
 
-            <a
-              href="#home"
-              className="hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md hover:bg-primary/5"
-            >
-              Home
-            </a>
+            <a href="#home">Home</a>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center items-center hover:bg-primary/5 focus:outline-none">
@@ -295,6 +303,138 @@ export function Header({
 
       {/* Bottom accent line */}
       <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20" />
+
+      {open && (
+        <div className="fixed inset-0 z-50 flex">
+          {/* Overlay */}
+          <div
+            className="bg-black/50 flex-1"
+            // onClick={() => setIsMobileMenuOpen(false)}
+          />
+
+          {/* Sidebar */}
+          <div className="w-full bg-white h-full p-4 overflow-y-auto">
+            {/* Logo & Close */}
+            <div className="flex justify-between items-center mb-6">
+              <Image src={BMIC_LOGO} alt="Logo" width={50} height={50} />
+              <button>
+                <X onClick={handleOpenMenu} className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Home button */}
+            <button
+              onClick={onNavigateToHome}
+              className="hover:text-primary font-medium text-lg transition-colors relative py-5 rounded-md hover:bg-primary/5"
+            >
+              Home
+            </button>
+
+            {/* Solutions */}
+            <Accordion
+              type="single"
+              className="border-t  border-[#0000001A]"
+              collapsible
+            >
+              <AccordionItem value="solutions">
+                <AccordionTrigger className="hover:text-primary font-medium text-lg transition-colors relative  py-5 rounded-md hover:bg-primary/5">
+                  Solutions
+                </AccordionTrigger>
+                <AccordionContent className="mt-2 space-y-4">
+                  {[
+                    "Insulation Solutions",
+                    "Cold Storage Solutions",
+                    "HVAC / Ducting Solutions",
+                    "Soundproofing Solutions",
+                  ].map((title, i) => (
+                    <div
+                      key={i}
+                      className="flex  items-start gap-3.5  max-w-[343px] pb-4"
+                    >
+                      <div className="bg-[#0059191A] p-3 rounded-full">
+                        <ShieldCheck className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className=" space-y-2">
+                        <button
+                          onClick={onNavigateToServices}
+                          className="flex gap-2  text-start text-[17.5px] w-full font-medium"
+                        >
+                          {title} <span>→</span>
+                        </button>
+                        <p className="text-[12.5px] text-gray-500">
+                          Lorem ipsum Lorem ipsum Lorem ipsum
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            {/* Industries */}
+            <div className="border-t  border-[#0000001A]">
+              <Accordion type="single" collapsible>
+                <AccordionItem value="industries">
+                  <AccordionTrigger className="w-full py-5 font-medium text-lg">
+                    Industries
+                  </AccordionTrigger>
+                  <AccordionContent className="mt-2 space-y-4">
+                    {industries.map((title, i) => (
+                      <div
+                        key={i}
+                        className="flex  items-start gap-3.5  max-w-[343px] pb-4"
+                      >
+                        <div className="bg-[#0059191A] p-3 rounded-full">
+                          <ShieldCheck className="h-5 w-5 text-primary" />
+                        </div>
+                        <div className=" space-y-2">
+                          <button
+                            onClick={onNavigateToServices}
+                            className="flex gap-2 text-start text-[17.5px] w-full font-medium"
+                          >
+                            {title.title} <span>→</span>
+                          </button>
+                          <p className="text-[12.5px] text-gray-500">
+                            Lorem ipsum Lorem ipsum Lorem ipsum
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+
+            {/* Other Links */}
+            <div className="border-t border-[#0000001A] ">
+              <button
+                onClick={onNavigateToProjects}
+                className="block w-full font-medium text-lg py-5 text-left"
+              >
+                Gallery
+              </button>
+            </div>
+
+            <div className="border-t border-[#0000001A] ">
+              <button
+                // onClick={onNavigateToBlog}
+                className="block w-full font-medium text-lg py-5 text-left"
+              >
+                Blog
+              </button>
+            </div>
+
+            <div className="border-t border-[#0000001A] ">
+              <button
+                onClick={onNavigateToAbout}
+                className="block w-full font-medium text-lg py-5 text-left"
+              >
+                About us
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

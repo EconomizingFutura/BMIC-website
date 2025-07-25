@@ -1,7 +1,7 @@
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
-import { aboutuscard } from "@/components/figma/images";
+import { aboutuscard, aboutusbanner } from "@/components/figma/images";
 import {
   ArrowLeft,
   Target,
@@ -12,7 +12,6 @@ import {
   ShieldCheck,
   Users,
   Building,
-  Award,
 } from "lucide-react";
 import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 import Image from "next/image";
@@ -139,61 +138,49 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/5 via-white to-accent/30 py-20 overflow-hidden">
-        {/* Enhanced Background Pattern */}
-        <div className="absolute inset-0 opacity-8">
-          <div className="absolute top-20 left-20 w-40 h-40 border-2 border-primary/20 rounded-full animate-pulse" />
-          <div className="absolute top-60 right-32 w-24 h-24 bg-primary/10 rounded-lg rotate-45 animate-bounce delay-100" />
-          <div className="absolute bottom-32 left-1/3 w-20 h-20 border-2 border-primary/15 rotate-12 animate-pulse delay-200" />
-          <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-gradient-to-br from-primary/8 to-accent/15 rounded-full animate-bounce delay-300" />
-        </div>
+      <section className="relative overflow-hidden md:min-h-[700px] h-full bg-gradient-to-br from-primary/5 via-white to-accent/30 pb-20">
+        <div className="relative w-full h-[300px] md:h-[500px]">
+          <Image
+            src={aboutusbanner}
+            alt="About Us"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#78A484] mix-blend-multiply"></div>
 
-        <div className="container mx-auto px-4 relative">
-          {/* Back Button */}
           <Button
             variant="outline"
             onClick={onBackToHome}
-            className="mb-8 hover:bg-primary hover:text-white transition-colors shadow-lg border-primary/30"
+            className="absolute top-6 left-6 md:top-20 md:left-20 inline-flex items-center text-[#0A0A0A] hover:text-[#0A0A0A] border border-[#0000001A] !bg-white shadow-md"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Button>
+        </div>
 
-          <div className="text-center mb-12">
+        {/* Enhanced Background Pattern */}
+        <div className="absolute inset-0 opacity-8 pointer-events-none">
+          <div className="absolute top-20 left-10 md:left-20 w-24 md:w-40 h-24 md:h-40 border-2 border-primary/20 rounded-full animate-pulse" />
+          <div className="absolute top-40 md:top-60 right-10 md:right-32 w-16 md:w-24 h-16 md:h-24 bg-primary/10 rounded-lg rotate-45 animate-bounce delay-100" />
+          <div className="absolute bottom-20 md:bottom-32 left-1/3 w-12 md:w-20 h-12 md:h-20 border-2 border-primary/15 rotate-12 animate-pulse delay-200" />
+          <div className="absolute top-1/2 right-1/4 w-20 md:w-32 h-20 md:h-32 bg-gradient-to-br from-primary/8 to-accent/15 rounded-full animate-bounce delay-300" />
+        </div>
+
+        <div className="container mx-auto px-4 md:px-0 flex justify-center items-center">
+          <div className="relative z-10 text-center w-full max-w-7xl mx-auto bg-white  p-6 md:p-12 shadow-md mt-[-100px] md:mt-[-150px]">
             <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-4 py-2">
               About Our Company
             </Badge>
-            <h1 className="text-4xl lg:text-6xl text-gray-900 mb-6">
-              Leading the Future of{" "}
-              <span className="text-primary relative">
-                Industrial Solutions
-                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
-              </span>
+            <h1 className="text-3xl md:text-[52px] font-semibold text-gray-900 mb-6">
+              Building the <span className="text-primary">Future</span> of
+              Industry
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              With over two decades of excellence in industrial insulation, cold
-              storage, and HVAC solutions, we&apos;ve established ourselves as
-              India&#39;s premier thermal management company.
+            <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
+              For over three decades, we&#39;ve been at the forefront of
+              industrial innovation, delivering cutting-edge solutions that
+              transform businesses and shape the future of manufacturing and
+              engineering excellence.
             </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-            <Card className="text-center p-4 bg-white/80 backdrop-blur-sm border-primary/20">
-              <div className="text-2xl text-primary mb-1">25+</div>
-              <div className="text-sm text-gray-600">Years Experience</div>
-            </Card>
-            <Card className="text-center p-4 bg-white/80 backdrop-blur-sm border-primary/20">
-              <div className="text-2xl text-primary mb-1">500+</div>
-              <div className="text-sm text-gray-600">Projects Completed</div>
-            </Card>
-            <Card className="text-center p-4 bg-white/80 backdrop-blur-sm border-primary/20">
-              <div className="text-2xl text-primary mb-1">50+</div>
-              <div className="text-sm text-gray-600">Expert Team</div>
-            </Card>
-            <Card className="text-center p-4 bg-white/80 backdrop-blur-sm border-primary/20">
-              <div className="text-2xl text-primary mb-1">15</div>
-              <div className="text-sm text-gray-600">States Covered</div>
-            </Card>
           </div>
         </div>
       </section>

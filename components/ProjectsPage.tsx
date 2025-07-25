@@ -17,6 +17,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import Image from "next/image";
 
 type ProjectType = "all" | "insulation" | "cold-storage" | "ducting";
 
@@ -612,10 +613,11 @@ export function ProjectsPage({ onBackToHome }: ProjectsPageProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative h-64">
-              <img
+              <Image
                 src={selectedProject.image}
                 alt={selectedProject.title}
                 className="w-full h-full object-cover"
+                fill
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <Button

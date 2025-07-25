@@ -52,7 +52,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="!bg-green-600 !text-white !border-green-600 !hover:bg-green-700"
+                className="bg-green-600 text-white border-green-600 hover:bg-green-700"
               >
                 WhatsApp Us
                 <ArrowRight className="ml-2 h-5 w-5" />

@@ -1,12 +1,13 @@
 import "../globals.css";
 import WhatsAnimate from "@/components/WhatsAnimate";
-
 export const metadata = {
-  title: "Economizing Futura",
+  title: "Bharath Modern Insulation Company",
   description:
     "Economizing Futura delivers innovative digital solutions, transforming ideas into powerful software for startups and businesses worldwide.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
-
 export default function RootLayout({
   children,
 }: {
@@ -14,10 +15,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <title>BMIC</title>
-      </head>
       <body>
         {children}
         <WhatsAnimate />

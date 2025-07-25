@@ -20,6 +20,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import Image from "next/image";
 
 const keyFeatures = [
   {
@@ -463,11 +464,14 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
                 className="group overflow-hidden hover:shadow-xl transition-all duration-300"
               >
                 <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={area.image}
-                    alt={area.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+                  <div className="relative w-full h-full overflow-hidden">
+                    <Image
+                      src={area.image}
+                      alt={area.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
 
                   <div className="absolute top-4 right-4">

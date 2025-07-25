@@ -1,7 +1,6 @@
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {
   Target,
   Eye,
@@ -17,6 +16,7 @@ import {
   Shield,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import Image from "next/image";
 
 const teamMembers = [
   {
@@ -572,11 +572,14 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="relative">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+                  <div className="relative w-full h-64 overflow-hidden">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="flex space-x-2">
@@ -656,11 +659,14 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
 
                 <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={facility.image}
-                    alt={facility.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+                  <div className="relative w-full h-full overflow-hidden">
+                    <Image
+                      src={facility.image}
+                      alt={facility.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
 
                   {/* Enhanced overlay content */}
@@ -777,11 +783,15 @@ export function AboutPage({ onBackToHome }: AboutPageProps) {
                 className="p-4 hover:shadow-lg transition-all duration-300 bg-gray-50 hover:bg-white group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="w-full h-12 object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 relative z-10"
-                />
+
+                <div className="relative w-full h-12 overflow-hidden">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    className="object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 relative z-10"
+                  />
+                </div>
               </Card>
             ))}
           </div>

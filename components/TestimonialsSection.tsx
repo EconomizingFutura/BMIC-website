@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import { Star, Quote } from "lucide-react";
 
@@ -148,11 +149,14 @@ export function TestimonialsSection() {
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.author}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
+                  <div className="w-12 h-12 rounded-full overflow-hidden relative">
+                    <Image
+                      src={testimonial.avatar}
+                      alt={testimonial.author}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   <div>
                     <p className="text-gray-900">{testimonial.author}</p>
                     <p className="text-sm text-gray-600">

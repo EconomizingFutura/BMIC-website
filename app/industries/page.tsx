@@ -16,14 +16,9 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { servicebanner } from "@/components/figma/images";
+import { useRouter } from "next/navigation";
 
-interface PharmaIndustryPageProps {
-  onBackToHome: () => void;
-}
-
-export default function PharmaIndustryPage({
-  onBackToHome,
-}: PharmaIndustryPageProps) {
+export default function PharmaIndustryPage() {
   const projects = [
     {
       title: "Advanced Manufacturing Plant",
@@ -195,6 +190,9 @@ export default function PharmaIndustryPage({
     },
   ];
 
+  const router = useRouter();
+
+  const onBackToHome = () => router.push("/home");
   return (
     <div className="min-h-screen">
       {/* Hero Section */}

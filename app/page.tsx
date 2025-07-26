@@ -1,7 +1,7 @@
 import { Header } from "./layouts/Header";
 import { Footer } from "./layouts/Footer";
 import { HomePage } from "./home/page";
-import { AboutPage } from "./About/page";
+import { AboutPage } from "./about/page";
 import { ServicesPage } from "./Services/page";
 // import { PharmaIndustryPage } from "./Industries/page";
 import { ProjectsPage } from "./Projects/page";

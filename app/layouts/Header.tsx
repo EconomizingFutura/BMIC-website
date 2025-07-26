@@ -198,7 +198,7 @@ export function Header() {
             <Link
               href="/"
               className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-2 justify-center cursor-default items-center hover:bg-primary/5 focus:outline-none ${
-                currentPage == "home"
+                currentPage == "/" || currentPage==""
                   ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
                   : ""
               }`}

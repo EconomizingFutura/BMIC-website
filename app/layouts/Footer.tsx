@@ -13,36 +13,11 @@ import {
 import BMIC_FOOTER from "@/components/figma/images/BMIC_FOOTER.svg";
 import EFLOGO from "@/components/figma/images/EFLOGO.svg";
 import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
 
-interface FooterProps {
-  onNavigateToAbout: () => void;
-  onNavigateToHome: () => void;
-  onNavigateToServices: () => void;
-  onNavigateToPharma: () => void;
-  onNavigateToProjects: () => void;
-  onNavigateToBlog: () => void;
-  onNavigateToContact: () => void;
-  onNavigateToInsulation: () => void;
-  onNavigateToColdStorage: () => void;
-  onNavigateToDucting: () => void;
-  onNavigateToSound: () => void;
-  onNavigateToFood: () => void;
-  onNavigateToColdChain: () => void;
-}
-export const Footer: React.FC<FooterProps> = ({
-  onNavigateToAbout,
-  onNavigateToBlog,
-  onNavigateToHome,
-  onNavigateToPharma,
-  onNavigateToProjects,
-  // onNavigateToContact,
-  onNavigateToInsulation,
-  onNavigateToColdStorage,
-  onNavigateToDucting,
-  onNavigateToSound,
-  onNavigateToFood,
-  onNavigateToColdChain,
-}) => {
+export const Footer: React.FC = () => {
+  const router = useRouter();
+
   return (
     <footer className="bg-gray-900 text-[#D1D5DC]">
       <div className="container mx-auto px-4 py-12">
@@ -55,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <div className="md:w-24 md:h-12 h-6 w-12 rounded-lg flex items-center bg-[#101828] justify-center ">
                   <Image
                     src={BMIC_FOOTER}
-                    onClick={onNavigateToHome}
+                    onClick={() => router.push("/")}
                     alt="Logo"
                     fill
                   />

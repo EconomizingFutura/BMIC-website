@@ -16,7 +16,7 @@ type BlogCategory =
 
 export default function BlogPage() {
   const router = useRouter();
-  const onBackToHome = () => router.push("/home");
+  const onBackToHome = () => router.push('/');
   const [activeFilter, setActiveFilter] = useState<BlogCategory>("all");
 
   const blogPosts = [

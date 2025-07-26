@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 
 export default function SoundProofingSolutionPage() {
   const router = useRouter();
-  const onBackToHome = () => router.push("/home");
+  const onBackToHome = () => router.push('/');
 
   // const services = [
   //   {

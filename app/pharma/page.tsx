@@ -22,7 +22,7 @@ import { useRouter } from "next/navigation";
 
 export default function PharmaIndustryPage() {
   const router = useRouter();
-  const onBackToHome = () => router.push("/home");
+  const onBackToHome = () => router.push('/');
   const projects = [
     {
       title: "Advanced Manufacturing Plant",

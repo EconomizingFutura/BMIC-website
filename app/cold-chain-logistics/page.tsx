@@ -192,7 +192,7 @@ export default function ColdChainIndustriesPage() {
   ];
 
   const router = useRouter();
-  const onBackToHome = () => router.push("/home");
+  const onBackToHome = () => router.push('/');
 
   return (
     <div className="min-h-screen">

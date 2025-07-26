@@ -287,7 +287,7 @@ export default function InsulationServicePage() {
             <div className="space-y-8 max-w-[586px] w-full ">
               <Button
                 variant="outline"
-                onClick={() => router.push("/home")}
+                onClick={() => router.push('/')}
                 className="mb-8 !bg-white  shadow-lg border-primary/30"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />

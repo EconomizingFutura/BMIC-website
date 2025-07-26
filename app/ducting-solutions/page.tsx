@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 
 export default function DuctingSolutionsPage() {
   const router = useRouter();
-  const onBackToHome = () => router.push("/home");
+  const onBackToHome = () => router.push('/');
   // const services = [
   //   {
   //     id: 1,

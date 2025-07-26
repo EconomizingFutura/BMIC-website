@@ -126,7 +126,7 @@ export default function ContactPage() {
   };
 
   const router = useRouter();
-  const onBackToHome = () => router.push("/home");
+  const onBackToHome = () => router.push('/');
 
   return (
     <div className="min-h-screen">

@@ -17,7 +17,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export function Header() {
   const [open, setOpen] = useState<boolean>(false);
@@ -26,28 +27,26 @@ export function Header() {
     setOpen((pre) => !pre);
   };
 
-  const router = useRouter();
-
   const solutions = [
     {
       title: "Insulation Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: () => router.push("/insulation"),
+      navigate: "/insulation",
     },
     {
       title: "Cold Storage Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: () => router.push("/cold-storage-solutions"),
+      navigate: "/cold-storage-solutions",
     },
     {
       title: "HVAC / Ducting Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: () => router.push("/ducting-solutions"),
+      navigate: "/ducting-solutions",
     },
     {
       title: "Soundproofing Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: () => router.push("/sound-proofing-solutions"),
+      navigate: "/sound-proofing-solutions",
     },
   ];
 
@@ -55,17 +54,17 @@ export function Header() {
     {
       title: "Pharma",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: () => router.push("/pharma"),
+      navigate: "/pharma",
     },
     {
       title: "Food & Beverage",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: () => router.push("/food-beverage"),
+      navigate: "/food-beverage",
     },
     {
       title: "Cold Chain Logistics",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: () => router.push("/cold-chain-logistics"),
+      navigate: "/cold-chain-logistics",
     },
   ];
 
@@ -79,10 +78,10 @@ export function Header() {
 
   const industryPages = ["pharma", "cold-chain-logistics", "food-beverage"];
 
-  let currentPage = "home";
+  let currentPage = "/";
 
-  if (pathname === "/home" || pathname === "/") {
-    currentPage = "home";
+  if (pathname === "/" || pathname === "/") {
+    currentPage = "/";
   } else if (servicePages.includes(pathname.split("/")[1])) {
     currentPage = "services";
   } else if (industryPages.includes(pathname.split("/")[1])) {
@@ -137,7 +136,6 @@ export function Header() {
           <div className="flex items-center space-x-2 ml-auto md:ml-0   md:space-x-4">
             <div className="flex items-center space-x-1 md:space-x-2 hover:bg-white/10 md:px-2 py-1 rounded-md transition-colors">
               <Phone className="h-4 w-4" />
-              <p>{currentPage}</p>
               <span className="text-[13px] md:text-[14px]">
                 +1 (555) 123-4567
               </span>
@@ -172,24 +170,24 @@ export function Header() {
       {/* Main navigation with enhanced styling */}
       <nav className=" mx-auto  px-2 lg:px-24 sm:px-4 py-4 relative">
         <div className="flex justify-between items-center">
-          <button
-            onClick={() => router.push("/home")}
-            className="flex  items-center space-x-2 hover:opacity-80 transition-all duration-300 group relative"
-          >
-            {/* Enhanced logo with background effect */}
-            <div className="relative ">
-              <div className="md:w-24 md:h-12 h-6 w-12 rounded-lg flex items-center justify-center ">
-                <Image src={BMIC_LOGO} alt="Logo" fill />
+          <Link href="/">
+            <button className="flex  items-center space-x-2 hover:opacity-80 transition-all duration-300 group relative">
+              {/* Enhanced logo with background effect */}
+              <div className="relative ">
+                <div className="md:w-24 md:h-12 h-6 w-12 rounded-lg flex items-center justify-center ">
+                  <Image src={BMIC_LOGO} alt="Logo" fill />
+                </div>
+                {/* Floating indicator */}
+                <div className="absolute hidden md:block -top-1 -right-1 w-3 h-3 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
               </div>
-              {/* Floating indicator */}
-              <div className="absolute hidden md:block -top-1 -right-1 w-3 h-3 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
-            </div>
-            <div className="">
-              <h1 className="whitespace-nowrap md:text-2xl text-[12px] sm:text-[13px] text-primary font-bold">
-                Bharath Modern Insulation Company
-              </h1>
-            </div>
-          </button>
+              <div className="">
+                <h1 className="whitespace-nowrap md:text-2xl text-[12px] sm:text-[13px] text-primary font-bold">
+                  Bharath Modern Insulation Company
+                </h1>
+              </div>
+            </button>
+          </Link>
+
           <Menu onClick={handleOpenMenu} className="h-6 w-6 lg:hidden" />
 
           {/* Enhanced Desktop Navigation */}
@@ -197,20 +195,20 @@ export function Header() {
             {/* Background decoration for nav */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300" />
 
-            <a
-              onClick={() => router.push("/home")}
-              className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center cursor-default items-center hover:bg-primary/5 focus:outline-none ${
+            <Link
+              href="/"
+              className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-2 justify-center cursor-default items-center hover:bg-primary/5 focus:outline-none ${
                 currentPage == "home"
                   ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
                   : ""
               }`}
             >
               Home
-            </a>
+            </Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
-                  className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center items-center hover:bg-primary/5 focus:outline-none ${
+                  className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-2 justify-center items-center hover:bg-primary/5 focus:outline-none ${
                     currentPage == "services"
                       ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
                       : ""
@@ -230,8 +228,8 @@ export function Header() {
                       key={index}
                       asChild
                     >
-                      <button
-                        onClick={() => item.navigate?.()}
+                      <Link
+                        href={item.navigate}
                         className="flex w-full text-left cursor-pointer items-start space-x-4 data-[highlighted]:bg-transparent"
                       >
                         <div className="bg-[#0059191A] p-2.5 rounded-full">
@@ -249,7 +247,7 @@ export function Header() {
                             {item.description}
                           </p>
                         </div>
-                      </button>
+                      </Link>
                     </DropdownMenuItem>
                   ))}
                 </div>
@@ -265,7 +263,7 @@ export function Header() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
-                  className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center items-center hover:bg-primary/5 focus:outline-none ${
+                  className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-2 justify-center items-center hover:bg-primary/5 focus:outline-none ${
                     currentPage == "industry"
                       ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
                       : ""
@@ -285,8 +283,8 @@ export function Header() {
                       key={index}
                       asChild
                     >
-                      <button
-                        onClick={() => item.navigate?.()}
+                      <Link
+                        href={item.navigate}
                         className="flex w-full text-left cursor-pointer items-start space-x-4 data-[highlighted]:bg-transparent"
                       >
                         <div className="bg-[#0059191A] p-2.5 rounded-full">
@@ -304,14 +302,14 @@ export function Header() {
                             {item.description}
                           </p>
                         </div>
-                      </button>
+                      </Link>
                     </DropdownMenuItem>
                   ))}
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>
-            <button
-              onClick={() => router.push("/projects")}
+            <Link
+              href="/projects"
               className={`hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md  ${
                 currentPage.trim() == "projects"
                   ? "bg-[#0059191A] !hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
@@ -319,10 +317,10 @@ export function Header() {
               }`}
             >
               Gallery
-            </button>
+            </Link>
 
-            <button
-              onClick={() => router.push("/about")}
+            <Link
+              href="/about"
               className={`hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md whitespace-nowrap  ${
                 currentPage == "about"
                   ? "bg-[#0059191A] text-primary hover:bg-[#0059191A] py-[6px] px-[12px] rounded"
@@ -330,13 +328,12 @@ export function Header() {
               }`}
             >
               About Us
-            </button>
-            <Button
-              onClick={() => router.push("/contact")}
-              className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative"> Contact Us</span>
+            </Link>
+            <Button className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+              <Link href={"/contact"}>
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative"> Contact Us</span>
+              </Link>
             </Button>
           </div>
         </div>
@@ -359,17 +356,21 @@ export function Header() {
             <div className="flex justify-between items-center mb-6">
               <Image src={BMIC_LOGO} alt="Logo" width={50} height={50} />
               <button>
-                <X onClick={handleOpenMenu} className="h-6 w-6" />
+                <X
+                  onClick={() => {
+                    handleOpenMenu();
+                  }}
+                  className="h-6 w-6"
+                />
               </button>
             </div>
 
             {/* Home button */}
-            <button
-              onClick={() => router.push("/home")}
-              className="hover:text-primary font-medium text-lg transition-colors relative py-5 rounded-md hover:bg-primary/5"
-            >
-              Home
-            </button>
+            <Link href="/" onClick={() => setOpen(false)}>
+              <button className="hover:text-primary font-medium text-lg transition-colors relative py-5 rounded-md hover:bg-primary/5">
+                Home
+              </button>
+            </Link>
 
             {/* Solutions */}
             <Accordion
@@ -383,10 +384,10 @@ export function Header() {
                 </AccordionTrigger>
                 <AccordionContent className="mt-2 space-y-4">
                   {solutions.map((title, i) => (
-                    <div
+                    <Link
+                      href={title.navigate}
                       key={i}
                       onClick={() => {
-                        title.navigate?.();
                         setOpen(false);
                       }}
                       className="flex  items-start gap-3.5  max-w-[343px] pb-4"
@@ -395,17 +396,14 @@ export function Header() {
                         <ShieldCheck className="h-5 w-5 text-primary" />
                       </div>
                       <div className=" space-y-2">
-                        <button
-                          onClick={title.navigate}
-                          className="flex gap-2  text-start text-[17.5px] w-full font-medium"
-                        >
+                        <button className="flex gap-2  text-start text-[17.5px] w-full font-medium">
                           {title.title} <span>→</span>
                         </button>
                         <p className="text-[12.5px] text-gray-500">
                           Lorem ipsum Lorem ipsum Lorem ipsum
                         </p>
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </AccordionContent>
               </AccordionItem>
@@ -420,10 +418,10 @@ export function Header() {
                   </AccordionTrigger>
                   <AccordionContent className="mt-2 space-y-4">
                     {industries.map((title, i) => (
-                      <div
+                      <Link
+                        href={title.navigate}
                         key={i}
                         onClick={() => {
-                          title.navigate?.();
                           setOpen(false);
                         }}
                         className="flex  items-start gap-3.5  max-w-[343px] pb-4"
@@ -439,7 +437,7 @@ export function Header() {
                             Lorem ipsum Lorem ipsum Lorem ipsum
                           </p>
                         </div>
-                      </div>
+                      </Link>
                     ))}
                   </AccordionContent>
                 </AccordionItem>
@@ -448,39 +446,39 @@ export function Header() {
 
             {/* Other Links */}
             <div className="border-t border-[#0000001A] ">
-              <button
+              <Link
+                href={"/projects"}
                 onClick={() => {
-                  router.push("/projects");
                   setOpen(false);
                 }}
                 className="block w-full font-medium text-lg py-5 text-left"
               >
                 Gallery
-              </button>
+              </Link>
             </div>
 
             <div className="border-t border-[#0000001A] ">
-              <button
+              <Link
+                href={"/blog"}
                 onClick={() => {
-                  router.push("/blog");
                   setOpen(false);
                 }}
                 className="block w-full font-medium text-lg py-5 text-left"
               >
                 Blog
-              </button>
+              </Link>
             </div>
 
             <div className="border-t border-[#0000001A] ">
-              <button
+              <Link
+                href={"/about"}
                 onClick={() => {
-                  router.push("/about");
                   setOpen(false);
                 }}
                 className="block w-full font-medium text-lg py-5 text-left"
               >
                 About us
-              </button>
+              </Link>
             </div>
           </div>
         </div>

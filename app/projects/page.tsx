@@ -17,7 +17,7 @@ type ProjectType = "all" | "insulation" | "cold-storage" | "ducting";
 
 export default function ProjectsPage() {
   const router = useRouter();
-  const onBackToHome = () => router.push("/home");
+  const onBackToHome = () => router.push('/');
   const [activeFilter, setActiveFilter] = useState<ProjectType>("all");
 
   const projects = [

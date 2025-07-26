@@ -20,7 +20,7 @@ import { useRouter } from "next/navigation";
 
 export default function AboutPage() {
   const router = useRouter();
-  const onBackToHome = () => router.push("/home");
+  const onBackToHome = () => router.push("/");
   const teamMembers = [
     {
       name: "Dr. Rajesh Kumar",

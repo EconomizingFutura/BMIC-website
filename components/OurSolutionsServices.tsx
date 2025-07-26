@@ -6,50 +6,67 @@ import {
   SoundProof,
 } from "@/components/figma/images/index";
 import Image from "next/image";
-const certifications = [
-  {
-    icon: Shield,
-    title: "Insulation",
-    subtitle: "Quality Management",
-    description:
-      "Certified quality management system ensuring consistent delivery of products and services.",
-    validUntil: "2025",
-    color: "bg-blue-500",
-    image: automobile,
-  },
-  {
-    icon: Shield,
-    title: "Cold Storage",
-    subtitle: "Environmental Management",
-    description:
-      "Environmental management system certification demonstrating our commitment to sustainability.",
-    validUntil: "2025",
-    color: "bg-green-500",
-    image: ColdStorage,
-  },
-  {
-    icon: Shield,
-    title: "HVAC / Ducting",
-    subtitle: "Occupational Health & Safety",
-    description:
-      "Workplace safety management system ensuring the health and safety of all personnel.",
-    validUntil: "2025",
-    color: "bg-red-500",
-    image: DUCT,
-  },
-  {
-    icon: Award,
-    title: "Soundproofing",
-    subtitle: "Oil & Gas Quality",
-    description:
-      "American Petroleum Institute quality management system for oil and gas industry.",
-    validUntil: "2024",
-    color: "bg-purple-500",
-    image: SoundProof,
-  },
-];
 
-export function OurSolutionsServices() {
+interface OurSolutionsServicesProps {
+  onNavigateToInsulation: () => void;
+  onNavigateToColdStorage: () => void;
+  onNavigateToDucting: () => void;
+  onNavigateToSound: () => void;
+}
+
+export function OurSolutionsServices({
+  onNavigateToInsulation,
+  onNavigateToColdStorage,
+  onNavigateToDucting,
+  onNavigateToSound,
+}: OurSolutionsServicesProps) {
+  const certifications = [
+    {
+      icon: Shield,
+      title: "Insulation",
+      subtitle: "Quality Management",
+      description:
+        "Certified quality management system ensuring consistent delivery of products and services.",
+      validUntil: "2025",
+      color: "bg-blue-500",
+      image: automobile,
+      navigate: onNavigateToInsulation,
+    },
+    {
+      icon: Shield,
+      title: "Cold Storage",
+      subtitle: "Environmental Management",
+      description:
+        "Environmental management system certification demonstrating our commitment to sustainability.",
+      validUntil: "2025",
+      color: "bg-green-500",
+      image: ColdStorage,
+      navigate: onNavigateToColdStorage,
+    },
+    {
+      icon: Shield,
+      title: "HVAC / Ducting",
+      subtitle: "Occupational Health & Safety",
+      description:
+        "Workplace safety management system ensuring the health and safety of all personnel.",
+      validUntil: "2025",
+      color: "bg-red-500",
+      image: DUCT,
+      navigate: onNavigateToDucting,
+    },
+    {
+      icon: Award,
+      title: "Soundproofing",
+      subtitle: "Oil & Gas Quality",
+      description:
+        "American Petroleum Institute quality management system for oil and gas industry.",
+      validUntil: "2024",
+      color: "bg-purple-500",
+      image: SoundProof,
+      navigate: onNavigateToSound,
+    },
+  ];
+
   return (
     <section className="py-20 bg-[#F9FAFB]">
       <div className="container mx-auto px-4">
@@ -81,7 +98,10 @@ export function OurSolutionsServices() {
                 </div>
                 <div className="px-4 py-2">
                   <Settings size={20} color="#005919" />
-                  <div className="flex justify-between py-4 ">
+                  <div
+                    className="flex justify-between cursor-pointer py-4 "
+                    onClick={cert.navigate}
+                  >
                     <h3 className="text-lg font-medium  text-gray-900 ">
                       {cert.title}
                     </h3>

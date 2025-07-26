@@ -21,23 +21,24 @@ import Head from "next/head";
 import "../globals.css";
 import { CTASection } from "@/components/CTASection";
 
+type currentPageType =
+  | "home"
+  | "about"
+  | "services"
+  | "industry"
+  | "projects"
+  | "blog"
+  | "contact"
+  | "insulation"
+  | "coldstorage"
+  | "ducting"
+  | "soundproofing"
+  | "pharma"
+  | "food"
+  | "coldChain";
+
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<
-    | "home"
-    | "about"
-    | "services"
-    | "industry"
-    | "projects"
-    | "blog"
-    | "contact"
-    | "insulation"
-    | "coldstorage"
-    | "ducting"
-    | "soundproofing"
-    | "pharma"
-    | "food"
-    | "coldChain"
-  >("home");
+  const [currentPage, setCurrentPage] = useState<currentPageType>("home");
   const navigateToInsulation = () => {
     setCurrentPage("insulation");
     window.scrollTo(0, 0);
@@ -259,7 +260,7 @@ export default function App() {
       </Head>
       <div className="min-h-screen">
         <Header {...navObject} currentPage={currentPage} />
-        <HomePage />
+        <HomePage {...navObject} />
         <Footer {...navObject} onNavigateToBlog={navigateToBlog} />
       </div>
     </>

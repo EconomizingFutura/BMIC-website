@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/accordion";
 import { useState } from "react";
 
-interface HeaderProps {
+export interface HeaderProps {
   onNavigateToAbout: () => void;
   onNavigateToHome: () => void;
   onNavigateToServices: () => void;

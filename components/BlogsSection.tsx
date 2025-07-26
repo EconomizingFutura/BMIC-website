@@ -73,7 +73,11 @@ const projects = [
   },
 ];
 
-export function BlogsSection() {
+interface BlogsProps {
+  onNavigateToBlog: () => void;
+}
+
+export function BlogsSection({ onNavigateToBlog }: BlogsProps) {
   return (
     <section id="projects" className="py-20 bg-[#F9FAFB]">
       <div className="container mx-auto px-4">
@@ -133,7 +137,10 @@ export function BlogsSection() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+          <button
+            onClick={onNavigateToBlog}
+            className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+          >
             View All Blogs
           </button>
         </div>

@@ -72,7 +72,13 @@ const projects = [
   },
 ];
 
-export function ProjectsSection() {
+interface ProjectsSectionProps {
+  onNavigateToProjects: () => void;
+}
+
+export function ProjectsSection({
+  onNavigateToProjects,
+}: ProjectsSectionProps) {
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
@@ -144,7 +150,10 @@ export function ProjectsSection() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+          <button
+            onClick={onNavigateToProjects}
+            className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+          >
             View All Projects
           </button>
         </div>

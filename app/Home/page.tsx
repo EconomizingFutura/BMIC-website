@@ -8,15 +8,40 @@ import ClientLogo from "@/components/ClientLogo";
 import OurSolutionsServices from "@/components/OurSolutionsServices";
 import { BlogsSection } from "@/components/BlogsSection";
 
-export function HomePage() {
+type HeaderProps = {
+  onNavigateToPharma: () => void;
+  onNavigateToProjects: () => void;
+  onNavigateToContact: () => void;
+  onNavigateToInsulation: () => void;
+  onNavigateToColdStorage: () => void;
+  onNavigateToDucting: () => void;
+  onNavigateToSound: () => void;
+  onNavigateToFood: () => void;
+  onNavigateToColdChain: () => void;
+  onNavigateToBlog: () => void;
+};
+
+export function HomePage({
+  onNavigateToProjects,
+  onNavigateToInsulation,
+  onNavigateToColdStorage,
+  onNavigateToDucting,
+  onNavigateToSound,
+  onNavigateToBlog,
+}: HeaderProps) {
   return (
     <main>
       <HeroSection />
       <ClientLogo />
       <IndustriesSection />
-      <ProjectsSection />
-      <BlogsSection />
-      <OurSolutionsServices />
+      <ProjectsSection onNavigateToProjects={onNavigateToProjects} />
+      <BlogsSection onNavigateToBlog={onNavigateToBlog} />
+      <OurSolutionsServices
+        onNavigateToColdStorage={onNavigateToColdStorage}
+        onNavigateToDucting={onNavigateToDucting}
+        onNavigateToInsulation={onNavigateToInsulation}
+        onNavigateToSound={onNavigateToSound}
+      />
       <CertificationsSection />
       <TestimonialsSection />
       <CTASection />

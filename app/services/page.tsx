@@ -1,3 +1,4 @@
+"use client";
 import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
@@ -17,11 +18,11 @@ import {
 } from "lucide-react";
 import { servicebanner } from "../../components/figma/images/index";
 import { useMemo } from "react";
-interface ServicesPageProps {
-  onBackToHome: () => void;
-}
+import { useRouter } from "next/navigation";
 
-export function ServicesPage({ onBackToHome }: ServicesPageProps) {
+export default function ServicesPage() {
+  const router = useRouter();
+  const onBackToHome = () => router.push("/home");
   // const services = [
   //   {
   //     id: 1,

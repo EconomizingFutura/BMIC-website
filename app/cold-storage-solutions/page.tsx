@@ -1,3 +1,4 @@
+"use client";
 import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
@@ -16,13 +17,11 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { servicebanner } from "../../components/figma/images/index";
-interface ColdStorageSolutions {
-  onBackToHome: () => void;
-}
+import { useRouter } from "next/navigation";
 
-export function ColdStorageSolutionsPage({
-  onBackToHome,
-}: ColdStorageSolutions) {
+export default function ColdStorageSolutionsPage() {
+  const router = useRouter();
+  const onBackToHome = () => router.push("/home");
   // const services = [
   //   {
   //     id: 1,

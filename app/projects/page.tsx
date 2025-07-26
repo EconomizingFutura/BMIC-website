@@ -11,14 +11,13 @@ import {
   Building2,
 } from "lucide-react";
 import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
-
-interface ProjectsPageProps {
-  onBackToHome: () => void;
-}
+import { useRouter } from "next/navigation";
 
 type ProjectType = "all" | "insulation" | "cold-storage" | "ducting";
 
-export function ProjectsPage({ onBackToHome }: ProjectsPageProps) {
+export default function ProjectsPage() {
+  const router = useRouter();
+  const onBackToHome = () => router.push("/home");
   const [activeFilter, setActiveFilter] = useState<ProjectType>("all");
 
   const projects = [

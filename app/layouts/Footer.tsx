@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Button } from "../../components/ui/button";
 import {
@@ -17,6 +18,16 @@ import { useRouter } from "next/navigation";
 
 export const Footer: React.FC = () => {
   const router = useRouter();
+  const onNavigateToAbout = () => router.push("/about");
+  const onNavigateToPharma = () => router.push("/pharma");
+  const onNavigateToProjects = () => router.push("/projects");
+  const onNavigateToInsulation = () => router.push("/insulation");
+  const onNavigateToColdStorage = () => router.push("/cold-storage-solutions");
+  const onNavigateToDucting = () => router.push("/ducting-solutions");
+  const onNavigateToSound = () => router.push("/sound-proofing-solutions");
+  const onNavigateToFood = () => router.push("/food-beverage");
+  const onNavigateToColdChain = () => router.push("/cold-chain-logistics");
+  const onNavigateToBlog = () => router.push("/blog");
 
   return (
     <footer className="bg-gray-900 text-[#D1D5DC]">

@@ -6,10 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Filter, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
-
-interface BlogPageProps {
-  onBackToHome: () => void;
-}
+import { useRouter } from "next/navigation";
 
 type BlogCategory =
   | "all"
@@ -17,7 +14,9 @@ type BlogCategory =
   | "cold-storage"
   | "hvac-ducting";
 
-export function BlogPage({ onBackToHome }: BlogPageProps) {
+export default function BlogPage() {
+  const router = useRouter();
+  const onBackToHome = () => router.push("/home");
   const [activeFilter, setActiveFilter] = useState<BlogCategory>("all");
 
   const blogPosts = [

@@ -1,3 +1,4 @@
+"use client";
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
@@ -15,12 +16,11 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-interface AboutPageProps {
-  onBackToHome: () => void;
-}
-
-export function AboutPage({ onBackToHome }: AboutPageProps) {
+export default function AboutPage() {
+  const router = useRouter();
+  const onBackToHome = () => router.push("/home");
   const teamMembers = [
     {
       name: "Dr. Rajesh Kumar",

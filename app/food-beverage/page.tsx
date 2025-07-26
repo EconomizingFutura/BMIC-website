@@ -1,3 +1,4 @@
+"use client";
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
@@ -16,12 +17,11 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { servicebanner } from "@/components/figma/images";
+import { useRouter } from "next/navigation";
 
-interface FoodIndustryPageProps {
-  onBackToHome: () => void;
-}
-
-export function FoodIndustryPage({ onBackToHome }: FoodIndustryPageProps) {
+export default function FoodIndustryPage() {
+  const router = useRouter();
+  const onBackToHome = () => router.push("/home");
   const projects = [
     {
       title: "Advanced Manufacturing Plant",

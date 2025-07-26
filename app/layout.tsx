@@ -2,6 +2,8 @@ import "../globals.css";
 import WhatsAnimate from "@/components/WhatsAnimate";
 import { Header } from "./layouts/Header";
 import { Footer } from "./layouts/Footer";
+import { CTASection } from "@/components/CTASection";
+
 export const metadata = {
   title: "Bharath Modern Insulation Company",
   description:
@@ -20,6 +22,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <CTASection />
         <Footer />
         <WhatsAnimate />
       </body>

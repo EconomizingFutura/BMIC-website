@@ -1,3 +1,4 @@
+"use client";
 import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
@@ -16,13 +17,12 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { servicebanner } from "../../components/figma/images/index";
-interface SoundProofingPageProps {
-  onBackToHome: () => void;
-}
+import { useRouter } from "next/navigation";
 
-export function SoundProofingSolutionPage({
-  onBackToHome,
-}: SoundProofingPageProps) {
+export default function SoundProofingSolutionPage() {
+  const router = useRouter();
+  const onBackToHome = () => router.push("/home");
+
   // const services = [
   //   {
   //     id: 1,

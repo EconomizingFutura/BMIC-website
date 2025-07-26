@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "../../components/ui/button";
 import { Phone, Mail, Menu, ChevronDown, ShieldCheck, X } from "lucide-react";
@@ -15,65 +17,37 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
-export interface HeaderProps {
-  onNavigateToAbout: () => void;
-  onNavigateToHome: () => void;
-  onNavigateToServices: () => void;
-  onNavigateToPharma: () => void;
-  onNavigateToProjects: () => void;
-  onNavigateToBlog: () => void;
-  onNavigateToContact: () => void;
-  onNavigateToInsulation: () => void;
-  onNavigateToColdStorage?: () => void;
-  onNavigateToDucting: () => void;
-  onNavigateToSound: () => void;
-  onNavigateToFood: () => void;
-  onNavigateToColdChain: () => void;
-  currentPage: string;
-}
-
-export function Header({
-  onNavigateToAbout,
-  onNavigateToHome,
-  onNavigateToPharma,
-  onNavigateToProjects,
-  onNavigateToContact,
-  onNavigateToInsulation,
-  onNavigateToColdStorage,
-  onNavigateToDucting,
-  onNavigateToSound,
-  onNavigateToFood,
-  onNavigateToColdChain,
-  onNavigateToBlog,
-  currentPage,
-}: HeaderProps) {
+export function Header() {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleOpenMenu = () => {
     setOpen((pre) => !pre);
   };
 
+  const router = useRouter();
+
   const solutions = [
     {
       title: "Insulation Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: onNavigateToInsulation,
+      navigate: () => router.push("/insulation"),
     },
     {
       title: "Cold Storage Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: onNavigateToColdStorage,
+      navigate: () => router.push("/cold-storage-solutions"),
     },
     {
       title: "HVAC / Ducting Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: onNavigateToDucting,
+      navigate: () => router.push("/ducting-solutions"),
     },
     {
       title: "Soundproofing Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: onNavigateToSound,
+      navigate: () => router.push("/sound-proofing-solutions"),
     },
   ];
 
@@ -81,19 +55,41 @@ export function Header({
     {
       title: "Pharma",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: onNavigateToPharma,
+      navigate: () => router.push("/pharma"),
     },
     {
       title: "Food & Beverage",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: onNavigateToFood,
+      navigate: () => router.push("/food-beverage"),
     },
     {
       title: "Cold Chain Logistics",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: onNavigateToColdChain,
+      navigate: () => router.push("/cold-chain-logistics"),
     },
   ];
+
+  const pathname = usePathname();
+  const servicePages = [
+    "insulation",
+    "ducting-solutions",
+    "sound-proofing-solutions",
+    "cold-storage-solutions",
+  ];
+
+  const industryPages = ["pharma", "cold-chain-logistics", "food-beverage"];
+
+  let currentPage = "home";
+
+  if (pathname === "/home" || pathname === "/") {
+    currentPage = "home";
+  } else if (servicePages.includes(pathname.split("/")[1])) {
+    currentPage = "services";
+  } else if (industryPages.includes(pathname.split("/")[1])) {
+    currentPage = "industry";
+  } else {
+    currentPage = pathname.split("/")[1];
+  }
 
   return (
     <header className=" top-0 z-50 bg-white shadow-sm relative overflow-hidden ">
@@ -141,6 +137,7 @@ export function Header({
           <div className="flex items-center space-x-2 ml-auto md:ml-0   md:space-x-4">
             <div className="flex items-center space-x-1 md:space-x-2 hover:bg-white/10 md:px-2 py-1 rounded-md transition-colors">
               <Phone className="h-4 w-4" />
+              <p>{currentPage}</p>
               <span className="text-[13px] md:text-[14px]">
                 +1 (555) 123-4567
               </span>
@@ -176,7 +173,7 @@ export function Header({
       <nav className=" mx-auto  px-2 lg:px-24 sm:px-4 py-4 relative">
         <div className="flex justify-between items-center">
           <button
-            onClick={onNavigateToHome}
+            onClick={() => router.push("/home")}
             className="flex  items-center space-x-2 hover:opacity-80 transition-all duration-300 group relative"
           >
             {/* Enhanced logo with background effect */}
@@ -201,7 +198,7 @@ export function Header({
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300" />
 
             <a
-              onClick={() => onNavigateToHome()}
+              onClick={() => router.push("/home")}
               className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-0.5 justify-center cursor-default items-center hover:bg-primary/5 focus:outline-none ${
                 currentPage == "home"
                   ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
@@ -314,7 +311,7 @@ export function Header({
               </DropdownMenuContent>
             </DropdownMenu>
             <button
-              onClick={onNavigateToProjects}
+              onClick={() => router.push("/projects")}
               className={`hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md  ${
                 currentPage.trim() == "projects"
                   ? "bg-[#0059191A] !hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
@@ -325,7 +322,7 @@ export function Header({
             </button>
 
             <button
-              onClick={onNavigateToAbout}
+              onClick={() => router.push("/about")}
               className={`hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md whitespace-nowrap  ${
                 currentPage == "about"
                   ? "bg-[#0059191A] text-primary hover:bg-[#0059191A] py-[6px] px-[12px] rounded"
@@ -335,7 +332,7 @@ export function Header({
               About Us
             </button>
             <Button
-              onClick={onNavigateToContact}
+              onClick={() => router.push("/contact")}
               className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -368,7 +365,7 @@ export function Header({
 
             {/* Home button */}
             <button
-              onClick={onNavigateToHome}
+              onClick={() => router.push("/home")}
               className="hover:text-primary font-medium text-lg transition-colors relative py-5 rounded-md hover:bg-primary/5"
             >
               Home
@@ -453,7 +450,7 @@ export function Header({
             <div className="border-t border-[#0000001A] ">
               <button
                 onClick={() => {
-                  onNavigateToProjects();
+                  router.push("/projects");
                   setOpen(false);
                 }}
                 className="block w-full font-medium text-lg py-5 text-left"
@@ -465,7 +462,7 @@ export function Header({
             <div className="border-t border-[#0000001A] ">
               <button
                 onClick={() => {
-                  onNavigateToBlog();
+                  router.push("/blog");
                   setOpen(false);
                 }}
                 className="block w-full font-medium text-lg py-5 text-left"
@@ -477,7 +474,7 @@ export function Header({
             <div className="border-t border-[#0000001A] ">
               <button
                 onClick={() => {
-                  onNavigateToAbout();
+                  router.push("/about");
                   setOpen(false);
                 }}
                 className="block w-full font-medium text-lg py-5 text-left"

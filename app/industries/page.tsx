@@ -21,7 +21,9 @@ interface PharmaIndustryPageProps {
   onBackToHome: () => void;
 }
 
-export function PharmaIndustryPage({ onBackToHome }: PharmaIndustryPageProps) {
+export default function PharmaIndustryPage({
+  onBackToHome,
+}: PharmaIndustryPageProps) {
   const projects = [
     {
       title: "Advanced Manufacturing Plant",

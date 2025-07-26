@@ -1,3 +1,4 @@
+"use client";
 import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
@@ -16,13 +17,9 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { servicebanner } from "../../components/figma/images/index";
-interface InsulationServicesPageProps {
-  onBackToHome: () => void;
-}
+import { useRouter } from "next/navigation";
 
-export function InsulationServicePage({
-  onBackToHome,
-}: InsulationServicesPageProps) {
+export default function InsulationServicePage() {
   // const services = [
   //   {
   //     id: 1,
@@ -277,7 +274,7 @@ export function InsulationServicePage({
       features: ["50+ Countries", "Local Teams", "Remote Support"],
     },
   ];
-
+  const router = useRouter();
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -290,7 +287,7 @@ export function InsulationServicePage({
             <div className="space-y-8 max-w-[586px] w-full ">
               <Button
                 variant="outline"
-                onClick={onBackToHome}
+                onClick={() => router.push("/home")}
                 className="mb-8 !bg-white  shadow-lg border-primary/30"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />

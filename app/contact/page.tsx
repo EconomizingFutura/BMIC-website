@@ -16,10 +16,7 @@ import {
 } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
-
-interface ContactPageProps {
-  onBackToHome: () => void;
-}
+import { useRouter } from "next/navigation";
 
 interface ContactFormData {
   name: string;
@@ -67,7 +64,7 @@ const contactOptions = [
   },
 ];
 
-export function ContactPage({ onBackToHome }: ContactPageProps) {
+export default function ContactPage() {
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -127,6 +124,10 @@ export function ContactPage({ onBackToHome }: ContactPageProps) {
       // Call API or show toast
     }
   };
+
+  const router = useRouter();
+  const onBackToHome = () => router.push("/home");
+
   return (
     <div className="min-h-screen">
       <section className="relative bg-gradient-to-br from-20%  from-[#c9dcce]  via-[#c9dcce]  to-[#fffff] to-70% py-16 ">

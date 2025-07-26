@@ -1,3 +1,4 @@
+"use client";
 import { HeroSection } from "../../components/HeroSection";
 import { IndustriesSection } from "../../components/IndustriesSection";
 import { ProjectsSection } from "../../components/ProjectsSection";
@@ -7,28 +8,18 @@ import { CTASection } from "../../components/CTASection";
 import ClientLogo from "@/components/ClientLogo";
 import OurSolutionsServices from "@/components/OurSolutionsServices";
 import { BlogsSection } from "@/components/BlogsSection";
+import { useRouter } from "next/navigation";
 
-type HeaderProps = {
-  onNavigateToPharma: () => void;
-  onNavigateToProjects: () => void;
-  onNavigateToContact: () => void;
-  onNavigateToInsulation: () => void;
-  onNavigateToColdStorage: () => void;
-  onNavigateToDucting: () => void;
-  onNavigateToSound: () => void;
-  onNavigateToFood: () => void;
-  onNavigateToColdChain: () => void;
-  onNavigateToBlog: () => void;
-};
+export default function HomePage() {
+  const router = useRouter();
 
-export function HomePage({
-  onNavigateToProjects,
-  onNavigateToInsulation,
-  onNavigateToColdStorage,
-  onNavigateToDucting,
-  onNavigateToSound,
-  onNavigateToBlog,
-}: HeaderProps) {
+  const onNavigateToProjects = () => router.push("/projects");
+  const onNavigateToInsulation = () => router.push("/insulation");
+  const onNavigateToColdStorage = () => router.push("/cold-storage-solutions");
+  const onNavigateToDucting = () => router.push("/ducting-solutions");
+  const onNavigateToSound = () => router.push("/sound-proofing-solutions");
+  const onNavigateToBlog = () => router.push("/blog");
+
   return (
     <main>
       <HeroSection />

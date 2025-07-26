@@ -1,3 +1,4 @@
+"use client";
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
@@ -16,14 +17,9 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { servicebanner } from "@/components/figma/images";
+import { useRouter } from "next/navigation";
 
-interface ColdChainIndustriesPageProps {
-  onBackToHome: () => void;
-}
-
-export function ColdChainIndustriesPage({
-  onBackToHome,
-}: ColdChainIndustriesPageProps) {
+export default function ColdChainIndustriesPage() {
   const projects = [
     {
       title: "Advanced Manufacturing Plant",
@@ -194,6 +190,9 @@ export function ColdChainIndustriesPage({
       ],
     },
   ];
+
+  const router = useRouter();
+  const onBackToHome = () => router.push("/home");
 
   return (
     <div className="min-h-screen">

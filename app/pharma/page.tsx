@@ -15,6 +15,7 @@ import {
   Dot,
   Book,
   Clock,
+  ExternalLink,
 } from "lucide-react";
 import Image from "next/image";
 import { servicebanner } from "@/components/figma/images";
@@ -22,7 +23,7 @@ import { useRouter } from "next/navigation";
 
 export default function PharmaIndustryPage() {
   const router = useRouter();
-  const onBackToHome = () => router.push('/');
+  const onBackToHome = () => router.push("/");
   const projects = [
     {
       title: "Advanced Manufacturing Plant",
@@ -245,9 +246,11 @@ export default function PharmaIndustryPage() {
               <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
                 <Button
                   size="lg"
-                  className="bg-[#00A63E] border border-[#00A63E] hover:bg-primary/90 text-white flex items-center justify-center"
+                  className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
                 >
-                  WhatsApp Us <MoveRight className="ml-2 h-5 w-5" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="relative"> WhatsApp Us</span>{" "}
+                  <MoveRight className="ml-2 h-5 relative w-5" />
                 </Button>
               </div>
             </div>
@@ -605,27 +608,32 @@ export default function PharmaIndustryPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2   lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.slice(0, 3).map((project, index) => (
               <Card
                 key={index}
-                className="group shadow-lg border border-[#0000001A] transition-all duration-300 overflow-hidden bg-[#FFFFFF]"
+                className="group hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     fill
                   />
+
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-primary text-white">
                       {project.category}
                     </Badge>
                   </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ExternalLink className="h-6 w-6 text-white" />
+                  </div>
                 </div>
 
-                <CardContent className="p-6">
+                <CardContent className="px-6">
                   <div className="space-y-3">
                     <h3 className="text-xl text-gray-900 font-semibold group-hover:text-primary transition-colors">
                       {project.title}

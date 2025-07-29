@@ -253,8 +253,12 @@ export const Footer: React.FC = () => {
                 placeholder="Your Email"
               />
             </div>
-            <Button className="bg-primary hover:bg-primary/90 w-full">
-              Subscribe
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative w-full overflow-hidden group hover:text-white"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative">Subscribe</span>
             </Button>
             <h4 className="text-lg text-white">Powered by</h4>
             <Image

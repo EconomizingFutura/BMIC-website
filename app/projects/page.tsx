@@ -17,7 +17,7 @@ type ProjectType = "all" | "insulation" | "cold-storage" | "ducting";
 
 export default function ProjectsPage() {
   const router = useRouter();
-  const onBackToHome = () => router.push('/');
+  const onBackToHome = () => router.push("/");
   const [activeFilter, setActiveFilter] = useState<ProjectType>("all");
 
   const projects = [
@@ -58,7 +58,7 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-[#caddd0]  bg-gradient-to-br from-primary/60 from-primary/5 via-white to-white py-20">
+      <section className="relative bg-gradient-to-br from-20%  from-[#d0e0d4]  via-[#c9dcce]/90  to-[#fffff] to-70% py-16 ">
         <div className="container mx-auto px-4 relative">
           <Button
             variant="outline"
@@ -148,7 +148,7 @@ export default function ProjectsPage() {
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
@@ -156,7 +156,7 @@ export default function ProjectsPage() {
                     <p className="text-white/90 text-sm">{project.location}</p>
                   </div>
                 </div>
-                <CardContent className="p-6">
+                <CardContent className="px-6 py-1">
                   <p className="text-gray-600 mb-4">Client: {project.client}</p>
                   <Button className="w-full bg-primary hover:bg-primary/90">
                     View Details

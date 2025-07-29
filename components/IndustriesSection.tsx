@@ -65,16 +65,16 @@ export function IndustriesSection() {
           {industries.map((industry, index) => (
             <Card
               key={index}
-              className="group  border-[#0000001A]  overflow-hidden"
+              className="group hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
                   src={industry.image}
                   alt={industry.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   fill
                 />
-                <div className="absolute inset-0 bg-primary/80 " />
+                <div className="absolute inset-0 bg-primary/80 group-hover:bg-primary/70 transition-colors duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
                     <industry.icon className="h-12 w-12 mx-auto mb-3" />
@@ -82,12 +82,12 @@ export function IndustriesSection() {
                   </div>
                 </div>
               </div>
-              <CardContent className="p-6">
+              <CardContent>
                 <p className="text-gray-600 text-center">
                   {industry.description}
                 </p>
                 <div className="mt-4 text-center">
-                  <button className="text-primary font-semibold hover:text-primary/80 transition-colors">
+                  <button className="text-primary hover:text-primary/80 transition-colors">
                     Learn More →
                   </button>
                 </div>

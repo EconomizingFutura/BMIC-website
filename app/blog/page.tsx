@@ -16,7 +16,7 @@ type BlogCategory =
 
 export default function BlogPage() {
   const router = useRouter();
-  const onBackToHome = () => router.push('/');
+  const onBackToHome = () => router.push("/");
   const [activeFilter, setActiveFilter] = useState<BlogCategory>("all");
 
   const blogPosts = [
@@ -58,6 +58,17 @@ export default function BlogPage() {
     },
   ];
 
+  const categoryCounts: Record<BlogCategory, number> = {
+    all: blogPosts.length,
+    "thermal-insulation": blogPosts.filter(
+      (p) => p.category === "thermal-insulation"
+    ).length,
+    "cold-storage": blogPosts.filter((p) => p.category === "cold-storage")
+      .length,
+    "hvac-ducting": blogPosts.filter((p) => p.category === "hvac-ducting")
+      .length,
+  };
+
   const filteredPosts =
     activeFilter === "all"
       ? blogPosts
@@ -66,7 +77,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-20%  from-[#c9dcce]  via-[#c9dcce]  to-[#fffff] to-70% py-16 ">
+      <section className="relative bg-gradient-to-br from-20%  from-[#d0e0d4]  via-[#c9dcce]/90  to-[#fffff] to-70% py-16 ">
         <div className="container mx-auto px-4 relative">
           <Button
             variant="outline"
@@ -99,7 +110,7 @@ export default function BlogPage() {
               <span className="text-sm text-gray-600">Filter by Category:</span>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-2.5">
               {[
                 { value: "all", label: "All Articles" },
                 { value: "thermal-insulation", label: "Thermal Insulation" },
@@ -114,11 +125,20 @@ export default function BlogPage() {
                   onClick={() => setActiveFilter(option.value as BlogCategory)}
                   className={
                     activeFilter === option.value
-                      ? "!bg-primary text-white !border-primary/30 !border"
-                      : "!border-primary/30 !border text-primary"
+                      ? "!bg-primary text-white !px-2 !border-primary/30 !border"
+                      : "!border-primary/30 !border !px-2 text-primary"
                   }
                 >
-                  {option.label}
+                  {option.label}{" "}
+                  <span
+                    className={`text-[#030213] py-[2.75px] px-2.5 ${
+                      activeFilter === option.value
+                        ? "bg-[#337A47]"
+                        : "bg-transparent"
+                    } rounded-[6.75px]`}
+                  >
+                    {categoryCounts[option.value as BlogCategory]}
+                  </span>
                 </Button>
               ))}
             </div>
@@ -139,7 +159,7 @@ export default function BlogPage() {
                   <ImageWithFallback
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute top-4 right-4">
                     <Badge className="bg-[#DBEAFE] border-[#BEDBFF] border rounded-[6.75px] text-[#1447E6] ">
@@ -149,7 +169,7 @@ export default function BlogPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
 
-                <CardContent className="p-6">
+                <CardContent className="px-6">
                   <h3 className="text-lg text-[#101828] font-semibold mb-3 line-clamp-2">
                     {post.title}
                   </h3>

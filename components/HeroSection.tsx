@@ -44,10 +44,11 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-white"
+                className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
               >
-                Get a Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative"> Get a Quote</span>
+                <ArrowRight className="ml-2 h-5 relative w-5" />
               </Button>
               <Button
                 size="lg"

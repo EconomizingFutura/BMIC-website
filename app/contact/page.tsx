@@ -126,7 +126,7 @@ export default function ContactPage() {
   };
 
   const router = useRouter();
-  const onBackToHome = () => router.push('/');
+  const onBackToHome = () => router.push("/");
 
   return (
     <div className="min-h-screen">
@@ -376,15 +376,17 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-[1fr_0.6fr] gap-[10px]">
                       <Button
-                        type="submit"
-                        className="w-full bg-primary hover:bg-primary/90"
+                        size="lg"
+                        className="bg-primary !hover:bg-green-700 font-medium shadow-lg !hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
                       >
-                        <Send className="h-4 w-4 mr-2" />
-                        Send Message
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <Send className="h-4 w-4 relative mr-2" />
+
+                        <span className="relative"> Send Message</span>
                       </Button>
-                      <Button className="w-full text-primary border border-primary bg-white">
+                      <Button className="w-full text-primary border border-primary !hover:text-white">
                         <Phone className="h-4 w-4 mr-2" />
-                        Request Call Back
+                        <span className="relative">Request Call Back</span>
                       </Button>
                     </div>
                   </form>

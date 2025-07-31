@@ -7,7 +7,7 @@ import { CTASection } from "@/components/CTASection";
 export const metadata = {
   title: "Bharath Modern Insulation Company",
   description:
-    "Economizing Futura delivers innovative digital solutions, transforming ideas into powerful software for startups and businesses worldwide.",
+    "EMIC delivers specialized solutions in thermal insulation and ducting systems, tailored to meet the demands of modern industrial and commercial infrastructures. With over three decades of experience, our services are designed to improve energy efficiency, temperature control, and acoustic comfort across facilities.",
   icons: {
     icon: "/favicon.svg",
   },

@@ -4,7 +4,6 @@ import { IndustriesSection } from "../../components/IndustriesSection";
 import { ProjectsSection } from "../../components/ProjectsSection";
 import { CertificationsSection } from "../../components/CertificationsSection";
 import { TestimonialsSection } from "../../components/TestimonialsSection";
-import { CTASection } from "../../components/CTASection";
 import ClientLogo from "@/components/ClientLogo";
 import OurSolutionsServices from "@/components/OurSolutionsServices";
 import { BlogsSection } from "@/components/BlogsSection";
@@ -35,7 +34,6 @@ export default function HomePage() {
       />
       <CertificationsSection />
       <TestimonialsSection />
-      <CTASection />
     </main>
   );
 }

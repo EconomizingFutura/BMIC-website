@@ -1,50 +1,55 @@
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
-import { Factory, Zap, Building2, Truck, Wrench, Shield } from "lucide-react";
+import { Factory, Zap, Building2, Truck, Wrench } from "lucide-react";
 
 const industries = [
   {
     icon: Factory,
-    title: "Manufacturing",
-    description: "Advanced manufacturing solutions and process optimization",
+    title: "Food & FMCG",
+    description:
+      "Hygienic and energy-efficient systems for food processing units and FMCG manufacturing facilities.",
     image:
       "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
   },
   {
     icon: Zap,
-    title: "Energy & Power",
-    description: "Renewable energy systems and power infrastructure",
+    title: "Commercial & Real Estate",
+    description:
+      "Reliable thermal and acoustic solutions for corporate offices, malls, and high-rise buildings",
     image:
       "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
   },
   {
     icon: Building2,
-    title: "Construction",
-    description: "Building materials and construction engineering",
+    title: "Engineering & Infrastructure",
+    description:
+      "Heavy-duty insulation and ventilation support for engineering plants and infrastructure projects.",
     image:
       "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
   },
   {
     icon: Truck,
-    title: "Transportation",
-    description: "Logistics and transportation infrastructure solutions",
+    title: "Pharma & Healthcare",
+    description:
+      "Logistics and transportation infrastructure solutionsTemperature-controlled and contamination-safe solutions for pharma labs and cleanrooms.",
     image:
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
   },
   {
     icon: Wrench,
-    title: "Oil & Gas",
-    description: "Petroleum industry equipment and services",
-    image:
-      "https://images.unsplash.com/photo-1625180726018-580b17371d52?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    icon: Shield,
-    title: "Defense",
-    description: "Military and defense technology solutions",
+    title: "Agro & Chemicals",
+    description:
+      "Protective insulation and ducting for agro industries, chemical plants, and fertilizer units.",
     image:
       "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
   },
+  // {
+  //   icon: Shield,
+  //   title: "Defense",
+  //   description: "Military and defense technology solutions",
+  //   image:
+  //     "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+  // },
 ];
 
 export function IndustriesSection() {
@@ -61,7 +66,7 @@ export function IndustriesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2  lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 wrap-anywhere  lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => (
             <Card
               key={index}

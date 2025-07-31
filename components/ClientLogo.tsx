@@ -1,7 +1,40 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { clientLogos as logos } from "./TestimonialsSection";
+
+import {
+  spic,
+  sivalaya,
+  ramraj,
+  proventus,
+  pertifi,
+  lotte,
+  infosys,
+  fourrts_logo,
+  foreach,
+  dlf,
+  akshaya,
+  britannina,
+  // bro,
+  adithyabrila,
+} from "@/components/figma/logos/index";
+
+const allLogos = [
+  // { name: "Boldrocchi", logo: bro },
+  { name: "SPIC", logo: spic },
+  { name: "Sivalaya", logo: sivalaya },
+  { name: "Ramraj", logo: ramraj },
+  { name: "Proventus", logo: proventus },
+  { name: "Pertifi", logo: pertifi },
+  { name: "Lotte", logo: lotte },
+  { name: "Infosys", logo: infosys },
+  { name: "Fourrts", logo: fourrts_logo },
+  { name: "Foreach", logo: foreach },
+  { name: "DLF", logo: dlf },
+  { name: "Akshaya", logo: akshaya },
+  { name: "Britannina", logo: britannina },
+  { name: "Adithya Birla", logo: adithyabrila },
+];
 
 const ClientLogo = () => {
   return (
@@ -15,32 +48,17 @@ const ClientLogo = () => {
 
         <div className="relative">
           <div className="flex animate-scroll">
-            {logos.map((logo) => (
+            {[...allLogos, ...allLogos, ...allLogos].map((logo, index) => (
               <div
-                key={`first-${logo.name}`}
+                key={`${logo.name}-${index}`}
                 className="flex-shrink-0 mx-4 bg-white rounded-lg shadow-md px-6 min-w-[200px] flex items-center gap-3 justify-center max-h-20"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                  alt={logo.name}
-                  width={24}
-                  height={10}
-                  className="object-cover rounded-full"
-                />
-                <h1>{logo.name}</h1>
-              </div>
-            ))}
-            {logos.map((logo) => (
-              <div
-                key={`second-${logo.name}`}
-                className="flex-shrink-0 mx-4 bg-white rounded-lg shadow-md p-6 min-w-[200px] flex items-center justify-center"
-              >
-                <Image
-                  src={logo.logo || "/placeholder.svg"}
+                  src={logo.logo}
                   alt={logo.name}
                   width={120}
                   height={60}
-                  className="max-w-full h-auto object-contain"
+                  className="object-contain max-h-[60px] "
                 />
               </div>
             ))}
@@ -60,7 +78,9 @@ const ClientLogo = () => {
 
         .animate-scroll {
           animation: scroll 80s linear infinite;
-          width: calc(200px * ${logos.length} * 2 + 32px * ${logos.length} * 2);
+          width: calc(
+            200px * ${allLogos.length} * 2 + 32px * ${allLogos.length} * 2
+          );
         }
 
         .animate-scroll:hover {

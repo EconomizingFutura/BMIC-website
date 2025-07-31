@@ -5,10 +5,10 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "Advanced Manufacturing Plant",
-    client: "TechCorp Industries",
-    category: "Manufacturing",
-    location: "Detroit, MI",
+    title: "Insulation for FMCG Production Facility",
+    client: "Perfetti Van Melle",
+    category: "Insulation",
+    location: "Urapakkam, Karanaipuducheri, Tamil Nadu 603210",
     year: "2024",
     image:
       "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -87,8 +87,9 @@ export function ProjectsSection({
             Featured <span className="text-primary">Projects</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore our portfolio of successful projects across various
-            industries, showcasing our expertise and commitment to excellence.
+            Explore our portfolio of successful insulation, ducting, and
+            soundproofing projects across diverse industries — showcasing our
+            quality, precision, and commitment to client success.
           </p>
         </div>
 
@@ -134,9 +135,9 @@ export function ProjectsSection({
                     </div>
 
                     <div className="flex items-center space-x-4">
-                      <div className="flex items-center space-x-1">
-                        <MapPin className="h-4 w-4 text-primary" />
-                        <span>{project.location}</span>
+                      <div className="flex space-x-1">
+                        <MapPin className="h-4 mt-0.5 w-4 text-primary" />
+                        <span className="max-w-64">{project.location}</span>
                       </div>
                       <div className="flex items-center space-x-1">
                         <Calendar className="h-4 w-4 text-primary" />

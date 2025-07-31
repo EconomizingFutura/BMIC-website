@@ -20,18 +20,22 @@ export function HeroSection() {
                 <br /> for Your Business Needs
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed">
-                We deliver innovative engineering solutions, manufacturing
-                excellence, and comprehensive services to help your business
-                thrive in today&lsquo;s competitive market.
+                we deliver specialized solutions in thermal insulation and
+                ducting systems, tailored to meet the demands of modern
+                industrial and commercial infrastructures. With over three
+                decades of experience, our services are designed to improve
+                energy efficiency, temperature control, and acoustic comfort
+                across facilities.
               </p>
             </div>
 
             {/* Key benefits */}
             <div className="space-y-3">
               {[
-                "ISO 9001:2015 Certified Quality",
+                "ISO 9001:2015 Certified",
+                "30+ Years of Technical Expertise",
+                "End-to-End Project Execution",
                 "24/7 Customer Support",
-                "30+ Years of Experience",
               ].map((benefit, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
@@ -64,15 +68,21 @@ export function HeroSection() {
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
               <div className="text-center">
                 <div className="text-2xl text-primary">500+</div>
-                <div className="text-sm text-gray-600">Projects Completed</div>
+                <div className="text-sm text-gray-600">
+                  Projects Delivered <br /> Successfully
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl text-primary">98%</div>
-                <div className="text-sm text-gray-600">Client Satisfaction</div>
+                <div className="text-sm text-gray-600">
+                  Client Satisfaction & Repeat Business
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl text-primary">30+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
+                <div className="text-sm text-gray-600">
+                  Years of Industry <br /> Experience
+                </div>
               </div>
             </div>
           </div>

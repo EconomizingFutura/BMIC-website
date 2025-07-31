@@ -49,10 +49,10 @@ export const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Leading provider of innovative engineering solutions,
-              manufacturing excellence, and comprehensive services for over 30
-              years. We help businesses thrive through cutting- edge technology
-              and expert consultation.
+              Leading provider of specialized insulation, ducting, and
+              energy-efficient solutions for over 30 years. We empower
+              industries through precision engineering, expert consultation, and
+              end-to-end execution.
             </p>
             <div className="space-y-4">
               <div className="space-y-3 text-sm">
@@ -60,17 +60,17 @@ export const Footer: React.FC = () => {
                   <MapPin className="h-4 w-4 text-[#B9F8CF] mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-300 font-normal text-sm leading-6">
-                      123 Industrial Park, Sector 15
+                      No 165, 8th Street, Sri Valli Nagar, Nandivaram,
                     </p>
                     <p className="text-gray-300 font-normal text-sm leading-6">
-                      Gurgaon, Haryana 122001
+                      Guduvancheri, Chennai - 603202
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 text-[#B9F8CF]" />
                   <p className="text-gray-300 font-normal text-sm leading-6">
-                    +91 9876543210
+                    +91 9566122235 +91 7871608088
                   </p>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -128,20 +128,21 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  onClick={onNavigateToColdStorage}
-                  className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
-                >
-                  Cold Storage
-                </a>
-              </li>
-              <li>
-                <a
                   onClick={onNavigateToDucting}
                   className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                 >
                   HVAC / Ducting
                 </a>
               </li>
+              <li>
+                <a
+                  onClick={onNavigateToColdStorage}
+                  className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
+                >
+                  Cold Storage
+                </a>
+              </li>
+
               <li>
                 <a
                   onClick={onNavigateToSound}

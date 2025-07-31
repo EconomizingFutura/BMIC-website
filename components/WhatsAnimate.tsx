@@ -7,7 +7,7 @@ const WhatsAnimate = () => {
   return (
     <div className="fixed bottom-10 right-10 z-50">
       <a
-        href="https://wa.me/1234567890"
+        href="https://wa.me/9566122235"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-[#25B43C] hover:bg-[#25B43C] text-white  rounded-full shadow-lg transition-all duration-300 flex items-center justify-center"

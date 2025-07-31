@@ -1,3 +1,5 @@
+"use client";
+import { sendEmail } from "@/utils/utils";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Phone, Mail, MessageCircle } from "lucide-react";
@@ -27,8 +29,11 @@ export function CTASection() {
                 Quick response guaranteed
               </p>
               <Button
+                onClick={() => {
+                  window.open("https://wa.me/9566122235", "_blank");
+                }}
                 size="sm"
-                className="bg-green-600 hover:bg-green-600 w-full"
+                className="bg-white text-primary hover:text-white hover:bg-green-600 w-full"
               >
                 Chat Now
               </Button>
@@ -41,11 +46,13 @@ export function CTASection() {
               <h4 className="mb-2">Call Us</h4>
               <p className="text-sm text-white/80 mb-4">Speak to an expert</p>
               <Button
+                // onClick={() => {
+                //   window.open("https://wa.me/9566122235", "_blank");
+                // }}
                 size="sm"
-                variant="outline"
-                className="border-white hover:text-white text-white w-full"
+                className="bg-white text-primary hover:text-white hover:bg-green-600 w-full"
               >
-                +1 (555) 123-4567
+                +91 9566122235
               </Button>
             </CardContent>
           </Card>
@@ -56,9 +63,9 @@ export function CTASection() {
               <h4 className="mb-2">Email Us</h4>
               <p className="text-sm text-white/80 mb-4">Detailed inquiry</p>
               <Button
+                onClick={sendEmail}
                 size="sm"
-                variant="outline"
-                className="border-white hover:text-white text-white w-full"
+                className="bg-white text-primary hover:text-white hover:bg-green-600 w-full"
               >
                 Send Email
               </Button>

@@ -34,15 +34,16 @@ export function Header() {
       navigate: "/insulation",
     },
     {
-      title: "Cold Storage Solutions",
-      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: "/cold-storage-solutions",
-    },
-    {
       title: "HVAC / Ducting Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
       navigate: "/ducting-solutions",
     },
+    {
+      title: "Cold Storage Solutions",
+      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      navigate: "/cold-storage-solutions",
+    },
+
     {
       title: "Soundproofing Solutions",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",

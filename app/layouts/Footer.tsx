@@ -98,7 +98,10 @@ export const Footer: React.FC = () => {
             <div className="space-y-4  ">
               <h4 className="text-lg text-white">Follow Us</h4>
               <div className=" flex gap-4 text-sm">
-                <a className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2 rounded-md">
+                <a
+                  href="https://www.facebook.com/share/16uFhojkdY/?mibextid=wwXIfr"
+                  className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2 rounded-md"
+                >
                   <Facebook className="h-[14px] w-[14px]" />
                 </a>
                 <a className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2  rounded-md">
@@ -107,7 +110,10 @@ export const Footer: React.FC = () => {
                 <a className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2 rounded-md">
                   <Linkedin className="h-[14px] w-[14px]" />
                 </a>
-                <a className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2 rounded-md">
+                <a
+                  href="https://www.instagram.com/bharathmoderninsulationcompany?igsh=MXA1ODNzeml5c2drNQ%3D%3D&utm_source=qr"
+                  className="text-gray-400 h-8 w-8 flex justify-center items-center border-[#4A5565] border-2 rounded-md"
+                >
                   <Instagram className="h-[14px] w-[14px] " />
                 </a>
               </div>

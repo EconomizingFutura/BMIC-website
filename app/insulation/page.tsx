@@ -211,37 +211,37 @@ export default function InsulationServicePage() {
 
   const downloadDoc = [
     {
-      title: "Technical Data Sheet",
-      description: "Complete technical specifications and performance data",
+      title: "Various safety documents",
+      description: "Guidelines, records ensuring workplace safety compliance.",
       type: "PDF",
       size: "2.4 MB",
       button: "Download",
       icon: <FileText className="h-8 w-8 text-primary" />,
     },
     {
-      title: "Installation Manual",
-      description: "Step-by-step installation and setup guidelines",
+      title: "Tech data sheet",
+      description: "Detailed specifications for product technical performance",
       type: "PDF",
       size: "5.1 MB",
       button: "Download",
       icon: <Wrench className="h-8 w-8 text-primary" />,
     },
-    {
-      title: "Safety Certificates",
-      description: "ISO certifications and compliance documentation",
-      type: "PDF",
-      size: "1.8 MB",
-      button: "Download",
-      icon: <Shield className="h-8 w-8 text-primary" />,
-    },
-    {
-      title: "CAD Drawings",
-      description: "Detailed engineering drawings and 3D models",
-      type: "DWG",
-      size: "12.3 MB",
-      icon: <Settings className="h-8 w-8 text-primary" />,
-      button: "Download",
-    },
+    // {
+    //   title: "Safety Certificates",
+    //   description: "ISO certifications and compliance documentation",
+    //   type: "PDF",
+    //   size: "1.8 MB",
+    //   button: "Download",
+    //   icon: <Shield className="h-8 w-8 text-primary" />,
+    // },
+    // {
+    //   title: "CAD Drawings",
+    //   description: "Detailed engineering drawings and 3D models",
+    //   type: "DWG",
+    //   size: "12.3 MB",
+    //   icon: <Settings className="h-8 w-8 text-primary" />,
+    //   button: "Download",
+    // },
   ];
 
   const keyFeatures = [
@@ -254,13 +254,15 @@ export default function InsulationServicePage() {
     {
       icon: <Shield />,
       title: "Safety & Compliance",
-      description: "ISO certified with comprehensive safety protocols",
+      description:
+        " ISO 9001:2015 certified, OSHA compliant, and CE marked for your peace of mind",
       features: ["ISO 9001:2015", "OSHA Compliant", "CE Marked"],
     },
     {
       icon: <Settings />,
       title: "Advanced Technology",
-      description: "Cutting-edge automation and control systems",
+      description:
+        "IoT integration, real-time monitoring, and predictive maintenance for smarter",
       features: [
         "IoT Integration",
         "Real-time Monitoring",
@@ -270,7 +272,8 @@ export default function InsulationServicePage() {
     {
       icon: <Globe />,
       title: "Global Support",
-      description: "Worldwide service network with local expertise",
+      description:
+        "Serving 5+ countries with local teams and remote assistance whenever you need.",
       features: ["50+ Countries", "Local Teams", "Remote Support"],
     },
   ];
@@ -303,10 +306,14 @@ export default function InsulationServicePage() {
                   System
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">
-                  State-of-the-art industrial equipment designed for maximum
-                  efficiency, reliability, and performance. Our solutions
-                  integrate seamlessly into your existing operations while
-                  delivering measurable improvements.
+                  Tailored insulation systems engineered to enhance thermal
+                  performance, energy efficiency, and operational safety across
+                  industrial and commercial environments. From hot and cold
+                  insulation to acoustic treatments, our solutions are designed
+                  for long-term durability and seamless integration with your
+                  infrastructure. Experience reduced energy costs, improved
+                  process reliability, and superior environmental protection
+                  with our expertly installed insulation systems.
                 </p>
               </div>
 
@@ -505,7 +512,7 @@ export default function InsulationServicePage() {
                 <h3 className="text-lg text-start text-[#101828] mb-1">
                   {a.title}
                 </h3>
-                <p className="text-[#4A5565]  text-sm max-w-60 w-full ">
+                <p className="text-[#4A5565]  text-sm max-w-xs w-full ">
                   {a.description}
                 </p>
                 <div className="text-[#6A7282] text-[10.5px] py-1 max-w-56   w-full flex justify-between">
@@ -544,99 +551,125 @@ export default function InsulationServicePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-6 md:p-4">
             {/* Performance Card */}
-            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
+            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
               <h2 className="text-lg font-semibold ">Performance</h2>
               <div className="w-full border-t border-[#00591933]" />
 
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Maximum Output:</span>
-                  <span className=" text-end block">10,000 units/hour</span>
+                  <span className="text-[#4A5565]">Thermal Conductivity:</span>
+                  <span className=" text-end block">0.035 W/m·K</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Efficiency Rating:</span>
-                  <span className=" text-end block">99.7%</span>
+                  <span className="text-[#4A5565]">
+                    Acoustic Insulation Rating:
+                  </span>
+                  <span className=" text-end block">Up to 45 dB</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Power Consumption:</span>
-                  <span className=" text-end block">15kW nominal</span>
+                  <span className="text-[#4A5565]">Fire Resistance:</span>
+                  <span className=" text-end block">
+                    Class A (as per ASTM E84)
+                  </span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Operating Temperature:</span>
-                  <span className=" text-end block">-20°C to +60°C</span>
+                  <span className=" text-end block">-50°C to +650°C</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="text-[#4A5565]">Durability:</span>
+                  <span className=" text-end block">15+ years (typical)</span>
                 </li>
               </ul>
             </Card>
 
             {/* Dimensions Card */}
-            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
+            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
               <h2 className="text-lg font-semibold ">Dimensions</h2>
               <div className="w-full border-t border-[#00591933]" />
 
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Length:</span>
-                  <span>2500mm</span>
+                  <span className="text-[#4A5565]">
+                    Thickness <br /> Range:
+                  </span>
+                  <span>25mm to 100mm</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Width:</span>
-                  <span>1200mm</span>
+                  <span className="text-[#4A5565]">Roll Size:</span>
+                  <span>5m x 1.2m</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Height:</span>
-                  <span>1800mm</span>
+                  <span className="text-[#4A5565]">Density:</span>
+                  <span>100–150 kg/m³</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Weight:</span>
-                  <span>850kg</span>
+                  <span className="text-end">
+                    Varies based on material and application
+                  </span>
                 </li>
               </ul>
             </Card>
 
             {/* Materials Card */}
-            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
+            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
               <h2 className="text-lg font-semibold">Materials</h2>
               <div className="w-full border-t border-[#00591933]" />
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Frame:</span>
-                  <span>Stainless Steel 316L</span>
+                  <span className="text-[#4A5565]">Core Material:</span>
+                  <span className="text-end">
+                    Rockwool / Glass Wool / Ceramic Fiber
+                  </span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Components:</span>
-                  <span className=" text-end block">Food Grade Materials</span>
+                  <span className="text-[#4A5565]">Cladding:</span>
+                  <span className=" text-end block">
+                    Aluminium / Stainless Steel Sheets (24G/26G)
+                  </span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Seals:</span>
-                  <span>FDA Approved</span>
+                  <span className="text-[#4A5565]">Binder:</span>
+                  <span className="text-end">
+                    Thermosetting Resin (Formaldehyde-Free)
+                  </span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Coating:</span>
-                  <span>Anti-corrosive</span>
+                  <span className="text-[#4A5565]">Finish:</span>
+                  <span className="text-end">
+                    Polished, Anti-Corrosive, Dust-Proof
+                  </span>
                 </li>
               </ul>
             </Card>
 
             {/* Compliance Card */}
-            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
+            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
               <h2 className="text-lg font-semibold ">Compliance</h2>
               <div className="w-full border-t border-[#00591933]" />
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Safety Standards:</span>
-                  <span>ISO 9001:2015</span>
+                  <span className="text-[#4A5565]">Quality Standards:</span>
+                  <span className="text-end">ISO 9001:2015, ISO 14001</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Quality:</span>
-                  <span>CE Marking</span>
+                  <span className="text-[#4A5565]">Fire Safety:</span>
+                  <span className="text-end">CE Marking</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Environmental:</span>
-                  <span>RoHS Compliant</span>
+                  <span className="text-end">CFC-Free, RoHS Compliant</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Industry:</span>
-                  <span>GMP Certified</span>
+                  <span className="text-[#4A5565]">Health & Safety:</span>
+                  <span className="text-end">OSHA Aligned Practices</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="text-[#4A5565]">Certifications:</span>
+                  <span className="text-end">
+                    NABL, CE, GMP (where applicable)
+                  </span>
                 </li>
               </ul>
             </Card>
@@ -661,33 +694,36 @@ export default function InsulationServicePage() {
           </div>
           {/* Technical Resources
            */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-            {downloadDoc.map((a) => (
-              <Card
-                key={a.description}
-                className="flex flex-col items-center text-center rounded-lg p-6 gap-3 border border-[#0000001A]"
-              >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                  {a.icon}
-                </div>
 
-                <h3 className="text-lg text-gray-900 mb-1">{a.title}</h3>
+          <div className="w-full flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 place-items-center">
+              {downloadDoc.map((a) => (
+                <Card
+                  key={a.description}
+                  className="flex flex-col items-center text-center rounded-lg p-6 gap-3 border border-[#0000001A]"
+                >
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    {a.icon}
+                  </div>
 
-                <p className="text-[#4A5565] text-sm max-w-60 w-full">
-                  {a.description}
-                </p>
+                  <h3 className="text-lg text-gray-900 mb-1">{a.title}</h3>
 
-                <div className="flex justify-between w-full text-[#6A7282] text-[10.5px] py-1 max-w-56">
-                  <p>{a.type}</p>
-                  <p>{a.size}</p>
-                </div>
+                  <p className="text-[#4A5565] text-sm max-w-60 w-full">
+                    {a.description}
+                  </p>
 
-                <Button className="w-full max-w-56 border border-primary bg-white hover:bg-white text-primary flex items-center justify-center gap-2 px-4 py-2">
-                  <Download />
-                  Download
-                </Button>
-              </Card>
-            ))}
+                  <div className="flex justify-between w-full text-[#6A7282] text-[10.5px] py-1 max-w-56">
+                    <p>{a.type}</p>
+                    <p>{a.size}</p>
+                  </div>
+
+                  <Button className="w-full max-w-56 border border-primary bg-white hover:bg-white text-primary flex items-center justify-center gap-2 px-4 py-2">
+                    <Download />
+                    Download
+                  </Button>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

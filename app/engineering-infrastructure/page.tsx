@@ -297,12 +297,11 @@ export default function ColdStorageSolutionsPage() {
               </Button>
               <div className="space-y-4">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-gray-900">
-                  Advanced
+                  Engineering
                   <span className="text-primary">
                     {" "}
-                    Cold Storage <br className="hidden sm:block" /> Solution{" "}
+                    <br className="hidden sm:block" />& Infrastructure
                   </span>
-                  System
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">
                   State-of-the-art industrial equipment designed for maximum

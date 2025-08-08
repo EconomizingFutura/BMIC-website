@@ -57,6 +57,9 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
+                onClick={() => {
+                  window.open("https://wa.me/9566122235", "_blank");
+                }}
                 className="!bg-green-600 !text-white !border-green-600 hover:bg-green-700"
               >
                 WhatsApp Us

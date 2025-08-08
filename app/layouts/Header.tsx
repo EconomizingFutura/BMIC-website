@@ -19,9 +19,11 @@ import {
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useDropdownStore } from "@/components/store/toggleDropdown";
 
 export function Header() {
   const [open, setOpen] = useState<boolean>(false);
+  const { isOpen, toggle, close } = useDropdownStore();
 
   const handleOpenMenu = () => {
     setOpen((pre) => !pre);
@@ -58,12 +60,22 @@ export function Header() {
       navigate: "/pharma",
     },
     {
-      title: "Food & Beverage",
+      title: "Food & FMCG",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
       navigate: "/food-beverage",
     },
     {
-      title: "Cold Chain Logistics",
+      title: "Commercial & Real Estate",
+      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      navigate: "/commercial-real-estate",
+    },
+    {
+      title: "Commercial & Real Estate",
+      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      navigate: "/cold-chain-logistics",
+    },
+    {
+      title: "Engineering & Infrastructure",
       description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
       navigate: "/cold-chain-logistics",
     },
@@ -261,9 +273,13 @@ export function Header() {
             >
               
             </button> */}
-            <DropdownMenu>
+            <DropdownMenu
+              open={isOpen}
+              onOpenChange={(open) => (open ? toggle() : close())}
+            >
               <DropdownMenuTrigger asChild>
                 <button
+                  onClick={toggle}
                   className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-2 justify-center items-center hover:bg-primary/5 focus:outline-none ${
                     currentPage == "industry"
                       ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
@@ -286,6 +302,7 @@ export function Header() {
                     >
                       <Link
                         href={item.navigate}
+                        // onClick={()=>}
                         className="flex w-full text-left cursor-pointer items-start space-x-4 data-[highlighted]:bg-transparent"
                       >
                         <div className="bg-[#0059191A] p-2.5 rounded-full">

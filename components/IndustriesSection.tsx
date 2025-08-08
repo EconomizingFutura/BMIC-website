@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import { Factory, Zap, Building2, Truck, Wrench } from "lucide-react";
+import { useDropdownStore } from "./store/toggleDropdown";
 
 const industries = [
   {
@@ -53,6 +54,7 @@ const industries = [
 ];
 
 export function IndustriesSection() {
+  const { isOpen, toggle, close } = useDropdownStore();
   return (
     <section id="industries" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -92,7 +94,10 @@ export function IndustriesSection() {
                   {industry.description}
                 </p>
                 <div className="mt-4 text-center">
-                  <button className="text-primary hover:text-primary/80 transition-colors">
+                  <button
+                    onClick={() => (!isOpen ? toggle() : close())}
+                    className="text-primary hover:text-primary/80 transition-colors"
+                  >
                     Learn More →
                   </button>
                 </div>

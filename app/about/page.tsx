@@ -23,38 +23,38 @@ export default function AboutPage() {
   const onBackToHome = () => router.push("/");
   const teamMembers = [
     {
-      name: "Dr. Rajesh Kumar",
-      role: "Chief Executive Officer",
+      name: "CT Murugesan",
+      role: "Founder",
       experience: "20+ years",
       expertise:
-        "Visionary leader with extensive experience in industrial engineering and business development.",
+        " Pioneering entrepreneur who laid the foundation of Bharath Modern Insulation Company in 1975, with a vision to deliver reliable thermal and acoustic solutions that stand the test of time.",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     },
     {
-      name: "Priya Sharma",
-      role: "Chief Technology Officer",
+      name: "M Jagadeesan",
+      role: "Proprietor & Managing Director",
       experience: "15+ years",
       expertise:
-        "Technology expert specializing in automation systems and digital transformation.",
+        "Guiding force behind the company’s growth, combining deep technical expertise with a commitment to innovation and customer satisfaction.",
       image:
         "https://images.unsplash.com/photo-1494790108755-2616b612b898?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     },
     {
-      name: "Engineer Amit Singh",
-      role: "Head of Operations",
+      name: "CJ Akash Ram",
+      role: " Chief Executive Officer (CEO)",
       experience: "18+ years",
       expertise:
-        "Operations specialist focused on efficiency optimization and quality management.",
+        " Dynamic leader driving strategic expansion, operational excellence, and modernization of services to meet evolving industry needs.",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     },
     {
-      name: "Dr. Meera Patel",
-      role: "Director of Engineering",
+      name: "A Rajan",
+      role: "Senior Supervisor",
       experience: "12+ years",
       expertise:
-        "Engineering leader with expertise in complex industrial project management.",
+        "Experienced supervisor ensuring meticulous project execution, safety compliance, and the highest standards of quality on every installation.",
       image:
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     },
@@ -63,17 +63,17 @@ export default function AboutPage() {
   const statsCard = [
     {
       icon: <Building className="h-6 w-6 text-green-900" />,
-      value: "1994",
+      value: "1975",
       title: "Company Founded",
     },
     {
       icon: <Target className="h-6 w-6 text-green-900" />,
-      value: "500+",
+      value: "10K+",
       title: "Projects Completed",
     },
     {
       icon: <Globe className="h-6 w-6 text-green-900" />,
-      value: "50+",
+      value: "5+",
       title: "Countries Served",
     },
     {
@@ -112,19 +112,19 @@ export default function AboutPage() {
   const stats = [
     {
       icon: <Globe className="h-6 w-6 text-green-700" />,
-      value: "50+",
+      value: "5+",
       title: "Countries Served",
       description: "Global presence across six continents",
     },
     {
       icon: <TrendingUp className="h-6 w-6 text-green-700" />,
-      value: "500+",
+      value: "10K+",
       title: "Projects Completed",
       description: "Successfully delivered industrial solutions",
     },
     {
       icon: <ShieldCheck className="h-6 w-6 text-green-700" />,
-      value: "15+",
+      value: "25+",
       title: "ISO Certifications",
       description: "Industry-leading quality standards",
     },
@@ -192,18 +192,20 @@ export default function AboutPage() {
               Our <span className="text-primary">Story</span>
             </h2>
             <p className="text-[#4A5565] text-[20px] font-normal  mx-auto">
-              Founded in 1994, our company began as a small engineering
-              consultancy with a bold vision: to revolutionize industrial
-              processes through innovative technology and unwavering commitment
-              to excellence. Today, we stand as a global leader in industrial
-              solutions.
+              Founded in 1975, our company started with a clear mission: to
+              deliver advanced insulation solutions that enhance efficiency,
+              safety, and comfort across industries. From humble beginnings as a
+              family-run venture, we have evolved into a trusted name known for
+              technical expertise and uncompromising quality.
             </p>
             <p className="text-[#4A5565] text-[20px] font-normal  mx-auto">
-              Our journey has been marked by continuous growth, strategic
-              partnerships, and breakthrough innovations that have set new
-              industry standards. We&#39;ve successfully completed over 500
-              projects across six continents, serving clients from startups to
-              Fortune 500 companies.
+              Over the decades, our journey has been shaped by innovation,
+              lasting client relationships, and a passion for setting new
+              benchmarks in thermal and acoustic insulation. From large-scale
+              industrial projects to specialized commercial installations, we
+              have successfully completed hundreds of assignments throughout
+              India and beyond, serving customers ranging from small enterprises
+              to multinational corporations.
             </p>
           </div>
           <div className="flex flex-col lg:flex-row mx-auto gap-8 items-center justify-between">

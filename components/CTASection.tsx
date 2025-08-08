@@ -1,5 +1,5 @@
 "use client";
-import { sendEmail } from "@/utils/utils";
+import { dialNumber, sendEmail } from "@/utils/utils";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Phone, Mail, MessageCircle } from "lucide-react";
@@ -46,13 +46,11 @@ export function CTASection() {
               <h4 className="mb-2">Call Us</h4>
               <p className="text-sm text-white/80 mb-4">Speak to an expert</p>
               <Button
-                // onClick={() => {
-                //   window.open("https://wa.me/9566122235", "_blank");
-                // }}
+                onClick={dialNumber}
                 size="sm"
                 className="bg-white text-primary hover:text-white hover:bg-green-600 w-full"
               >
-                +91 9566122235
+                +91 7871608088
               </Button>
             </CardContent>
           </Card>

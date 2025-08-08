@@ -37,18 +37,18 @@ const contactOptions = [
     title: "Phone Support",
     description: "Speak directly with our technical experts",
     details: [
-      { type: "phone", value: "+91 9876543210" },
-      { type: "phone", value: "+91 9876543211" },
+      { type: "phone", value: "+91 7871608088" },
+      { type: "Whatsapp", value: "+91 9566122235" },
     ],
-    note: "Mon-Fri: 9:00 AM – 6:00 PM IST",
+    note: "Mon-Fri: 8:00 AM – 8:00 PM IST",
   },
   {
     icon: <Mail className="h-6 w-6 text-primary " />,
     title: "Email Us",
     description: "Send us your project details and requirements",
     details: [
-      { type: "email", value: "info@company.com" },
-      { type: "email", value: "sales@company.com" },
+      { type: "email", value: "jagadeesan.bharath@gmail.com" },
+      // { type: "email", value: "sales@company.com" },
     ],
     note: "Response within 24 hours",
   },
@@ -57,10 +57,10 @@ const contactOptions = [
     title: "Visit Our Office",
     description: "Schedule a meeting at our headquarters",
     details: [
-      { type: "address", value: "123 Industrial Park, Sector 15" },
-      { type: "address", value: "Gurgaon, Haryana 122001" },
+      { type: "address", value: "No 165, 8th Street, Sri Valli Nagar," },
+      { type: "address", value: " Nandivaram,Guduvancheri, Chennai - 603202" },
     ],
-    note: "By appointment only",
+    note: "Available at your convenience",
   },
 ];
 
@@ -384,8 +384,12 @@ export default function ContactPage() {
 
                         <span className="relative"> Send Message</span>
                       </Button>
-                      <Button className="w-full text-primary border border-primary !hover:text-white">
+                      <Button
+                        size="lg"
+                        className="bg-primary !hover:bg-green-700 font-medium shadow-lg !hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
+                      >
                         <Phone className="h-4 w-4 mr-2" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <span className="relative">Request Call Back</span>
                       </Button>
                     </div>
@@ -414,7 +418,7 @@ export default function ContactPage() {
           <div className="w-full rounded-[8.75px] max-h-[336px] h-full overflow-hidden aspect-video">
             <iframe
               className="w-full h-full border-0"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28441.112662923042!2d80.20089954143259!3d13.007816757111497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267709aa40a7d%3A0xca348695fc512750!2sGuindy%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1753256037778!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2807.6955962021907!2d80.07093830249242!3d12.828847907920515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f777f85f81ad%3A0x126d0f5af6a1e283!2sBharath%20Modern%20Insulation%20Company!5e0!3m2!1sen!2sin!4v1754053444587!5m2!1sen!2sin"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen={false}

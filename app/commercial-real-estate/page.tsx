@@ -19,7 +19,7 @@ import {
 import { servicebanner } from "../../components/figma/images/index";
 import { useRouter } from "next/navigation";
 
-export default function DuctingSolutionsPage() {
+export default function ColdStorageSolutionsPage() {
   const router = useRouter();
   const onBackToHome = () => router.push("/");
   // const services = [
@@ -213,79 +213,67 @@ export default function DuctingSolutionsPage() {
 
   const downloadDoc = [
     {
-      title: "Various safety documents",
-      description: "Guidelines, records ensuring workplace safety compliance.",
+      title: "Technical Data Sheet",
+      description: "Complete technical specifications and performance data",
       type: "PDF",
       size: "2.4 MB",
       button: "Download",
       icon: <FileText className="h-8 w-8 text-primary" />,
     },
     {
-      title: "Tech data sheet",
-      description: "Detailed specifications for product technical performance",
+      title: "Installation Manual",
+      description: "Step-by-step installation and setup guidelines",
       type: "PDF",
       size: "5.1 MB",
       button: "Download",
       icon: <Wrench className="h-8 w-8 text-primary" />,
     },
-    // {
-    //   title: "Safety Certificates",
-    //   description: "ISO certifications and compliance documentation",
-    //   type: "PDF",
-    //   size: "1.8 MB",
-    //   button: "Download",
-    //   icon: <Shield className="h-8 w-8 text-primary" />,
-    // },
-    // {
-    //   title: "CAD Drawings",
-    //   description: "Detailed engineering drawings and 3D models",
-    //   type: "DWG",
-    //   size: "12.3 MB",
-    //   icon: <Settings className="h-8 w-8 text-primary" />,
-    //   button: "Download",
-    // },
+    {
+      title: "Safety Certificates",
+      description: "ISO certifications and compliance documentation",
+      type: "PDF",
+      size: "1.8 MB",
+      button: "Download",
+      icon: <Shield className="h-8 w-8 text-primary" />,
+    },
+    {
+      title: "CAD Drawings",
+      description: "Detailed engineering drawings and 3D models",
+      type: "DWG",
+      size: "12.3 MB",
+      icon: <Settings className="h-8 w-8 text-primary" />,
+      button: "Download",
+    },
   ];
 
   const keyFeatures = [
     {
       icon: <Zap />,
       title: "High Performance",
-      description:
-        "Industry-leading efficiency with optimized airflow and minimal leakage",
-      features: [
-        "Pressure-tested systems",
-        "Long lifespan components",
-        "Smooth interiors reduce airflow resistance.",
-      ],
+      description: "Industry-leading efficiency with 99.7% uptime guarantee",
+      features: ["24/7 Operation", "Fast Response Time", "Automated Systems"],
     },
     {
       icon: <Shield />,
       title: "Safety & Compliance",
-      description:
-        "ISO-certified, OSHA-compliant ducting built to meet rigorous safety standards.",
-      features: ["ISO 9001:2015", "OSHA Compliant", "Fire-rated materials"],
+      description: "ISO certified with comprehensive safety protocols",
+      features: ["ISO 9001:2015", "OSHA Compliant", "CE Marked"],
     },
     {
       icon: <Settings />,
       title: "Advanced Technology",
-      description:
-        "Precision-fabricated ducting with modern fabrication tools and smart integration.",
+      description: "Cutting-edge automation and control systems",
       features: [
-        "CAD/CAM-Based Fabrication",
-        "Leak-proof Sealing",
-        "Modular Assembly",
+        "IoT Integration",
+        "Real-time Monitoring",
+        "Predictive Maintenance",
       ],
     },
     {
       icon: <Globe />,
       title: "Global Support",
-      description:
-        "Pan-India service with local technical teams and remote project support.",
-      features: [
-        "Projects in 50+ Cities",
-        "Fast Turnaround",
-        "Custom Engineering Support",
-      ],
+      description: "Worldwide service network with local expertise",
+      features: ["50+ Countries", "Local Teams", "Remote Support"],
     },
   ];
 
@@ -309,22 +297,17 @@ export default function DuctingSolutionsPage() {
               </Button>
               <div className="space-y-4">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-gray-900">
-                  Advanced
+                  Commercial
                   <span className="text-primary">
                     {" "}
-                    Ducting <br className="hidden sm:block" /> Solution{" "}
+                    <br className="hidden sm:block" />& Real Estate
                   </span>
-                  System
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">
-                  Engineered to deliver precise air flow control and thermal
-                  efficiency, our ducting solutions are tailored for industrial,
-                  commercial, and specialized applications. From HVAC
-                  distribution to cleanroom-grade installations, our systems
-                  ensure high performance, low leakage, and long-term
-                  durability. We use corrosion-resistant materials, acoustic
-                  treatment options, and advanced sealing techniques to meet
-                  demanding environmental, acoustic, and thermal requirements.
+                  State-of-the-art industrial equipment designed for maximum
+                  efficiency, reliability, and performance. Our solutions
+                  integrate seamlessly into your existing operations while
+                  delivering measurable improvements.
                 </p>
               </div>
 
@@ -506,8 +489,8 @@ export default function DuctingSolutionsPage() {
               <span className="text-primary"> Solutions</span>
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Discover the advanced features that make our ducting systems stand
-              out.
+              Discover the advanced features that set our industrial systems
+              apart from the competition.
             </p>
           </div>
           <div className="grid md:grid-cols-2 items-start  lg:grid-cols-4 gap-8">
@@ -522,10 +505,10 @@ export default function DuctingSolutionsPage() {
                 <h3 className="text-lg text-start text-[#101828] mb-1">
                   {a.title}
                 </h3>
-                <p className="text-[#4A5565]  text-sm max-w-96  w-full ">
+                <p className="text-[#4A5565]  text-sm max-w-60 w-full ">
                   {a.description}
                 </p>
-                <div className="text-[#6A7282] text-[10.5px] py-1 max-w-xs  w-full flex justify-between">
+                <div className="text-[#6A7282] text-[10.5px] py-1 max-w-56   w-full flex justify-between">
                   <ul className="list-disc list-inside space-y-1">
                     {a.features.map((feature, index) => (
                       <li
@@ -559,131 +542,101 @@ export default function DuctingSolutionsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:p-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-6 md:p-4">
             {/* Performance Card */}
-            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
-              <h2 className="text-lg font-semibold">Performance</h2>
+            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
+              <h2 className="text-lg font-semibold ">Performance</h2>
               <div className="w-full border-t border-[#00591933]" />
+
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Airflow Efficiency:</span>
-                  <span className="text-end block">≥90%</span>
+                  <span className="text-[#4A5565]">Maximum Output:</span>
+                  <span className=" text-end block">10,000 units/hour</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Static Pressure:</span>
-                  <span className="text-end block">Up to 2500 Pa</span>
+                  <span className="text-[#4A5565]">Efficiency Rating:</span>
+                  <span className=" text-end block">99.7%</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Leakage Class:</span>
-                  <span className="text-end block">Class C (SMACNA)</span>
+                  <span className="text-[#4A5565]">Power Consumption:</span>
+                  <span className=" text-end block">15kW nominal</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Operating Temp:</span>
-                  <span className="text-end block">-20°C to +80°C</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Acoustic Insulation:</span>
-                  <span className="text-end block">Up to 30 dB (Optional)</span>
+                  <span className="text-[#4A5565]">Operating Temperature:</span>
+                  <span className=" text-end block">-20°C to +60°C</span>
                 </li>
               </ul>
             </Card>
 
             {/* Dimensions Card */}
-            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
-              <h2 className="text-lg font-semibold">Dimensions</h2>
+            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
+              <h2 className="text-lg font-semibold ">Dimensions</h2>
               <div className="w-full border-t border-[#00591933]" />
+
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Standard Sizes:</span>
-                  <span className="text-end block">
-                    Custom (Rectangular/Circular)
-                  </span>
+                  <span className="text-[#4A5565]">Length:</span>
+                  <span>2500mm</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Thickness Range:</span>
-                  <span className="text-end block">
-                    0.5mm – 1.2mm(Sheet Metal)
-                  </span>
+                  <span className="text-[#4A5565]">Width:</span>
+                  <span>1200mm</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Lengths:</span>
-                  <span className="text-end block">1m – 2.5m per section</span>
+                  <span className="text-[#4A5565]">Height:</span>
+                  <span>1800mm</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Flange Type:</span>
-                  <span className="text-end block">
-                    GI Angle / TDF / Cleat-type
-                  </span>
+                  <span className="text-[#4A5565]">Weight:</span>
+                  <span>850kg</span>
                 </li>
               </ul>
             </Card>
 
             {/* Materials Card */}
-            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
+            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
               <h2 className="text-lg font-semibold">Materials</h2>
               <div className="w-full border-t border-[#00591933]" />
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Core Material:</span>
-                  <span className="text-end block">
-                    Galvanized Iron / Aluminium / Stainless Steel
-                  </span>
+                  <span className="text-[#4A5565]">Frame:</span>
+                  <span>Stainless Steel 316L</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="text-[#4A5565]">Components:</span>
+                  <span className=" text-end block">Food Grade Materials</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="text-[#4A5565]">Seals:</span>
+                  <span>FDA Approved</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Coating:</span>
-                  <span className="text-end block">
-                    Zinc / Anodized / Polished
-                  </span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Insulation:</span>
-                  <span className="text-end block">
-                    Glass Wool,Nitrile Rubber
-                  </span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Fasteners & Sealants:</span>
-                  <span className="text-end block">
-                    Fire-retardant, Non-toxic
-                  </span>
+                  <span>Anti-corrosive</span>
                 </li>
               </ul>
             </Card>
 
             {/* Compliance Card */}
-            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
-              <h2 className="text-lg font-semibold">Compliance</h2>
+            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
+              <h2 className="text-lg font-semibold ">Compliance</h2>
               <div className="w-full border-t border-[#00591933]" />
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Fabrication Standards:</span>
-                  <span className="text-end block">
-                    SMACNA / DW144 / IS 655
-                  </span>
+                  <span className="text-[#4A5565]">Safety Standards:</span>
+                  <span>ISO 9001:2015</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Fire Safety:</span>
-                  <span className="text-end block">IS 4351, ASTM E84</span>
+                  <span className="text-[#4A5565]">Quality:</span>
+                  <span>CE Marking</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Environmental:</span>
-                  <span className="text-end block">
-                    CFC-Free, RoHS Compliant
-                  </span>
+                  <span>RoHS Compliant</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Fire Safety:</span>
-                  <span className="text-end block md:max-w-24">
-                    OSHA Aligned Practices
-                  </span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">
-                    Quality Certifications:
-                  </span>
-                  <span className="text-end block">
-                    ISO 9001:2015, CE Certified
-                  </span>
+                  <span className="text-[#4A5565]">Industry:</span>
+                  <span>GMP Certified</span>
                 </li>
               </ul>
             </Card>
@@ -708,36 +661,33 @@ export default function DuctingSolutionsPage() {
           </div>
           {/* Technical Resources
            */}
-          <div className="w-full flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 place-items-center">
-              {" "}
-              {downloadDoc.map((a) => (
-                <Card
-                  key={a.description}
-                  className="flex flex-col items-center text-center rounded-lg p-6 gap-3 border border-[#0000001A]"
-                >
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    {a.icon}
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+            {downloadDoc.map((a) => (
+              <Card
+                key={a.description}
+                className="flex flex-col items-center text-center rounded-lg p-6 gap-3 border border-[#0000001A]"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  {a.icon}
+                </div>
 
-                  <h3 className="text-lg text-gray-900 mb-1">{a.title}</h3>
+                <h3 className="text-lg text-gray-900 mb-1">{a.title}</h3>
 
-                  <p className="text-[#4A5565] text-sm max-w-60 w-full">
-                    {a.description}
-                  </p>
+                <p className="text-[#4A5565] text-sm max-w-60 w-full">
+                  {a.description}
+                </p>
 
-                  <div className="flex justify-between w-full text-[#6A7282] text-[10.5px] py-1 max-w-56">
-                    <p>{a.type}</p>
-                    <p>{a.size}</p>
-                  </div>
+                <div className="flex justify-between w-full text-[#6A7282] text-[10.5px] py-1 max-w-56">
+                  <p>{a.type}</p>
+                  <p>{a.size}</p>
+                </div>
 
-                  <Button className="w-full max-w-56 border border-primary bg-white hover:bg-white text-primary flex items-center justify-center gap-2 px-4 py-2">
-                    <Download />
-                    Download
-                  </Button>
-                </Card>
-              ))}
-            </div>
+                <Button className="w-full max-w-56 border border-primary bg-white hover:bg-white text-primary flex items-center justify-center gap-2 px-4 py-2">
+                  <Download />
+                  Download
+                </Button>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

@@ -266,9 +266,10 @@ export default function AboutPage() {
               </div>
 
               <p className="text-gray-600  text-sm leading-relaxed">
-                To deliver world-class thermal management solutions that enhance
-                energy efficiency, ensure product integrity, and support
-                sustainable industrial growth across India and beyond.
+                To be a trusted leader in thermal and acoustic solutions,
+                setting industry benchmarks in quality, innovation, and
+                sustainability. We aim to enhance energy efficiency and
+                environmental comfort across every space we insulate
               </p>
 
               <div className="space-y-3">
@@ -304,9 +305,11 @@ export default function AboutPage() {
               </div>
 
               <p className="text-gray-600 text-sm leading-relaxed">
-                To be the most trusted and innovative thermal management
-                partner, setting global standards for quality, efficiency, and
-                environmental responsibility in industrial solutions.
+                To deliver high-performance insulation and soundproofing
+                solutions through expert craftsmanship, cutting-edge technology,
+                and a commitment to client satisfaction— ensuring safe,
+                efficient, and sustainable environments for all industries we
+                serve.
               </p>
 
               <div className="space-y-3">

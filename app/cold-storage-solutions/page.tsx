@@ -19,7 +19,9 @@ import {
 import { servicebanner } from "../../components/figma/images/index";
 import { useRouter } from "next/navigation";
 
-export default function InsulationServicePage() {
+export default function ColdStorageSolutionsPage() {
+  const router = useRouter();
+  const onBackToHome = () => router.push("/");
   // const services = [
   //   {
   //     id: 1,
@@ -217,7 +219,7 @@ export default function InsulationServicePage() {
       size: "2.4 MB",
       button: "Download",
       icon: <FileText className="h-8 w-8 text-primary" />,
-      file: "/pdfs/TDS_THERMAL.pdf",
+      file: "/pdfs/TDS_COLDSTORAGE.pdf",
     },
     {
       title: "Tech data sheet",
@@ -226,7 +228,7 @@ export default function InsulationServicePage() {
       size: "5.1 MB",
       button: "Download",
       icon: <Wrench className="h-8 w-8 text-primary" />,
-      file: "/pdfs/TDS_THERMAL.pdf",
+      file: "/pdfs/TDS_COLDSTORAGE.pdf",
     },
     // {
     //   title: "Safety Certificates",
@@ -250,36 +252,45 @@ export default function InsulationServicePage() {
     {
       icon: <Zap />,
       title: "High Performance",
-      description: "Industry-leading efficiency with 99.7% uptime guarantee",
-      features: ["24/7 Operation", "Fast Response Time", "Automated Systems"],
+      description: "",
+      features: [
+        "Industry-leading insulation with high R-value for superior temperature retention",
+        "Moisture-resistant and airtight systems preventing condensation and thermal bridging",
+        "Durable, hygienic finishes for compliance with food and pharma safety standards.",
+      ],
     },
     {
       icon: <Shield />,
       title: "Safety & Compliance",
-      description:
-        " ISO 9001:2015 certified, OSHA compliant, and CE marked for your peace of mind",
-      features: ["ISO 9001:2015", "OSHA Compliant", "CE Marked"],
+      description: "",
+      features: [
+        "ISO-certified, HACCP and GMP compliant insulation systems.",
+        "Fire-retardant materials designed to meet international safety standards.",
+        "Environmentally safe components with low VOC emissions.",
+      ],
     },
     {
       icon: <Settings />,
       title: "Advanced Technology",
-      description:
-        "IoT integration, real-time monitoring, and predictive maintenance for smarter",
+      description: "",
       features: [
-        "IoT Integration",
-        "Real-time Monitoring",
-        "Predictive Maintenance",
+        "Precision-fabricated insulated panels with cam-lock joints.",
+        "Modular, quick-assembly designs for fast installation.",
+        "Integration with cold storage doors, piping, and sealing systems.",
       ],
     },
     {
       icon: <Globe />,
       title: "Global Support",
-      description:
-        "Serving 5+ countries with local teams and remote assistance whenever you need.",
-      features: ["50+ Countries", "Local Teams", "Remote Support"],
+      description: "",
+      features: [
+        "Pan-India network with experienced local technical teams and remote project assistance.",
+        "Completed projects across 40+ cities.",
+        "Fast project turnaround and customized engineering support",
+      ],
     },
   ];
-  const router = useRouter();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -292,7 +303,7 @@ export default function InsulationServicePage() {
             <div className="space-y-8 max-w-[586px] w-full ">
               <Button
                 variant="outline"
-                onClick={() => router.push("/")}
+                onClick={onBackToHome}
                 className="mb-8 !bg-white  shadow-lg border-primary/30"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
@@ -303,19 +314,20 @@ export default function InsulationServicePage() {
                   Advanced
                   <span className="text-primary">
                     {" "}
-                    Insulation <br className="hidden sm:block" /> Solution{" "}
+                    Ducting <br className="hidden sm:block" /> Solution{" "}
                   </span>
                   System
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">
-                  Tailored insulation systems engineered to enhance thermal
-                  performance, energy efficiency, and operational safety across
-                  industrial and commercial environments. From hot and cold
-                  insulation to acoustic treatments, our solutions are designed
-                  for long-term durability and seamless integration with your
-                  infrastructure. Experience reduced energy costs, improved
-                  process reliability, and superior environmental protection
-                  with our expertly installed insulation systems.
+                  Engineered to deliver exceptional thermal performance and
+                  moisture control, our cold storage insulation solutions are
+                  tailored for industrial, commercial, and specialized
+                  temperature-controlled applications. From frozen storage
+                  warehouses to ripening chambers, our systems ensure minimal
+                  heat ingress, airtight sealing, and long-term durability. We
+                  use high-quality insulation materials, vapor barriers, and
+                  advanced sealing techniques to meet stringent environmental,
+                  thermal, and hygiene requirements.
                 </p>
               </div>
 
@@ -327,7 +339,7 @@ export default function InsulationServicePage() {
                       className="flex items-center border border-[#0059194D] py-2 px-4 rounded-md space-x-2"
                     >
                       <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                      <span className="text-[#005919] font-medium text-[10.5px] leading-[14px] tracking-normal text-center align-middle">
+                      <span className="text-primary font-medium text-[10.5px] leading-[14px] tracking-normal text-center align-middle">
                         {benefit}
                       </span>
                     </div>
@@ -344,7 +356,6 @@ export default function InsulationServicePage() {
                   <span className="relative">Request Quote</span>{" "}
                   <Mail className="ml-2 relative h-5 w-5" />
                 </Button>
-
                 <Button
                   size="lg"
                   className="bg-white text-primary border border-primary hover:bg-white flex items-center justify-center"
@@ -372,121 +383,6 @@ export default function InsulationServicePage() {
           </div>
         </div>
       </section>
-
-      {/* <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {services.map((service) => (
-              <Card
-                key={service.id}
-                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-              >
-                <div className="relative h-64">
-                  <ImageWithFallback
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
-                  <div className="absolute top-4 left-4">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white">
-                      {service.icon}
-                    </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-xl text-white mb-2">{service.title}</h3>
-                    <p className="text-white/90 text-sm">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-
-                <CardContent className="p-6">
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-lg text-gray-900 mb-3">
-                        Key Features
-                      </h4>
-                      <div className="grid grid-cols-1 gap-2">
-                        {service.features.slice(0, 4).map((feature, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center space-x-2"
-                          >
-                            <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
-                            <span className="text-gray-700 text-sm">
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg text-gray-900 mb-3">
-                        Applications
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {service.applications.slice(0, 4).map((app, index) => (
-                          <Badge
-                            key={index}
-                            variant="outline"
-                            className="text-xs border-primary/30 text-primary"
-                          >
-                            {app}
-                          </Badge>
-                        ))}
-                        {service.applications.length > 4 && (
-                          <Badge
-                            variant="outline"
-                            className="text-xs border-gray-300 text-gray-600"
-                          >
-                            +{service.applications.length - 4} more
-                          </Badge>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="bg-gray-50 p-4 rounded-lg">
-                      <h4 className="text-sm text-gray-900 mb-2">
-                        Technical Specifications
-                      </h4>
-                      <div className="grid grid-cols-2 gap-2 text-xs">
-                        <div>
-                          <span className="text-gray-500">Materials:</span>
-                          <p className="text-gray-700 truncate">
-                            {service.specifications.materials}
-                          </p>
-                        </div>
-                        <div>
-                          <span className="text-gray-500">Certification:</span>
-                          <p className="text-gray-700 truncate">
-                            {service.specifications.certification}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex space-x-3">
-                      <Button className="flex-1 bg-primary hover:bg-primary/90">
-                        <Phone className="h-4 w-4 mr-2" />
-                        Get Quote
-                      </Button>
-                      <Button
-                        variant="outline"
-                        className="border-primary/30 text-primary hover:bg-primary hover:text-white"
-                      >
-                        <Download className="h-4 w-4 mr-2" />
-                        TDS
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -498,15 +394,15 @@ export default function InsulationServicePage() {
               <span className="text-primary"> Solutions</span>
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Discover the advanced features that set our industrial systems
-              apart from the competition.
+              Discover the advanced features that make our cold storage
+              insulation systems stand out.
             </p>
           </div>
           <div className="grid md:grid-cols-2 items-start  lg:grid-cols-4 gap-8">
             {keyFeatures.map((a) => (
               <Card
                 key={a.description}
-                className="text-start rounded-[12.75px] py-6 px-4 gap-2  border-[#0000001A] border"
+                className="text-start rounded-[12.75px] h-[303px] py-6 px-4 gap-2  border-[#0000001A] border"
               >
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center  mb-4">
                   {a.icon}
@@ -514,18 +410,15 @@ export default function InsulationServicePage() {
                 <h3 className="text-lg text-start text-[#101828] mb-1">
                   {a.title}
                 </h3>
-                <p className="text-[#4A5565]  text-sm max-w-xs w-full ">
+                <p className="text-[#4A5565]  text-sm max-w-96  w-full ">
                   {a.description}
                 </p>
-                <div className="text-[#6A7282] text-[10.5px] py-1 max-w-56   w-full flex justify-between">
-                  <ul className="list-disc list-inside space-y-1">
+                <div className="text-[#6A7282] text-[10.5px] py-1 max-w-xs  w-full flex justify-between">
+                  <ul className="space-y-2 list-none">
                     {a.features.map((feature, index) => (
-                      <li
-                        key={index}
-                        className="flex items-center -translate-2.5   "
-                      >
-                        <Dot size={25} className=" text-primary " />
-                        {feature}
+                      <li key={index} className="flex items-center gap-2">
+                        <Dot size={16} className="text-primary" />
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -551,126 +444,116 @@ export default function InsulationServicePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-6 md:p-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:p-4">
             {/* Performance Card */}
-            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
-              <h2 className="text-lg font-semibold ">Performance</h2>
+            <Card className="rounded-[12.75px] min-h-[303px] max-h-[255px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
+              <h2 className="text-lg font-semibold">Performance</h2>
               <div className="w-full border-t border-[#00591933]" />
-
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Thermal Conductivity:</span>
-                  <span className=" text-end block">0.035 W/m·K</span>
+                  <span className="text-[#4A5565]">
+                    Thermal Conductivity (K-value):
+                  </span>
+                  <span className="text-end block">0.022 – 0.025 W/mK</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">
-                    Acoustic Insulation Rating:
+                    Operating Temperature Range :
                   </span>
-                  <span className=" text-end block">Up to 45 dB</span>
+                  <span className="text-end block">-50°C to +80°C</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Fire Resistance:</span>
-                  <span className=" text-end block">
-                    Class A (as per ASTM E84)
+                  <span className="text-[#4A5565]">
+                    Moisture Vapor Transmission Rate :
                   </span>
+                  <span className="text-end block">≤ 0.05 perms</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Operating Temperature:</span>
-                  <span className=" text-end block">-50°C to +650°C</span>
+                  <span className="text-[#4A5565]">Compressive Strength:</span>
+                  <span className="text-end block">≥ 150 kPa</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Durability:</span>
-                  <span className=" text-end block">15+ years (typical)</span>
+                  <span className="text-[#4A5565]">Fire Rating:</span>
+                  <span className="text-end block">
+                    Class 1 / Class B (FM Approved)
+                  </span>
                 </li>
               </ul>
             </Card>
 
             {/* Dimensions Card */}
-            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
-              <h2 className="text-lg font-semibold ">Dimensions</h2>
+            <Card className="rounded-[12.75px] min-h-[303px] max-h-[255px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
+              <h2 className="text-lg font-semibold">Dimensions</h2>
               <div className="w-full border-t border-[#00591933]" />
-
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">
-                    Thickness <br /> Range:
-                  </span>
-                  <span>25mm to 100mm</span>
+                  <span className="text-[#4A5565]">Panel Thickness:</span>
+                  <span className="text-end block">40 mm to 150 mm</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Roll Size:</span>
-                  <span>5m x 1.2m</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Density:</span>
-                  <span>100–150 kg/m³</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Weight:</span>
-                  <span className="text-end">
-                    Varies based on material and application
-                  </span>
+                  <span className="text-[#4A5565]">Panel Sizes:</span>
+                  <span className="text-end block">Custom as per design</span>
                 </li>
               </ul>
             </Card>
 
             {/* Materials Card */}
-            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
+            <Card className="rounded-[12.75px] min-h-[303px] max-h-[255px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
               <h2 className="text-lg font-semibold">Materials</h2>
               <div className="w-full border-t border-[#00591933]" />
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Core Material:</span>
-                  <span className="text-end">
-                    Rockwool / Glass Wool / Ceramic Fiber
+                  <span className="text-end block">PUF, PIR, EPS</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="text-[#4A5565]">Coating:</span>
+                  <span className="text-end block">
+                    Pre-coated GI, Aluminum, Stainless Steel
                   </span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Cladding:</span>
-                  <span className=" text-end block">
-                    Aluminium / Stainless Steel Sheets (24G/26G)
+                  <span className="text-[#4A5565]">Sealants & Fasteners :</span>
+                  <span className="text-end block">
+                    Food-grade, Fire-retardant
                   </span>
                 </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Binder:</span>
-                  <span className="text-end">
-                    Thermosetting Resin (Formaldehyde-Free)
+                {/* <li className="flex justify-between">
+                  <span className="text-[#4A5565]">Fasteners & Sealants:</span>
+                  <span className="text-end block">
+                    Fire-retardant, Non-toxic
                   </span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Finish:</span>
-                  <span className="text-end">
-                    Polished, Anti-Corrosive, Dust-Proof
-                  </span>
-                </li>
+                </li> */}
               </ul>
             </Card>
 
             {/* Compliance Card */}
-            <Card className="rounded-[12.75px] min-h-[298px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
-              <h2 className="text-lg font-semibold ">Compliance</h2>
+            <Card className="rounded-[12.75px] min-h-[303px] max-h-[255px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-[#FFFFFF]">
+              <h2 className="text-lg font-semibold">Compliance</h2>
               <div className="w-full border-t border-[#00591933]" />
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Quality Standards:</span>
-                  <span className="text-end">ISO 9001:2015, ISO 14001</span>
+                  <span className="text-[#4A5565]">Fabrication Standards:</span>
+                  <span className="text-end block">IS 14885, ASTM C518</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Fire Safety:</span>
-                  <span className="text-end">CE Marking</span>
+                  <span className="text-end block">IS 4351, ASTM E84</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Environmental:</span>
-                  <span className="text-end">CFC-Free, RoHS Compliant</span>
+                  <span className="text-end block">RoHS, REACH, CFC-Free</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Health & Safety:</span>
-                  <span className="text-end">OSHA Aligned Practices</span>
+                  <span className="text-[#4A5565]">Quality Certification:</span>
+                  <span className="text-end block md:max-w-24">
+                    ISO 9001:2015, CE Certified
+                  </span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Certifications:</span>
-                  <span className="text-end">
-                    NABL, CE, GMP (where applicable)
+                  <span className="text-[#4A5565]">Hygiene:</span>
+                  <span className="text-end block">
+                    HACCP, GMP, FDA Compliant
                   </span>
                 </li>
               </ul>
@@ -694,8 +577,6 @@ export default function InsulationServicePage() {
               installation guides.
             </p>
           </div>
-          {/* Technical Resources
-           */}
 
           <div className="w-full flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 place-items-center">
@@ -718,7 +599,6 @@ export default function InsulationServicePage() {
                     <p>{a.type}</p>
                     <p>{a.size}</p>
                   </div>
-
                   <a href={a.file} download>
                     <Button className="w-full max-w-56 border border-primary bg-white hover:bg-white text-primary flex items-center justify-center gap-2 px-4 py-2">
                       <Download />
@@ -731,46 +611,6 @@ export default function InsulationServicePage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      {/* <section className="py-20 bg-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 border border-white/20 rounded-full animate-pulse" />
-          <div className="absolute bottom-10 right-10 w-24 h-24 bg-white/10 rounded-lg rotate-45" />
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-white/15 rotate-12" />
-        </div>
-
-        <div className="container mx-auto px-4 relative">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl mb-6">
-              Ready to Optimize Your Thermal Management?
-            </h2>
-            <p className="text-xl mb-8 text-white/90">
-              Let our experts design a custom solution that meets your specific
-              requirements and delivers exceptional performance and energy
-              savings.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="bg-white text-primary hover:bg-gray-100"
-              >
-                <Phone className="h-5 w-5 mr-2" />
-                Schedule Consultation
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary"
-              >
-                <Download className="h-5 w-5 mr-2" />
-                Download Brochure
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 }

@@ -220,6 +220,7 @@ export default function SoundProofingSolutionPage() {
       size: "2.4 MB",
       button: "Download",
       icon: <FileText className="h-8 w-8 text-primary" />,
+      file: "/pdfs/TDS_CS.pdf",
     },
     {
       title: "Installation Manual",
@@ -228,53 +229,66 @@ export default function SoundProofingSolutionPage() {
       size: "5.1 MB",
       button: "Download",
       icon: <Wrench className="h-8 w-8 text-primary" />,
+      file: "/pdfs/TDS_CS.pdf",
     },
-    {
-      title: "Safety Certificates",
-      description: "ISO certifications and compliance documentation",
-      type: "PDF",
-      size: "1.8 MB",
-      button: "Download",
-      icon: <Shield className="h-8 w-8 text-primary" />,
-    },
-    {
-      title: "CAD Drawings",
-      description: "Detailed engineering drawings and 3D models",
-      type: "DWG",
-      size: "12.3 MB",
-      icon: <Settings className="h-8 w-8 text-primary" />,
-      button: "Download",
-    },
+    // {
+    //   title: "Safety Certificates",
+    //   description: "ISO certifications and compliance documentation",
+    //   type: "PDF",
+    //   size: "1.8 MB",
+    //   button: "Download",
+    //   icon: <Shield className="h-8 w-8 text-primary" />,
+    // },
+    // {
+    //   title: "CAD Drawings",
+    //   description: "Detailed engineering drawings and 3D models",
+    //   type: "DWG",
+    //   size: "12.3 MB",
+    //   icon: <Settings className="h-8 w-8 text-primary" />,
+    //   button: "Download",
+    // },
   ];
 
   const keyFeatures = [
     {
       icon: <Zap />,
       title: "High Performance",
-      description: "Industry-leading efficiency with 99.7% uptime guarantee",
-      features: ["24/7 Operation", "Fast Response Time", "Automated Systems"],
+      description: "",
+      features: [
+        "Industry-leading sound absorption and noise reduction capabilities",
+        "Customized acoustic solutions tailored to project specifications",
+        "Durable materials ensuring long-lasting noise control",
+      ],
     },
     {
       icon: <Shield />,
       title: "Safety & Compliance",
-      description: "ISO certified with comprehensive safety protocols",
-      features: ["ISO 9001:2015", "OSHA Compliant", "CE Marked"],
+      description: "",
+      features: [
+        "Compliant with national and international acoustic standards",
+        "Fire-retardant and non-toxic materials for safe indoor use",
+        "ISO 9001:2015 certified manufacturing processes",
+      ],
     },
     {
       icon: <Settings />,
       title: "Advanced Technology",
-      description: "Cutting-edge automation and control systems",
+      description: "",
       features: [
-        "IoT Integration",
-        "Real-time Monitoring",
-        "Predictive Maintenance",
+        "Precision-engineered acoustic panels and barriers",
+        "Modular, easy-to-install designs for quick deployment",
+        "Integration with HVAC and ducting systems for noise reduction",
       ],
     },
     {
       icon: <Globe />,
       title: "Global Support",
-      description: "Worldwide service network with local expertise",
-      features: ["50+ Countries", "Local Teams", "Remote Support"],
+      description: "",
+      features: [
+        "Technical teams available across India for on-site consultation",
+        "Remote assistance and acoustic performance analysis",
+        "Successful projects completed in 40+ cities",
+      ],
     },
   ];
 
@@ -306,10 +320,15 @@ export default function SoundProofingSolutionPage() {
                   System
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">
-                  State-of-the-art industrial equipment designed for maximum
-                  efficiency, reliability, and performance. Our solutions
-                  integrate seamlessly into your existing operations while
-                  delivering measurable improvements.
+                  Designed to significantly reduce noise pollution and enhance
+                  acoustic comfort, our sound proofing solutions are engineered
+                  for industrial, commercial, and residential applications.
+                  Whether for noisy machinery enclosures, HVAC noise control,
+                  recording studios, or office partitions, our systems deliver
+                  superior sound attenuation, durability, and ease of
+                  installation. We combine high-performance materials with
+                  precision engineering to meet stringent noise control
+                  regulations and client requirements.
                 </p>
               </div>
 
@@ -491,15 +510,15 @@ export default function SoundProofingSolutionPage() {
               <span className="text-primary"> Solutions</span>
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Discover the advanced features that set our industrial systems
-              apart from the competition.
+              Discover the key features that make our sound proofing systems
+              exceptional.
             </p>
           </div>
           <div className="grid md:grid-cols-2 items-start  lg:grid-cols-4 gap-8">
             {keyFeatures.map((a) => (
               <Card
                 key={a.description}
-                className="text-start rounded-[12.75px] py-6 px-4 gap-2  border-[#0000001A] border"
+                className="text-start rounded-[12.75px] h-[282px] py-6 px-4 gap-2  border-[#0000001A] border"
               >
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center  mb-4">
                   {a.icon}
@@ -507,18 +526,15 @@ export default function SoundProofingSolutionPage() {
                 <h3 className="text-lg text-start text-[#101828] mb-1">
                   {a.title}
                 </h3>
-                <p className="text-[#4A5565]  text-sm max-w-60 w-full ">
+                <p className="text-[#4A5565]  text-sm max-w-96  w-full ">
                   {a.description}
                 </p>
-                <div className="text-[#6A7282] text-[10.5px] py-1 max-w-56   w-full flex justify-between">
-                  <ul className="list-disc list-inside space-y-1">
+                <div className="text-[#6A7282] text-[10.5px] py-1 max-w-xs  w-full flex justify-between">
+                  <ul className="space-y-2 list-none">
                     {a.features.map((feature, index) => (
-                      <li
-                        key={index}
-                        className="flex items-center -translate-2.5   "
-                      >
-                        <Dot size={25} className=" text-primary " />
-                        {feature}
+                      <li key={index} className="flex items-center gap-2">
+                        <Dot size={16} className="text-primary" />
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -544,53 +560,53 @@ export default function SoundProofingSolutionPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-6 md:p-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:p-4">
             {/* Performance Card */}
             <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
-              <h2 className="text-lg font-semibold ">Performance</h2>
+              <h2 className="text-lg font-semibold">Performance</h2>
               <div className="w-full border-t border-[#00591933]" />
 
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Maximum Output:</span>
-                  <span className=" text-end block">10,000 units/hour</span>
+                  <span className="text-[#4A5565] max-w-36">
+                    Sound Transmission Class (STC):
+                  </span>
+                  <span>Up to 55</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Efficiency Rating:</span>
-                  <span className=" text-end block">99.7%</span>
+                  <span className="text-[#4A5565] max-w-36">
+                    Noise Reduction Coefficient (NRC):
+                  </span>
+                  <span>0.85</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Power Consumption:</span>
-                  <span className=" text-end block">15kW nominal</span>
+                  <span className="text-[#4A5565]">Fire Rating:</span>
+                  <span>Class A (ASTM E84)</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Operating Temperature:</span>
-                  <span className=" text-end block">-20°C to +60°C</span>
+                  <span className="text-end">-20°C to +70°C</span>
                 </li>
               </ul>
             </Card>
 
             {/* Dimensions Card */}
             <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
-              <h2 className="text-lg font-semibold ">Dimensions</h2>
+              <h2 className="text-lg font-semibold">Dimensions</h2>
               <div className="w-full border-t border-[#00591933]" />
 
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Length:</span>
-                  <span>2500mm</span>
+                  <span className="text-[#4A5565]">Panel Sizes:</span>
+                  <span className="text-[#101828] max-w-40 text-end">
+                    Custom (Std 600×600mm, 1200×600mm)
+                  </span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Width:</span>
-                  <span>1200mm</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Height:</span>
-                  <span>1800mm</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Weight:</span>
-                  <span>850kg</span>
+                  <span className="text-[#4A5565] max-w-1.5">
+                    Thickness Range:
+                  </span>
+                  <span className="text-end text-[#101828]">25mm to 100mm</span>
                 </li>
               </ul>
             </Card>
@@ -599,46 +615,55 @@ export default function SoundProofingSolutionPage() {
             <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
               <h2 className="text-lg font-semibold">Materials</h2>
               <div className="w-full border-t border-[#00591933]" />
+
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Frame:</span>
-                  <span>Stainless Steel 316L</span>
+                  <span className="text-[#4A5565] max-w-2">
+                    Core Materials:
+                  </span>
+                  <span className="text-end">
+                    Acoustic foam, mineral <br /> wool, fiberglass
+                  </span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Components:</span>
-                  <span className=" text-end block">Food Grade Materials</span>
+                  <span className="text-[#4A5565]">Facings:</span>
+                  <span className="text-end">
+                    Perforated metal,
+                    <br /> fabric, PVC laminate
+                  </span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Seals:</span>
-                  <span>FDA Approved</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Coating:</span>
-                  <span>Anti-corrosive</span>
+                  <span className="text-[#4A5565]">Sealants & Adhesives:</span>
+                  <span className="text-end">Fire-retardant, VOC-free</span>
                 </li>
               </ul>
             </Card>
 
             {/* Compliance Card */}
             <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
-              <h2 className="text-lg font-semibold ">Compliance</h2>
+              <h2 className="text-lg font-semibold">Compliance</h2>
               <div className="w-full border-t border-[#00591933]" />
+
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Safety Standards:</span>
-                  <span>ISO 9001:2015</span>
+                  <span className="text-[#4A5565]">Acoustic Standards:</span>
+                  <span className="text-end">ASTM E90, ISO 10140</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Quality:</span>
-                  <span>CE Marking</span>
+                  <span className="text-[#4A5565]">Fire Safety:</span>
+                  <span className="text-end">ASTM E84, IS 4091</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Environmental:</span>
-                  <span>RoHS Compliant</span>
+                  <span className="text-[#4A5565]">
+                    Environmental Standards:
+                  </span>
+                  <span className="text-end">RoHS, REACH</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Industry:</span>
-                  <span>GMP Certified</span>
+                  <span className="text-[#4A5565]">
+                    Quality Certifications:
+                  </span>
+                  <span className="text-end">ISO 9001:2015, CE Mark</span>
                 </li>
               </ul>
             </Card>
@@ -663,33 +688,38 @@ export default function SoundProofingSolutionPage() {
           </div>
           {/* Technical Resources
            */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-            {downloadDoc.map((a) => (
-              <Card
-                key={a.description}
-                className="flex flex-col items-center text-center rounded-lg p-6 gap-3 border border-[#0000001A]"
-              >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                  {a.icon}
-                </div>
+          <div className="w-full flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 place-items-center">
+              {" "}
+              {downloadDoc.map((a) => (
+                <Card
+                  key={a.description}
+                  className="flex flex-col items-center text-center rounded-lg p-6 gap-3 border border-[#0000001A]"
+                >
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    {a.icon}
+                  </div>
 
-                <h3 className="text-lg text-gray-900 mb-1">{a.title}</h3>
+                  <h3 className="text-lg text-gray-900 mb-1">{a.title}</h3>
 
-                <p className="text-[#4A5565] text-sm max-w-60 w-full">
-                  {a.description}
-                </p>
+                  <p className="text-[#4A5565] text-sm max-w-60 w-full">
+                    {a.description}
+                  </p>
 
-                <div className="flex justify-between w-full text-[#6A7282] text-[10.5px] py-1 max-w-56">
-                  <p>{a.type}</p>
-                  <p>{a.size}</p>
-                </div>
+                  <div className="flex justify-between w-full text-[#6A7282] text-[10.5px] py-1 max-w-56">
+                    <p>{a.type}</p>
+                    <p>{a.size}</p>
+                  </div>
 
-                <Button className="w-full max-w-56 border border-primary bg-white hover:bg-white text-primary flex items-center justify-center gap-2 px-4 py-2">
-                  <Download />
-                  Download
-                </Button>
-              </Card>
-            ))}
+                  <a href={a.file} download>
+                    <Button className="w-full max-w-56 border border-primary bg-white hover:bg-white text-primary flex items-center justify-center gap-2 px-4 py-2">
+                      <Download />
+                      Download
+                    </Button>
+                  </a>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

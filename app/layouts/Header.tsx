@@ -32,23 +32,27 @@ export function Header() {
   const solutions = [
     {
       title: "Insulation Solutions",
-      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      description:
+        "Durable insulation boosting efficiency, safety, and environmental protection.",
       navigate: "/insulation",
     },
     {
       title: "HVAC / Ducting Solutions",
-      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      description:
+        "Precise, durable ducting for efficient industrial climate control.",
       navigate: "/ducting-solutions",
     },
     {
       title: "Cold Storage Solutions",
-      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      description:
+        "Durable cold storage insulation ensuring efficiency, sealing, and hygiene.",
       navigate: "/cold-storage-solutions",
     },
 
     {
       title: "Soundproofing Solutions",
-      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      description:
+        "Durable soundproofing for superior noise control and comfort.",
       navigate: "/sound-proofing-solutions",
     },
   ];
@@ -145,18 +149,18 @@ export function Header() {
           />
         </div>
 
-        <div className=" mx-auto  lg:px-24 px-4 flex md:flex-row flex-col justify-between items-center relative">
-          <div className="flex items-center space-x-2 ml-auto md:ml-0   md:space-x-4">
-            <div className="flex items-center space-x-1 md:space-x-2 hover:bg-white/10 md:px-2 py-1 rounded-md transition-colors">
-              <Phone className="h-4 w-4" />
-              <span className="text-[13px] md:text-[14px]">
-                +1 (555) 123-4567
+        <div className=" mx-auto  lg:px-24 md:px-4 flex md:flex-row flex-col justify-between items-center relative">
+          <div className="flex items-center justify-between w-full max-w-sm px-2  space-x-1 ml-auto md:ml-0 md:space-x-4">
+            <div className="flex items-center space-x-1 md:space-x-2 hover:bg-white/10 px-0.5 md:px-2 py-1 rounded-md transition-colors">
+              <Phone className="md:h-4 h-3 w-3 md:w-4" />
+              <span className="text-[11.5px] md:text-[14px]">
+                +917871608088
               </span>
             </div>
             <div className="flex items-center space-x-1 md:space-x-2 hover:bg-white/10 md:px-2 py-1 rounded-md transition-colors">
-              <Mail className="h-4 w-4" />
-              <span className="text-[13px] md:text-[14px]">
-                info@company.com
+              <Mail className="md:h-4 h-3 w-3 md:w-4" />
+              <span className="text-[11.5px] md:text-[14px]">
+                jagadeesan.bharath@gmail.com
               </span>
             </div>
           </div>
@@ -418,7 +422,7 @@ export function Header() {
                           {title.title} <span>→</span>
                         </button>
                         <p className="text-[12.5px] text-gray-500">
-                          Lorem ipsum Lorem ipsum Lorem ipsum
+                          {title.description}
                         </p>
                       </div>
                     </Link>

@@ -1,9 +1,17 @@
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
-import { Factory, Zap, Building2, Truck, Wrench } from "lucide-react";
+import { Factory, Zap, Building2, Wrench } from "lucide-react";
 import { useDropdownStore } from "./store/toggleDropdown";
 
 const industries = [
+  {
+    icon: Factory,
+    title: "Pharma",
+    description:
+      "Hygienic and energy-efficient systems for food processing units and FMCG manufacturing facilities.",
+    image:
+      "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+  },
   {
     icon: Factory,
     title: "Food & FMCG",
@@ -27,14 +35,6 @@ const industries = [
       "Heavy-duty insulation and ventilation support for engineering plants and infrastructure projects.",
     image:
       "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    icon: Truck,
-    title: "Pharma & Healthcare",
-    description:
-      "Logistics and transportation infrastructure solutionsTemperature-controlled and contamination-safe solutions for pharma labs and cleanrooms.",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
   },
   {
     icon: Wrench,

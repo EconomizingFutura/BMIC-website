@@ -1,279 +1,156 @@
 "use client";
-import { Card } from "../../components/ui/card";
+import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
-import Image from "next/image";
 import {
-  Zap,
-  Shield,
-  Download,
-  FileText,
-  CheckCircle,
-  Wrench,
-  Settings,
-  Dot,
-  Globe,
-  Mail,
   ArrowLeft,
+  Thermometer,
+  Shield,
+  CheckCircle,
+  MoveRight,
+  MapPin,
+  Calendar,
+  CircleCheckBig,
+  Dot,
+  Book,
+  Clock,
+  ExternalLink,
 } from "lucide-react";
-import { servicebanner } from "../../components/figma/images/index";
+import Image from "next/image";
+import { servicebanner } from "@/components/figma/images";
 import { useRouter } from "next/navigation";
 
 export default function ColdStorageSolutionsPage() {
   const router = useRouter();
   const onBackToHome = () => router.push("/");
-  // const services = [
-  //   {
-  //     id: 1,
-  //     title: "Thermal Insulation",
-  //     icon: <Thermometer className="h-6 w-6" />,
-  //     description:
-  //       "High-performance insulation solutions for industrial pipes, vessels, and equipment operating at extreme temperatures.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Temperature range: -200°C to +1000°C",
-  //       "Energy loss reduction up to 85%",
-  //       "Fire-resistant materials",
-  //       "Custom fabrication available",
-  //       "Maintenance-free operation",
-  //       "Corrosion protection",
-  //     ],
-  //     applications: [
-  //       "Petrochemical plants",
-  //       "Power generation facilities",
-  //       "Chemical processing units",
-  //       "Steam distribution systems",
-  //       "Furnaces and kilns",
-  //       "Cryogenic applications",
-  //     ],
-  //     specifications: {
-  //       materials: "Mineral wool, Ceramic fiber, Aerogel, Polyurethane",
-  //       thickness: "25mm to 200mm",
-  //       density: "32-160 kg/m³",
-  //       certification: "IS 8183, ASTM C547, EN 14303",
-  //     },
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Cold Storage Solutions",
-  //     icon: <Snowflake className="h-6 w-6" />,
-  //     description:
-  //       "Precision-controlled cold storage facilities for pharmaceuticals, food processing, and specialty applications.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1576091160549-57d4ac34bfad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Temperature precision ±0.5°C",
-  //       "Multi-zone temperature control",
-  //       "Automated monitoring systems",
-  //       "Energy-efficient design",
-  //       "FDA/WHO compliance",
-  //       "Emergency backup systems",
-  //     ],
-  //     applications: [
-  //       "Pharmaceutical storage",
-  //       "Vaccine distribution centers",
-  //       "Food processing facilities",
-  //       "Data center cooling",
-  //       "Laboratory storage",
-  //       "Blood bank facilities",
-  //     ],
-  //     specifications: {
-  //       materials: "PIR/PUF panels, Stainless steel",
-  //       thickness: "75mm to 200mm",
-  //       density: "40-50 kg/m³",
-  //       certification: "FDA, WHO, HACCP, ISO 22000",
-  //     },
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "HVAC & Ducting",
-  //     icon: <Wind className="h-6 w-6" />,
-  //     description:
-  //       "Complete HVAC solutions including design, installation, and maintenance of air conditioning and ventilation systems.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Energy-efficient design",
-  //       "Smart controls integration",
-  //       "Zone-based climate control",
-  //       "Air quality monitoring",
-  //       "Noise reduction technology",
-  //       "Predictive maintenance",
-  //     ],
-  //     applications: [
-  //       "Commercial buildings",
-  //       "Healthcare facilities",
-  //       "Industrial complexes",
-  //       "Data centers",
-  //       "Educational institutions",
-  //       "Hospitality sector",
-  //     ],
-  //     specifications: {
-  //       materials: "Galvanized steel, Aluminum, Stainless steel",
-  //       thickness: "0.6mm to 2.0mm",
-  //       density: "Variable based on application",
-  //       certification: "IS 5392, ASHRAE, SMACNA",
-  //     },
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "Industrial Solutions",
-  //     icon: <Factory className="h-6 w-6" />,
-  //     description:
-  //       "Comprehensive industrial thermal management including steam systems, process heating, and equipment insulation.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Process optimization",
-  //       "Energy recovery systems",
-  //       "Steam trap management",
-  //       "Heat exchanger insulation",
-  //       "Boiler insulation",
-  //       "Maintenance services",
-  //     ],
-  //     applications: [
-  //       "Manufacturing plants",
-  //       "Process industries",
-  //       "Power plants",
-  //       "Steel mills",
-  //       "Cement plants",
-  //       "Oil refineries",
-  //     ],
-  //     specifications: {
-  //       materials: "Various based on application",
-  //       thickness: "Custom designed",
-  //       density: "Application specific",
-  //       certification: "IS, ASTM, EN standards",
-  //     },
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "Energy Efficiency",
-  //     icon: <Zap className="h-6 w-6" />,
-  //     description:
-  //       "Energy audit, optimization consulting, and implementation of energy-saving thermal management solutions.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Energy audits & assessments",
-  //       "ROI analysis & reporting",
-  //       "Carbon footprint reduction",
-  //       "Sustainability consulting",
-  //       "Performance monitoring",
-  //       "Government incentive assistance",
-  //     ],
-  //     applications: [
-  //       "Industrial facilities",
-  //       "Commercial buildings",
-  //       "Healthcare institutions",
-  //       "Educational campuses",
-  //       "Government buildings",
-  //       "Residential complexes",
-  //     ],
-  //     specifications: {
-  //       materials: "Smart sensors, IoT devices",
-  //       thickness: "N/A",
-  //       density: "N/A",
-  //       certification: "BEE, LEED, GRIHA",
-  //     },
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "Regulatory Compliance",
-  //     icon: <Shield className="h-6 w-6" />,
-  //     description:
-  //       "Ensuring compliance with international standards, safety regulations, and industry-specific requirements.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Regulatory consulting",
-  //       "Documentation support",
-  //       "Inspection & testing",
-  //       "Certification assistance",
-  //       "Training programs",
-  //       "Compliance monitoring",
-  //     ],
-  //     applications: [
-  //       "Pharmaceutical facilities",
-  //       "Food processing plants",
-  //       "Chemical industries",
-  //       "Healthcare facilities",
-  //       "Export-oriented units",
-  //       "Government projects",
-  //     ],
-  //     specifications: {
-  //       materials: "Compliant materials only",
-  //       thickness: "As per regulations",
-  //       density: "Standard compliant",
-  //       certification: "All major international standards",
-  //     },
-  //   },
-  // ];
-
-  const downloadDoc = [
+  const projects = [
     {
-      title: "Technical Data Sheet",
-      description: "Complete technical specifications and performance data",
-      type: "PDF",
-      size: "2.4 MB",
-      button: "Download",
-      icon: <FileText className="h-8 w-8 text-primary" />,
+      title: "Tech & Innovation Campus",
+      client: "Infosys",
+      category: "Commercial",
+      location: " Mysore, Karnataka",
+      year: "2024",
+      image:
+        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      description:
+        "Specialized insulation and ducting systems implemented for a sprawling commercial campus of Infosys, ensuring energy-efficient climate control and acoustic comfort across offices.",
     },
     {
-      title: "Installation Manual",
-      description: "Step-by-step installation and setup guidelines",
-      type: "PDF",
-      size: "5.1 MB",
-      button: "Download",
-      icon: <Wrench className="h-8 w-8 text-primary" />,
-    },
-    {
-      title: "Safety Certificates",
-      description: "ISO certifications and compliance documentation",
-      type: "PDF",
-      size: "1.8 MB",
-      button: "Download",
-      icon: <Shield className="h-8 w-8 text-primary" />,
-    },
-    {
-      title: "CAD Drawings",
-      description: "Detailed engineering drawings and 3D models",
-      type: "DWG",
-      size: "12.3 MB",
-      icon: <Settings className="h-8 w-8 text-primary" />,
-      button: "Download",
+      title: "Premium Mixed-use Development",
+      client: "DLF",
+      category: "Energy",
+      location: "Chennai, Tamil Nadu",
+      year: "2024",
+      image:
+        "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      description:
+        "Advanced insulation integration in DLF’s Chennai project, enhancing thermal performance, energy savings, and occupant comfort across retail, office, and residential zones.",
     },
   ];
 
-  const keyFeatures = [
+  const cards = [
     {
-      icon: <Zap />,
-      title: "High Performance",
-      description: "Industry-leading efficiency with 99.7% uptime guarantee",
-      features: ["24/7 Operation", "Fast Response Time", "Automated Systems"],
-    },
-    {
-      icon: <Shield />,
-      title: "Safety & Compliance",
-      description: "ISO certified with comprehensive safety protocols",
-      features: ["ISO 9001:2015", "OSHA Compliant", "CE Marked"],
-    },
-    {
-      icon: <Settings />,
-      title: "Advanced Technology",
-      description: "Cutting-edge automation and control systems",
+      image:
+        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      label: "Processing",
+      title: "Commercial Insulation & Ducting Systems",
+      applications: [
+        "Office complexes",
+        "Shopping malls",
+        "Hotels & resorts",
+        "Residential towers",
+      ],
       features: [
-        "IoT Integration",
-        "Real-time Monitoring",
-        "Predictive Maintenance",
+        "Fire-rated insulation systems",
+        "Acoustic noise reduction",
+        "Energy-efficient climate control",
+        "Durable, low-maintenance solutions",
+      ],
+      specs: {
+        capacity: "25–150 mm (customized)",
+        accuracy: "≤0.035 W/m·K",
+        material: "Mineral Wool / PIR / PUF with aluminum or GI cladding",
+        standards: "ISO 9001, LEED, IGBC compliance",
+      },
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      label: "Fire-Safe",
+      title: "Acoustic & Fire-Safe Solutions",
+      applications: [
+        "Auditoriums & conference halls",
+        "Multiplexes & cinemas",
+        "Commercial kitchens & HVAC systems",
+        "High-rise buildings",
+      ],
+      features: [
+        "Advanced soundproofing panels",
+        "Fire-rated ducting insulation",
+        "Vibration & noise control systems",
+        "Hygienic, easy-to-clean finishes",
+      ],
+      specs: {
+        capacity: "Up to 2 hours",
+        accuracy: "Up to 0.9",
+        material: "Rockwool / Acoustic boards / Specialized duct liners",
+        standards: "NBC, NFPA, ISO certified",
+      },
+    },
+  ];
+
+  const data = [
+    {
+      title: "Stringent Regulatory Compliance",
+      icon: <Shield className="md:w-7 w-6 h-6 md:h-7 text-primary" />,
+      priority: "Critical",
+      priorityColor: "bg-[#005919] text-white",
+      description:
+        "Meeting building codes, fire safety standards, and environmental regulations while ensuring long-lasting insulation performance.",
+      solutions: [
+        "Fire-rated insulation systems",
+        "Code-compliant ducting solutions",
+        "Certified sustainable materials",
       ],
     },
     {
-      icon: <Globe />,
-      title: "Global Support",
-      description: "Worldwide service network with local expertise",
-      features: ["50+ Countries", "Local Teams", "Remote Support"],
+      title: "Temperature & Environment Control",
+      priority: "High",
+      priorityColor: "bg-[#005919] text-white",
+      icon: <Thermometer className="md:w-7 w-6 h-6 md:h-7 text-primary" />,
+      description:
+        " Ensuring efficient climate control and indoor comfort across offices, malls, hotels, and real estate complexes",
+      solutions: [
+        "HVAC duct insulation",
+        "Thermal barriers for walls & roofs",
+        "Energy-efficient climate systems",
+      ],
+    },
+    {
+      title: "Operational Efficiency",
+      priority: "Medium",
+      icon: <Book className="md:w-7 w-6 h-6 md:h-7 text-primary" />,
+      priorityColor: "bg-[#005919] text-white",
+      description:
+        "Balancing cost savings, sustainability, and long-term durability in large-scale commercial projects.",
+      solutions: [
+        "Energy-saving insulation solutions",
+        "Optimized ducting layouts",
+        "Low-maintenance, durable systems",
+      ],
+    },
+    {
+      title: "Production Efficiency",
+      priority: "Medium",
+      icon: <Clock className="md:w-7 w-6 h-6 md:h-7 text-primary" />,
+      priorityColor: "bg-[#E8F5EA] ",
+      description:
+        " Balancing food safety with energy savings, production speed, and cost-effectiveness.",
+      solutions: [
+        "Energy-efficient insulation systems",
+        "Optimized ducting layouts",
+        "Long-lasting, low-maintenance materials",
+      ],
     },
   ];
 
@@ -296,35 +173,36 @@ export default function ColdStorageSolutionsPage() {
                 Back to Home
               </Button>
               <div className="space-y-4">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-gray-900">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl  font-semibold leading-tight text-gray-900">
                   Commercial
-                  <span className="text-primary">
-                    {" "}
-                    <br className="hidden sm:block" />& Real Estate
-                  </span>
+                  <span className="text-primary"> Food & Real Estate</span>
+                  <br />
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">
-                  State-of-the-art industrial equipment designed for maximum
-                  efficiency, reliability, and performance. Our solutions
-                  integrate seamlessly into your existing operations while
-                  delivering measurable improvements.
+                  Delivering specialized insulation and ducting solutions for
+                  commercial and real estate projects, designed to enhance
+                  energy efficiency, acoustic comfort, and climate control. Our
+                  systems integrate seamlessly into modern infrastructure,
+                  ensuring long-term performance and sustainability.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                {["ISO Certified", "99.7% Uptime", "Global Support"].map(
-                  (benefit, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center border border-[#0059194D] py-2 px-4 rounded-md space-x-2"
-                    >
-                      <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                      <span className="text-primary font-medium text-[10.5px] leading-[14px] tracking-normal text-center align-middle">
-                        {benefit}
-                      </span>
-                    </div>
-                  )
-                )}
+                {[
+                  "ISO Certified",
+                  "30+ Years of Expertise",
+                  "Proven Energy Efficiency",
+                ].map((benefit, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center border border-[#0059194D] py-2 px-4 rounded-md space-x-2"
+                  >
+                    <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                    <span className="text-primary font-medium text-[10.5px] leading-[14px] tracking-normal text-center align-middle">
+                      {benefit}
+                    </span>
+                  </div>
+                ))}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
@@ -333,15 +211,8 @@ export default function ColdStorageSolutionsPage() {
                   className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="relative">Request Quote</span>{" "}
-                  <Mail className="ml-2 relative h-5 w-5" />
-                </Button>
-                <Button
-                  size="lg"
-                  className="bg-white text-primary border border-primary hover:bg-white flex items-center justify-center"
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Brochure
+                  <span className="relative"> WhatsApp Us</span>{" "}
+                  <MoveRight className="ml-2 h-5 relative w-5" />
                 </Button>
               </div>
             </div>
@@ -363,374 +234,409 @@ export default function ColdStorageSolutionsPage() {
           </div>
         </div>
       </section>
+      {/* <section className="relative bg-gradient-to-br from-primary/5 via-white to-accent/30 py-20 overflow-hidden">
+        <div className="container mx-auto px-4 relative">
+          <Button
+            variant="outline"
+            onClick={onBackToHome}
+            className="mb-8 hover:bg-primary hover:text-white transition-colors shadow-lg border-primary/30"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Home
+          </Button>
 
-      {/* <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {services.map((service) => (
-              <Card
-                key={service.id}
-                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-              >
-                <div className="relative h-64">
-                  <ImageWithFallback
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
-                  <div className="absolute top-4 left-4">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white">
-                      {service.icon}
-                    </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-xl text-white mb-2">{service.title}</h3>
-                    <p className="text-white/90 text-sm">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-
-                <CardContent className="p-6">
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-lg text-gray-900 mb-3">
-                        Key Features
-                      </h4>
-                      <div className="grid grid-cols-1 gap-2">
-                        {service.features.slice(0, 4).map((feature, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center space-x-2"
-                          >
-                            <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
-                            <span className="text-gray-700 text-sm">
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg text-gray-900 mb-3">
-                        Applications
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {service.applications.slice(0, 4).map((app, index) => (
-                          <Badge
-                            key={index}
-                            variant="outline"
-                            className="text-xs border-primary/30 text-primary"
-                          >
-                            {app}
-                          </Badge>
-                        ))}
-                        {service.applications.length > 4 && (
-                          <Badge
-                            variant="outline"
-                            className="text-xs border-gray-300 text-gray-600"
-                          >
-                            +{service.applications.length - 4} more
-                          </Badge>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="bg-gray-50 p-4 rounded-lg">
-                      <h4 className="text-sm text-gray-900 mb-2">
-                        Technical Specifications
-                      </h4>
-                      <div className="grid grid-cols-2 gap-2 text-xs">
-                        <div>
-                          <span className="text-gray-500">Materials:</span>
-                          <p className="text-gray-700 truncate">
-                            {service.specifications.materials}
-                          </p>
-                        </div>
-                        <div>
-                          <span className="text-gray-500">Certification:</span>
-                          <p className="text-gray-700 truncate">
-                            {service.specifications.certification}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex space-x-3">
-                      <Button className="flex-1 bg-primary hover:bg-primary/90">
-                        <Phone className="h-4 w-4 mr-2" />
-                        Get Quote
-                      </Button>
-                      <Button
-                        variant="outline"
-                        className="border-primary/30 text-primary hover:bg-primary hover:text-white"
-                      >
-                        <Download className="h-4 w-4 mr-2" />
-                        TDS
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="text-center mb-12">
+            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-4 py-2">
+              Pharmaceutical Industry
+            </Badge>
+            <h1 className="text-4xl lg:text-6xl text-gray-900 mb-6">
+              Pharmaceutical{" "}
+              <span className="text-primary relative">
+                Thermal Solutions
+                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Specialized thermal insulation and cold storage solutions for
+              pharmaceutical manufacturing, ensuring product integrity and
+              regulatory compliance.
+            </p>
           </div>
         </div>
       </section> */}
-      <section className="py-20 bg-gray-50">
+      {/* Industry Challenges */}
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="mb-4  bg-primary/10 text-primary border-primary/20">
-              Key Features
-            </Badge>
-            <h2 className="text-3xl font-semibold lg:text-[52px] text-gray-900 mb-6">
-              Why Choose Our
-              <span className="text-primary"> Solutions</span>
+            <h2 className="text-3xl text-gray-900 mb-6">
+              Industry Challenges We Address
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Discover the advanced features that set our industrial systems
-              apart from the competition.
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <Thermometer className="h-8 w-8 text-primary mb-4" />
+              <h3 className="text-lg text-gray-900 mb-3">
+                Temperature Control
+              </h3>
+              <p className="text-gray-600">
+                Maintaining precise temperature ranges for drug stability and
+                efficacy.
+              </p>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <Shield className="h-8 w-8 text-primary mb-4" />
+              <h3 className="text-lg text-gray-900 mb-3">
+                Regulatory Compliance
+              </h3>
+              <p className="text-gray-600">
+                Meeting FDA, WHO, and other international pharmaceutical
+                standards.
+              </p>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <Zap className="h-8 w-8 text-primary mb-4" />
+              <h3 className="text-lg text-gray-900 mb-3">Energy Efficiency</h3>
+              <p className="text-gray-600">
+                Reducing operational costs while maintaining critical
+                environmental conditions.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section> */}
+      <section className="py-20 bg-[#F9FAFB]">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-4 py-2">
+              Industry Challenges
+            </Badge>
+            <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">
+              Overcoming
+              <span className="text-primary"> Critical Challenges </span>
+              in Food & FMCG
+            </h2>
+            <p className="text-lg text-gray-600 max-w-5xl mx-auto">
+              Modern commercial buildings demand energy efficiency, acoustic
+              comfort, and climate control, requiring specialized insulation
+              solutions for sustainable, cost-effective performance.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 items-start  lg:grid-cols-4 gap-8">
-            {keyFeatures.map((a) => (
-              <Card
-                key={a.description}
-                className="text-start rounded-[12.75px] py-6 px-4 gap-2  border-[#0000001A] border"
-              >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center  mb-4">
-                  {a.icon}
-                </div>
-                <h3 className="text-lg text-start text-[#101828] mb-1">
-                  {a.title}
-                </h3>
-                <p className="text-[#4A5565]  text-sm max-w-60 w-full ">
-                  {a.description}
-                </p>
-                <div className="text-[#6A7282] text-[10.5px] py-1 max-w-56   w-full flex justify-between">
-                  <ul className="list-disc list-inside space-y-1">
-                    {a.features.map((feature, index) => (
-                      <li
-                        key={index}
-                        className="flex items-center -translate-2.5   "
-                      >
-                        <Dot size={25} className=" text-primary " />
-                        {feature}
+
+          <div className=" w-full py-12  flex items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-6">
+              {data.map((item, index) => (
+                <Card
+                  key={index}
+                  className="border border-black/10 rounded-[12.75px]  bg-[#FFFFFF] md:max-w-[532px]  opacity-100 w-full gap-2.5 md:px-5 py-5"
+                >
+                  <div className="flex items-center justify-between  p-5">
+                    <div className="flex items-start space-x-2">
+                      <div className="bg-green-100 md:p-3 p-2 rounded-full">
+                        {item.icon}
+                      </div>
+                      <div className=" flex flex-col space-y-2.5 justify-start">
+                        <div className="flex md:flex-row flex-col items-start md:items-center space-x-2">
+                          <h2 className="text-lg font-semibold">
+                            {item.title}
+                          </h2>
+                          <p
+                            className={`${item.priorityColor} ${
+                              item.priority.toLowerCase() == "medium"
+                                ? "text-primary"
+                                : " "
+                            } text-xs font-medium px-2 py-1 rounded-[6.75px] w-min`}
+                          >
+                            {item.priority}
+                          </p>
+                        </div>
+
+                        <p className="text-sm max-w-sm  text-[#4A5565]">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 className="text-sm font-semibold px-5">Our Solutions:</h3>
+                  <ul className="space-y-3 text-sm px-5 text-gray-700">
+                    {item.solutions.map((solution, idx) => (
+                      <li key={idx} className="flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <span>{solution}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* Technical Specifications */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge className="mb-4  bg-primary/10 text-primary border-primary/20">
-              Technical Specifications
-            </Badge>
-            <h2 className="text-3xl font-semibold lg:text-[52px] text-gray-900 mb-6">
-              Detailed <span className="text-primary"> Specifications</span>{" "}
-            </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Comprehensive technical data for informed decision-making and
-              seamless integration.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-6 md:p-4">
-            {/* Performance Card */}
-            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
-              <h2 className="text-lg font-semibold ">Performance</h2>
-              <div className="w-full border-t border-[#00591933]" />
-
-              <ul className="space-y-2 text-sm">
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Maximum Output:</span>
-                  <span className=" text-end block">10,000 units/hour</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Efficiency Rating:</span>
-                  <span className=" text-end block">99.7%</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Power Consumption:</span>
-                  <span className=" text-end block">15kW nominal</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Operating Temperature:</span>
-                  <span className=" text-end block">-20°C to +60°C</span>
-                </li>
-              </ul>
-            </Card>
-
-            {/* Dimensions Card */}
-            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
-              <h2 className="text-lg font-semibold ">Dimensions</h2>
-              <div className="w-full border-t border-[#00591933]" />
-
-              <ul className="space-y-2 text-sm">
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Length:</span>
-                  <span>2500mm</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Width:</span>
-                  <span>1200mm</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Height:</span>
-                  <span>1800mm</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Weight:</span>
-                  <span>850kg</span>
-                </li>
-              </ul>
-            </Card>
-
-            {/* Materials Card */}
-            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
-              <h2 className="text-lg font-semibold">Materials</h2>
-              <div className="w-full border-t border-[#00591933]" />
-              <ul className="space-y-2 text-sm">
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Frame:</span>
-                  <span>Stainless Steel 316L</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Components:</span>
-                  <span className=" text-end block">Food Grade Materials</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Seals:</span>
-                  <span>FDA Approved</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Coating:</span>
-                  <span>Anti-corrosive</span>
-                </li>
-              </ul>
-            </Card>
-
-            {/* Compliance Card */}
-            <Card className="rounded-[12.75px] max-h-[248px] md:max-w-[252px] h-full w-full border border-[#00000010] p-6 bg-white">
-              <h2 className="text-lg font-semibold ">Compliance</h2>
-              <div className="w-full border-t border-[#00591933]" />
-              <ul className="space-y-2 text-sm">
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Safety Standards:</span>
-                  <span>ISO 9001:2015</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Quality:</span>
-                  <span>CE Marking</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Environmental:</span>
-                  <span>RoHS Compliant</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Industry:</span>
-                  <span>GMP Certified</span>
-                </li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Support Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge className="mb-4  bg-primary/10 text-primary border-primary/20">
-              Technical Resources
-            </Badge>
-            <h2 className="text-3xl font-semibold lg:text-[52px] text-gray-900 mb-6">
-              Download <span className="text-primary"> Documentation</span>{" "}
-            </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Access comprehensive technical documentation, certificates, and
-              installation guides.
-            </p>
-          </div>
-          {/* Technical Resources
-           */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-            {downloadDoc.map((a) => (
-              <Card
-                key={a.description}
-                className="flex flex-col items-center text-center rounded-lg p-6 gap-3 border border-[#0000001A]"
-              >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                  {a.icon}
-                </div>
-
-                <h3 className="text-lg text-gray-900 mb-1">{a.title}</h3>
-
-                <p className="text-[#4A5565] text-sm max-w-60 w-full">
-                  {a.description}
-                </p>
-
-                <div className="flex justify-between w-full text-[#6A7282] text-[10.5px] py-1 max-w-56">
-                  <p>{a.type}</p>
-                  <p>{a.size}</p>
-                </div>
-
-                <Button className="w-full max-w-56 border border-primary bg-white hover:bg-white text-primary flex items-center justify-center gap-2 px-4 py-2">
-                  <Download />
-                  Download
-                </Button>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      {/* <section className="py-20 bg-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 border border-white/20 rounded-full animate-pulse" />
-          <div className="absolute bottom-10 right-10 w-24 h-24 bg-white/10 rounded-lg rotate-45" />
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-white/15 rotate-12" />
-        </div>
-
-        <div className="container mx-auto px-4 relative">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl mb-6">
-              Ready to Optimize Your Thermal Management?
-            </h2>
-            <p className="text-xl mb-8 text-white/90">
-              Let our experts design a custom solution that meets your specific
-              requirements and delivers exceptional performance and energy
-              savings.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="bg-white text-primary hover:bg-gray-100"
-              >
-                <Phone className="h-5 w-5 mr-2" />
-                Schedule Consultation
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary"
-              >
-                <Download className="h-5 w-5 mr-2" />
-                Download Brochure
-              </Button>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
+      </section>
+      {/* Our Solutions */}
+      {/* <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl text-gray-900 mb-6">
+              Our Pharmaceutical Solutions
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            <Card className="overflow-hidden">
+              <div className="h-48">
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1576091160549-57d4ac34bfad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Cold storage facility"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl text-gray-900 mb-3">
+                  Cold Storage & Distribution
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Temperature-controlled storage solutions for vaccines,
+                  biologics, and temperature-sensitive medications.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">-80°C to +25°C range</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">±0.5°C precision</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">24/7 monitoring</span>
+                  </li>
+                </ul>
+                <Button className="w-full bg-primary hover:bg-primary/90">
+                  Learn More
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <div className="h-48">
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Manufacturing insulation"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl text-gray-900 mb-3">
+                  Manufacturing Process Insulation
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  High-performance insulation for pharmaceutical manufacturing
+                  equipment and processes.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">GMP compliant materials</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Easy to clean surfaces</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Chemical resistance</span>
+                  </li>
+                </ul>
+                <Button className="w-full bg-primary hover:bg-primary/90">
+                  Learn More
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </section> */}
+      <section className="py-16 bg-[#F9FAFB]">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-4 py-2">
+              Our Solution
+            </Badge>
+            <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">
+              Specialized <span className="text-primary">Products </span> for
+              Commercial & Real Estate{" "}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-5xl mx-auto">
+              Comprehensive range of insulation and ducting solutions designed
+              for modern commercial buildings and real estate projects, ensuring
+              energy efficiency, acoustic comfort, and regulatory compliance.
+            </p>
+          </div>
+
+          <div className=" w-full py-12  flex items-center justify-center">
+            <div className="w-full max-w-6xl  grid grid-cols-1 md:grid-cols-2 gap-6">
+              {cards.map((card, i) => (
+                <div
+                  key={card.title}
+                  className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 flex flex-col"
+                >
+                  <div className="relative  h-44 w-full">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover bg-black w-full h-full"
+                    />
+                    <span className="absolute top-3 left-3 text-[#FFFFFF33] bg-transparent text-xs px-2 py-1.5 rounded-[6.75px] border border-[#FFFFFF4D]">
+                      {card.label}
+                    </span>
+                    <h3 className=" absolute bottom-1 left-4 font-normal leading-[24.5px] text-[#FFFFFF] text-[17.5px]">
+                      {card.title}
+                    </h3>
+                  </div>
+                  <div className="md:px-6 px-2 pb-6   pt-4 flex flex-col flex-1">
+                    <div className="text-sm mt-1">
+                      <span className="font-semibold text-gray-800 py-1">
+                        Applications:
+                      </span>
+                      <div className="grid grid-cols-2 min-h-24 gap-y-1 mb-2 mt-1">
+                        {card.applications.map((app, i) => (
+                          <p key={i} className="flex text-blue-700 ">
+                            <Dot size={20} /> <span>{app}</span>
+                          </p>
+                        ))}
+                      </div>
+                      <span className="font-semibold text-gray-800 block py-1">
+                        Key Features:
+                      </span>
+                      <div className="grid grid-cols-2 gap-y-1 mb-3 mt-1">
+                        {card.features.map((feat, i) => (
+                          <p
+                            key={i}
+                            className="flex items-center font-normal text-[#364153]  gap-2.5"
+                          >
+                            <CircleCheckBig
+                              color="#00A63E"
+                              className="h-4 w-4"
+                            />
+                            {feat}
+                          </p>
+                        ))}
+                      </div>
+                      <div className="bg-[#F9FAFB] rounded-lg px-3 py-2 mt-2 shadow-sm text-xs text-gray-700 text-[12.3px]">
+                        <p className=" text-[#101828]  py-2">Specifications:</p>
+                        <div className="grid grid-cols-1 gap-2.5">
+                          <div className="text-[#101828] flex justify-between font-normal">
+                            <span className=" text-[#4A5565]">
+                              {i == 1 ? "Fire Rating" : "Insulation Thickness"}:
+                            </span>
+                            <span>{card.specs.capacity}</span>
+                          </div>
+                          <div className="text-[#101828] flex justify-between font-normal">
+                            <span className=" text-[#4A5565]">
+                              {i == 1
+                                ? "NRC (Noise Reduction Coefficient)"
+                                : "Thermal Conductivity"}
+                              :
+                            </span>
+                            <span>{card.specs.accuracy}</span>
+                          </div>
+                          <div className="text-[#101828] flex justify-between font-normal">
+                            <span className=" text-[#4A5565]">Material:</span>
+                            <span>{card.specs.material}</span>
+                          </div>
+                          <div className="text-[#101828] flex justify-between font-normal">
+                            <span className=" text-[#4A5565]">Standards:</span>
+                            <span>{card.specs.standards}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projects" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-4 py-2">
+              Success Stories
+            </Badge>
+            <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">
+              Proven <span className="text-primary">Results </span>
+              in Commercial & Real Estate Projects
+            </h2>
+            <p className="text-lg text-gray-600 max-w-5xl  mx-auto">
+              Real-world examples of how our insulation and ducting solutions
+              have transformed commercial spaces by improving energy efficiency,
+              acoustic comfort, and long-term sustainability.
+            </p>
+          </div>
+          <div className=" flex justify-center items-center mx-auto w-full ">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
+              {projects.slice(0, 3).map((project, index) => (
+                <Card
+                  key={index}
+                  className="group hover:shadow-xl max-w-lg transition-all duration-300 overflow-hidden"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      fill
+                    />
+
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-primary text-white">
+                        {project.category}
+                      </Badge>
+                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <ExternalLink className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
+
+                  <CardContent className="px-6">
+                    <div className="space-y-3">
+                      <h3 className="text-xl text-gray-900 font-semibold group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {project.description}
+                      </p>
+
+                      <div className="space-y-2 text-sm text-gray-500">
+                        <div className="flex items-center space-x-2">
+                          <span className="text-primary">Client:</span>
+                          <span>{project.client}</span>
+                        </div>
+
+                        <div className="flex items-center space-x-4">
+                          <div className="flex items-center space-x-1">
+                            <MapPin className="h-4 w-4 text-primary" />
+                            <span>{project.location}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="h-4 w-4 text-primary" />
+                            <span>{project.year}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

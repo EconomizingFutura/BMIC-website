@@ -22,6 +22,7 @@ import { useRouter } from "next/navigation";
 export default function DuctingSolutionsPage() {
   const router = useRouter();
   const onBackToHome = () => router.push("/");
+  const handleBroucher = () => router.push("/contact");
 
   const downloadDoc = [
     {
@@ -160,6 +161,7 @@ export default function DuctingSolutionsPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
                 <Button
+                  onClick={handleBroucher}
                   size="lg"
                   className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
                 >

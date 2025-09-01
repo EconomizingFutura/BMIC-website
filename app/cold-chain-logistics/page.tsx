@@ -21,72 +21,30 @@ import { servicebanner } from "@/components/figma/images";
 import { useRouter } from "next/navigation";
 
 export default function ColdChainIndustriesPage() {
+  const router = useRouter();
+  const onBackToHome = () => router.push("/");
   const projects = [
     {
-      title: "Advanced Manufacturing Plant",
-      client: "TechCorp Industries",
-      category: "Manufacturing",
-      location: "Detroit, MI",
+      title: "Corporate IT Campus – Infosys Mysore",
+      client: "Infosys Technologies Ltd",
+      category: "Commercial",
+      location: " Mysore, Karnataka",
       year: "2024",
       image:
         "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       description:
-        "Complete automation system implementation for a 50,000 sq ft manufacturing facility.",
+        "Complete HVAC & ducting system for 1.2 million sq. ft. IT campus, ensuring energy efficiency and comfort.",
     },
     {
-      title: "Solar Power Infrastructure",
-      client: "GreenEnergy Solutions",
+      title: "Commercial Complex – DLF Cyber City",
+      client: "DLF",
       category: "Energy",
-      location: "Phoenix, AZ",
+      location: "Chennai, Tamil Nadu",
       year: "2024",
       image:
         "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       description:
-        "Design and installation of 100MW solar power plant with energy storage systems.",
-    },
-    {
-      title: "Commercial Complex",
-      client: "Urban Development Co.",
-      category: "Construction",
-      location: "New York, NY",
-      year: "2023",
-      image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      description:
-        "Structural engineering and project management for 40-story commercial building.",
-    },
-    {
-      title: "Port Logistics Center",
-      client: "Maritime Logistics Inc.",
-      category: "Transportation",
-      location: "Long Beach, CA",
-      year: "2023",
-      image:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      description:
-        "Automated cargo handling system for major port facility operations.",
-    },
-    {
-      title: "Offshore Platform",
-      client: "Ocean Energy Corp",
-      category: "Oil & Gas",
-      location: "Gulf of Mexico",
-      year: "2023",
-      image:
-        "https://images.unsplash.com/photo-1625180726018-580b17371d52?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      description:
-        "Engineering and installation of deep-water drilling platform systems.",
-    },
-    {
-      title: "Defense Communication System",
-      client: "DoD Contract",
-      category: "Defense",
-      location: "Classified",
-      year: "2024",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      description:
-        "Secure communication infrastructure for military installations.",
+        "Thermal & acoustic insulation for a premium commercial hub, reducing energy costs by 22%.",
     },
   ];
 
@@ -95,48 +53,48 @@ export default function ColdChainIndustriesPage() {
       image:
         "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       label: "Processing",
-      title: "Pharmaceutical Processing Equipment",
+      title: "Engineering & Infrastructure Solutions",
       applications: [
-        "Tablet compression",
-        "Capsule filling",
-        "Liquid processing",
-        "Powder handling",
+        "Industrial Insulation (Hot & Cold)",
+        "Ducting & Ventilation Systems",
+        "Cold Storage Construction",
+        "Acoustic & Soundproofing Solutions",
       ],
       features: [
-        "GMP compliance",
-        "Easy cleaning",
-        "Precise control",
-        "Data logging",
+        "ISO & ISI compliance",
+        "Energy-efficient performance",
+        "Durable and low-maintenance materials",
+        "Seamless integration with existing infrastructure",
       ],
       specs: {
-        capacity: "Up to 500,000 tablets/hour",
-        accuracy: "±0.5% weight variation",
-        material: "316L Stainless Steel",
-        standards: "FDA 21 CFR Part 11",
+        capacity: "Up to 95% heat retention/reduction",
+        accuracy: "Rockwool / PUF / PIR / Aluminum Cladding",
+        material: "15–20 years lifecycle",
+        standards: "ISO 9001, ISO 14001, OHSAS 18001",
       },
     },
     {
       image:
         "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      label: "Packaging",
-      title: "Packaging & Serialization",
+      label: "Commercial",
+      title: "Commercial & Real Estate – HVAC & Ducting Systems",
       applications: [
-        "Tablet compression",
-        "Capsule filling",
-        "Liquid processing",
-        "Powder handling",
+        "Commercial Buildings & IT Parks",
+        "Shopping Malls & Multiplexes",
+        "Warehouses & Data Centers",
+        "Residential Towers",
       ],
       features: [
-        "GMP compliance",
-        "Easy cleaning",
-        "Precise control",
-        "Data logging",
+        "Centralized HVAC systems",
+        "Fire & safety compliant ducting",
+        "Low noise & high airflow",
+        "Smart monitoring & automation ready",
       ],
       specs: {
-        capacity: "Up to 500,000 tablets/hour",
-        accuracy: "±0.5% weight variation",
-        material: "316L Stainless Steel",
-        standards: "FDA 21 CFR Part 11",
+        capacity: "Up to 1,000,000 CFM air handling",
+        accuracy: "GI / Aluminum / Stainless Steel",
+        material: "20–30% vs traditional systems",
+        standards: "ASHRAE, SMACNA",
       },
     },
   ];
@@ -148,11 +106,11 @@ export default function ColdChainIndustriesPage() {
       priority: "Critical",
       priorityColor: "bg-[#005919] text-white",
       description:
-        "Meeting FDA, EMA, and other global regulatory requirements for pharmaceutical manufacturing",
+        " Meeting national building codes, fire safety regulations, and environmental standards across infrastructure projects.",
       solutions: [
-        "GMP-compliant systems",
-        "Automated documentation",
-        "Validation protocols",
+        "Fire-rated insulation systems",
+        "Code-compliant ducting solutions",
+        "Certified sustainable materials",
       ],
     },
     {
@@ -161,39 +119,40 @@ export default function ColdChainIndustriesPage() {
       priorityColor: "bg-[#005919] text-white",
       icon: <Thermometer className="md:w-7 w-6 h-6 md:h-7 text-primary" />,
       description:
-        "Maintaining precise environmental conditions for drug stability and efficacy",
+        " Ensuring effective climate control, energy efficiency, and comfort across industrial plants, warehouses, and public infrastructure.",
       solutions: [
-        "HVAC systems",
-        "Clean room technology",
-        "Monitoring sensors",
+        "HVAC duct insulation",
+        "Thermal barriers for large structures",
+        "Energy-efficient climate systems",
       ],
     },
     {
-      title: "Contamination Prevention",
+      title: "Safety & Durability",
       priority: "Critical",
       icon: <Book className="md:w-7 w-6 h-6 md:h-7 text-primary" />,
       priorityColor: "bg-[#005919] text-white",
       description:
-        "Ensuring sterile manufacturing environments and preventing cross-contamination",
-      solutions: ["Barrier systems", "Air filtration", "Aseptic processing"],
+        " Guaranteeing long-term performance, worker safety, and protection against fire, corrosion, and extreme conditions.",
+      solutions: [
+        "Fire-resistant insulation",
+        "Anti-corrosion cladding",
+        "High-durability materials",
+      ],
     },
     {
-      title: "Production Efficiency",
+      title: "Operational Efficiency",
       priority: "Medium",
       icon: <Clock className="md:w-7 w-6 h-6 md:h-7 text-primary" />,
       priorityColor: "bg-[#E8F5EA] ",
       description:
-        "Balancing quality requirements with production speed and cost-effectiveness",
+        " Balancing cost-effectiveness, energy savings, and sustainable practices for large-scale projects.",
       solutions: [
-        "Automation systems",
-        "Lean manufacturing",
-        "Process optimization",
+        "Energy-efficient insulation systems",
+        "Optimized ducting layouts",
+        "Long-lasting, low-life systems",
       ],
     },
   ];
-
-  const router = useRouter();
-  const onBackToHome = () => router.push("/");
 
   return (
     <div className="min-h-screen">
@@ -216,31 +175,39 @@ export default function ColdChainIndustriesPage() {
               <div className="space-y-4">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl  font-semibold leading-tight text-gray-900">
                   Advancing
-                  <span className="text-primary"> Cold Chain</span>
-                  <br /> Manufacturing
+                  <span className="text-primary">
+                    {" "}
+                    Engineering & Infrastructure
+                  </span>
+                  <br />
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">
-                  Delivering cutting-edge solutions for pharmaceutical
-                  manufacturing, ensuring compliance, quality, and <br />{" "}
-                  efficiency in every aspect of drug production from R&D to
-                  commercial scale manufacturing.
+                  Delivering specialized insulation and ducting solutions for
+                  large-scale engineering and infrastructure projects, ensuring
+                  durability, energy efficiency, and performance across
+                  industrial plants, warehouses, and public facilities. Our
+                  systems are designed to integrate seamlessly with complex
+                  infrastructure, supporting long-term sustainability and
+                  operational excellence.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                {["ISO Certified", "99.7% Uptime", "Global Support"].map(
-                  (benefit, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center border border-[#0059194D] py-2 px-4 rounded-md space-x-2"
-                    >
-                      <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                      <span className="text-primary font-medium text-[10.5px] leading-[14px] tracking-normal text-center align-middle">
-                        {benefit}
-                      </span>
-                    </div>
-                  )
-                )}
+                {[
+                  "ISO Certified",
+                  "30+ Years of Expertise",
+                  "Proven Energy Efficiency",
+                ].map((benefit, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center border border-[#0059194D] py-2 px-4 rounded-md space-x-2"
+                  >
+                    <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                    <span className="text-primary font-medium text-[10.5px] leading-[14px] tracking-normal text-center align-middle">
+                      {benefit}
+                    </span>
+                  </div>
+                ))}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
@@ -352,12 +319,12 @@ export default function ColdChainIndustriesPage() {
             <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">
               Overcoming
               <span className="text-primary"> Critical Challenges </span>
-              in Pharma
+              in Engineering & Infrastructure
             </h2>
             <p className="text-lg text-gray-600 max-w-5xl mx-auto">
-              The pharmaceutical industry faces unique challenges that require
-              specialized solutions and deep expertise to ensure patient safety
-              and regulatory compliance.
+              Large-scale infrastructure projects demand durable insulation,
+              energy efficiency, and climate control to ensure safety,
+              sustainability, and long-term performance.
             </p>
           </div>
 
@@ -503,18 +470,19 @@ export default function ColdChainIndustriesPage() {
             </Badge>
             <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">
               Specialized <span className="text-primary">Products </span> for
-              Pharma
+              Engineering & Infrastructure
             </h2>
             <p className="text-lg text-gray-600 max-w-5xl mx-auto">
-              Comprehensive range of pharmaceutical manufacturing equipment and
-              systems designed to meet the strictest quality and regulatory
-              requirements.
+              Comprehensive range of insulation and ducting solutions engineered
+              for infrastructure and industrial projects, ensuring durability,
+              safety, energy efficiency, and compliance with regulatory
+              standards.
             </p>
           </div>
 
           <div className=" w-full py-12  flex items-center justify-center">
             <div className="w-full max-w-6xl  grid grid-cols-1 md:grid-cols-2 gap-6">
-              {cards.map((card) => (
+              {cards.map((card, i) => (
                 <div
                   key={card.title}
                   className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 flex flex-col"
@@ -538,7 +506,7 @@ export default function ColdChainIndustriesPage() {
                       <span className="font-semibold text-gray-800 py-1">
                         Applications:
                       </span>
-                      <div className="grid grid-cols-2 gap-y-1 mb-2 mt-1">
+                      <div className="grid grid-cols-2 min-h-24 gap-y-1 mb-2 mt-1">
                         {card.applications.map((app, i) => (
                           <p key={i} className="flex text-blue-700 ">
                             <Dot size={20} /> <span>{app}</span>
@@ -566,15 +534,20 @@ export default function ColdChainIndustriesPage() {
                         <p className=" text-[#101828]  py-2">Specifications:</p>
                         <div className="grid grid-cols-1 gap-2.5">
                           <div className="text-[#101828] flex justify-between font-normal">
-                            <span className=" text-[#4A5565]">Capacity:</span>
+                            <span className=" text-[#4A5565]">
+                              {i == 1 ? "Capacity" : "Thermal Efficiency"}:
+                            </span>
                             <span>{card.specs.capacity}</span>
                           </div>
                           <div className="text-[#101828] flex justify-between font-normal">
-                            <span className=" text-[#4A5565]">Accuracy:</span>
+                            <span className=" text-[#4A5565]">Material:</span>
                             <span>{card.specs.accuracy}</span>
                           </div>
                           <div className="text-[#101828] flex justify-between font-normal">
-                            <span className=" text-[#4A5565]">Material:</span>
+                            <span className=" text-[#4A5565]">
+                              {" "}
+                              {i == 0 ? "Durability" : "Energy Saving"}::
+                            </span>
                             <span>{card.specs.material}</span>
                           </div>
                           <div className="text-[#101828] flex justify-between font-normal">
@@ -599,71 +572,72 @@ export default function ColdChainIndustriesPage() {
             </Badge>
             <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">
               Proven <span className="text-primary">Results </span>
-              in Pharmaceutical Projects
+              in Commercial & Real Estate Projects
             </h2>
             <p className="text-lg text-gray-600 max-w-5xl  mx-auto">
-              Real-world examples of how our solutions have transformed
-              pharmaceutical manufacturing <br /> operations and delivered
-              measurable results.
+              Real-world examples of how our insulation and ducting solutions
+              have transformed commercial spaces by improving energy efficiency,
+              acoustic comfort, and long-term sustainability.
             </p>
           </div>
+          <div className=" flex justify-center items-center mx-auto w-full ">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
+              {projects.slice(0, 3).map((project, index) => (
+                <Card
+                  key={index}
+                  className="group hover:shadow-xl max-w-lg transition-all duration-300 overflow-hidden"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      fill
+                    />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.slice(0, 3).map((project, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-xl transition-all duration-300 overflow-hidden"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    fill
-                  />
-
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-primary text-white">
-                      {project.category}
-                    </Badge>
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-primary text-white">
+                        {project.category}
+                      </Badge>
+                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <ExternalLink className="h-6 w-6 text-white" />
+                    </div>
                   </div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ExternalLink className="h-6 w-6 text-white" />
-                  </div>
-                </div>
 
-                <CardContent className="px-6">
-                  <div className="space-y-3">
-                    <h3 className="text-xl text-gray-900 font-semibold group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
+                  <CardContent className="px-6">
+                    <div className="space-y-3">
+                      <h3 className="text-xl text-gray-900 font-semibold group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
 
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {project.description}
-                    </p>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {project.description}
+                      </p>
 
-                    <div className="space-y-2 text-sm text-gray-500">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-primary">Client:</span>
-                        <span>{project.client}</span>
-                      </div>
-
-                      <div className="flex items-center space-x-4">
-                        <div className="flex items-center space-x-1">
-                          <MapPin className="h-4 w-4 text-primary" />
-                          <span>{project.location}</span>
+                      <div className="space-y-2 text-sm text-gray-500">
+                        <div className="flex items-center space-x-2">
+                          <span className="text-primary">Client:</span>
+                          <span>{project.client}</span>
                         </div>
-                        <div className="flex items-center space-x-1">
-                          <Calendar className="h-4 w-4 text-primary" />
-                          <span>{project.year}</span>
+
+                        <div className="flex items-center space-x-4">
+                          <div className="flex items-center space-x-1">
+                            <MapPin className="h-4 w-4 text-primary" />
+                            <span>{project.location}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="h-4 w-4 text-primary" />
+                            <span>{project.year}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

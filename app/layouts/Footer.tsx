@@ -28,6 +28,7 @@ export const Footer: React.FC = () => {
   const onNavigateToFood = () => router.push("/food-beverage");
   const onNavigateToColdChain = () => router.push("/cold-chain-logistics");
   const onNavigateToBlog = () => router.push("/blog");
+  const onNavigateToRealEstate = () => router.push("/commercial-real-estate");
 
   return (
     <footer className="bg-gray-900 text-[#D1D5DC]">
@@ -175,25 +176,33 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   onClick={onNavigateToFood}
-                  className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
+                  className="text-gray-300   hover:text-primary transition-colors"
                 >
-                  Food & Beverage
+                  Food & FMCG
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={onNavigateToRealEstate}
+                  className="text-gray-300  hover:text-primary cursor-pointer transition-colors"
+                >
+                  Commercial & Real Estate
                 </a>
               </li>
               <li>
                 <a
                   onClick={onNavigateToColdChain}
-                  className="text-gray-300  hover:text-primary transition-colors"
+                  className="text-gray-300  hover:text-primary cursor-pointer transition-colors"
                 >
-                  Cold Chain Logistics
+                  Engineering & Infrastructure
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a className="text-gray-300 hover:text-primary transition-colors">
                   IT & Data Centers
                 </a>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <a className="text-gray-300 hover:text-primary transition-colors">
                   Warehousing
                 </a>
@@ -202,7 +211,7 @@ export const Footer: React.FC = () => {
                 <a className="text-gray-300 hover:text-primary transition-colors">
                   Construction & Infrastructure
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -240,7 +249,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <a
                     onClick={() => onNavigateToBlog()}
-                    className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
+                    className="text-gray-300 hidden cursor-pointer hover:text-primary transition-colors"
                   >
                     Blogs
                   </a>

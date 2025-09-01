@@ -248,7 +248,7 @@ export default function SoundProofingSolutionPage() {
     //   button: "Download",
     // },
   ];
-
+  const handleBroucher = () => router.push("/contact");
   const keyFeatures = [
     {
       icon: <Zap />,
@@ -350,6 +350,7 @@ export default function SoundProofingSolutionPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
                 <Button
+                  onClick={handleBroucher}
                   size="lg"
                   className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
                 >

@@ -32,17 +32,7 @@ export function OurSolutionsServices({
       image: automobile,
       navigate: onNavigateToInsulation,
     },
-    {
-      icon: Shield,
-      title: "Cold Storage",
-      subtitle: "Environmental Management",
-      description:
-        "Environmental management system certification demonstrating our commitment to sustainability.",
-      validUntil: "2025",
-      color: "bg-green-500",
-      image: ColdStorage,
-      navigate: onNavigateToColdStorage,
-    },
+
     {
       icon: Shield,
       title: "HVAC / Ducting",
@@ -53,6 +43,17 @@ export function OurSolutionsServices({
       color: "bg-red-500",
       image: DUCT,
       navigate: onNavigateToDucting,
+    },
+    {
+      icon: Shield,
+      title: "Cold Storage",
+      subtitle: "Environmental Management",
+      description:
+        "Environmental management system certification demonstrating our commitment to sustainability.",
+      validUntil: "2025",
+      color: "bg-green-500",
+      image: ColdStorage,
+      navigate: onNavigateToColdStorage,
     },
     {
       icon: Award,

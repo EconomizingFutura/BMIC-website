@@ -50,7 +50,7 @@ export function CTASection() {
                 size="sm"
                 className="bg-white text-primary hover:text-white hover:bg-green-600 w-full"
               >
-                +91 7871608088
+                +91 9566122235
               </Button>
             </CardContent>
           </Card>

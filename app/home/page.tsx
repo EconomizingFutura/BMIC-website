@@ -6,7 +6,7 @@ import { CertificationsSection } from "../../components/CertificationsSection";
 import { TestimonialsSection } from "../../components/TestimonialsSection";
 import ClientLogo from "@/components/ClientLogo";
 import OurSolutionsServices from "@/components/OurSolutionsServices";
-import { BlogsSection } from "@/components/BlogsSection";
+// import { BlogsSection } from "@/components/BlogsSection";
 import { useRouter } from "next/navigation";
 
 export default function HomePage() {
@@ -17,7 +17,7 @@ export default function HomePage() {
   const onNavigateToColdStorage = () => router.push("/cold-storage-solutions");
   const onNavigateToDucting = () => router.push("/ducting-solutions");
   const onNavigateToSound = () => router.push("/sound-proofing-solutions");
-  const onNavigateToBlog = () => router.push("/blog");
+  // const onNavigateToBlog = () => router.push("/blog");
 
   return (
     <main>
@@ -25,7 +25,7 @@ export default function HomePage() {
       <ClientLogo />
       <IndustriesSection />
       <ProjectsSection onNavigateToProjects={onNavigateToProjects} />
-      <BlogsSection onNavigateToBlog={onNavigateToBlog} />
+      {/* <BlogsSection onNavigateToBlog={onNavigateToBlog} /> */}
       <OurSolutionsServices
         onNavigateToColdStorage={onNavigateToColdStorage}
         onNavigateToDucting={onNavigateToDucting}

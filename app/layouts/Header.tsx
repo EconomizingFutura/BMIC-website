@@ -60,27 +60,24 @@ export function Header() {
   const industries = [
     {
       title: "Pharma",
-      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      description:
+        "Advanced insulation for pharmaceutical cleanroom efficiency.",
       navigate: "/pharma",
     },
     {
       title: "Food & FMCG",
-      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      description: "Insulation and ducting for hygienic, efficient facilities.",
       navigate: "/food-beverage",
     },
     {
       title: "Commercial & Real Estate",
-      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      description: "Insulation and ducting for sustainable commercial comfort.",
       navigate: "/commercial-real-estate",
     },
     {
-      title: "Commercial & Real Estate",
-      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      navigate: "/cold-chain-logistics",
-    },
-    {
       title: "Engineering & Infrastructure",
-      description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+      description:
+        "Insulation and ducting for durable infrastructure efficiency.",
       navigate: "/cold-chain-logistics",
     },
   ];
@@ -154,7 +151,7 @@ export function Header() {
             <div className="flex items-center space-x-1 md:space-x-2 hover:bg-white/10 px-0.5 md:px-2 py-1 rounded-md transition-colors">
               <Phone className="md:h-4 h-3 w-3 md:w-4" />
               <span className="text-[11.5px] md:text-[14px]">
-                +917871608088
+                +919566122235
               </span>
             </div>
             <div className="flex items-center space-x-1 md:space-x-2 hover:bg-white/10 md:px-2 py-1 rounded-md transition-colors">

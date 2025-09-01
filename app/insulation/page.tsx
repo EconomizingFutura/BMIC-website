@@ -20,195 +20,6 @@ import { servicebanner } from "../../components/figma/images/index";
 import { useRouter } from "next/navigation";
 
 export default function InsulationServicePage() {
-  // const services = [
-  //   {
-  //     id: 1,
-  //     title: "Thermal Insulation",
-  //     icon: <Thermometer className="h-6 w-6" />,
-  //     description:
-  //       "High-performance insulation solutions for industrial pipes, vessels, and equipment operating at extreme temperatures.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Temperature range: -200°C to +1000°C",
-  //       "Energy loss reduction up to 85%",
-  //       "Fire-resistant materials",
-  //       "Custom fabrication available",
-  //       "Maintenance-free operation",
-  //       "Corrosion protection",
-  //     ],
-  //     applications: [
-  //       "Petrochemical plants",
-  //       "Power generation facilities",
-  //       "Chemical processing units",
-  //       "Steam distribution systems",
-  //       "Furnaces and kilns",
-  //       "Cryogenic applications",
-  //     ],
-  //     specifications: {
-  //       materials: "Mineral wool, Ceramic fiber, Aerogel, Polyurethane",
-  //       thickness: "25mm to 200mm",
-  //       density: "32-160 kg/m³",
-  //       certification: "IS 8183, ASTM C547, EN 14303",
-  //     },
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Cold Storage Solutions",
-  //     icon: <Snowflake className="h-6 w-6" />,
-  //     description:
-  //       "Precision-controlled cold storage facilities for pharmaceuticals, food processing, and specialty applications.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1576091160549-57d4ac34bfad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Temperature precision ±0.5°C",
-  //       "Multi-zone temperature control",
-  //       "Automated monitoring systems",
-  //       "Energy-efficient design",
-  //       "FDA/WHO compliance",
-  //       "Emergency backup systems",
-  //     ],
-  //     applications: [
-  //       "Pharmaceutical storage",
-  //       "Vaccine distribution centers",
-  //       "Food processing facilities",
-  //       "Data center cooling",
-  //       "Laboratory storage",
-  //       "Blood bank facilities",
-  //     ],
-  //     specifications: {
-  //       materials: "PIR/PUF panels, Stainless steel",
-  //       thickness: "75mm to 200mm",
-  //       density: "40-50 kg/m³",
-  //       certification: "FDA, WHO, HACCP, ISO 22000",
-  //     },
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "HVAC & Ducting",
-  //     icon: <Wind className="h-6 w-6" />,
-  //     description:
-  //       "Complete HVAC solutions including design, installation, and maintenance of air conditioning and ventilation systems.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Energy-efficient design",
-  //       "Smart controls integration",
-  //       "Zone-based climate control",
-  //       "Air quality monitoring",
-  //       "Noise reduction technology",
-  //       "Predictive maintenance",
-  //     ],
-  //     applications: [
-  //       "Commercial buildings",
-  //       "Healthcare facilities",
-  //       "Industrial complexes",
-  //       "Data centers",
-  //       "Educational institutions",
-  //       "Hospitality sector",
-  //     ],
-  //     specifications: {
-  //       materials: "Galvanized steel, Aluminum, Stainless steel",
-  //       thickness: "0.6mm to 2.0mm",
-  //       density: "Variable based on application",
-  //       certification: "IS 5392, ASHRAE, SMACNA",
-  //     },
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "Industrial Solutions",
-  //     icon: <Factory className="h-6 w-6" />,
-  //     description:
-  //       "Comprehensive industrial thermal management including steam systems, process heating, and equipment insulation.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Process optimization",
-  //       "Energy recovery systems",
-  //       "Steam trap management",
-  //       "Heat exchanger insulation",
-  //       "Boiler insulation",
-  //       "Maintenance services",
-  //     ],
-  //     applications: [
-  //       "Manufacturing plants",
-  //       "Process industries",
-  //       "Power plants",
-  //       "Steel mills",
-  //       "Cement plants",
-  //       "Oil refineries",
-  //     ],
-  //     specifications: {
-  //       materials: "Various based on application",
-  //       thickness: "Custom designed",
-  //       density: "Application specific",
-  //       certification: "IS, ASTM, EN standards",
-  //     },
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "Energy Efficiency",
-  //     icon: <Zap className="h-6 w-6" />,
-  //     description:
-  //       "Energy audit, optimization consulting, and implementation of energy-saving thermal management solutions.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Energy audits & assessments",
-  //       "ROI analysis & reporting",
-  //       "Carbon footprint reduction",
-  //       "Sustainability consulting",
-  //       "Performance monitoring",
-  //       "Government incentive assistance",
-  //     ],
-  //     applications: [
-  //       "Industrial facilities",
-  //       "Commercial buildings",
-  //       "Healthcare institutions",
-  //       "Educational campuses",
-  //       "Government buildings",
-  //       "Residential complexes",
-  //     ],
-  //     specifications: {
-  //       materials: "Smart sensors, IoT devices",
-  //       thickness: "N/A",
-  //       density: "N/A",
-  //       certification: "BEE, LEED, GRIHA",
-  //     },
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "Regulatory Compliance",
-  //     icon: <Shield className="h-6 w-6" />,
-  //     description:
-  //       "Ensuring compliance with international standards, safety regulations, and industry-specific requirements.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  //     features: [
-  //       "Regulatory consulting",
-  //       "Documentation support",
-  //       "Inspection & testing",
-  //       "Certification assistance",
-  //       "Training programs",
-  //       "Compliance monitoring",
-  //     ],
-  //     applications: [
-  //       "Pharmaceutical facilities",
-  //       "Food processing plants",
-  //       "Chemical industries",
-  //       "Healthcare facilities",
-  //       "Export-oriented units",
-  //       "Government projects",
-  //     ],
-  //     specifications: {
-  //       materials: "Compliant materials only",
-  //       thickness: "As per regulations",
-  //       density: "Standard compliant",
-  //       certification: "All major international standards",
-  //     },
-  //   },
-  // ];
-
   const downloadDoc = [
     {
       title: "Various safety documents",
@@ -228,22 +39,6 @@ export default function InsulationServicePage() {
       icon: <Wrench className="h-8 w-8 text-primary" />,
       file: "/pdfs/TDS_THERMAL.pdf",
     },
-    // {
-    //   title: "Safety Certificates",
-    //   description: "ISO certifications and compliance documentation",
-    //   type: "PDF",
-    //   size: "1.8 MB",
-    //   button: "Download",
-    //   icon: <Shield className="h-8 w-8 text-primary" />,
-    // },
-    // {
-    //   title: "CAD Drawings",
-    //   description: "Detailed engineering drawings and 3D models",
-    //   type: "DWG",
-    //   size: "12.3 MB",
-    //   icon: <Settings className="h-8 w-8 text-primary" />,
-    //   button: "Download",
-    // },
   ];
 
   const keyFeatures = [
@@ -280,6 +75,7 @@ export default function InsulationServicePage() {
     },
   ];
   const router = useRouter();
+  const handleBroucher = () => router.push("/contact");
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -337,6 +133,7 @@ export default function InsulationServicePage() {
 
               <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
                 <Button
+                  onClick={handleBroucher}
                   size="lg"
                   className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
                 >

@@ -26,70 +26,26 @@ export default function PharmaIndustryPage() {
   const onBackToHome = () => router.push("/");
   const projects = [
     {
-      title: "Advanced Manufacturing Plant",
-      client: "TechCorp Industries",
-      category: "Manufacturing",
-      location: "Detroit, MI",
+      title: "Advanced Pharmaceutical Plant",
+      client: "Proventus Life Sciences Pvt Ltd",
+      category: "Insulation & Ducting",
+      location: "Maraimalai Nagar, Tamil Nadu",
       year: "2024",
       image:
         "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       description:
-        "Complete automation system implementation for a 50,000 sq ft manufacturing facility.",
+        "Specialized insulation and ducting solutions implemented for a state-of-the-art pharmaceutical manufacturing facility spanning 50,000 sq ft.",
     },
     {
-      title: "Solar Power Infrastructure",
-      client: "GreenEnergy Solutions",
-      category: "Energy",
-      location: "Phoenix, AZ",
+      title: "Pharmaceutical Manufacturing Facility",
+      client: " Fourrts India",
+      category: "Pharmaceutical",
+      location: " Kandigai, Tamil Nadu",
       year: "2024",
       image:
         "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       description:
-        "Design and installation of 100MW solar power plant with energy storage systems.",
-    },
-    {
-      title: "Commercial Complex",
-      client: "Urban Development Co.",
-      category: "Construction",
-      location: "New York, NY",
-      year: "2023",
-      image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      description:
-        "Structural engineering and project management for 40-story commercial building.",
-    },
-    {
-      title: "Port Logistics Center",
-      client: "Maritime Logistics Inc.",
-      category: "Transportation",
-      location: "Long Beach, CA",
-      year: "2023",
-      image:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      description:
-        "Automated cargo handling system for major port facility operations.",
-    },
-    {
-      title: "Offshore Platform",
-      client: "Ocean Energy Corp",
-      category: "Oil & Gas",
-      location: "Gulf of Mexico",
-      year: "2023",
-      image:
-        "https://images.unsplash.com/photo-1625180726018-580b17371d52?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      description:
-        "Engineering and installation of deep-water drilling platform systems.",
-    },
-    {
-      title: "Defense Communication System",
-      client: "DoD Contract",
-      category: "Defense",
-      location: "Classified",
-      year: "2024",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      description:
-        "Secure communication infrastructure for military installations.",
+        "Design and execution of advanced insulation and ducting systems for a large-scale pharmaceutical production plant ensuring energy efficiency and compliance.",
     },
   ];
 
@@ -98,22 +54,23 @@ export default function PharmaIndustryPage() {
       image:
         "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       label: "Processing",
-      title: "Pharmaceutical Processing Equipment",
+      title: "Pharmaceutical Insulation & Ducting Systems",
+
       applications: [
-        "Tablet compression",
-        "Capsule filling",
-        "Liquid processing",
-        "Powder handling",
+        "Packaging halls",
+        "Serialization areas",
+        "Blister pack & labeling units",
+        "Temperature-sensitive storage zones",
       ],
       features: [
-        "GMP compliance",
-        "Easy cleaning",
-        "Precise control",
-        "Data logging",
+        "GMP-compliant insulation materials",
+        "Easy-to-clean finishes for hygienic conditions",
+        "Precise temperature & humidity control",
+        "Support for contamination-free environments",
       ],
       specs: {
-        capacity: "Up to 500,000 tablets/hour",
-        accuracy: "±0.5% weight variation",
+        capacity: "25–100 mm (customized)",
+        accuracy: "≤0.035 W/m·K",
         material: "316L Stainless Steel",
         standards: "FDA 21 CFR Part 11",
       },
@@ -122,7 +79,7 @@ export default function PharmaIndustryPage() {
       image:
         "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       label: "Packaging",
-      title: "Packaging & Serialization",
+      title: "Packaging & Storage Insulation Systems",
       applications: [
         "Tablet compression",
         "Capsule filling",
@@ -151,11 +108,11 @@ export default function PharmaIndustryPage() {
       priority: "Critical",
       priorityColor: "bg-[#005919] text-white",
       description:
-        "Meeting FDA, EMA, and other global regulatory requirements for pharmaceutical manufacturing",
+        "Adhering to FDA, EMA, and global pharma standards while ensuring facility insulation supports cleanroom compliance.",
       solutions: [
-        "GMP-compliant systems",
-        "Automated documentation",
-        "Validation protocols",
+        "GMP-compliant insulation systems",
+        "Validated ducting solutions",
+        "Regulatory-ready documentation",
       ],
     },
     {
@@ -164,11 +121,11 @@ export default function PharmaIndustryPage() {
       priorityColor: "bg-[#005919] text-white",
       icon: <Thermometer className="md:w-7 w-6 h-6 md:h-7 text-primary" />,
       description:
-        "Maintaining precise environmental conditions for drug stability and efficacy",
+        "Maintaining stable temperatures and acoustic control for drug stability, storage, and manufacturing efficiency.",
       solutions: [
-        "HVAC systems",
-        "Clean room technology",
-        "Monitoring sensors",
+        "HVAC duct insulation",
+        "Cold storage insulation",
+        "Energy-efficient thermal barriers",
       ],
     },
     {
@@ -177,8 +134,12 @@ export default function PharmaIndustryPage() {
       icon: <Book className="md:w-7 w-6 h-6 md:h-7 text-primary" />,
       priorityColor: "bg-[#005919] text-white",
       description:
-        "Ensuring sterile manufacturing environments and preventing cross-contamination",
-      solutions: ["Barrier systems", "Air filtration", "Aseptic processing"],
+        " Protecting sterile zones from cross-contamination with controlled airflow and insulated cleanroom environments.",
+      solutions: [
+        "Insulated ducting systems",
+        "Airflow management & filtration support",
+        "Hygienic insulation materials",
+      ],
     },
     {
       title: "Production Efficiency",
@@ -186,11 +147,11 @@ export default function PharmaIndustryPage() {
       icon: <Clock className="md:w-7 w-6 h-6 md:h-7 text-primary" />,
       priorityColor: "bg-[#E8F5EA] ",
       description:
-        "Balancing quality requirements with production speed and cost-effectiveness",
+        " Improving energy efficiency while balancing operational costs and pharmaceutical production demands.",
       solutions: [
-        "Automation systems",
-        "Lean manufacturing",
-        "Process optimization",
+        "Optimized ducting layouts",
+        "Energy-saving insulation systems",
+        "Long-lasting, low-maintenance solutions",
       ],
     },
   ];
@@ -220,27 +181,30 @@ export default function PharmaIndustryPage() {
                   <br /> Manufacturing
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">
-                  Delivering cutting-edge solutions for pharmaceutical
-                  manufacturing, ensuring compliance, quality, and <br />{" "}
-                  efficiency in every aspect of drug production from R&D to
-                  commercial scale manufacturing.
+                  Delivering advanced thermal and acoustic insulation solutions
+                  tailored for pharmaceutical manufacturing facilities. Our
+                  expertise ensures precise temperature control,
+                  contamination-free environments, and energy efficiency across
+                  cleanrooms, R&D labs, and large-scale production units.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                {["ISO Certified", "99.7% Uptime", "Global Support"].map(
-                  (benefit, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center border border-[#0059194D] py-2 px-4 rounded-md space-x-2"
-                    >
-                      <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                      <span className="text-primary font-medium text-[10.5px] leading-[14px] tracking-normal text-center align-middle">
-                        {benefit}
-                      </span>
-                    </div>
-                  )
-                )}
+                {[
+                  "ISO Certified",
+                  "30+ Years of Expertise",
+                  "Proven Energy Efficiency",
+                ].map((benefit, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center border border-[#0059194D] py-2 px-4 rounded-md space-x-2"
+                  >
+                    <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                    <span className="text-primary font-medium text-[10.5px] leading-[14px] tracking-normal text-center align-middle">
+                      {benefit}
+                    </span>
+                  </div>
+                ))}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
@@ -355,9 +319,9 @@ export default function PharmaIndustryPage() {
               in Pharma
             </h2>
             <p className="text-lg text-gray-600 max-w-5xl mx-auto">
-              The pharmaceutical industry faces unique challenges that require
-              specialized solutions and deep expertise to ensure patient safety
-              and regulatory compliance.
+              Pharma manufacturing demands strict temperature control,
+              contamination prevention, and energy efficiency, requiring
+              specialized insulation solutions to ensure compliance and safety.
             </p>
           </div>
 
@@ -506,15 +470,15 @@ export default function PharmaIndustryPage() {
               Pharma
             </h2>
             <p className="text-lg text-gray-600 max-w-5xl mx-auto">
-              Comprehensive range of pharmaceutical manufacturing equipment and
-              systems designed to meet the strictest quality and regulatory
-              requirements.
+              Comprehensive insulation and ducting solutions engineered for
+              pharmaceutical facilities, ensuring strict compliance, energy
+              efficiency, and contamination-free manufacturing environments.
             </p>
           </div>
 
           <div className=" w-full py-12  flex items-center justify-center">
             <div className="w-full max-w-6xl  grid grid-cols-1 md:grid-cols-2 gap-6">
-              {cards.map((card) => (
+              {cards.map((card, i) => (
                 <div
                   key={card.title}
                   className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 flex flex-col"
@@ -538,7 +502,7 @@ export default function PharmaIndustryPage() {
                       <span className="font-semibold text-gray-800 py-1">
                         Applications:
                       </span>
-                      <div className="grid grid-cols-2 gap-y-1 mb-2 mt-1">
+                      <div className="grid grid-cols-2 min-h-10 gap-y-1 mb-2 mt-1">
                         {card.applications.map((app, i) => (
                           <p key={i} className="flex text-blue-700 ">
                             <Dot size={20} /> <span>{app}</span>
@@ -548,7 +512,7 @@ export default function PharmaIndustryPage() {
                       <span className="font-semibold text-gray-800 block py-1">
                         Key Features:
                       </span>
-                      <div className="grid grid-cols-2 gap-y-1 mb-3 mt-1">
+                      <div className="grid grid-cols-2 md:h-40 gap-y-1 mb-3 mt-1">
                         {card.features.map((feat, i) => (
                           <p
                             key={i}
@@ -563,14 +527,22 @@ export default function PharmaIndustryPage() {
                         ))}
                       </div>
                       <div className="bg-[#F9FAFB] rounded-lg px-3 py-2 mt-2 shadow-sm text-xs text-gray-700 text-[12.3px]">
-                        <p className=" text-[#101828]  py-2">Specifications:</p>
+                        <p className=" text-[#101828]  py-2">
+                          Specifications :
+                        </p>
                         <div className="grid grid-cols-1 gap-2.5">
                           <div className="text-[#101828] flex justify-between font-normal">
-                            <span className=" text-[#4A5565]">Capacity:</span>
+                            <span className=" text-[#4A5565]">
+                              {i == 0
+                                ? "Temperature Range"
+                                : "Insulation Thickness"}{" "}
+                            </span>
                             <span>{card.specs.capacity}</span>
                           </div>
                           <div className="text-[#101828] flex justify-between font-normal">
-                            <span className=" text-[#4A5565]">Accuracy:</span>
+                            <span className=" text-[#4A5565]">
+                              Thermal Conductivity:
+                            </span>
                             <span>{card.specs.accuracy}</span>
                           </div>
                           <div className="text-[#101828] flex justify-between font-normal">
@@ -602,68 +574,70 @@ export default function PharmaIndustryPage() {
               in Pharmaceutical Projects
             </h2>
             <p className="text-lg text-gray-600 max-w-5xl  mx-auto">
-              Real-world examples of how our solutions have transformed
-              pharmaceutical manufacturing <br /> operations and delivered
-              measurable results.
+              Showcasing how our specialized insulation and ducting solutions
+              have enhanced pharmaceutical facilities with improved energy
+              efficiency, precise environment control, and compliance with
+              stringent regulatory standards.
             </p>
           </div>
+          <div className=" flex justify-center items-center mx-auto w-full ">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
+              {projects.map((project, index) => (
+                <Card
+                  key={index}
+                  className="group hover:shadow-xl transition-all duration-300 overflow-hidden max-w-lg"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      fill
+                    />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.slice(0, 3).map((project, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-xl transition-all duration-300 overflow-hidden"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    fill
-                  />
-
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-primary text-white">
-                      {project.category}
-                    </Badge>
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-primary text-white">
+                        {project.category}
+                      </Badge>
+                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <ExternalLink className="h-6 w-6 text-white" />
+                    </div>
                   </div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ExternalLink className="h-6 w-6 text-white" />
-                  </div>
-                </div>
 
-                <CardContent className="px-6">
-                  <div className="space-y-3">
-                    <h3 className="text-xl text-gray-900 font-semibold group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
+                  <CardContent className="px-6">
+                    <div className="space-y-3">
+                      <h3 className="text-xl text-gray-900 font-semibold group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
 
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {project.description}
-                    </p>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {project.description}
+                      </p>
 
-                    <div className="space-y-2 text-sm text-gray-500">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-primary">Client:</span>
-                        <span>{project.client}</span>
-                      </div>
-
-                      <div className="flex items-center space-x-4">
-                        <div className="flex items-center space-x-1">
-                          <MapPin className="h-4 w-4 text-primary" />
-                          <span>{project.location}</span>
+                      <div className="space-y-2 text-sm text-gray-500">
+                        <div className="flex items-center space-x-2">
+                          <span className="text-primary">Client:</span>
+                          <span>{project.client}</span>
                         </div>
-                        <div className="flex items-center space-x-1">
-                          <Calendar className="h-4 w-4 text-primary" />
-                          <span>{project.year}</span>
+
+                        <div className="flex items-center space-x-4">
+                          <div className="flex items-center space-x-1">
+                            <MapPin className="h-4 w-4 text-primary" />
+                            <span>{project.location}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="h-4 w-4 text-primary" />
+                            <span>{project.year}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

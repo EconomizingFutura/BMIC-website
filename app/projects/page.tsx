@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 import { useRouter } from "next/navigation";
+import { GalleryGrid } from "@/components/gallery-grid";
 
 type ProjectType = "all" | "insulation" | "cold-storage" | "ducting";
 
@@ -138,7 +139,7 @@ export default function ProjectsPage() {
       {/* Projects Grid */}
       <section className="py-20 bg-[#FFFFFF]">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className=" hidden md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
               <Card
                 key={project.id}
@@ -165,6 +166,18 @@ export default function ProjectsPage() {
               </Card>
             ))}
           </div>
+          {/* <div>
+            {ductingImages.map((img) => (
+              // <img key={img.name} src={img.src} alt={img.name} />
+              <ImageWithFallback
+                key={img.name}
+                src={img.src}
+                alt={img.name}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            ))}
+          </div> */}
+          <GalleryGrid />
         </div>
       </section>
     </div>

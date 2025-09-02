@@ -1,71 +1,63 @@
 "use client";
-import { useState } from "react";
-import { Card, CardContent } from "../../components/ui/card";
+import { useState, useEffect } from "react";
 import { Button } from "../../components/ui/button";
 import {
   ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
+  X,
   Filter,
   Thermometer,
   Snowflake,
   Wind,
   Building2,
 } from "lucide-react";
-import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
-import { useRouter } from "next/navigation";
 import { GalleryGrid } from "@/components/gallery-grid";
+import { ductingImages } from "@/utils/ductingObjects";
+import {
+  Dialog,
+  DialogContent,
+  DialogOverlay,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 type ProjectType = "all" | "insulation" | "cold-storage" | "ducting";
 
 export default function ProjectsPage() {
-  const router = useRouter();
-  const onBackToHome = () => router.push("/");
   const [activeFilter, setActiveFilter] = useState<ProjectType>("all");
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Pharmaceutical Cold Storage Facility",
-      type: "cold-storage" as ProjectType,
-      location: "Mumbai, India",
-      client: "Global Pharma Corp",
-      image:
-        "https://images.unsplash.com/photo-1576091160549-57d4ac34bfad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      id: 2,
-      title: "Industrial Pipe Insulation Project",
-      type: "insulation" as ProjectType,
-      location: "Chennai, India",
-      client: "Petrochemical Industries Ltd",
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      id: 3,
-      title: "Commercial HVAC Ducting System",
-      type: "ducting" as ProjectType,
-      location: "Bangalore, India",
-      client: "Tech Tower Complex",
-      image:
-        "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    },
-  ];
+  useEffect(() => setMounted(true), []);
 
   const filteredProjects =
     activeFilter === "all"
-      ? projects
-      : projects.filter((project) => project.type === activeFilter);
+      ? ductingImages
+      : ductingImages.filter((p) => p.type === activeFilter);
+
+  const handlePrev = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((prev) =>
+        prev === 0 ? filteredProjects.length - 1 : (prev ?? 0) - 1
+      );
+    }
+  };
+
+  const handleNext = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((prev) =>
+        prev === filteredProjects.length - 1 ? 0 : (prev ?? 0) + 1
+      );
+    }
+  };
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-20%  from-[#d0e0d4]  via-[#c9dcce]/90  to-[#fffff] to-70% py-16 ">
+      <section className="relative bg-gradient-to-br from-20% from-[#d0e0d4] via-[#c9dcce]/90 to-[#fffff] to-70% py-16">
         <div className="container mx-auto px-4 relative">
-          <Button
-            variant="outline"
-            onClick={onBackToHome}
-            className="mb-8 !bg-white"
-          >
+          <Button variant="outline" className="mb-8 !bg-white">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Button>
@@ -139,47 +131,58 @@ export default function ProjectsPage() {
       {/* Projects Grid */}
       <section className="py-20 bg-[#FFFFFF]">
         <div className="container mx-auto px-4">
-          <div className=" hidden md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
-              <Card
-                key={project.id}
-                className="overflow-hidden border border-[#00591933]"
-              >
-                <div className="relative h-48">
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-lg text-white mb-1">{project.title}</h3>
-                    <p className="text-white/90 text-sm">{project.location}</p>
-                  </div>
-                </div>
-                <CardContent className="px-6 py-1">
-                  <p className="text-gray-600 mb-4">Client: {project.client}</p>
-                  <Button className="w-full bg-primary hover:bg-primary/90">
-                    View Details
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          {/* <div>
-            {ductingImages.map((img) => (
-              // <img key={img.name} src={img.src} alt={img.name} />
-              <ImageWithFallback
-                key={img.name}
-                src={img.src}
-                alt={img.name}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            ))}
-          </div> */}
-          <GalleryGrid />
+          <GalleryGrid onImageClick={(idx) => setSelectedIndex(idx)} />
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      {mounted && (
+        <Dialog
+          open={selectedIndex !== null}
+          onOpenChange={() => setSelectedIndex(null)}
+        >
+          <DialogOverlay className="fixed inset-0 bg-black/70" />
+          <DialogContent className="max-w-4xl w-full bg-transparent shadow-none border-none p-0">
+            {selectedIndex !== null && (
+              <div className="relative flex items-center justify-center">
+                <VisuallyHidden>
+                  <DialogTitle>
+                    {filteredProjects[selectedIndex].name} enlarged view
+                  </DialogTitle>
+                </VisuallyHidden>
+
+                <img
+                  src={filteredProjects[selectedIndex].src}
+                  alt={filteredProjects[selectedIndex].name}
+                  className="max-h-[80vh] rounded-md object-contain"
+                />
+
+                {/* Close */}
+                <button
+                  className="absolute top-4 right-4 p-2 rounded-full bg-black/60 text-white"
+                  onClick={() => setSelectedIndex(null)}
+                >
+                  <X className="h-6 w-6" />
+                </button>
+                {/* Prev */}
+                <button
+                  className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 text-white"
+                  onClick={handlePrev}
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                {/* Next */}
+                <button
+                  className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 text-white"
+                  onClick={handleNext}
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 }

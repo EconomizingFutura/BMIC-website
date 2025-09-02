@@ -13,7 +13,7 @@ import {
   Building2,
 } from "lucide-react";
 import { GalleryGrid } from "@/components/gallery-grid";
-import { ductingImages } from "@/utils/ductingObjects";
+import { DuctingImage, ductingImages } from "@/utils/ductingObjects";
 import {
   Dialog,
   DialogContent,
@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
-type ProjectType = "all" | "insulation" | "cold-storage" | "ducting";
+type ProjectType = "all" | "insulation" | "safety" | "ducting";
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<ProjectType>("all");
@@ -35,6 +35,8 @@ export default function ProjectsPage() {
     activeFilter === "all"
       ? ductingImages
       : ductingImages.filter((p) => p.type === activeFilter);
+
+  console.log(filteredProjects);
 
   const handlePrev = () => {
     if (selectedIndex !== null) {
@@ -68,7 +70,7 @@ export default function ProjectsPage() {
             </h1>
             <p className="text-xl text-gray-600 max-w-5xl mx-auto">
               Explore our comprehensive portfolio of completed and ongoing
-              projects across thermal insulation, cold storage, and HVAC ducting
+              projects across thermal insulation, safety, and HVAC ducting
               systems. Each project demonstrates our commitment to quality,
               innovation, and client satisfaction.
             </p>
@@ -97,8 +99,8 @@ export default function ProjectsPage() {
                   icon: <Thermometer className="h-4 w-4" />,
                 },
                 {
-                  value: "cold-storage",
-                  label: "Cold Storage",
+                  value: "safety",
+                  label: "Safety",
                   icon: <Snowflake className="h-4 w-4" />,
                 },
                 {
@@ -131,7 +133,10 @@ export default function ProjectsPage() {
       {/* Projects Grid */}
       <section className="py-20 bg-[#FFFFFF]">
         <div className="container mx-auto px-4">
-          <GalleryGrid onImageClick={(idx) => setSelectedIndex(idx)} />
+          <GalleryGrid
+            items={filteredProjects as DuctingImage[]}
+            onImageClick={(idx) => setSelectedIndex(idx)}
+          />
         </div>
       </section>
 

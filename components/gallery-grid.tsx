@@ -1,13 +1,12 @@
-import { ductingImages } from "@/utils/ductingObjects";
+import { DuctingImage } from "@/utils/ductingObjects";
 import Image from "next/image";
 
 type GalleryGridProps = {
   onImageClick: (index: number) => void;
+  items: DuctingImage[]; // if items are just image URLs
 };
 
-export function GalleryGrid({ onImageClick }: GalleryGridProps) {
-  const items = ductingImages;
-
+export function GalleryGrid({ onImageClick, items }: GalleryGridProps) {
   if (items.length === 0) {
     return (
       <div className="rounded-md border bg-card p-6 text-center text-sm text-muted-foreground">

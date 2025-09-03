@@ -176,7 +176,7 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   onClick={onNavigateToFood}
-                  className="text-gray-300   hover:text-primary transition-colors"
+                  className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                 >
                   Food & FMCG
                 </a>
@@ -229,12 +229,12 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-300 hover:text-primary transition-colors">
+                  <a className="text-gray-300 cursor-pointer hover:text-primary transition-colors">
                     Our Services
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-300 hover:text-primary transition-colors">
+                  <a className="text-gray-300 cursor-pointer hover:text-primary transition-colors">
                     Industries
                   </a>
                 </li>
@@ -243,7 +243,7 @@ export const Footer: React.FC = () => {
                     onClick={() => onNavigateToProjects()}
                     className="text-gray-300 cursor-pointer hover:text-primary transition-colors"
                   >
-                    Projects
+                    Gallery
                   </a>
                 </li>
                 <li>
@@ -255,15 +255,15 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-300 hover:text-primary transition-colors">
+                  <a className="text-gray-300 hidden hover:text-primary transition-colors">
                     News & Updates
                   </a>
                 </li>
               </ul>
             </div>
 
-            <h4 className="text-lg text-white">Stay Updated</h4>
-            <div>
+            <h4 className="text-lg hidden text-white">Stay Updated</h4>
+            <div className="hidden">
               <Input
                 className="border border-[#4A5565] bg-[#1E2939] placeholder:text-[#99A1AF]"
                 placeholder="Your Email"
@@ -271,7 +271,7 @@ export const Footer: React.FC = () => {
             </div>
             <Button
               size="lg"
-              className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative w-full overflow-hidden group hover:text-white"
+              className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all hidden duration-300 relative w-full overflow-hidden group hover:text-white"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="relative">Subscribe</span>

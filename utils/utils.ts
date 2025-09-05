@@ -1,7 +1,7 @@
 export const sendEmail = () => {
   const to = "jagadeesan.bharath@gmail.com";
   const subject = encodeURIComponent("Inquiry About Services and Quotation");
-  const body = encodeURIComponent(`Dear Mr. Bharath,
+  const body = encodeURIComponent(`Dear Team,
 
 I came across your contact on your website and am reaching out to inquire about the services you offer.
 

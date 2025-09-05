@@ -2,6 +2,7 @@ import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Calendar, ExternalLink, MapPin } from "lucide-react";
 import Image from "next/image";
+import { fmcg, solar } from "./figma/images";
 
 const projects = [
   {
@@ -10,8 +11,7 @@ const projects = [
     category: "Insulation",
     location: "Urapakkam, Karanaipuducheri, Tamil Nadu 603210",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: fmcg,
     description:
       "Complete automation system implementation for a 50,000 sq ft manufacturing facility.",
   },
@@ -21,8 +21,7 @@ const projects = [
     category: "Energy",
     location: "Phoenix, AZ",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: solar,
     description:
       "Design and installation of 100MW solar power plant with energy storage systems.",
   },

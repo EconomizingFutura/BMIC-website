@@ -44,13 +44,6 @@ const industries = [
     image:
       "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
   },
-  // {
-  //   icon: Shield,
-  //   title: "Defense",
-  //   description: "Military and defense technology solutions",
-  //   image:
-  //     "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-  // },
 ];
 
 export function IndustriesSection() {

@@ -1,9 +1,9 @@
 import { Award, Shield, ChevronRight, Settings } from "lucide-react";
 import {
-  ColdStorage,
-  DUCT,
-  automobile,
-  SoundProof,
+  solution1,
+  solution2,
+  solution3,
+  solution4,
 } from "@/components/figma/images/index";
 import Image from "next/image";
 
@@ -29,7 +29,7 @@ export function OurSolutionsServices({
         "Certified quality management system ensuring consistent delivery of products and services.",
       validUntil: "2025",
       color: "bg-blue-500",
-      image: automobile,
+      image: solution4,
       navigate: onNavigateToInsulation,
     },
 
@@ -41,7 +41,7 @@ export function OurSolutionsServices({
         "Workplace safety management system ensuring the health and safety of all personnel.",
       validUntil: "2025",
       color: "bg-red-500",
-      image: DUCT,
+      image: solution3,
       navigate: onNavigateToDucting,
     },
     {
@@ -52,7 +52,7 @@ export function OurSolutionsServices({
         "Environmental management system certification demonstrating our commitment to sustainability.",
       validUntil: "2025",
       color: "bg-green-500",
-      image: ColdStorage,
+      image: solution2,
       navigate: onNavigateToColdStorage,
     },
     {
@@ -63,7 +63,7 @@ export function OurSolutionsServices({
         "American Petroleum Institute quality management system for oil and gas industry.",
       validUntil: "2024",
       color: "bg-purple-500",
-      image: SoundProof,
+      image: solution1,
       navigate: onNavigateToSound,
     },
   ];

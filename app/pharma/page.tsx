@@ -210,6 +210,9 @@ export default function PharmaIndustryPage() {
               <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
                 <Button
                   size="lg"
+                  onClick={() => {
+                    window.open("https://wa.me/9566122235", "_blank");
+                  }}
                   className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

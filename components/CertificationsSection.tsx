@@ -9,7 +9,7 @@ const certifications = [
     subtitle: "Quality Management",
     description:
       "Certified quality management system ensuring consistent delivery of products and services.",
-    validUntil: "2025",
+    validUntil: "2030",
     color: "bg-blue-500",
   },
   {
@@ -18,7 +18,7 @@ const certifications = [
     subtitle: "Environmental Management",
     description:
       "Environmental management system certification demonstrating our commitment to sustainability.",
-    validUntil: "2025",
+    validUntil: "2030",
     color: "bg-green-500",
   },
   {
@@ -27,7 +27,7 @@ const certifications = [
     subtitle: "Occupational Health & Safety",
     description:
       "Workplace safety management system ensuring the health and safety of all personnel.",
-    validUntil: "2025",
+    validUntil: "2030",
     color: "bg-red-500",
   },
   {
@@ -36,7 +36,7 @@ const certifications = [
     subtitle: "Oil & Gas Quality",
     description:
       "American Petroleum Institute quality management system for oil and gas industry.",
-    validUntil: "2024",
+    validUntil: "2030",
     color: "bg-purple-500",
   },
 ];

@@ -24,7 +24,7 @@ export default function AboutPage() {
   const teamMembers = [
     {
       name: "CT Murugesan",
-      role: "Founder",
+      role: "Company",
       experience: "20+ years",
       expertise:
         " Pioneering entrepreneur who laid the foundation of Bharath Modern Insulation Company in 1975, with a vision to deliver reliable thermal and acoustic solutions that stand the test of time.",
@@ -34,7 +34,7 @@ export default function AboutPage() {
     {
       name: "M Jagadeesan",
       role: "Proprietor & Managing Director",
-      experience: "15+ years",
+      experience: "35+ years",
       expertise:
         "Guiding force behind the company’s growth, combining deep technical expertise with a commitment to innovation and customer satisfaction.",
       image:
@@ -43,7 +43,7 @@ export default function AboutPage() {
     {
       name: "CJ Akash Ram",
       role: " Chief Executive Officer (CEO)",
-      experience: "18+ years",
+      experience: "10+ years",
       expertise:
         " Dynamic leader driving strategic expansion, operational excellence, and modernization of services to meet evolving industry needs.",
       image:
@@ -51,7 +51,7 @@ export default function AboutPage() {
     },
     {
       name: "A Rajan",
-      role: "Senior Supervisor",
+      role: "Supervisor",
       experience: "12+ years",
       expertise:
         "Experienced supervisor ensuring meticulous project execution, safety compliance, and the highest standards of quality on every installation.",

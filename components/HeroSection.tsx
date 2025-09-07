@@ -4,8 +4,13 @@ import { CheckCircle, ArrowRight, Play } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import yoe from "./figma/images/yoe.svg";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export function HeroSection() {
+  const router = useRouter();
+
+  const onNavigateToContact = () => router.push("/contact");
+
   return (
     <section
       id="home"
@@ -47,6 +52,7 @@ export function HeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
+                onClick={onNavigateToContact}
                 size="lg"
                 className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
               >

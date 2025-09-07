@@ -113,18 +113,37 @@ export default function ContactPage() {
     return errors;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent, type: "message" | "callback") => {
     e.preventDefault();
     const errors = validate();
     setFormErrors(errors);
-    console.log("Form submitted successfully", errors);
 
     if (Object.keys(errors).length === 0) {
-      console.log("Form submitted successfully", formData);
-      // Call API or show toast
+      // Subject depends on button clicked
+      const subject =
+        type === "message"
+          ? `New Project Enquiry from ${formData.name}`
+          : `Requesting a Call Back from ${formData.name}`;
+
+      const body = encodeURIComponent(
+        `Hello,\n\nHere are the details submitted from the contact form:\n\n
+      Full Name: ${formData.name}
+      Email: ${formData.email}
+      Phone: ${formData.phone}
+      Company: ${formData.company || "N/A"}
+      Service Required: ${formData.service || "N/A"}
+      Message: ${formData.message}
+      
+      Subscribe to Newsletter: ${formData.subscribe ? "Yes" : "No"}`
+      );
+
+      const mailtoLink = `mailto:jagadeesan.bharath@gmail.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${body}`;
+
+      window.location.href = mailtoLink;
     }
   };
-
   const router = useRouter();
   const onBackToHome = () => router.push("/");
 
@@ -219,7 +238,7 @@ export default function ContactPage() {
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label className="text-sm gap-1.5 flex text-gray-700 mb-2 ">
@@ -236,9 +255,8 @@ export default function ContactPage() {
                           placeholder="Enter your full name"
                           value={formData.name}
                           onChange={handleChange}
-                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${
-                            formErrors.name ? "border-red-500" : ""
-                          }`}
+                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${formErrors.name ? "border-red-500" : ""
+                            }`}
                         />
                         {formErrors.name && (
                           <p className="text-red-500 text-xs">
@@ -257,9 +275,8 @@ export default function ContactPage() {
                           placeholder="Enter your email"
                           value={formData.email}
                           onChange={handleChange}
-                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${
-                            formErrors.email ? "border-red-500" : ""
-                          }`}
+                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${formErrors.email ? "border-red-500" : ""
+                            }`}
                         />
                         {formErrors.email && (
                           <p className="text-red-500 text-xs">
@@ -281,9 +298,8 @@ export default function ContactPage() {
                           placeholder="Enter your phone number"
                           value={formData.phone}
                           onChange={handleChange}
-                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${
-                            formErrors.phone ? "border-red-500" : ""
-                          }`}
+                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${formErrors.phone ? "border-red-500" : ""
+                            }`}
                         />
                         {formErrors.phone && (
                           <p className="text-red-500 text-xs">
@@ -302,9 +318,8 @@ export default function ContactPage() {
                           placeholder="Enter company name"
                           value={formData.company}
                           onChange={handleChange}
-                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${
-                            formErrors.company ? "border-red-500" : ""
-                          }`}
+                          className={`!bg-[#F3F3F5] border !rounded-[6.75px] !border-[#D1D5DC] ${formErrors.company ? "border-red-500" : ""
+                            }`}
                         />
                         {formErrors.company && (
                           <p className="text-red-500 text-xs">
@@ -353,9 +368,8 @@ export default function ContactPage() {
                         placeholder="Please describe your project requirements..."
                         value={formData.message}
                         onChange={handleChange}
-                        className={`min-h-32 border !border-[#D1D5DC] !bg-[#F3F3F5] ${
-                          formErrors.message ? "border-red-500" : ""
-                        }`}
+                        className={`min-h-32 border !border-[#D1D5DC] !bg-[#F3F3F5] ${formErrors.message ? "border-red-500" : ""
+                          }`}
                       />
                       {formErrors.message && (
                         <p className="text-red-500 text-xs">
@@ -363,29 +377,37 @@ export default function ContactPage() {
                         </p>
                       )}
                     </div>
-                    <div className="flex items-center  space-x-2 ">
+                    <div className="flex items-center space-x-2">
                       <Checkbox
                         id="subscribe"
-                        className=" border border-[#767676]"
+                        name="subscribe"
+                        checked={formData.subscribe}
+                        onCheckedChange={(checked) =>
+                          setFormData((prev) => ({ ...prev, subscribe: Boolean(checked) }))
+                        }
+                        className="border border-[#767676]"
                       />
                       <p className="text-sm text-[#4A5565]">
-                        Subscribe to our newsletter for industry updates and
-                        technical insights
+                        Subscribe to our newsletter for industry updates and technical insights
                       </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-[1fr_0.6fr] gap-[10px]">
                       <Button
+                        type="submit"
                         size="lg"
+                        onClick={(e) => handleSubmit(e, "message")}
                         className="bg-primary !hover:bg-green-700 font-medium shadow-lg !hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <Send className="h-4 w-4 relative mr-2" />
-
                         <span className="relative"> Send Message</span>
                       </Button>
+
                       <Button
+                        type="submit"
                         size="lg"
+                        onClick={(e) => handleSubmit(e, "callback")}
                         className="bg-primary !hover:bg-green-700 font-medium shadow-lg !hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
                       >
                         <Phone className="h-4 w-4 mr-2" />

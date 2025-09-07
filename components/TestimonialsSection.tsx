@@ -6,9 +6,9 @@ const testimonials = [
   {
     content:
       "Their engineering expertise and attention to detail exceeded our expectations. The project was delivered on time and within budget.",
-    author: "Sarah Johnson",
+    author: "Anisha",
     position: "Project Manager",
-    company: "TechCorp Industries",
+    company: "Proventus",
     rating: 5,
     avatar:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
@@ -16,9 +16,9 @@ const testimonials = [
   {
     content:
       "Outstanding service and technical support. Their team's professionalism and expertise made our complex project a success.",
-    author: "Michael Chen",
-    position: "Operations Director",
-    company: "GreenEnergy Solutions",
+    author: "Gurumurthy Meiyappan",
+    position: "Faciliate Manager",
+    company: "Perfetti Van",
     rating: 5,
     avatar:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
@@ -26,12 +26,12 @@ const testimonials = [
   {
     content:
       "Reliable, professional, and innovative solutions. They've been our trusted partner for multiple projects over the years.",
-    author: "Emily Rodriguez",
-    position: "VP Engineering",
-    company: "Urban Development Co.",
+    author: "Anand Kumar",
+    position: "Manager",
+    company: "Forech India (P) Limited.",
     rating: 5,
     avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
   },
 ];
 

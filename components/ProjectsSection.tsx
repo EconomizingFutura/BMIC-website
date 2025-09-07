@@ -16,23 +16,13 @@ const projects = [
       "Complete automation system implementation for a 50,000 sq ft manufacturing facility.",
   },
   {
-    title: "Solar Power Infrastructure",
-    client: "GreenEnergy Solutions",
-    category: "Energy",
-    location: "Phoenix, AZ",
-    year: "2024",
-    image: solar,
-    description:
-      "Design and installation of 100MW solar power plant with energy storage systems.",
-  },
-  {
     title: "Commercial Complex",
-    client: "Urban Development Co.",
+    client: "Infosys",
     category: "Construction",
-    location: "New York, NY",
-    year: "2023",
+    location: "Mysore, Karnataka",
+    year: "2024",
     image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     description:
       "Structural engineering and project management for 40-story commercial building.",
   },
@@ -93,7 +83,7 @@ export function ProjectsSection({
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.slice(0, 3).map((project, index) => (
+          {projects.slice(0, 2).map((project, index) => (
             <Card
               key={index}
               className="group hover:shadow-xl transition-all duration-300 overflow-hidden"

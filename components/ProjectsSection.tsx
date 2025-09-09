@@ -81,63 +81,64 @@ export function ProjectsSection({
             quality, precision, and commitment to client success.
           </p>
         </div>
+        <div className="w-full flex justify-center">
+          <div className="grid md:grid-cols-2 gap-8">
+            {projects.slice(0, 2).map((project, index) => (
+              <Card
+                key={index}
+                className="group hover:shadow-xl max-w-sm w-full transition-all duration-300 overflow-hidden"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    fill
+                  />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.slice(0, 2).map((project, index) => (
-            <Card
-              key={index}
-              className="group hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  fill
-                />
-
-                <div className="absolute top-4 left-4">
-                  <Badge className="bg-primary text-white">
-                    {project.category}
-                  </Badge>
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-primary text-white">
+                      {project.category}
+                    </Badge>
+                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ExternalLink className="h-6 w-6 text-white" />
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ExternalLink className="h-6 w-6 text-white" />
-                </div>
-              </div>
 
-              <CardContent className="px-6">
-                <div className="space-y-3">
-                  <h3 className="text-xl text-gray-900 font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
+                <CardContent className="px-6">
+                  <div className="space-y-3">
+                    <h3 className="text-xl text-gray-900 font-semibold group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
 
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {project.description}
+                    </p>
 
-                  <div className="space-y-2 text-sm text-gray-500">
-                    <div className="flex items-center space-x-2">
-                      <span className="text-primary">Client:</span>
-                      <span>{project.client}</span>
-                    </div>
-
-                    <div className="flex items-center space-x-4">
-                      <div className="flex space-x-1">
-                        <MapPin className="h-4 mt-0.5 w-4 text-primary" />
-                        <span className="max-w-64">{project.location}</span>
+                    <div className="space-y-2 text-sm text-gray-500">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-primary">Client:</span>
+                        <span>{project.client}</span>
                       </div>
-                      <div className="flex items-center space-x-1">
-                        <Calendar className="h-4 w-4 text-primary" />
-                        <span>{project.year}</span>
+
+                      <div className="flex items-center space-x-4">
+                        <div className="flex space-x-1">
+                          <MapPin className="h-4 mt-0.5 w-4 text-primary" />
+                          <span className="max-w-64">{project.location}</span>
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          <Calendar className="h-4 w-4 text-primary" />
+                          <span>{project.year}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">

@@ -2,7 +2,7 @@ import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Calendar, ExternalLink, MapPin } from "lucide-react";
 import Image from "next/image";
-import { fmcg, solar } from "./figma/images";
+import { fmcg } from "./figma/images";
 
 const projects = [
   {

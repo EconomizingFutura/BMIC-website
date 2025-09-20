@@ -18,8 +18,14 @@ import {
   ExternalLink,
 } from "lucide-react";
 import Image from "next/image";
-import { servicebanner } from "@/components/figma/images";
 import { useRouter } from "next/navigation";
+import {
+  PharmaGroup,
+  PharmaSubImage1,
+  PharmaSubImage2,
+  PharmaSubImage3,
+  PharmaSubImage4,
+} from "@/components/figma/images";
 
 export default function PharmaIndustryPage() {
   const router = useRouter();
@@ -31,8 +37,7 @@ export default function PharmaIndustryPage() {
       category: "Insulation & Ducting",
       location: "Maraimalai Nagar, Tamil Nadu",
       year: "2024",
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: PharmaSubImage1,
       description:
         "Specialized insulation and ducting solutions implemented for a state-of-the-art pharmaceutical manufacturing facility spanning 50,000 sq ft.",
     },
@@ -42,8 +47,7 @@ export default function PharmaIndustryPage() {
       category: "Pharmaceutical",
       location: " Kandigai, Tamil Nadu",
       year: "2024",
-      image:
-        "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: PharmaSubImage2,
       description:
         "Design and execution of advanced insulation and ducting systems for a large-scale pharmaceutical production plant ensuring energy efficiency and compliance.",
     },
@@ -51,8 +55,7 @@ export default function PharmaIndustryPage() {
 
   const cards = [
     {
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: PharmaSubImage4,
       label: "Processing",
       title: "Pharmaceutical Insulation & Ducting Systems",
 
@@ -76,8 +79,7 @@ export default function PharmaIndustryPage() {
       },
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: PharmaSubImage3,
       label: "Packaging",
       title: "Packaging & Storage Insulation Systems",
       applications: [
@@ -181,8 +183,9 @@ export default function PharmaIndustryPage() {
                   <br /> Manufacturing
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">
-                  Delivering advanced thermal and acoustic insulation solutions
-                  tailored for pharmaceutical manufacturing facilities. Our
+                  Advancing Pharmaceutical Manufacturing Providing specialized
+                  thermal and acoustic insulation solutions primarily focused on
+                  reactor insulation for pharmaceutical facilities. Our
                   expertise ensures precise temperature control,
                   contamination-free environments, and energy efficiency across
                   cleanrooms, R&D labs, and large-scale production units.
@@ -225,7 +228,7 @@ export default function PharmaIndustryPage() {
             <div className="relative w-full bg-transparent">
               <Card className="overflow-hidden bg-transparent border-none w-full">
                 <Image
-                  src={servicebanner}
+                  src={PharmaGroup}
                   alt="Industrial facility"
                   className="w-full h-auto object-cover"
                   sizes="100vw"

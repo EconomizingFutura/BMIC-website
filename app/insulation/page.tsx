@@ -16,8 +16,8 @@ import {
   Mail,
   ArrowLeft,
 } from "lucide-react";
-import { servicebanner } from "../../components/figma/images/index";
 import { useRouter } from "next/navigation";
+import { InsulationGroup } from "@/components/figma/images";
 
 export default function InsulationServicePage() {
   const downloadDoc = [
@@ -155,7 +155,7 @@ export default function InsulationServicePage() {
             <div className="relative w-full bg-transparent">
               <Card className="overflow-hidden bg-transparent border-none w-full">
                 <Image
-                  src={servicebanner}
+                  src={InsulationGroup}
                   alt="Industrial facility"
                   className="w-full h-auto object-cover"
                   sizes="100vw"

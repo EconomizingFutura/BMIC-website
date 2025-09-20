@@ -16,8 +16,8 @@ import {
   Mail,
   ArrowLeft,
 } from "lucide-react";
-import { servicebanner } from "../../components/figma/images/index";
 import { useRouter } from "next/navigation";
+import { DuctGroup } from "@/components/figma/images";
 
 export default function DuctingSolutionsPage() {
   const router = useRouter();
@@ -182,7 +182,7 @@ export default function DuctingSolutionsPage() {
             <div className="relative w-full bg-transparent">
               <Card className="overflow-hidden bg-transparent border-none w-full">
                 <Image
-                  src={servicebanner}
+                  src={DuctGroup}
                   alt="Industrial facility"
                   className="w-full h-auto object-cover"
                   sizes="100vw"

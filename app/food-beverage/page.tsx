@@ -17,8 +17,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 import Image from "next/image";
-import { servicebanner } from "@/components/figma/images";
 import { useRouter } from "next/navigation";
+import { FMCGSubImage1, FoodGroup } from "@/components/figma/images";
 
 export default function FoodIndustryPage() {
   const router = useRouter();
@@ -30,8 +30,7 @@ export default function FoodIndustryPage() {
       category: "Manufacturing",
       location: "Urapakkam, Tamil Nadu",
       year: "2024",
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: FMCGSubImage1,
       description:
         "Specialized insulation and ducting solutions executed for a 50,000 sq ft FMCG manufacturing plant, ensuring energy efficiency, temperature control, and compliance with food safety standards.",
     },
@@ -224,7 +223,7 @@ export default function FoodIndustryPage() {
             <div className="relative w-full bg-transparent">
               <Card className="overflow-hidden bg-transparent border-none w-full">
                 <Image
-                  src={servicebanner}
+                  src={FoodGroup}
                   alt="Industrial facility"
                   className="w-full h-auto object-cover"
                   sizes="100vw"

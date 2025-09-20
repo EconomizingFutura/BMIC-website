@@ -17,8 +17,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 import Image from "next/image";
-import { servicebanner } from "@/components/figma/images";
 import { useRouter } from "next/navigation";
+import { ComericialGroup } from "@/components/figma/images";
 
 export default function ColdStorageSolutionsPage() {
   const router = useRouter();
@@ -208,9 +208,9 @@ export default function ColdStorageSolutionsPage() {
               <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
                 <Button
                   size="lg"
-                   onClick={() => {
-                  window.open("https://wa.me/9566122235", "_blank");
-                }}
+                  onClick={() => {
+                    window.open("https://wa.me/9566122235", "_blank");
+                  }}
                   className="bg-primary hover:bg-green-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:text-white"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -223,7 +223,7 @@ export default function ColdStorageSolutionsPage() {
             <div className="relative w-full bg-transparent">
               <Card className="overflow-hidden bg-transparent border-none w-full">
                 <Image
-                  src={servicebanner}
+                  src={ComericialGroup}
                   alt="Industrial facility"
                   className="w-full h-auto object-cover"
                   sizes="100vw"

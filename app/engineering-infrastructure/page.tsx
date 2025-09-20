@@ -16,8 +16,8 @@ import {
   Mail,
   ArrowLeft,
 } from "lucide-react";
-import { servicebanner } from "../../components/figma/images/index";
 import { useRouter } from "next/navigation";
+import { EngineeringGroup } from "@/components/figma/images";
 
 export default function ColdStorageSolutionsPage() {
   const router = useRouter();
@@ -349,7 +349,7 @@ export default function ColdStorageSolutionsPage() {
             <div className="relative w-full bg-transparent">
               <Card className="overflow-hidden bg-transparent border-none w-full">
                 <Image
-                  src={servicebanner}
+                  src={EngineeringGroup}
                   alt="Industrial facility"
                   className="w-full h-auto object-cover"
                   sizes="100vw"

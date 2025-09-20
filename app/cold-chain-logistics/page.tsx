@@ -17,7 +17,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import Image from "next/image";
-import { servicebanner } from "@/components/figma/images";
+import { EngineeringGroup } from "@/components/figma/images";
 import { useRouter } from "next/navigation";
 
 export default function ColdChainIndustriesPage() {
@@ -228,7 +228,7 @@ export default function ColdChainIndustriesPage() {
             <div className="relative w-full bg-transparent">
               <Card className="overflow-hidden bg-transparent border-none w-full">
                 <Image
-                  src={servicebanner}
+                  src={EngineeringGroup}
                   alt="Industrial facility"
                   className="w-full h-auto object-cover"
                   sizes="100vw"

@@ -17,7 +17,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import Image from "next/image";
-import { EngineeringGroup } from "@/components/figma/images";
+import { EngineeringGroup, EngineeringSubImage1, EngineeringSubImage2, EngineeringSubImage3, EngineeringSubImage4 } from "@/components/figma/images";
 import { useRouter } from "next/navigation";
 
 export default function ColdChainIndustriesPage() {
@@ -30,8 +30,7 @@ export default function ColdChainIndustriesPage() {
       category: "Commercial",
       location: " Mysore, Karnataka",
       year: "2024",
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image:EngineeringSubImage1,
       description:
         "Complete HVAC & ducting system for 1.2 million sq. ft. IT campus, ensuring energy efficiency and comfort.",
     },
@@ -41,8 +40,7 @@ export default function ColdChainIndustriesPage() {
       category: "Energy",
       location: "Chennai, Tamil Nadu",
       year: "2024",
-      image:
-        "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image:EngineeringSubImage2,
       description:
         "Thermal & acoustic insulation for a premium commercial hub, reducing energy costs by 22%.",
     },
@@ -50,8 +48,7 @@ export default function ColdChainIndustriesPage() {
 
   const cards = [
     {
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image:EngineeringSubImage3,
       label: "Processing",
       title: "Engineering & Infrastructure Solutions",
       applications: [
@@ -74,8 +71,7 @@ export default function ColdChainIndustriesPage() {
       },
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image:EngineeringSubImage4,
       label: "Commercial",
       title: "Commercial & Real Estate – HVAC & Ducting Systems",
       applications: [

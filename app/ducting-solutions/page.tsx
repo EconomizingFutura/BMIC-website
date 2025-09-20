@@ -70,7 +70,7 @@ export default function DuctingSolutionsPage() {
       features: [
         "Pressure-tested systems",
         "Long lifespan components",
-        "Smooth interiors reduce airflow resistance.",
+        "Smooth internal finishes for minimal airflow resistance.",
       ],
     },
     {
@@ -391,7 +391,7 @@ export default function DuctingSolutionsPage() {
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Leakage Class:</span>
-                  <span className="text-end block">Class C (SMACNA)</span>
+                  <span className="text-end block">Class C (SMACNA Standard)</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Operating Temp:</span>
@@ -412,8 +412,7 @@ export default function DuctingSolutionsPage() {
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Standard Sizes:</span>
                   <span className="text-end block">
-                    Custom (Rectangular/Circular)
-                  </span>
+                      Custom as per design (Rectangular/Circular)                  </span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Thickness Range:</span>
@@ -448,7 +447,8 @@ export default function DuctingSolutionsPage() {
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Coating:</span>
                   <span className="text-end block">
-                    Zinc / Anodized / Polished
+                    Zinc Coated (GI), Anodized (Aluminium), Polished (SS)
+
                   </span>
                 </li>
                 <li className="flex justify-between">
@@ -488,7 +488,7 @@ export default function DuctingSolutionsPage() {
                   </span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-[#4A5565]">Fire Safety:</span>
+                  <span className="text-[#4A5565]">Safety:</span>
                   <span className="text-end block md:max-w-24">
                     OSHA Aligned Practices
                   </span>

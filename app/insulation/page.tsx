@@ -454,7 +454,7 @@ export default function InsulationServicePage() {
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Fire Safety:</span>
-                  <span className="text-end">CE Marking</span>
+                  <span className="text-end">IS 8183, ASTM E84</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-[#4A5565]">Environmental:</span>

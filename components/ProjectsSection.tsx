@@ -2,7 +2,7 @@ import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Calendar, ExternalLink, MapPin } from "lucide-react";
 import Image from "next/image";
-import { fmcg } from "./figma/images";
+import { fmcg, ProjectSubImage1, ProjectSubImage2, ProjectSubImage3, ProjectSubImage4 } from "./figma/images";
 
 const projects = [
   {
@@ -21,8 +21,7 @@ const projects = [
     category: "Construction",
     location: "Mysore, Karnataka",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image:ProjectSubImage1,
     description:
       "Structural engineering and project management for 40-story commercial building.",
   },
@@ -32,8 +31,7 @@ const projects = [
     category: "Transportation",
     location: "Long Beach, CA",
     year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image:ProjectSubImage2,
     description:
       "Automated cargo handling system for major port facility operations.",
   },
@@ -43,8 +41,7 @@ const projects = [
     category: "Oil & Gas",
     location: "Gulf of Mexico",
     year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1625180726018-580b17371d52?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image:ProjectSubImage3,
     description:
       "Engineering and installation of deep-water drilling platform systems.",
   },
@@ -54,8 +51,7 @@ const projects = [
     category: "Defense",
     location: "Classified",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image:ProjectSubImage4,
     description:
       "Secure communication infrastructure for military installations.",
   },

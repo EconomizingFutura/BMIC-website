@@ -630,7 +630,7 @@ export default function SoundProofingSolutionPage() {
                   <span className="text-[#4A5565]">Facings:</span>
                   <span className="text-end">
                     Perforated metal,
-                    <br /> fabric, PVC laminate
+                    <br /> fabric-wrapped, PVC laminate
                   </span>
                 </li>
                 <li className="flex justify-between">

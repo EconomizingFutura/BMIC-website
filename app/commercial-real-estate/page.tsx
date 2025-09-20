@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { ComericialGroup } from "@/components/figma/images";
+import { ComericialGroup, CommercialSubImage1, CommercialSubImage2, CommercialSubImage3, CommercialSubImage4 } from "@/components/figma/images";
 
 export default function ColdStorageSolutionsPage() {
   const router = useRouter();
@@ -30,8 +30,7 @@ export default function ColdStorageSolutionsPage() {
       category: "Commercial",
       location: " Mysore, Karnataka",
       year: "2024",
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image:CommercialSubImage1,    
       description:
         "Specialized insulation and ducting systems implemented for a sprawling commercial campus of Infosys, ensuring energy-efficient climate control and acoustic comfort across offices.",
     },
@@ -41,8 +40,7 @@ export default function ColdStorageSolutionsPage() {
       category: "Energy",
       location: "Chennai, Tamil Nadu",
       year: "2024",
-      image:
-        "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image:CommercialSubImage2,
       description:
         "Advanced insulation integration in DLF’s Chennai project, enhancing thermal performance, energy savings, and occupant comfort across retail, office, and residential zones.",
     },
@@ -50,8 +48,7 @@ export default function ColdStorageSolutionsPage() {
 
   const cards = [
     {
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image:CommercialSubImage3,
       label: "Processing",
       title: "Commercial Insulation & Ducting Systems",
       applications: [
@@ -74,8 +71,7 @@ export default function ColdStorageSolutionsPage() {
       },
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image:CommercialSubImage4,
       label: "Fire-Safe",
       title: "Acoustic & Fire-Safe Solutions",
       applications: [

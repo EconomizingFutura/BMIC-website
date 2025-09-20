@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { FMCGSubImage1, FoodGroup } from "@/components/figma/images";
+import { FMCGSubImage1, FMCGSubImage2, FMCGSubImage3, FMCGSubImage4, FoodGroup } from "@/components/figma/images";
 
 export default function FoodIndustryPage() {
   const router = useRouter();
@@ -40,8 +40,7 @@ export default function FoodIndustryPage() {
       category: "Energy",
       location: "Chennai, Tamil Nadu",
       year: "2024",
-      image:
-        "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image:FMCGSubImage2,
       description:
         "Design and execution of advanced insulation and ducting systems for a large-scale food production plant, ensuring hygiene, temperature stability, and energy efficiency.",
     },
@@ -49,8 +48,7 @@ export default function FoodIndustryPage() {
 
   const cards = [
     {
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image:FMCGSubImage3,
       label: "Processing",
       title: "Pharmaceutical Processing Equipment",
       applications: [
@@ -73,8 +71,7 @@ export default function FoodIndustryPage() {
       },
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image:FMCGSubImage4,
       label: "Packaging",
       title: "Packaging & Serialization",
       applications: [

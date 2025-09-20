@@ -38,7 +38,7 @@ const keyFeatures = [
   {
     icon: <Settings className="h-6 w-6" />,
     title: "Advanced Technology",
-    description: "Cutting-edge automation and control systems",
+    description: "Cutting-edge automation and control systems Operations",
     specs: [
       "IoT Integration",
       "Real-time Monitoring",
@@ -49,7 +49,7 @@ const keyFeatures = [
     icon: <Globe className="h-6 w-6" />,
     title: "Global Support",
     description: "Worldwide service network with local expertise",
-    specs: ["50+ Countries", "Local Teams", "Remote Support"],
+    specs: ["50+ States", "Local Teams", "Remote Support"],
   },
 ];
 
@@ -333,8 +333,8 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
               Why Choose Our <span className="text-primary">Solutions</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover the advanced features that set our industrial systems
-              apart from the competition.
+              Discover the advanced features that make our industrial systems stand out.
+
             </p>
           </div>
 

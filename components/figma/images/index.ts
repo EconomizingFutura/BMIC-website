@@ -26,8 +26,54 @@ import PharmaSubImage2 from "./PharmaSubImage2.jpg";
 import PharmaSubImage3 from "./PharmaSubImage3.png";
 import PharmaSubImage4 from "./PharmaSubImage4.webp";
 import FMCGSubImage1 from "./FMCGSubImage1.jpeg";
+import FMCGSubImage2 from "./FMCGSubImage2.jpg";
+import FMCGSubImage3 from "./FMCGSubImage3.jpeg";
+import FMCGSubImage4 from "./FMCGSubImage4.jpeg";
+import CommercialSubImage1 from "./CommercialSubImage1.jpg";
+import CommercialSubImage2 from "./CommercialSubImage2.jpg";
+import CommercialSubImage3 from "./CommercialSubImage3.jpg";
+import CommercialSubImage4 from "./CommercialSubImage4.jpg";
+import EngineeringSubImage1 from "./EngineeringSubImage1.jpg";
+import EngineeringSubImage2 from "./EngineeringSubImage2.jpg";
+import EngineeringSubImage3 from "./EngineeringSubImage3.jpg";
+import EngineeringSubImage4 from "./EngineeringSubImage4.jpg";
+import SolutionSubImage from "./SolutionSubImage.jpg";
+import SolutionSubImage2 from "./SolutionSubImage2.jpg";
+import SolutionSubImage3 from "./SolutionSubImage3.jpg";
+import SolutionSubImage4 from "./SolutionSubImage4.jpg";
+import ProjectSubImage1 from "./ProjectSubImage1.jpeg";
+import ProjectSubImage2 from "./ProjectSubImage2.jpg";
+import ProjectSubImage3 from "./ProjectSubImage3.jpg";
+import ProjectSubImage4 from "./ProjectSubImage4.jpg";
+
+
+
+
+
+
+
+
 
 export {
+  ProjectSubImage4,
+  ProjectSubImage3,
+  ProjectSubImage2,
+  ProjectSubImage1,
+  SolutionSubImage4,
+  SolutionSubImage3,
+  SolutionSubImage2,
+  SolutionSubImage,
+  EngineeringSubImage4,
+  EngineeringSubImage3,
+  EngineeringSubImage2,
+  EngineeringSubImage1,
+  CommercialSubImage4,
+  CommercialSubImage3,
+  CommercialSubImage2,
+  CommercialSubImage1,
+  FMCGSubImage4,
+  FMCGSubImage3,
+  FMCGSubImage2,
   FMCGSubImage1,
   PharmaSubImage3,
   PharmaSubImage4,

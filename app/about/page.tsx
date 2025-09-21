@@ -14,7 +14,6 @@ import {
   Users,
   Building,
 } from "lucide-react";
-import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 

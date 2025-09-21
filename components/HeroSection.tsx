@@ -3,7 +3,6 @@
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { CheckCircle, ArrowRight, Play } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 import yoe from "./figma/images/yoe.svg";
 import Image from "next/image";
 import { useRouter } from "next/navigation";

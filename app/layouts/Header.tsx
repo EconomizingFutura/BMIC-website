@@ -165,13 +165,15 @@ export function Header() {
             <span className="">Follow Us:</span>
             <div className="flex space-x-2">
               <a
-                href="#"
+                target="_blank"
+                href="https://www.linkedin.com/in/bharath-modern-insulation-company-bmic-7b84a4382?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 className="hover:bg-white/10 px-2 py-1 rounded-md transition-colors"
               >
                 LinkedIn
               </a>
               <a
-                href="#"
+                target="_blank"
+                href="https://x.com/bharathmodernic?s=21"
                 className="hover:bg-white/10 px-2 py-1 rounded-md transition-colors"
               >
                 Twitter
@@ -211,22 +213,20 @@ export function Header() {
 
             <Link
               href="/"
-              className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-2 justify-center cursor-default items-center hover:bg-primary/5 focus:outline-none ${
-                currentPage == "/" || currentPage == ""
-                  ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
-                  : ""
-              }`}
+              className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-2 justify-center cursor-default items-center hover:bg-primary/5 focus:outline-none ${currentPage == "/" || currentPage == ""
+                ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
+                : ""
+                }`}
             >
               Home
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
-                  className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-2 justify-center items-center hover:bg-primary/5 focus:outline-none ${
-                    currentPage == "services"
-                      ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
-                      : ""
-                  }`}
+                  className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-2 justify-center items-center hover:bg-primary/5 focus:outline-none ${currentPage == "services"
+                    ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
+                    : ""
+                    }`}
                 >
                   Solutions <ChevronDown size={2} className="h-5 w-5" />
                 </button>
@@ -281,11 +281,10 @@ export function Header() {
               <DropdownMenuTrigger asChild>
                 <button
                   onClick={toggle}
-                  className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-2 justify-center items-center hover:bg-primary/5 focus:outline-none ${
-                    currentPage == "industry"
-                      ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
-                      : ""
-                  }`}
+                  className={`hover:text-primary font-medium transition-colors relative px-3 rounded-md flex gap-1 py-2 justify-center items-center hover:bg-primary/5 focus:outline-none ${currentPage == "industry"
+                    ? "bg-[#0059191A] hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
+                    : ""
+                    }`}
                 >
                   Industries <ChevronDown size={2} className="h-5 w-5" />
                 </button>
@@ -329,22 +328,20 @@ export function Header() {
             </DropdownMenu>
             <Link
               href="/projects"
-              className={`hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md  ${
-                currentPage.trim() == "projects"
-                  ? "bg-[#0059191A] !hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
-                  : "hover:bg-primary/5"
-              }`}
+              className={`hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md  ${currentPage.trim() == "projects"
+                ? "bg-[#0059191A] !hover:bg-[#0059191A] text-primary py-[6px] px-[12px] rounded"
+                : "hover:bg-primary/5"
+                }`}
             >
               Gallery
             </Link>
 
             <Link
               href="/about"
-              className={`hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md whitespace-nowrap  ${
-                currentPage == "about"
-                  ? "bg-[#0059191A] text-primary hover:bg-[#0059191A] py-[6px] px-[12px] rounded"
-                  : "hover:bg-primary/5 "
-              }`}
+              className={`hover:text-primary font-medium transition-colors relative px-3 py-2 rounded-md whitespace-nowrap  ${currentPage == "about"
+                ? "bg-[#0059191A] text-primary hover:bg-[#0059191A] py-[6px] px-[12px] rounded"
+                : "hover:bg-primary/5 "
+                }`}
             >
               About Us
             </Link>

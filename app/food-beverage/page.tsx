@@ -35,12 +35,12 @@ export default function FoodIndustryPage() {
         "Specialized insulation and ducting solutions executed for a 50,000 sq ft FMCG manufacturing plant, ensuring energy efficiency, temperature control, and compliance with food safety standards.",
     },
     {
-      title: "Solar Power Infrastructure",
+      title: "Food Processing & Manufacturing Facility",
       client: "Britannia Industries",
       category: "Energy",
       location: "Chennai, Tamil Nadu",
       year: "2024",
-      image:FMCGSubImage2,
+      image: FMCGSubImage2,
       description:
         "Design and execution of advanced insulation and ducting systems for a large-scale food production plant, ensuring hygiene, temperature stability, and energy efficiency.",
     },
@@ -48,7 +48,7 @@ export default function FoodIndustryPage() {
 
   const cards = [
     {
-      image:FMCGSubImage3,
+      image: FMCGSubImage3,
       label: "Processing",
       title: "Pharmaceutical Processing Equipment",
       applications: [
@@ -71,7 +71,7 @@ export default function FoodIndustryPage() {
       },
     },
     {
-      image:FMCGSubImage4,
+      image: FMCGSubImage4,
       label: "Packaging",
       title: "Packaging & Serialization",
       applications: [
@@ -341,11 +341,10 @@ export default function FoodIndustryPage() {
                             {item.title}
                           </h2>
                           <p
-                            className={`${item.priorityColor} ${
-                              item.priority.toLowerCase() == "medium"
+                            className={`${item.priorityColor} ${item.priority.toLowerCase() == "medium"
                                 ? "text-primary"
                                 : " "
-                            } text-xs font-medium px-2 py-1 rounded-[6.75px] w-min`}
+                              } text-xs font-medium px-2 py-1 rounded-[6.75px] w-min`}
                           >
                             {item.priority}
                           </p>

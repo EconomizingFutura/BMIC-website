@@ -178,17 +178,13 @@ export default function PharmaIndustryPage() {
               </Button>
               <div className="space-y-4">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl  font-semibold leading-tight text-gray-900">
-                  Advancing
+                  Enhancing
                   <span className="text-primary"> Pharmaceutical</span>
-                  <br /> Manufacturing
+                  <br /> Infrastructure
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">
-                  Advancing Pharmaceutical Manufacturing Providing specialized
-                  thermal and acoustic insulation solutions primarily focused on
-                  reactor insulation for pharmaceutical facilities. Our
-                  expertise ensures precise temperature control,
-                  contamination-free environments, and energy efficiency across
-                  cleanrooms, R&D labs, and large-scale production units.
+                  Delivering advanced thermal and acoustic insulation solutions tailored for pharmaceutical manufacturing facilities. Our expertise ensures precise temperature control, contamination-free environments, and energy efficiency across cleanrooms, R&D labs, and large-scale production units.
+
                 </p>
               </div>
 
@@ -349,11 +345,10 @@ export default function PharmaIndustryPage() {
                             {item.title}
                           </h2>
                           <p
-                            className={`${item.priorityColor} ${
-                              item.priority.toLowerCase() == "medium"
+                            className={`${item.priorityColor} ${item.priority.toLowerCase() == "medium"
                                 ? "text-primary"
                                 : " "
-                            } text-xs font-medium px-2 py-1 rounded-[6.75px] w-min`}
+                              } text-xs font-medium px-2 py-1 rounded-[6.75px] w-min`}
                           >
                             {item.priority}
                           </p>

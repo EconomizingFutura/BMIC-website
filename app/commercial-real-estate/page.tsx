@@ -171,7 +171,7 @@ export default function ColdStorageSolutionsPage() {
               <div className="space-y-4">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl  font-semibold leading-tight text-gray-900">
                   Commercial
-                  <span className="text-primary"> Food & Real Estate</span>
+                  <span className="text-primary"> & Real Estate</span>
                   <br />
                 </h1>
                 <p className="text-base  text-gray-600 leading-relaxed ">
@@ -313,7 +313,7 @@ export default function ColdStorageSolutionsPage() {
             <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">
               Overcoming
               <span className="text-primary"> Critical Challenges </span>
-              in Food & FMCG
+              in Commercial & Real Estate
             </h2>
             <p className="text-lg text-gray-600 max-w-5xl mx-auto">
               Modern commercial buildings demand energy efficiency, acoustic

@@ -51,7 +51,7 @@ export default function AboutPage() {
     },
     {
       name: "A Rajan",
-      role: "Senior Supervisor",
+      role: "Supervisor",
       experience: "12+ years",
       expertise:
         "Experienced supervisor ensuring meticulous project execution, safety compliance, and the highest standards of quality on every installation.",

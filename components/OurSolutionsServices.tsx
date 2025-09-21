@@ -1,9 +1,5 @@
 import { Award, Shield, ChevronRight, Settings } from "lucide-react";
 import {
-  solution1,
-  solution2,
-  solution3,
-  solution4,
   SolutionSubImage,
   SolutionSubImage2,
   SolutionSubImage3,

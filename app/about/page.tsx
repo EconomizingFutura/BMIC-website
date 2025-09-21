@@ -2,7 +2,7 @@
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
-import { aboutuscard, aboutusbanner } from "@/components/figma/images";
+import { aboutuscard, aboutusbanner, ProfilePlaceholder } from "@/components/figma/images";
 import {
   ArrowLeft,
   Target,
@@ -28,8 +28,7 @@ export default function AboutPage() {
       experience: "20+ years",
       expertise:
         " Pioneering entrepreneur who laid the foundation of Bharath Modern Insulation Company in 1975, with a vision to deliver reliable thermal and acoustic solutions that stand the test of time.",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: ProfilePlaceholder,
     },
     {
       name: "M Jagadeesan",
@@ -37,8 +36,7 @@ export default function AboutPage() {
       experience: "35+ years",
       expertise:
         "Guiding force behind the company’s growth, combining deep technical expertise with a commitment to innovation and customer satisfaction.",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b898?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: ProfilePlaceholder,
     },
     {
       name: "CJ Akash Ram",
@@ -47,7 +45,7 @@ export default function AboutPage() {
       expertise:
         " Dynamic leader driving strategic expansion, operational excellence, and modernization of services to meet evolving industry needs.",
       image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        ProfilePlaceholder,
     },
     {
       name: "A Rajan",
@@ -56,7 +54,7 @@ export default function AboutPage() {
       expertise:
         "Experienced supervisor ensuring meticulous project execution, safety compliance, and the highest standards of quality on every installation.",
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        ProfilePlaceholder,
     },
   ];
 
@@ -379,7 +377,7 @@ export default function AboutPage() {
                 className="group overflow-hidden border   mx-auto w-full gap-0 border-[#0000001A] "
               >
                 <div className="relative h-64 overflow-hidden">
-                  <ImageWithFallback
+                  <Image
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover "

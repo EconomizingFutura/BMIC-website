@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { CheckCircle, ArrowRight, Play } from "lucide-react";
@@ -5,9 +7,12 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import yoe from "./figma/images/yoe.svg";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { VideoThumbnail } from "./figma/images";
 
 export function HeroSection() {
   const router = useRouter();
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const onNavigateToContact = () => router.push("/contact");
 
@@ -97,7 +102,7 @@ export function HeroSection() {
           </div>
 
           <div className="relative ">
-            <div className="absolute -right-4 -top-12 md:-top-16 lg:-top-[5.5rem] h-32 w-32 md:h-full md:w-full md:max-w-36 md:max-h-36">
+            <div className="z-10 absolute -right-4 -top-12 md:-top-16 lg:-top-[5.5rem] h-32 w-32 md:h-full md:w-full md:max-w-36 md:max-h-36">
               <Image
                 alt="30+Experience"
                 src={yoe}
@@ -105,27 +110,49 @@ export function HeroSection() {
               />
             </div>
 
-            <Card className="overflow-hidden shadow-xl">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Industrial facility"
-                className="w-full  h-96 border border-green-500 object-cover"
-              />
+            <Card className="relative overflow-hidden shadow-xl">
+              {!isPlaying ? (
+                <>
+                  {/* Thumbnail */}
+                  <Image
+                    src={VideoThumbnail}
+                    alt="Industrial facility"
+                    className="w-full h-96 border border-green-500 object-cover"
+                  />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-white rounded-lg p-4 shadow-lg">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                      <Play className="h-6 w-6 text-white ml-1" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600">Watch our</p>
-                      <p className="text-primary">Company Overview</p>
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+
+                  {/* Play Button */}
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div
+                      onClick={() => setIsPlaying(true)}
+                      className="bg-white rounded-lg p-4 shadow-lg cursor-pointer"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                          <Play className="h-6 w-6 text-white ml-1" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-600">Watch our</p>
+                          <p className="text-primary font-semibold">Company Overview</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </>
+              ) : (
+                /* YouTube Player */
+                <div className="w-full h-96">
+                  <iframe
+                    className="w-full h-full rounded-lg"
+                    src="https://www.youtube.com/embed/kuZ-6jd82Go?autoplay=1&rel=0"
+                    title="Company Overview"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
-              </div>
+              )}
             </Card>
 
             {/* Floating elements */}

@@ -45,16 +45,13 @@ import ProjectSubImage1 from "./ProjectSubImage1.jpeg";
 import ProjectSubImage2 from "./ProjectSubImage2.jpg";
 import ProjectSubImage3 from "./ProjectSubImage3.jpg";
 import ProjectSubImage4 from "./ProjectSubImage4.jpg";
-
-
-
-
-
-
-
+import VideoThumbnail from "./VideoThumbnail.jpeg";
+import ProfilePlaceholder from "./ProfilePlaceholder.svg";
 
 
 export {
+  ProfilePlaceholder,
+  VideoThumbnail,
   ProjectSubImage4,
   ProjectSubImage3,
   ProjectSubImage2,

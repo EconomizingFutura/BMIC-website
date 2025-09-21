@@ -145,7 +145,7 @@ export function HeroSection() {
                 <div className="w-full h-96">
                   <iframe
                     className="w-full h-full rounded-lg"
-                    src="https://www.youtube.com/embed/kuZ-6jd82Go?autoplay=1&rel=0"
+                    src="https://www.youtube.com/embed/r672vrlANRc?autoplay=1&rel=0"
                     title="Company Overview"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

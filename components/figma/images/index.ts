@@ -4,8 +4,6 @@ import automobile from "./automobile.svg";
 import SoundProof from "./SoundProof.svg";
 import yoe from "./yoe.svg";
 import servicebanner from "./servicebanner.svg";
-import aboutuscard from "./aboutuscard.svg";
-import aboutusbanner from "./aboutusbanner.jpg";
 import whatsappAnimation from "./whatsappAnimation.json";
 import fmcg from "./fmcg.jpg";
 import solar from "./solar.jpg";
@@ -47,9 +45,14 @@ import ProjectSubImage3 from "./ProjectSubImage3.jpg";
 import ProjectSubImage4 from "./ProjectSubImage4.jpg";
 import VideoThumbnail from "./VideoThumbnail.jpeg";
 import ProfilePlaceholder from "./ProfilePlaceholder.svg";
-
+import fmcgHome from "./fmcgHome.jpg";
+import bg from "./bg.png";
+import aboutUSBg_2 from "./aboutUSBg_2.png";
 
 export {
+  aboutUSBg_2,
+  bg,
+  fmcgHome,
   ProfilePlaceholder,
   VideoThumbnail,
   ProjectSubImage4,
@@ -91,8 +94,6 @@ export {
   SoundProof,
   yoe,
   servicebanner,
-  aboutuscard,
-  aboutusbanner,
   fmcg,
   solar,
   solution1,

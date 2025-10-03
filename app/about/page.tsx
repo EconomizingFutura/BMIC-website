@@ -2,7 +2,7 @@
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
-import { aboutuscard, aboutusbanner, ProfilePlaceholder } from "@/components/figma/images";
+import { ProfilePlaceholder, bg, aboutUSBg_2 } from "@/components/figma/images";
 import {
   ArrowLeft,
   Target,
@@ -138,7 +138,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden md:min-h-[700px] h-full bg-gradient-to-br from-primary/5 via-white to-accent/30 pb-20">
         <div className="relative w-full h-[300px] md:h-[500px]">
           <Image
-            src={aboutusbanner}
+            src={bg}
             alt="About Us"
             fill
             className="object-cover"
@@ -225,7 +225,7 @@ export default function AboutPage() {
             {/* Right image with certification */}
             <div className="relative w-full  aspect-[3/2] overflow-hidden">
               <Image
-                src={aboutuscard}
+                src={aboutUSBg_2}
                 alt="Office"
                 fill
                 className="object-contain"

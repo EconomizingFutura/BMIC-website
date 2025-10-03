@@ -2,7 +2,7 @@ import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Calendar, ExternalLink, MapPin } from "lucide-react";
 import Image from "next/image";
-import { fmcg, ProjectSubImage1, ProjectSubImage2, ProjectSubImage3, ProjectSubImage4 } from "./figma/images";
+import { fmcgHome, ProjectSubImage1, ProjectSubImage2, ProjectSubImage3, ProjectSubImage4 } from "./figma/images";
 
 const projects = [
   {
@@ -11,7 +11,7 @@ const projects = [
     category: "Insulation",
     location: "Urapakkam, Karanaipuducheri, Tamil Nadu 603210",
     year: "2024",
-    image: fmcg,
+    image: fmcgHome,
     description:
       "Complete automation system implementation for a 50,000 sq ft manufacturing facility.",
   },
@@ -21,7 +21,7 @@ const projects = [
     category: "Construction",
     location: "Mysore, Karnataka",
     year: "2024",
-    image:ProjectSubImage1,
+    image: ProjectSubImage1,
     description:
       "Structural engineering and project management for 40-story commercial building.",
   },
@@ -31,7 +31,7 @@ const projects = [
     category: "Transportation",
     location: "Long Beach, CA",
     year: "2023",
-    image:ProjectSubImage2,
+    image: ProjectSubImage2,
     description:
       "Automated cargo handling system for major port facility operations.",
   },
@@ -41,7 +41,7 @@ const projects = [
     category: "Oil & Gas",
     location: "Gulf of Mexico",
     year: "2023",
-    image:ProjectSubImage3,
+    image: ProjectSubImage3,
     description:
       "Engineering and installation of deep-water drilling platform systems.",
   },
@@ -51,7 +51,7 @@ const projects = [
     category: "Defense",
     location: "Classified",
     year: "2024",
-    image:ProjectSubImage4,
+    image: ProjectSubImage4,
     description:
       "Secure communication infrastructure for military installations.",
   },

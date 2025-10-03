@@ -178,6 +178,22 @@ export function Header() {
               >
                 Twitter
               </a>
+
+              <a
+                target="_blank"
+                href="https://www.facebook.com/share/16uFhojkdY/?mibextid=wwXIfr"
+                className="hover:bg-white/10 px-2 py-1 rounded-md transition-colors"
+              >
+                Facebook
+              </a>
+
+              <a
+                target="_blank"
+                href="https://www.instagram.com/bharathmoderninsulationcompany?igsh=MXA1ODNzeml5c2drNQ%3D%3D&utm_source=qr"
+                className="hover:bg-white/10 px-2 py-1 rounded-md transition-colors"
+              >
+                Instagram
+              </a>
             </div>
           </div>
         </div>

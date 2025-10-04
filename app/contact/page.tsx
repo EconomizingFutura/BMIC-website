@@ -141,19 +141,21 @@ export default function ContactPage() {
         subject
       )}&body=${body}`;
 
+      const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=jagadeesan.bharath@gmail.com&su=${encodeURIComponent(
+        subject
+      )}&body=${body}`;
+
       // window.location.href = mailtoLink;
 
       //window.open(mailtoLink);
+      window.open(gmailLink, "_blank");
 
-      const a = document.createElement("a");
-      a.href = mailtoLink;
-      a.style.display = "none";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+
 
     }
   };
+
+
   const router = useRouter();
   const onBackToHome = () => router.push("/");
 

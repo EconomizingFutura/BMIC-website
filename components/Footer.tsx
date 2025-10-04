@@ -1,6 +1,15 @@
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
-import { MapPin, Phone, Mail, Clock, Linkedin, Twitter, Facebook, Youtube } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Youtube,
+} from "lucide-react";
 
 const quickLinks = [
   { title: "About Us", href: "#about" },
@@ -8,7 +17,7 @@ const quickLinks = [
   { title: "Industries", href: "#industries" },
   { title: "Projects", href: "#projects" },
   { title: "Careers", href: "#careers" },
-  { title: "News & Updates", href: "#news" }
+  { title: "News & Updates", href: "#news" },
 ];
 
 const services = [
@@ -17,7 +26,7 @@ const services = [
   { title: "Automation", href: "#automation" },
   { title: "Maintenance", href: "#maintenance" },
   { title: "Consulting", href: "#consulting" },
-  { title: "Training", href: "#training" }
+  { title: "Training", href: "#training" },
 ];
 
 const industries = [
@@ -26,7 +35,7 @@ const industries = [
   { title: "Energy & Power", href: "#energy" },
   { title: "Construction", href: "#construction" },
   { title: "Transportation", href: "#transportation" },
-  { title: "Defense", href: "#defense" }
+  { title: "Defense", href: "#defense" },
 ];
 
 export function Footer() {
@@ -48,9 +57,10 @@ export function Footer() {
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Leading provider of innovative engineering solutions, manufacturing excellence, 
-                and comprehensive services for over 30 years. We help businesses thrive through 
-                cutting-edge technology and expert consultation.
+                Leading provider of innovative engineering solutions,
+                manufacturing excellence, and comprehensive services for over 30
+                years. We help businesses thrive through cutting-edge technology
+                and expert consultation.
               </p>
             </div>
 
@@ -63,21 +73,27 @@ export function Footer() {
                   <p className="text-gray-300">Houston, TX 77001</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <a href="tel:+15551234567" className="text-gray-300 hover:text-primary transition-colors">
-                  +1 (555) 123-4567
+                <a
+                  href="tel:+15551234567"
+                  className="text-gray-300 hover:text-primary transition-colors"
+                >
+                  9566122235 7871608088
                 </a>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                <a href="mailto:info@company.com" className="text-gray-300 hover:text-primary transition-colors">
+                <a
+                  href="mailto:info@company.com"
+                  className="text-gray-300 hover:text-primary transition-colors"
+                >
                   info@company.com
                 </a>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
@@ -92,16 +108,32 @@ export function Footer() {
             <div>
               <h4 className="text-lg mb-3">Follow Us</h4>
               <div className="flex space-x-3">
-                <Button size="icon" variant="outline" className="border-gray-600 text-gray-300 hover:text-primary hover:border-primary">
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="border-gray-600 text-gray-300 hover:text-primary hover:border-primary"
+                >
                   <Linkedin className="h-4 w-4" />
                 </Button>
-                <Button size="icon" variant="outline" className="border-gray-600 text-gray-300 hover:text-primary hover:border-primary">
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="border-gray-600 text-gray-300 hover:text-primary hover:border-primary"
+                >
                   <Twitter className="h-4 w-4" />
                 </Button>
-                <Button size="icon" variant="outline" className="border-gray-600 text-gray-300 hover:text-primary hover:border-primary">
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="border-gray-600 text-gray-300 hover:text-primary hover:border-primary"
+                >
                   <Facebook className="h-4 w-4" />
                 </Button>
-                <Button size="icon" variant="outline" className="border-gray-600 text-gray-300 hover:text-primary hover:border-primary">
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="border-gray-600 text-gray-300 hover:text-primary hover:border-primary"
+                >
                   <Youtube className="h-4 w-4" />
                 </Button>
               </div>
@@ -114,8 +146,8 @@ export function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href} 
+                  <a
+                    href={link.href}
                     className="text-gray-300 hover:text-primary transition-colors text-sm"
                   >
                     {link.title}
@@ -131,8 +163,8 @@ export function Footer() {
             <ul className="space-y-2">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a 
-                    href={service.href} 
+                  <a
+                    href={service.href}
                     className="text-gray-300 hover:text-primary transition-colors text-sm"
                   >
                     {service.title}
@@ -148,8 +180,8 @@ export function Footer() {
             <ul className="space-y-2">
               {industries.map((industry, index) => (
                 <li key={index}>
-                  <a 
-                    href={industry.href} 
+                  <a
+                    href={industry.href}
                     className="text-gray-300 hover:text-primary transition-colors text-sm"
                   >
                     {industry.title}
@@ -184,18 +216,30 @@ export function Footer() {
           <div className="text-sm text-gray-400">
             © 2024 Company Solutions & Services. All rights reserved.
           </div>
-          
+
           <div className="flex space-x-6 text-sm">
-            <a href="#privacy" className="text-gray-400 hover:text-primary transition-colors">
+            <a
+              href="#privacy"
+              className="text-gray-400 hover:text-primary transition-colors"
+            >
               Privacy Policy
             </a>
-            <a href="#terms" className="text-gray-400 hover:text-primary transition-colors">
+            <a
+              href="#terms"
+              className="text-gray-400 hover:text-primary transition-colors"
+            >
               Terms of Service
             </a>
-            <a href="#cookies" className="text-gray-400 hover:text-primary transition-colors">
+            <a
+              href="#cookies"
+              className="text-gray-400 hover:text-primary transition-colors"
+            >
               Cookie Policy
             </a>
-            <a href="#sitemap" className="text-gray-400 hover:text-primary transition-colors">
+            <a
+              href="#sitemap"
+              className="text-gray-400 hover:text-primary transition-colors"
+            >
               Sitemap
             </a>
           </div>

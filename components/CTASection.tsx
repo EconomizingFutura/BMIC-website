@@ -1,6 +1,8 @@
+"use client";
+import { dialNumber, sendEmail } from "@/utils/utils";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
-import { ArrowRight, Phone, Mail, MessageCircle } from "lucide-react";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 
 export function CTASection() {
   return (
@@ -8,104 +10,65 @@ export function CTASection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-5xl mb-4">
-            Ready to Start Your <span className="text-green-200">Next Project?</span>
+            Ready to Start Your{" "}
+            <span className="text-green-200">Next Project?</span>
           </h2>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
-            Get in touch with our experts today. We're here to help you find the perfect solution 
-            for your business needs with a free consultation and competitive quote.
+            Get in touch with our experts today. We&apos;re here to help you
+            find the perfect solution for your business needs with a free
+            consultation and competitive quote.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          {/* Main CTA Card */}
-          <Card className="lg:col-span-2 bg-white/10 border-white/20 text-white">
-            <CardContent className="p-8">
-              <h3 className="text-2xl mb-4">Get Your Free Quote Today</h3>
-              <p className="text-white/90 mb-6 leading-relaxed">
-                Our team of experts will analyze your requirements and provide you with a detailed 
-                proposal within 24 hours. No obligations, just professional advice tailored to your needs.
+          <Card className="bg-white/10 border-white/20 text-white">
+            <CardContent className="p-6 text-center">
+              <MessageCircle className="h-8 w-8 mx-auto mb-3" />
+              <h4 className="mb-2">WhatsApp Us</h4>
+              <p className="text-sm text-white/80 mb-4">
+                Quick response guaranteed
               </p>
-              
-              <div className="space-y-4 mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-green-300 rounded-full" />
-                  <span>Free consultation and project assessment</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-green-300 rounded-full" />
-                  <span>Detailed proposal within 24 hours</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-green-300 rounded-full" />
-                  <span>Competitive pricing and flexible terms</span>
-                </div>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 flex-1"
-                >
-                  Get a Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-primary flex-1"
-                >
-                  View Portfolio
-                </Button>
-              </div>
+              <Button
+                onClick={() => {
+                  window.open("https://wa.me/9566122235", "_blank");
+                }}
+                size="sm"
+                className="bg-white text-primary hover:text-white hover:bg-green-600 w-full"
+              >
+                Chat Now
+              </Button>
             </CardContent>
           </Card>
 
-          {/* Contact Options */}
-          <div className="space-y-4">
-            <Card className="bg-white/10 border-white/20 text-white hover:bg-white/20 transition-colors">
-              <CardContent className="p-6 text-center">
-                <MessageCircle className="h-8 w-8 mx-auto mb-3" />
-                <h4 className="mb-2">WhatsApp Us</h4>
-                <p className="text-sm text-white/80 mb-4">Quick response guaranteed</p>
-                <Button 
-                  size="sm" 
-                  className="bg-green-600 hover:bg-green-700 w-full"
-                >
-                  Chat Now
-                </Button>
-              </CardContent>
-            </Card>
+          <Card className="bg-white/10 border-white/20 text-white">
+            <CardContent className="p-6 text-center">
+              <Phone className="h-8 w-8 mx-auto mb-3" />
+              <h4 className="mb-2">Call Us</h4>
+              <p className="text-sm text-white/80 mb-4">Speak to an expert</p>
+              <Button
+                onClick={dialNumber}
+                size="sm"
+                className="bg-white text-primary hover:text-white hover:bg-green-600 w-full"
+              >
+                +91 9566122235
+              </Button>
+            </CardContent>
+          </Card>
 
-            <Card className="bg-white/10 border-white/20 text-white hover:bg-white/20 transition-colors">
-              <CardContent className="p-6 text-center">
-                <Phone className="h-8 w-8 mx-auto mb-3" />
-                <h4 className="mb-2">Call Us</h4>
-                <p className="text-sm text-white/80 mb-4">Speak to an expert</p>
-                <Button 
-                  size="sm" 
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-primary w-full"
-                >
-                  +1 (555) 123-4567
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/10 border-white/20 text-white hover:bg-white/20 transition-colors">
-              <CardContent className="p-6 text-center">
-                <Mail className="h-8 w-8 mx-auto mb-3" />
-                <h4 className="mb-2">Email Us</h4>
-                <p className="text-sm text-white/80 mb-4">Detailed inquiry</p>
-                <Button 
-                  size="sm" 
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-primary w-full"
-                >
-                  Send Email
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+          <Card className="bg-white/10 border-white/20 text-white ">
+            <CardContent className="p-6 text-center">
+              <Mail className="h-8 w-8 mx-auto mb-3" />
+              <h4 className="mb-2">Email Us</h4>
+              <p className="text-sm text-white/80 mb-4">Detailed inquiry</p>
+              <Button
+                onClick={sendEmail}
+                size="sm"
+                className="bg-white text-primary hover:text-white hover:bg-green-600 w-full"
+              >
+                Send Email
+              </Button>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Bottom stats */}

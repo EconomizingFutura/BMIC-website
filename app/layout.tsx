@@ -1,10 +1,17 @@
 import "../globals.css";
-export const metadata = {
-  title: "Economizing Futura",
-  description:
-    "Economizing Futura delivers innovative digital solutions, transforming ideas into powerful software for startups and businesses worldwide.",
-};
+import WhatsAnimate from "@/components/WhatsAnimate";
+import { Header } from "./layouts/Header";
+import { Footer } from "./layouts/Footer";
+import { CTASection } from "@/components/CTASection";
 
+export const metadata = {
+  title: "Bharath Modern Insulation Company",
+  description:
+    "EMIC delivers specialized solutions in thermal insulation and ducting systems, tailored to meet the demands of modern industrial and commercial infrastructures. With over three decades of experience, our services are designed to improve energy efficiency, temperature control, and acoustic comfort across facilities.",
+  icons: {
+    icon: "/favicon.svg",
+  },
+};
 export default function RootLayout({
   children,
 }: {
@@ -12,11 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <title>BMIC</title>
-      </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <CTASection />
+        <Footer />
+        <WhatsAnimate />
+      </body>
     </html>
   );
 }

@@ -269,13 +269,13 @@ export function ServicesPage({ onBackToHome }: ServicesPageProps) {
                   <Mail className="h-4 w-4 mr-2" />
                   Request Quote
                 </Button>
-                <Button
+                {/* <Button
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary hover:text-white"
                 >
                   <Download className="h-4 w-4 mr-2" />
                   Download Brochure
-                </Button>
+                </Button> */}
               </div>
             </div>
 

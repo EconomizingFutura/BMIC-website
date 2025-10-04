@@ -213,13 +213,13 @@ export default function ColdStorageSolutionsPage() {
 
   const downloadDoc = [
     {
-      title: "Various safety documents",
+      title: "Safety documents",
       description: "Guidelines, records ensuring workplace safety compliance.",
       type: "PDF",
       size: "2.4 MB",
       button: "Download",
       icon: <FileText className="h-8 w-8 text-primary" />,
-      file: "/pdfs/TDS_COLDSTORAGE.pdf",
+      file: "/pdfs/Safety.pdf",
     },
     {
       title: "Tech data sheet",
@@ -315,7 +315,7 @@ export default function ColdStorageSolutionsPage() {
                   Advanced
                   <span className="text-primary">
                     {" "}
-                    Ducting <br className="hidden sm:block" /> Solution{" "}
+                    Cold <br className="hidden sm:block" /> Storage{" "}
                   </span>
                   System
                 </h1>
@@ -358,13 +358,13 @@ export default function ColdStorageSolutionsPage() {
                   <span className="relative">Request Quote</span>{" "}
                   <Mail className="ml-2 relative h-5 w-5" />
                 </Button>
-                <Button
+                {/* <Button
                   size="lg"
                   className="bg-white text-primary border border-primary hover:bg-white flex items-center justify-center"
                 >
                   <Download className="mr-2 h-5 w-5" />
                   Download Brochure
-                </Button>
+                </Button> */}
               </div>
             </div>
 

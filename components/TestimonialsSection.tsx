@@ -7,7 +7,7 @@ const testimonials = [
       "Their engineering expertise and attention to detail exceeded our expectations. The project was delivered on time and within budget.",
     author: "Anisha",
     position: "Project Manager",
-    company: "Proventus",
+    company: "Proventus Life Sciences Pvt Ltd",
     rating: 5,
     avatar:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
@@ -17,7 +17,7 @@ const testimonials = [
       "Outstanding service and technical support. Their team's professionalism and expertise made our complex project a success.",
     author: "Gurumurthy Meiyappan",
     position: "Faciliate Manager",
-    company: "Perfetti Van",
+    company: "Perfetti van melle Pvt Ltd",
     rating: 5,
     avatar:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",

@@ -141,7 +141,17 @@ export default function ContactPage() {
         subject
       )}&body=${body}`;
 
-      window.location.href = mailtoLink;
+      // window.location.href = mailtoLink;
+
+      //window.open(mailtoLink);
+
+      const a = document.createElement("a");
+      a.href = mailtoLink;
+      a.style.display = "none";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
     }
   };
   const router = useRouter();

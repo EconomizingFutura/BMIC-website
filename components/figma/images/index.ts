@@ -48,8 +48,10 @@ import ProfilePlaceholder from "./ProfilePlaceholder.svg";
 import fmcgHome from "./fmcgHome.jpg";
 import bg from "./bg.png";
 import aboutUSBg_2 from "./aboutUSBg_2.png";
+import bgBanner from "./bgBanner.png";
 
 export {
+  bgBanner,
   aboutUSBg_2,
   bg,
   fmcgHome,

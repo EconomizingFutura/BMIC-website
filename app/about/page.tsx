@@ -2,7 +2,7 @@
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
-import { ProfilePlaceholder, bg, aboutUSBg_2 } from "@/components/figma/images";
+import { ProfilePlaceholder, aboutUSBg_2, bgBanner } from "@/components/figma/images";
 import {
   ArrowLeft,
   Target,
@@ -138,12 +138,12 @@ export default function AboutPage() {
       <section className="relative overflow-hidden md:min-h-[700px] h-full bg-gradient-to-br from-primary/5 via-white to-accent/30 pb-20">
         <div className="relative w-full h-[300px] md:h-[500px]">
           <Image
-            src={bg}
+            src={bgBanner}
             alt="About Us"
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-[#78A484] mix-blend-multiply"></div>
+          {/* <div className="absolute inset-0 bg-[#78A484] mix-blend-multiply"></div> */}
 
           <Button
             variant="outline"

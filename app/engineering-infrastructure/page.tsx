@@ -336,13 +336,13 @@ export default function ColdStorageSolutionsPage() {
                   <span className="relative">Request Quote</span>{" "}
                   <Mail className="ml-2 relative h-5 w-5" />
                 </Button>
-                <Button
+                {/* <Button
                   size="lg"
                   className="bg-white text-primary border border-primary hover:bg-white flex items-center justify-center"
                 >
                   <Download className="mr-2 h-5 w-5" />
                   Download Brochure
-                </Button>
+                </Button> */}
               </div>
             </div>
 

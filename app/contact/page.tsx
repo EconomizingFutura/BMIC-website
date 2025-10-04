@@ -137,9 +137,9 @@ export default function ContactPage() {
       Subscribe to Newsletter: ${formData.subscribe ? "Yes" : "No"}`
       );
 
-      const mailtoLink = `mailto:jagadeesan.bharath@gmail.com?subject=${encodeURIComponent(
-        subject
-      )}&body=${body}`;
+      // const mailtoLink = `mailto:jagadeesan.bharath@gmail.com?subject=${encodeURIComponent(
+      //   subject
+      // )}&body=${body}`;
 
       const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=jagadeesan.bharath@gmail.com&su=${encodeURIComponent(
         subject
